@@ -6,17 +6,21 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BasicBlock extends Block {
 
-    public BasicBlock(String unlocalizedName, Material material, float hardness, float resistance, String tool, int level) {
+	public String name = "";
+	
+    public BasicBlock(String unlocalizedName, Material material, float hardness, float resistance, String tool, int level, String name) {
         super(material);
         this.setUnlocalizedName(unlocalizedName);
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setHardness(hardness);
         this.setResistance(resistance);
+        this.setHarvestLevel(tool, level);
+        this.name = name;
     }
 
-    public BasicBlock(String unlocalizedName, float hardness, float resistance, String tool, int level)
+    public BasicBlock(String unlocalizedName, float hardness, float resistance, String tool, int level, String name)
     {
-        this(unlocalizedName, Material.rock, hardness, resistance, tool, level);
+        this(unlocalizedName, Material.rock, hardness, resistance, tool, level, name);
     }
     
     //public BasicBlock(String unlocalizedName, float hardness, float resistance) {

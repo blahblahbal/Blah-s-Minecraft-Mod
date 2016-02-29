@@ -14,8 +14,9 @@ public class ModBlockOre extends Block {
 	private int meta;
 	private int least_quantity;
 	private int most_quantity;
+	private String name;
 	
-    protected ModBlockOre(String unlocalizedName, Material mat, Item drop, float hard, float res, String tool, int level, int meta, int least_quantity, int most_quantity) {
+    protected ModBlockOre(String unlocalizedName, Material mat, Item drop, float hard, float res, String tool, int level, int meta, int least_quantity, int most_quantity, String name) {
         super(mat);
         this.drop = drop;
         this.meta = meta;
@@ -26,6 +27,7 @@ public class ModBlockOre extends Block {
         this.setResistance(res);
         this.setUnlocalizedName(unlocalizedName);
         this.setCreativeTab(CreativeTabs.tabBlock);
+        this.name = name;
     }
     
     @Override
