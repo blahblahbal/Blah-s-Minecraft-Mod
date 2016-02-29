@@ -1,0 +1,21 @@
+item.tadaniteShard.name=Tadanite Shard
+item.obsidianIngot.name=Obsidian Ingot
+item.obsidianPickaxe.name=Obsidian Pickaxe
+item.obsidianAxe.name=Obsidian Axe
+item.obsidianShovel.name=Obsidian Shovel
+item.obsidianSword.name=Obsidian Sword
+item.obsidianHoe.name=Obsidian Hoe
+item.acidBucket.name=Acid Bucket
+item.tadanitePickaxe.name=Tadanite Pickaxe
+item.tadaniteAxe.name=Tadanite Axe
+item.tadaniteShovel.name=Tadanite Shovel
+item.tadaniteSword.name=Tadanite Sword
+item.tadaniteHoe.name=Tadanite Hoe
+item.tadaniteHelmet.name=Tadanite Helmet
+item.tadaniteChestplate.name=Tadanite Chestplate
+item.tadaniteLeggings.name=Tadanite Leggings
+item.tadaniteBoots.name=Tadanite Boots
+
+tile.leatherBlock.name=Leather Block
+tile.tadanite.name=Tadanite
+tile.tadaniteOre.name=Tadanite Ore
