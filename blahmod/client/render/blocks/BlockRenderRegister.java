@@ -15,8 +15,9 @@ public final class BlockRenderRegister {
 		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 	    //.register(Item.getItemFromBlock((Block)ModBlocks.tadanite), 0, new ModelResourceLocation("blahmod:tadanite", "inventory"));
 	    reg((BasicBlock)ModBlocks.tadanite);
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock((Block)ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ModBlocks.tadaniteOre.name, "inventory"));
 	    reg((BasicBlock)ModBlocks.leatherBlock);
-	    reg((BasicBlock)ModBlocks.tadaniteOre);
+	    //reg((BasicBlock)ModBlocks.tadaniteOre);
 	}
 
 	public static void reg(BasicBlock block) {

@@ -21,7 +21,7 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent e)
     {
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen(), 0);
+    	//GameRegistry.registerWorldGenerator(new BlahWorldGen(), 0);
     }
 
     public void postInit(FMLPostInitializationEvent e) {

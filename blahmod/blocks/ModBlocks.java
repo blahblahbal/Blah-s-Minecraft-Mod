@@ -9,7 +9,7 @@ public final class ModBlocks {
 
 	public static Block tadanite;
     public static Block leatherBlock;
-    public static Block tadaniteOre;
+    public static ModBlockOre tadaniteOre;
     
     public static void createBlocks()
     {
