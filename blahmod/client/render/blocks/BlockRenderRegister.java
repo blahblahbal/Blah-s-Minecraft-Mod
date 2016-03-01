@@ -2,6 +2,7 @@ package blahmod.client.render.blocks;
 
 import blahmod.Main;
 import blahmod.blocks.BasicBlock;
+import blahmod.blocks.ModBlockOre;
 import blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -15,9 +16,9 @@ public final class BlockRenderRegister {
 		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 	    //.register(Item.getItemFromBlock((Block)ModBlocks.tadanite), 0, new ModelResourceLocation("blahmod:tadanite", "inventory"));
 	    reg((BasicBlock)ModBlocks.tadanite);
-	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock((Block)ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ModBlocks.tadaniteOre.name, "inventory"));
 	    reg((BasicBlock)ModBlocks.leatherBlock);
 	    //reg((BasicBlock)ModBlocks.tadaniteOre);
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tadaniteOre)).name, "inventory"));
 	}
 
 	public static void reg(BasicBlock block) {

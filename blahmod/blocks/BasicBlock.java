@@ -14,8 +14,7 @@ public class BasicBlock extends Block {
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setHardness(hardness);
         this.setResistance(resistance);
-        this.setHarvestLevel(tool, level);
-        this.name = name;
+        this.name = unlocalizedName;
     }
 
     public BasicBlock(String unlocalizedName, float hardness, float resistance, String tool, int level, String name)
