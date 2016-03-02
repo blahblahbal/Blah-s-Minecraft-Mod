@@ -29,6 +29,7 @@ public final class ItemRenderRegister {
     	reg((Item)ModItems.tadaniteChestplate);
     	reg((Item)ModItems.tadaniteLeggings);
     	reg((Item)ModItems.tadaniteBoots);
+    	reg((Item)ModItems.limestone);
     }
     
     public static void reg(Item item) {
