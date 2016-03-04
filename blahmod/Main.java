@@ -13,7 +13,7 @@ public class Main {
 
     public static final String MODID = "blahmod";
     public static final String MODNAME = "Blah's Mod";
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.2.0";
 
     @Instance
     public static Main instance = new Main();

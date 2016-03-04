@@ -8,6 +8,7 @@ import blahmod.blocks.ModBlocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -21,7 +22,7 @@ public class BlahWorldGen implements IWorldGenerator
 	public WorldGenerator gen_tadanite_ore;
 	int[] dimensions;
 	Block what;
-	Block where;
+	Predicate<IBlockState> where;
 	int maxY;
 	int minY;
 	int vpc;
@@ -31,7 +32,7 @@ public class BlahWorldGen implements IWorldGenerator
 	{
 	      this.dimensions = dimensions;
 	      this.what = block;
-	      this.where = block2;
+	      this.where = BlockHelper.forBlock(block2);
 	      this.maxY = maxY;
 	      this.minY = minY;
 	      this.vpc = vpc;
@@ -70,7 +71,7 @@ public class BlahWorldGen implements IWorldGenerator
 	               int X = arg1 * 16 + arg0.nextInt(16);
 	               int Y = this.minY + arg0.nextInt(this.maxY - this.minY + 1);
 	               int Z = arg2 * 16 + arg0.nextInt(16);
-	               (new WorldGenMinable(this.what.getDefaultState(), this.opv)).generate(arg3, arg0, new BlockPos(X, Y, Z));
+	               (new WorldGenMinable(this.what.getDefaultState(), this.opv, this.where)).generate(arg3, arg0, new BlockPos(X, Y, Z));
 	            }
 	         }
 		}

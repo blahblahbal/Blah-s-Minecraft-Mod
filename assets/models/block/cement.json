@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "blahmod:blocks/leatherBlock"
+        "all": "blahmod:blocks/cement"
     }
 }

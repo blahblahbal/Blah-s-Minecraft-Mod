@@ -14,6 +14,7 @@ public class ClientProxy extends CommonProxy {
         
         
         BlockRenderRegister.registerBlockRenderer();
+        blahmod.container.StartupClientOnly.preInitClientOnly();
     }
 
     @Override

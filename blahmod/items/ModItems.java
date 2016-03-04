@@ -15,6 +15,7 @@ public final class ModItems {
     public static Item obsidianIngot;
     public static Item acidBucket;
     public static Item limestone;
+    public static Item sulphur2;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;
@@ -50,5 +51,6 @@ public final class ModItems {
         GameRegistry.registerItem((Item)(tadaniteShovel = new ItemModShovel("tadaniteShovel", tadaniteM)), "tadaniteShovel");
         GameRegistry.registerItem((Item)(tadaniteHoe = new ItemModHoe("tadaniteHoe", tadaniteM)), "tadaniteHoe");
         GameRegistry.registerItem(limestone = new BasicItem("limestone"), "limestone");
+        GameRegistry.registerItem(sulphur2 = new BasicItem("sulphur2"), "sulphur2");
     }
 }

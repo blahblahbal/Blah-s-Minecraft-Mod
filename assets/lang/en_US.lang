@@ -15,7 +15,15 @@ item.tadaniteHelmet.name=Tadanite Helmet
 item.tadaniteChestplate.name=Tadanite Chestplate
 item.tadaniteLeggings.name=Tadanite Leggings
 item.tadaniteBoots.name=Tadanite Boots
+item.limestone.name=Limestone
+item.sulphur2.name=Sulphur
 
 tile.leatherBlock.name=Leather Block
 tile.tadanite.name=Tadanite
 tile.tadaniteOre.name=Tadanite Ore
+tile.limestoneOre.name=Limestone Ore
+tile.limestoneBlock.name=Limestone Block
+tile.cement.name=Cement
+tile.sulphurBlock.name=Sulphur Block
+tile.sulphurOre.name=Sulphur Ore
+tile.catalyst.name=Catalyzer

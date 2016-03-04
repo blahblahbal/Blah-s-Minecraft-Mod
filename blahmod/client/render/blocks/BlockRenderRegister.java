@@ -18,9 +18,11 @@ public final class BlockRenderRegister {
 	    reg((BasicBlock)ModBlocks.tadanite);
 	    reg((BasicBlock)ModBlocks.leatherBlock);
 	    reg((BasicBlock)ModBlocks.limestoneBlock);
+	    reg((BasicBlock)ModBlocks.sulphurBlock);
 	    reg((BasicBlock)ModBlocks.cement);
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tadaniteOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.limestoneOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.limestoneOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sulphurOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.sulphurOre)).name, "inventory"));
 	}
 
 	public static void reg(BasicBlock block) {

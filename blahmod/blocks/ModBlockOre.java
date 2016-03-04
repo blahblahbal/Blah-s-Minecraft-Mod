@@ -71,6 +71,10 @@ public class ModBlockOre extends BlockOre {
         {
         	return MathHelper.getRandomIntegerInRange(rand, 1, 5);
         }
+        if (this == ModBlocks.sulphurOre)
+        {
+        	return MathHelper.getRandomIntegerInRange(rand, 15, 17);
+        }
         return 0;
     }
 }

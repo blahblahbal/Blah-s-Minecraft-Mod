@@ -30,6 +30,7 @@ public final class ItemRenderRegister {
     	reg((Item)ModItems.tadaniteLeggings);
     	reg((Item)ModItems.tadaniteBoots);
     	reg((Item)ModItems.limestone);
+    	reg((Item)ModItems.sulphur2);
     }
     
     public static void reg(Item item) {
