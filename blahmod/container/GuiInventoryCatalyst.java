@@ -23,7 +23,7 @@ public class GuiInventoryCatalyst extends GuiContainer {
 
 	public GuiInventoryCatalyst(InventoryPlayer invPlayer, World w, BlockPos p, TileInventoryCatalyst tic)
 	{
-		super(new ContainerCatalyst(invPlayer, w, p));
+		super(new ContainerCatalyst(invPlayer, w, p, tic));
 
 		// Set the width and height of the gui
 		xSize = 176;

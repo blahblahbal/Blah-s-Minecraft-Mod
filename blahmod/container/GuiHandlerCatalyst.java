@@ -18,7 +18,12 @@ public class GuiHandlerCatalyst implements IGuiHandler {
 		}
 
 		BlockPos xyz = new BlockPos(x, y, z);
-		return new ContainerCatalyst(player.inventory, world, xyz);
+		TileEntity tileEntity = world.getTileEntity(xyz);
+		if (tileEntity instanceof TileInventoryCatalyst) {
+			TileInventoryCatalyst tileInventoryFurnace = (TileInventoryCatalyst) tileEntity;
+			return new ContainerCatalyst(player.inventory, world, xyz, tileInventoryFurnace);
+		}
+		return null;
 	}
 
 	// Gets the client side element for the given gui id this should return a gui

@@ -19,6 +19,7 @@ public class ContainerCatalyst extends Container
     /** The crafting matrix inventory (3x3). */
     public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 1);
     public IInventory craftResult = new InventoryCraftResult();
+    private TileInventoryCatalyst tic;
     private World worldObj;
     /** Position of the workbench */
     private BlockPos pos;
@@ -29,14 +30,18 @@ public class ContainerCatalyst extends Container
 	private final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
 	private final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
 
-    public ContainerCatalyst(InventoryPlayer playerInventory, World worldIn, BlockPos posIn)
+    public ContainerCatalyst(InventoryPlayer playerInventory, World worldIn, BlockPos posIn, TileInventoryCatalyst tick)
     {
         this.worldObj = worldIn;
         this.pos = posIn;
+        this.tic = tick;
         final int SLOT_X_SPACING = 18;
 		final int SLOT_Y_SPACING = 18;
 		final int HOTBAR_XPOS = 8;
 		final int HOTBAR_YPOS = 129;
+		
+		this.addSlotToContainer(new SlotCrafting(playerInventory.player, this.craftMatrix, this.craftResult, 0, 107, 29));
+		
 		// Add the players hotbar to the gui - the [xpos, ypos] location of each item
 		for (int x = 0; x < HOTBAR_SLOT_COUNT; x++) {
 			int slotNumber = x;
@@ -55,20 +60,16 @@ public class ContainerCatalyst extends Container
 			}
 		}
 
-		final int C1_SLOT_XPOS = 26;
-		final int C1_SLOT_YPOS = 42;
-		addSlotToContainer(new Slot(this.craftMatrix, 0, C1_SLOT_XPOS, C1_SLOT_YPOS));
-		final int C2_SLOT_XPOS = 52;
-		final int C2_SLOT_YPOS = 16;
-		addSlotToContainer(new Slot(this.craftMatrix, 1, C2_SLOT_XPOS, C2_SLOT_YPOS));
-
 		final int INPUT_SLOTS_XPOS = 26;
 		final int INPUT_SLOTS_YPOS = 16;
-		// Add the tile input slots
-
-		addSlotToContainer(new Slot(this.craftMatrix, 2, INPUT_SLOTS_XPOS, INPUT_SLOTS_YPOS));
+		addSlotToContainer(new Slot(this.craftMatrix, 0, INPUT_SLOTS_XPOS, INPUT_SLOTS_YPOS));
 		
-		this.addSlotToContainer(new SlotCrafting(playerInventory.player, this.craftMatrix, this.craftResult, 0, 107, 29));
+		final int C1_SLOT_XPOS = 26;
+		final int C1_SLOT_YPOS = 42;
+		addSlotToContainer(new Slot(this.craftMatrix, 1, C1_SLOT_XPOS, C1_SLOT_YPOS));
+		final int C2_SLOT_XPOS = 52;
+		final int C2_SLOT_YPOS = 16;
+		addSlotToContainer(new Slot(this.craftMatrix, 2, C2_SLOT_XPOS, C2_SLOT_YPOS));
 
         this.onCraftMatrixChanged(this.craftMatrix);
     }
@@ -78,7 +79,8 @@ public class ContainerCatalyst extends Container
      */
     public void onCraftMatrixChanged(IInventory inventoryIn)
     {
-        this.craftResult.setInventorySlotContents(0, BlahCraftManager.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
+    	
+        this.craftResult.setInventorySlotContents(0, tic.getResultForItem(craftMatrix.getStackInSlot(0), craftMatrix.getStackInSlot(1), craftMatrix.getStackInSlot(2))); //BlahCraftManager.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
     }
 
     /**
@@ -104,7 +106,8 @@ public class ContainerCatalyst extends Container
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        return this.worldObj.getBlockState(this.pos).getBlock() != Blocks.crafting_table ? false : playerIn.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
+        //return playerIn.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
+        return tic.isUseableByPlayer(playerIn);
     }
 
     /**
@@ -122,7 +125,7 @@ public class ContainerCatalyst extends Container
 
             if (index == 0)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 46, true))
+                if (!this.mergeItemStack(itemstack1, 10, 40, true))
                 {
                     return null;
                 }
@@ -131,19 +134,19 @@ public class ContainerCatalyst extends Container
             }
             else if (index >= 10 && index < 37)
             {
-                if (!this.mergeItemStack(itemstack1, 37, 46, false))
+                if (!this.mergeItemStack(itemstack1, 37, 40, false))
                 {
                     return null;
                 }
             }
-            else if (index >= 37 && index < 46)
+            else if (index >= 37 && index < 40)
             {
                 if (!this.mergeItemStack(itemstack1, 10, 37, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 10, 46, false))
+            else if (!this.mergeItemStack(itemstack1, 10, 40, false))
             {
                 return null;
             }

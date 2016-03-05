@@ -23,16 +23,6 @@ import java.util.Arrays;
 
 import blahmod.items.ModItems;
 
-/**
- * User: brandon3055
- * Date: 06/01/2015
- *
- * TileInventorySmelting is an advanced sided inventory that works like a vanilla furnace except that it has 5 input and output slots,
- * 4 fuel slots and cooks at up to four times the speed.
- * The input slots are used sequentially rather than in parallel, i.e. the first slot cooks, then the second, then the third, etc
- * The fuel slots are used in parallel.  The more slots burning in parallel, the faster the cook time.
- * The code is heavily based on TileEntityFurnace.
- */
 public class TileInventoryCatalyst extends TileEntity implements IInventory, ITickable {
 	// Create and initialize the itemStacks variable that will store store the itemStacks
 	public static final int CATALYST_SLOTS_COUNT = 2;
@@ -47,63 +37,6 @@ public class TileInventoryCatalyst extends TileEntity implements IInventory, ITi
 	private ItemStack[] itemStacks = new ItemStack[TOTAL_SLOTS_COUNT];
 
 	//public ArrayList<ItemBlock> outputs = new ArrayList<ItemBlock>(Blocks.bedrock, Blocks.log, Blocks.end_stone, );
-
-
-	private boolean catalyzeItem(boolean performCat)
-	{
-		Integer firstSuitableInputSlot = null;
-		Integer firstSuitableOutputSlot = null;
-		ItemStack result = null;
-
-		// finds the first input slot which is smeltable and whose result fits into an output slot (stacking if possible)
-		for (int inputSlot = FIRST_INPUT_SLOT; inputSlot < FIRST_INPUT_SLOT + INPUT_SLOTS_COUNT; inputSlot++)	{
-			if (itemStacks[inputSlot] != null && itemStacks[1] != null)
-			{
-				/*if (itemStacks[1] == new ItemStack(Blocks.coal_block) && itemStacks[2] == new ItemStack(ModItems.sulphur2) && itemStacks[3] == new ItemStack(Items.lava_bucket))
-					result = new ItemStack(Items.diamond);
-				if (itemStacks[1] == new ItemStack(Blocks.coal_block) && itemStacks[2] == new ItemStack(ModItems.sulphur2) && itemStacks[3] == new ItemStack(Items.lava_bucket))
-					result = new ItemStack(Items.diamond);*/
-				result = getResultForItem(itemStacks[0], itemStacks[1], itemStacks[2]);
-				if (result != null)
-				{
-					// find the first suitable output slot- either empty, or with identical item that has enough space
-					for (int outputSlot = OUTPUT_SLOT; outputSlot < OUTPUT_SLOT + RESULT_SLOTS_COUNT; outputSlot++) {
-						ItemStack outputStack = itemStacks[outputSlot];
-						if (outputStack == null) {
-							firstSuitableInputSlot = inputSlot;
-							firstSuitableOutputSlot = outputSlot;
-							break;
-						}
-
-						if (outputStack.getItem() == result.getItem() && (!outputStack.getHasSubtypes() || outputStack.getMetadata() == outputStack.getMetadata())
-										&& ItemStack.areItemStackTagsEqual(outputStack, result)) {
-							int combinedSize = itemStacks[outputSlot].stackSize + result.stackSize;
-							if (combinedSize <= getInventoryStackLimit() && combinedSize <= itemStacks[outputSlot].getMaxStackSize()) {
-								firstSuitableInputSlot = inputSlot;
-								firstSuitableOutputSlot = outputSlot;
-								break;
-							}
-						}
-					}
-					if (firstSuitableInputSlot != null) break;
-				}
-			}
-		}
-
-		if (firstSuitableInputSlot == null) return false;
-		if (!performCat) return true;
-
-		// alter input and output
-		itemStacks[firstSuitableInputSlot].stackSize--;
-		if (itemStacks[firstSuitableInputSlot].stackSize <=0) itemStacks[firstSuitableInputSlot] = null;
-		if (itemStacks[firstSuitableOutputSlot] == null) {
-			itemStacks[firstSuitableOutputSlot] = result.copy(); // Use deep .copy() to avoid altering the recipe
-		} else {
-			itemStacks[firstSuitableOutputSlot].stackSize += result.stackSize;
-		}
-		markDirty();
-		return true;
-	}
 
 	// returns the smelting result for the given stack. Returns null if the given stack can not be smelted
 	public static ItemStack getResultForItem(ItemStack stack, ItemStack c1, ItemStack c2)
@@ -195,7 +128,7 @@ public class TileInventoryCatalyst extends TileEntity implements IInventory, ITi
 	// Unlike the vanilla furnace, we allow anything to be placed in the fuel slots
 	static public boolean isItemValidForC1Slot(ItemStack itemStack)
 	{
-		return (itemStack != new ItemStack(ModItems.sulphur2));
+		return (itemStack == new ItemStack(ModItems.sulphur2));
 	}
 
 	// Return true if the given stack is allowed to be inserted in the given slot
@@ -294,49 +227,6 @@ public class TileInventoryCatalyst extends TileEntity implements IInventory, ITi
 	public IChatComponent getDisplayName() {
 		return this.hasCustomName() ? new ChatComponentText("Catalyzer") : new ChatComponentText("Catalyzer");
 	}
-
-	// Fields are used to send non-inventory information from the server to interested clients
-	// The container code caches the fields and sends the client any fields which have changed.
-	// The field ID is limited to byte, and the field value is limited to short. (if you use more than this, they get cast down
-	//   in the network packets)
-	// If you need more than this, or shorts are too small, use a custom packet in your container instead.
-
-	/*private static final byte COOK_FIELD_ID = 0;
-	private static final byte FIRST_BURN_TIME_REMAINING_FIELD_ID = 1;
-	private static final byte FIRST_BURN_TIME_INITIAL_FIELD_ID = FIRST_BURN_TIME_REMAINING_FIELD_ID + (byte)CATALYST_SLOTS_COUNT;
-	private static final byte NUMBER_OF_FIELDS = FIRST_BURN_TIME_INITIAL_FIELD_ID + (byte)CATALYST_SLOTS_COUNT;
-
-	@Override
-	public int getField(int id) {
-		if (id == COOK_FIELD_ID) return cookTime;
-		if (id >= FIRST_BURN_TIME_REMAINING_FIELD_ID && id < FIRST_BURN_TIME_REMAINING_FIELD_ID + CATALYST_SLOTS_COUNT) {
-			return burnTimeRemaining[id - FIRST_BURN_TIME_REMAINING_FIELD_ID];
-		}
-		if (id >= FIRST_BURN_TIME_INITIAL_FIELD_ID && id < FIRST_BURN_TIME_INITIAL_FIELD_ID + CATALYST_SLOTS_COUNT) {
-			return burnTimeInitialValue[id - FIRST_BURN_TIME_INITIAL_FIELD_ID];
-		}
-		System.err.println("Invalid field ID in TileInventorySmelting.getField:" + id);
-		return 0;
-	}
-
-	@Override
-	public void setField(int id, int value)
-	{
-		if (id == COOK_FIELD_ID) {
-			cookTime = (short)value;
-		} else if (id >= FIRST_BURN_TIME_REMAINING_FIELD_ID && id < FIRST_BURN_TIME_REMAINING_FIELD_ID + CATALYST_SLOTS_COUNT) {
-			burnTimeRemaining[id - FIRST_BURN_TIME_REMAINING_FIELD_ID] = value;
-		} else if (id >= FIRST_BURN_TIME_INITIAL_FIELD_ID && id < FIRST_BURN_TIME_INITIAL_FIELD_ID + CATALYST_SLOTS_COUNT) {
-			burnTimeInitialValue[id - FIRST_BURN_TIME_INITIAL_FIELD_ID] = value;
-		} else {
-			System.err.println("Invalid field ID in TileInventorySmelting.setField:" + id);
-		}
-	}
-
-	@Override
-	public int getFieldCount() {
-		return NUMBER_OF_FIELDS;
-	}*/
 
 	// -----------------------------------------------------------------------------------------------------------
 	// The following methods are not needed for this example but are part of IInventory so they must be implemented

@@ -41,10 +41,10 @@ public class BlahCraftManager
         return instance;
     }
 
-    private BlahCraftManager()
+    public BlahCraftManager()
     {
         
-        this.addRecipe(new ItemStack(Items.diamond, 1), "s", "c", "l", 's', ModItems.sulphur2, 'c', Blocks.coal_block, 'l', Items.lava_bucket);
+        this.addRecipe(new ItemStack(Items.diamond, 1), "s", "l", "c", 's', ModItems.sulphur2, 'c', Blocks.coal_block, 'l', Items.lava_bucket);
         this.addRecipe(new ItemStack(Blocks.log, 1), "s", "c", 's', ModItems.sulphur2, 'c', Items.coal);
         this.addRecipe(new ItemStack(Blocks.brick_block, 1), "s", "c", 's', ModItems.sulphur2, 'c', Blocks.clay);
         this.addRecipe(new ItemStack(Blocks.sand, 1, 1), "s", "c", 's', ModItems.sulphur2, 'c', Blocks.sand);
