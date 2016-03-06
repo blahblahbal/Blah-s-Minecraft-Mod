@@ -18,12 +18,13 @@ public class GuiHandlerCatalyst implements IGuiHandler {
 		}
 
 		BlockPos xyz = new BlockPos(x, y, z);
-		TileEntity tileEntity = world.getTileEntity(xyz);
+		/*TileEntity tileEntity = world.getTileEntity(xyz);
 		if (tileEntity instanceof TileInventoryCatalyst) {
 			TileInventoryCatalyst tileInventoryFurnace = (TileInventoryCatalyst) tileEntity;
-			return new ContainerCatalyst(player.inventory, world, xyz, tileInventoryFurnace);
+			return new ContainerCatalyst(player.inventory, world, xyz); //, tileInventoryFurnace);
 		}
-		return null;
+		return null;*/
+		return new ContainerCatalyst(player.inventory, world, xyz);
 	}
 
 	// Gets the client side element for the given gui id this should return a gui
@@ -34,12 +35,13 @@ public class GuiHandlerCatalyst implements IGuiHandler {
 		}
 
 		BlockPos xyz = new BlockPos(x, y, z);
-		TileEntity tileEntity = world.getTileEntity(xyz);
+		/*TileEntity tileEntity = world.getTileEntity(xyz);
 		if (tileEntity instanceof TileInventoryCatalyst) {
 			TileInventoryCatalyst tileInventoryFurnace = (TileInventoryCatalyst) tileEntity;
-			return new GuiInventoryCatalyst(player.inventory, world, xyz, tileInventoryFurnace);
-		}
-		return null;
+			return new GuiInventoryCatalyst(player.inventory, world, xyz); //, tileInventoryFurnace);
+		}*/
+		return new GuiInventoryCatalyst(player.inventory, world, xyz);
+		//return null;
 	}
 
 }

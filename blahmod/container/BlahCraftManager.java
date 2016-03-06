@@ -180,13 +180,13 @@ public class BlahCraftManager
     /**
      * Retrieves an ItemStack that has multiple recipes for it.
      */
-    public ItemStack findMatchingRecipe(InventoryCrafting p_82787_1_, World worldIn)
+    public ItemStack findMatchingRecipe(InventoryCrafting craftingMatrix, World worldIn)
     {
         for (IRecipe irecipe : this.recipes)
         {
-            if (irecipe.matches(p_82787_1_, worldIn))
+            if (irecipe.matches(craftingMatrix, worldIn))
             {
-                return irecipe.getCraftingResult(p_82787_1_);
+                return getResultForItem(craftingMatrix.getStackInSlot(0), craftingMatrix.getStackInSlot(1), craftingMatrix.getStackInSlot(2));
             }
         }
 
@@ -213,6 +213,32 @@ public class BlahCraftManager
         return aitemstack;
     }
 
+    public static ItemStack getResultForItem(ItemStack stack, ItemStack c1, ItemStack c2)
+	{
+		
+		if (stack == new ItemStack(Blocks.coal_block) && c1 == new ItemStack(ModItems.sulphur2) && c2 == new ItemStack(Items.lava_bucket)) return new ItemStack(Items.diamond, 1);
+		if (stack == new ItemStack(Blocks.clay) && c1 == new ItemStack(ModItems.sulphur2)) return new ItemStack(Blocks.brick_block);
+		if (stack == new ItemStack(Blocks.sand) && c1 == new ItemStack(ModItems.sulphur2)) return new ItemStack(Blocks.sand, 1, 1);
+		if (stack == new ItemStack(Blocks.sand, 1, 1) && c1 == new ItemStack(ModItems.sulphur2)) return new ItemStack(Blocks.sand);
+		if (stack == new ItemStack(Blocks.cobblestone, 1, 1) && c1 == new ItemStack(ModItems.sulphur2)) return new ItemStack(Blocks.end_stone);
+		if (stack == new ItemStack(Items.coal) && c1 == new ItemStack(ModItems.sulphur2)) return new ItemStack(Blocks.log);
+		return null;
+	}
+    
+    /*public static ItemStack getResultForItem(ItemStack stack, ItemStack c1, ItemStack c2)
+	{
+    	for (int i = 1; i < 65; i++)
+    	{
+    		if (stack == new ItemStack(Blocks.coal_block, i) && c1 == new ItemStack(ModItems.sulphur2, i) && c2 == new ItemStack(Items.lava_bucket, i)) return new ItemStack(Items.diamond, i);
+			if (stack == new ItemStack(Blocks.clay, i) && c1 == new ItemStack(ModItems.sulphur2, i)) return new ItemStack(Blocks.brick_block, i);
+			if (stack == new ItemStack(Blocks.sand, i) && c1 == new ItemStack(ModItems.sulphur2, i)) return new ItemStack(Blocks.sand, i, 1);
+			if (stack == new ItemStack(Blocks.sand, i, 1) && c1 == new ItemStack(ModItems.sulphur2, i)) return new ItemStack(Blocks.sand, i);
+			if (stack == new ItemStack(Blocks.cobblestone, i, 1) && c1 == new ItemStack(ModItems.sulphur2, i)) return new ItemStack(Blocks.end_stone);
+			if (stack == new ItemStack(Items.coal, i) && c1 == new ItemStack(ModItems.sulphur2, i)) return new ItemStack(Blocks.log, i);
+    	}
+		return null;
+	}*/
+    
     public List<IRecipe> getRecipeList()
     {
         return this.recipes;

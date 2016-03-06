@@ -19,7 +19,7 @@ public class ContainerCatalyst extends Container
     /** The crafting matrix inventory (3x3). */
     public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 1);
     public IInventory craftResult = new InventoryCraftResult();
-    private TileInventoryCatalyst tic;
+    public TileInventoryCatalyst tic;
     private World worldObj;
     /** Position of the workbench */
     private BlockPos pos;
@@ -27,51 +27,53 @@ public class ContainerCatalyst extends Container
     private final int HOTBAR_SLOT_COUNT = 9;
 	private final int PLAYER_INVENTORY_ROW_COUNT = 3;
 	private final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
-	private final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
+	/*private final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
 	private final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
+	
+	public final int INPUT_SLOTS_COUNT = 3;
+	public final int OUTPUT_SLOTS_COUNT = 1;
+	public final int CATALYZER_SLOTS_COUNT = INPUT_SLOTS_COUNT + OUTPUT_SLOTS_COUNT;
+	
+	private final int FIRST_CATALYST_SLOT_INDEX = VANILLA_SLOT_COUNT;
+	private final int FIRST_INPUT_SLOT_INDEX = FIRST_CATALYST_SLOT_INDEX;
+	private final int FIRST_OUTPUT_SLOT_INDEX = FIRST_INPUT_SLOT_INDEX + INPUT_SLOTS_COUNT;*/
 
-    public ContainerCatalyst(InventoryPlayer playerInventory, World worldIn, BlockPos posIn, TileInventoryCatalyst tick)
+    public ContainerCatalyst(InventoryPlayer playerInventory, World worldIn, BlockPos posIn) //, TileInventoryCatalyst tick)
     {
         this.worldObj = worldIn;
         this.pos = posIn;
-        this.tic = tick;
+        //this.craftResult = new InventoryCatalystResult(posIn);
+        //this.tic = tick;
         final int SLOT_X_SPACING = 18;
-		final int SLOT_Y_SPACING = 18;
-		final int HOTBAR_XPOS = 8;
-		final int HOTBAR_YPOS = 129;
+		final int SLOT_Y_SPACING = 18;		
 		
+		//output
 		this.addSlotToContainer(new SlotCrafting(playerInventory.player, this.craftMatrix, this.craftResult, 0, 107, 29));
 		
-		// Add the players hotbar to the gui - the [xpos, ypos] location of each item
-		for (int x = 0; x < HOTBAR_SLOT_COUNT; x++) {
-			int slotNumber = x;
-			addSlotToContainer(new Slot(playerInventory, slotNumber, HOTBAR_XPOS + SLOT_X_SPACING * x, HOTBAR_YPOS));
+		for (int i = 0; i < 3; ++i)
+		{
+			if (i == 2) addSlotToContainer(new Slot(this.craftMatrix, 2, 26, 16)); // input
+			if (i == 0) addSlotToContainer(new Slot(this.craftMatrix, 0, 26, 42)); // c1
+			if (i == 1) addSlotToContainer(new Slot(this.craftMatrix, 1, 52, 16)); // c2
 		}
-
-		final int PLAYER_INVENTORY_XPOS = 8;
-		final int PLAYER_INVENTORY_YPOS = 71;
-		// Add the rest of the players inventory to the gui
-		for (int y = 0; y < PLAYER_INVENTORY_ROW_COUNT; y++) {
-			for (int x = 0; x < PLAYER_INVENTORY_COLUMN_COUNT; x++) {
-				int slotNumber = HOTBAR_SLOT_COUNT + y * PLAYER_INVENTORY_COLUMN_COUNT + x;
-				int xpos = PLAYER_INVENTORY_XPOS + x * SLOT_X_SPACING;
-				int ypos = PLAYER_INVENTORY_YPOS + y * SLOT_Y_SPACING;
-				addSlotToContainer(new Slot(playerInventory, slotNumber,  xpos, ypos));
-			}
-		}
-
-		final int INPUT_SLOTS_XPOS = 26;
-		final int INPUT_SLOTS_YPOS = 16;
-		addSlotToContainer(new Slot(this.craftMatrix, 0, INPUT_SLOTS_XPOS, INPUT_SLOTS_YPOS));
 		
-		final int C1_SLOT_XPOS = 26;
-		final int C1_SLOT_YPOS = 42;
-		addSlotToContainer(new Slot(this.craftMatrix, 1, C1_SLOT_XPOS, C1_SLOT_YPOS));
-		final int C2_SLOT_XPOS = 52;
-		final int C2_SLOT_YPOS = 16;
-		addSlotToContainer(new Slot(this.craftMatrix, 2, C2_SLOT_XPOS, C2_SLOT_YPOS));
+		// Add the player's hotbar to the gui - the [xpos, ypos] location of each item
+		for (int l = 0; l < 9; ++l)
+        {
+            this.addSlotToContainer(new Slot(playerInventory, l, 8 + l * 18, 129));
+        }
+		// Add the rest of the player's inventory to the gui
+		for (int k = 0; k < 3; ++k)
+        {
+            for (int i1 = 0; i1 < 9; ++i1)
+            {
+                this.addSlotToContainer(new Slot(playerInventory, i1 + k * 9 + 9, 8 + i1 * 18, 71 + k * 18));
+            }
+        }
+		
+		
 
-        this.onCraftMatrixChanged(this.craftMatrix);
+		this.onCraftMatrixChanged(this.craftMatrix);
     }
 
     /**
@@ -79,8 +81,7 @@ public class ContainerCatalyst extends Container
      */
     public void onCraftMatrixChanged(IInventory inventoryIn)
     {
-    	
-        this.craftResult.setInventorySlotContents(0, tic.getResultForItem(craftMatrix.getStackInSlot(0), craftMatrix.getStackInSlot(1), craftMatrix.getStackInSlot(2))); //BlahCraftManager.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
+        this.craftResult.setInventorySlotContents(0, BlahCraftManager.getInstance().findMatchingRecipe((InventoryCrafting)inventoryIn, this.worldObj));
     }
 
     /**
@@ -106,15 +107,14 @@ public class ContainerCatalyst extends Container
 
     public boolean canInteractWith(EntityPlayer playerIn)
     {
-        //return playerIn.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;
-        return tic.isUseableByPlayer(playerIn);
+        return craftResult.isUseableByPlayer(playerIn);
     }
 
     /**
      * Take a stack from the specified inventory slot.
      */
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
-    {
+    {    	
         ItemStack itemstack = null;
         Slot slot = (Slot)this.inventorySlots.get(index);
 

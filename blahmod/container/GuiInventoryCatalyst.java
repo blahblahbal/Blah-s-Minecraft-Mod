@@ -21,15 +21,15 @@ public class GuiInventoryCatalyst extends GuiContainer {
 	private static final ResourceLocation texture = new ResourceLocation("blahmod", "textures/gui/inventoryCatalyst.png");
 	private TileInventoryCatalyst tileEntity;
 
-	public GuiInventoryCatalyst(InventoryPlayer invPlayer, World w, BlockPos p, TileInventoryCatalyst tic)
+	public GuiInventoryCatalyst(InventoryPlayer invPlayer, World w, BlockPos p) //, TileInventoryCatalyst tic)
 	{
-		super(new ContainerCatalyst(invPlayer, w, p, tic));
+		super(new ContainerCatalyst(invPlayer, w, p)); //, tic));
 
 		// Set the width and height of the gui
 		xSize = 176;
 		ySize = 153;
 		
-		this.tileEntity = tic;
+		//this.tileEntity = tic;
 	}
 
 	// some [x,y] coordinates of graphical elements
@@ -63,7 +63,7 @@ public class GuiInventoryCatalyst extends GuiContainer {
 
 		final int LABEL_XPOS = 5;
 		final int LABEL_YPOS = 5;
-		fontRendererObj.drawString(tileEntity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.darkGray.getRGB());
+		fontRendererObj.drawString("Catalyzer", LABEL_XPOS, LABEL_YPOS, Color.darkGray.getRGB());
 	}
 
 	// Returns true if the given x,y coordinates are within the given rectangle
