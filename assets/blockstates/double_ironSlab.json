@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "minecraft:iron_block" },
+        "variant=true":    { "model": "minecraft:iron_block" }
+    }
+}

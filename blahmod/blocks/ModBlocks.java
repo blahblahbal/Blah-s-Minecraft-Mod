@@ -1,12 +1,29 @@
 package blahmod.blocks;
 
+import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import blahmod.Main;
+import blahmod.ModFluids;
+import blahmod.items.ModItemBlockSlab;
+import blahmod.items.ModItemSlab;
 import blahmod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public final class ModBlocks {
-
+public final class ModBlocks
+{
+	public static String[] gemNames = new String[] { "ruby", "citrine", "topaz", "sapphire", "amethyst" };
+	public static Block[] gemBlocks = new Block[5];
+	public static Block[] gemOres = new Block[5];
 	public static Block tadanite;
     public static Block leatherBlock;
     public static Block tadaniteOre;
@@ -14,7 +31,19 @@ public final class ModBlocks {
     public static Block limestoneBlock;
     public static Block cement;
     public static Block sulphurOre;
+    public static Block uraniumOre;
     public static Block sulphurBlock;
+    public static Block catalyzer;
+    public static Block uraniumBlock;
+    public static Block endStoneBricks;
+    public static Block uraniumTorch;
+    public static Block clayOre;
+    public static ModBlockSlab[] slabs = new ModBlockSlab[8];
+    public static ModBlockSlab[] doubleSlabs = new ModBlockSlab[8];
+    public static ModBlockSlab[] slabs2 = new ModBlockSlab[8];
+    public static ModBlockSlab[] doubleSlabs2 = new ModBlockSlab[8];
+    public static Block petrifiedWood;
+    public static Block blazeBrick;
     
     public static void createBlocks()
     {
@@ -26,5 +55,66 @@ public final class ModBlocks {
     	GameRegistry.registerBlock(limestoneOre = new ModBlockOre("limestoneOre", Material.rock, ModItems.limestone, 3.5F, 100F, "pickaxe", 1, 0, 1, 2, "limestoneOre"), "limestoneOre");
     	GameRegistry.registerBlock(sulphurOre = new ModBlockOre("sulphurOre", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre"), "sulphurOre");
     	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 5F, 150F, "pickaxe", 1, "cement")), "cement");
+    	GameRegistry.registerBlock((Block)(uraniumBlock = new BasicBlock("uraniumBlock", Material.iron, 10F, 200F, "pickaxe", 2, "uraniumBlock")).setStepSound(Block.soundTypeMetal).setLightLevel(.3F), "uraniumBlock");
+    	GameRegistry.registerBlock((Block)(endStoneBricks = new BasicBlock("endStoneBricks", Material.rock, 10F, 200F, "pickaxe", 1, "endStoneBricks")).setStepSound(Block.soundTypeStone), "endStoneBricks");
+    	GameRegistry.registerBlock(catalyzer = new ModBlockTileEntity("catalyzer"), "catalyzer");
+    	GameRegistry.registerBlock((Block)(uraniumOre = new BasicBlock("uraniumOre", Material.rock, 3F, 200F, "pickaxe", 3, "uraniumOre")), "uraniumOre");
+    	GameRegistry.registerBlock((Block)(petrifiedWood = new BasicBlock("petrifiedWood", Material.rock, 2F, 100F, "pickaxe", 1, "petrifiedWood")), "petrifiedWood");
+    	GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(12), "blazeBrick");
+    	GameRegistry.registerBlock(uraniumTorch = new ModBlockTorch(3F, "uraniumTorch"), "uraniumTorch");
+    	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "shovel", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
+    	Blocks.bedrock.setHarvestLevel("pickaxe", 6);
+    	Blocks.bedrock.setHardness(9F);
+    	
+    	for (int i = 0; i < gemNames.length; i++)
+    	{
+    		GameRegistry.registerBlock((Block)(gemBlocks[i] = new BasicBlock(gemNames[i] + "Block", Material.iron, 2F, 100F, "pickaxe", 2, gemNames[i] + "Block")), gemNames[i] + "Block");
+    		GameRegistry.registerBlock(gemOres[i] = new ModBlockOre(gemNames[i] + "Ore", Material.rock, ModItems.gems[i], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, gemNames[i] + "Ore"), gemNames[i] + "Ore");
+    	}
+    	
+    	slabs[0] = new ModBlockSlabHalf("woolSlab");
+    	slabs[1] = new ModBlockSlabHalf("ironSlab");
+    	slabs[2] = new ModBlockSlabHalf("goldSlab");
+    	slabs[3] = new ModBlockSlabHalf("diamondSlab");
+    	slabs[4] = new ModBlockSlabHalf("emeraldSlab");
+    	slabs[5] = new ModBlockSlabHalf("sulphurSlab");
+    	slabs[6] = new ModBlockSlabHalf("limestoneSlab");
+    	slabs[7] = new ModBlockSlabHalf("uraniumSlab");
+    	
+    	doubleSlabs[0] = new ModBlockSlabDouble("double_woolSlab");
+    	doubleSlabs[1] = new ModBlockSlabDouble("double_ironSlab");
+    	doubleSlabs[2] = new ModBlockSlabDouble("double_goldSlab");
+    	doubleSlabs[3] = new ModBlockSlabDouble("double_diamondSlab");
+    	doubleSlabs[4] = new ModBlockSlabDouble("double_emeraldSlab");
+    	doubleSlabs[5] = new ModBlockSlabDouble("double_sulphurSlab");
+    	doubleSlabs[6] = new ModBlockSlabDouble("double_limestoneSlab");
+    	doubleSlabs[7] = new ModBlockSlabDouble("double_uraniumSlab");
+    	
+    	slabs2[0] = new ModBlockSlabHalf("dirtSlab");
+    	slabs2[1] = new ModBlockSlabHalf("grassSlab");
+    	slabs2[2] = new ModBlockSlabHalf("leatherSlab");
+    	slabs2[3] = new ModBlockSlabHalf("lapisSlab");
+    	slabs2[4] = new ModBlockSlabHalf("obsidianSlab");
+    	slabs2[5] = new ModBlockSlabHalf("mossSlab");
+    	slabs2[6] = new ModBlockSlabHalf("endStoneBrickSlab");
+    	slabs2[7] = new ModBlockSlabHalf("tadaniteSlab");
+    	
+    	doubleSlabs2[0] = new ModBlockSlabDouble("double_dirtSlab");
+    	doubleSlabs2[1] = new ModBlockSlabDouble("double_grassSlab");
+    	doubleSlabs2[2] = new ModBlockSlabDouble("double_leatherSlab");
+    	doubleSlabs2[3] = new ModBlockSlabDouble("double_lapisSlab");
+    	doubleSlabs2[4] = new ModBlockSlabDouble("double_obsidianSlab");
+    	doubleSlabs2[5] = new ModBlockSlabDouble("double_mossSlab");
+    	doubleSlabs2[6] = new ModBlockSlabDouble("double_endStoneBrickSlab");
+    	doubleSlabs2[7] = new ModBlockSlabDouble("double_tadaniteSlab");
+    	
+    	for (int i = 0; i < 8; i++)
+    	{
+    		GameRegistry.registerBlock(slabs[i], ModItemBlockSlab.class, slabs[i].name, slabs[i], doubleSlabs[i], false);
+    		GameRegistry.registerBlock(doubleSlabs[i], ModItemBlockSlab.class, doubleSlabs[i].name, slabs[i], doubleSlabs[i], false);
+    		
+    		GameRegistry.registerBlock(slabs2[i], ModItemBlockSlab.class, slabs2[i].name, slabs2[i], doubleSlabs2[i], false);
+    		GameRegistry.registerBlock(doubleSlabs2[i], ModItemBlockSlab.class, doubleSlabs2[i].name, slabs2[i], doubleSlabs2[i], false);
+    	}
     }
 }

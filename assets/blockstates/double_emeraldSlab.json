@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "minecraft:emerald_block" },
+        "variant=true":    { "model": "minecraft:emerald_block" }
+    }
+}

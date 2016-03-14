@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "blahmod:endStoneBricks" },
+        "variant=true":    { "model": "blahmod:endStoneBricks" }
+    }
+}

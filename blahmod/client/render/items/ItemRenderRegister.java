@@ -22,6 +22,7 @@ public final class ItemRenderRegister {
     	reg((Item)ModItems.obsidianAxe);
     	reg((Item)ModItems.tadaniteSword);
     	reg((Item)ModItems.tadanitePickaxe);
+    	reg((Item)ModItems.bedrockPickaxe);
     	reg((Item)ModItems.tadaniteHoe);
     	reg((Item)ModItems.tadaniteShovel);
     	reg((Item)ModItems.tadaniteAxe);
@@ -29,8 +30,18 @@ public final class ItemRenderRegister {
     	reg((Item)ModItems.tadaniteChestplate);
     	reg((Item)ModItems.tadaniteLeggings);
     	reg((Item)ModItems.tadaniteBoots);
+    	reg((Item)ModItems.obsidianHelmet);
+    	reg((Item)ModItems.obsidianChestplate);
+    	reg((Item)ModItems.obsidianLeggings);
+    	reg((Item)ModItems.obsidianBoots);
     	reg((Item)ModItems.limestone);
     	reg((Item)ModItems.sulphur2);
+    	reg((Item)ModItems.uraniumIngot);
+    	reg((Item)ModItems.uraniumRod);
+    	for (int i = 0; i < 5; i++)
+    	{
+    		reg(ModItems.gems[i]);
+    	}
     }
     
     public static void reg(Item item) {

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "minecraft:obsidian" },
+        "variant=true":    { "model": "minecraft:obsidian" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:endStoneBricks" },
+        "inventory": { "model": "blahmod:endStoneBricks" }
+    }
+}

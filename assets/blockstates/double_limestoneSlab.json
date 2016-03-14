@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "blahmod:limestoneBlock" },
+        "variant=true":    { "model": "blahmod:limestoneBlock" }
+    }
+}

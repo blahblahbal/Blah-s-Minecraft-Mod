@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "blahmod:leatherBlock" },
+        "variant=true":    { "model": "blahmod:leatherBlock" }
+    }
+}

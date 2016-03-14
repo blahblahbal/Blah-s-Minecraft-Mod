@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "blahmod:sulphurBlock" },
+        "variant=true":    { "model": "blahmod:sulphurBlock" }
+    }
+}

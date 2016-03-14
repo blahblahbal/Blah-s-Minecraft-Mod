@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "blahmod:blocks/limestoneBlock",
+        "top": "blahmod:blocks/limestoneBlock",
+        "side": "blahmod:blocks/limestoneBlock"
+    }
+}

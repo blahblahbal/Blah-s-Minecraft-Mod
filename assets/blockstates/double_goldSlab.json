@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "minecraft:gold_block" },
+        "variant=true":    { "model": "minecraft:gold_block" }
+    }
+}
