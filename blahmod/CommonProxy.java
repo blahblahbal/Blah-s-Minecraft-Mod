@@ -26,12 +26,12 @@ public class CommonProxy
     public void preInit(FMLPreInitializationEvent e)
     {
     	ModItems.createItems();
-    	
+    	ModBlocks.createBlocks();
     	ModCrafting.initCrafting();
     	ModTileEntities.init();
     	ModFluids.registerFluids();
     	ModFluids.registerFluidContainers();
-    	ModBlocks.createBlocks();
+    	
     }
     public void init(FMLInitializationEvent e)
     {
@@ -42,16 +42,17 @@ public class CommonProxy
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.uraniumOre, (Blocks.stone), new int[]{0}, 7, 5, 1, 7), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.clayOre, (Blocks.dirt), new int[]{0}, 45, 25, 3, 5), 0);
     	
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[0], (Blocks.stone), new int[]{0}, 35, 25, 1, 2), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[1], (Blocks.stone), new int[]{0}, 35, 25, 1, 2), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[2], (Blocks.stone), new int[]{0}, 35, 25, 1, 2), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[3], (Blocks.stone), new int[]{0}, 35, 25, 1, 2), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[4], (Blocks.stone), new int[]{0}, 35, 25, 1, 2), 0);
-    	
+    	/*for (int i = 0; i < 5; i++)
+    	{
+    		GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[i], (Blocks.stone), new int[]{0}, 40, 20, 1, 3), 0);
+    	}*/
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.rubyOre, (Blocks.stone), new int[]{0}, 45, 25, 1, 3), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.citrineOre, (Blocks.stone), new int[]{0}, 50, 15, 2, 3), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.topazOre, (Blocks.stone), new int[]{0}, 43, 27, 3, 3), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.sapphireOre, (Blocks.stone), new int[]{0}, 40, 20, 4, 3), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.amethystOre, (Blocks.stone), new int[]{0}, 35, 22, 2, 3), 0);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new ModGuiHandler());
     	MinecraftForge.EVENT_BUS.register(new ModEventHandler());
-    	//ModBucketHandler.INSTANCE.buckets.put(ModBlocks.acidL, ModItems.acidBucket);
-    	//MinecraftForge.EVENT_BUS.register(ModBucketHandler.INSTANCE);
     	Enchantment.addToBookList(Main.moltenTouch);
     	Enchantment.addToBookList(Main.pulverize);
     }

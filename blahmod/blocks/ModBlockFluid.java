@@ -48,7 +48,7 @@ public class ModBlockFluid extends BlockFluidClassic
 	}
 	public boolean checkForMixing(World worldIn, BlockPos pos, IBlockState state)
     {
-        if (this.blockMaterial == Material.water && worldIn.getBlockState(pos).getBlock().getUnlocalizedName() == "tile.blahmod:fluid_acid")
+        if (this.blockMaterial == Material.water)
         {
             boolean flag = false;
             boolean flag2 = false;

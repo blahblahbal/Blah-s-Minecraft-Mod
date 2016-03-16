@@ -16,6 +16,11 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.limestoneBlock), "###","###", "###", '#', ModItems.limestone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sulphurBlock), "###","###", "###", '#', ModItems.sulphur2);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumBlock), "###","###", "###", '#', ModItems.uraniumIngot);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[0]), "###","###", "###", '#', ModItems.gems[0]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[1]), "###","###", "###", '#', ModItems.gems[1]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[2]), "###","###", "###", '#', ModItems.gems[2]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[3]), "###","###", "###", '#', ModItems.gems[3]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[4]), "###","###", "###", '#', ModItems.gems[4]);
 		GameRegistry.addRecipe(new ItemStack(Blocks.obsidian), "##","##", '#', ModItems.obsidianIngot);
 		GameRegistry.addRecipe(new ItemStack(Blocks.packed_ice), "##","##", '#', Blocks.ice);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.endStoneBricks), "##","##", '#', Blocks.end_stone);
@@ -26,6 +31,11 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.iron_ingot, 3), new ItemStack(Items.bucket));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.iron_ingot, 2), new ItemStack(Items.iron_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.leather, 9), new ItemStack(ModBlocks.leatherBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[0], 9), new ItemStack(ModBlocks.gemBlocks[0]));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[1], 9), new ItemStack(ModBlocks.gemBlocks[1]));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[2], 9), new ItemStack(ModBlocks.gemBlocks[2]));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[3], 9), new ItemStack(ModBlocks.gemBlocks[3]));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[4], 9), new ItemStack(ModBlocks.gemBlocks[4]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.tadaniteShard, 8), new ItemStack(ModBlocks.tadanite));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.limestone, 9), new ItemStack(ModBlocks.limestoneBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.sulphur2, 9), new ItemStack(ModBlocks.sulphurBlock));

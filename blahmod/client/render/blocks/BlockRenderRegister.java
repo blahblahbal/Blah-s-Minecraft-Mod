@@ -62,9 +62,13 @@ public final class BlockRenderRegister
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
-	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.gemOres[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.gemOres[i])).name, "inventory"));
+	    	//ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.gemOres[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.gemOres[i])).name, "inventory"));
 	    }
-	    
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.rubyOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.rubyOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.citrineOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.citrineOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.topazOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.topazOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sapphireOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.sapphireOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.amethystOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.amethystOre)).name, "inventory"));
 	    for (int i = 0; i < 8; i++)
 	    {
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.doubleSlabs[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.doubleSlabs[i])).name, "inventory"));

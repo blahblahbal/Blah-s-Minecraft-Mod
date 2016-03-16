@@ -73,6 +73,24 @@ public class BlahCraftManager
         this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 3));
         this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2));
         this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2, 1, 1));
+        this.addRecipe(new ItemStack(ModItems.gems[0]), ModItems.sulphur2, new ItemStack(ModItems.gems[4]));
+        this.addRecipe(new ItemStack(ModItems.gems[1]), ModItems.sulphur2, new ItemStack(ModItems.gems[0]));
+        this.addRecipe(new ItemStack(ModItems.gems[2]), ModItems.sulphur2, new ItemStack(ModItems.gems[1]));
+        this.addRecipe(new ItemStack(Items.emerald), ModItems.sulphur2, new ItemStack(ModItems.gems[2]));
+        this.addRecipe(new ItemStack(ModItems.gems[3]), ModItems.sulphur2, new ItemStack(Items.emerald));
+        this.addRecipe(new ItemStack(ModItems.gems[4]), ModItems.sulphur2, new ItemStack(ModItems.gems[3]));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1, 2), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1, 1), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 2));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1, 3), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 1));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1, 4), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 3));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1, 5), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 4));
+        this.addRecipe(new ItemStack(Blocks.sapling, 1), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 5));
+        
+        
+        
+        
+        
+        
         Collections.sort(this.recipes, new BlahRecipeSorter(this));
     }
 

@@ -20,6 +20,10 @@ item.sulphur2.name=Sulphur
 item.uraniumIngot.name=Uranium Ingot
 item.uraniumRod.name=Uranium Rod
 item.bedrockPickaxe.name=Bedrock Pickaxe
+item.obsidianHelmet.name=Obsidian Helmet
+item.obsidianChestplate.name=Obsidian Chestplate
+item.obsidianLeggings.name=Obsidian Leggings
+item.obsidianBoots.name=Obsidian Boots
 
 enchantment.moltenTouch=Molten Touch
 enchantment.pulverize=Pulverize
