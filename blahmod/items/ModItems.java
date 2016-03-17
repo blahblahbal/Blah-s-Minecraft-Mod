@@ -1,6 +1,7 @@
 package blahmod.items;
 
 import blahmod.blocks.ModBlocks;
+import blahmod.projectiles.EntityGemBolt.EnumBoltType;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -18,6 +19,9 @@ public final class ModItems {
 	public static ArmorMaterial tadaniteA = EnumHelper.addArmorMaterial("TADANITEA", "blahmod:tadanite", 150, new int[] {4, 9, 8, 3}, 32);
 	public static ArmorMaterial obsidianA = EnumHelper.addArmorMaterial("OBSIDIANA", "blahmod:obsidian", 50, new int[] {2, 6, 6, 2}, 32);
 	public static Item[] gems = new Item[5];
+	
+	public static Item[] gemStaves = new Item[7];
+	
 	public static Item tadaniteShard;
     public static Item obsidianIngot;
     public static Item acidBucket;
@@ -75,6 +79,14 @@ public final class ModItems {
         GameRegistry.registerItem(sulphur2 = new BasicItem("sulphur2"), "sulphur2");
         GameRegistry.registerItem(uraniumIngot = new BasicItem("uraniumIngot"), "uraniumIngot");
         GameRegistry.registerItem(uraniumRod = new BasicItem("uraniumRod"), "uraniumRod");
+        
+        GameRegistry.registerItem((Item)(gemStaves[0] = new ItemGemStaff(EnumBoltType.RUBY, ModBlocks.gemNames[0] + "Staff")), ModBlocks.gemNames[0] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[1] = new ItemGemStaff(EnumBoltType.CITRINE, ModBlocks.gemNames[1] + "Staff")), ModBlocks.gemNames[1] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[2] = new ItemGemStaff(EnumBoltType.TOPAZ, ModBlocks.gemNames[2] + "Staff")), ModBlocks.gemNames[2] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[3] = new ItemGemStaff(EnumBoltType.EMERALD, "emeraldStaff")), "emeraldStaff");
+        GameRegistry.registerItem((Item)(gemStaves[4] = new ItemGemStaff(EnumBoltType.SAPPHIRE, ModBlocks.gemNames[3] + "Staff")), ModBlocks.gemNames[3] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[5] = new ItemGemStaff(EnumBoltType.AMETHYST, ModBlocks.gemNames[4] + "Staff")), ModBlocks.gemNames[4] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[6] = new ItemGemStaff(EnumBoltType.DIAMOND, "diamondStaff")), "diamondStaff");
         
         for (int i = 0; i < 5; i++)
         {

@@ -42,6 +42,10 @@ public final class ItemRenderRegister {
     	{
     		reg(ModItems.gems[i]);
     	}
+    	for (int i = 0; i < 7; i++)
+    	{
+    		reg((Item)ModItems.gemStaves[i]);
+    	}
     }
     
     public static void reg(Item item) {

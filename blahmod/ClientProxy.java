@@ -1,8 +1,13 @@
 package blahmod;
 
 import blahmod.client.render.blocks.BlockRenderRegister;
+import blahmod.client.render.entity.RenderGemBolt;
 import blahmod.client.render.items.ItemRenderRegister;
+import blahmod.projectiles.EntityGemBolt;
 import blahmod.tileentity.ModTileEntities;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -22,6 +27,8 @@ public class ClientProxy extends CommonProxy {
         super.init(e);
         
         ItemRenderRegister.registerItemRenderer();
+        RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
+        RenderingRegistry.registerEntityRenderingHandler(EntityGemBolt.class, new RenderGemBolt(renderManager, 1F));
     }
 
     @Override
