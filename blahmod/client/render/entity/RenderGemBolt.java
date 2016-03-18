@@ -1,5 +1,7 @@
 package blahmod.client.render.entity;
 
+import org.lwjgl.opengl.GL11;
+
 import blahmod.Main;
 import blahmod.projectiles.EntityGemBolt;
 import blahmod.projectiles.EntityGemBolt.EnumBoltType;
@@ -14,6 +16,7 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.init.Items;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -21,12 +24,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderGemBolt extends Render<EntityGemBolt>
 {
-    private float scale;
-
     public RenderGemBolt(RenderManager renderManagerIn, float scaleIn)
     {
         super(renderManagerIn);
-        this.scale = scaleIn;
     }
 
     /**
@@ -37,29 +37,56 @@ public class RenderGemBolt extends Render<EntityGemBolt>
      */
     public void doRender(EntityGemBolt entity, double x, double y, double z, float entityYaw, float partialTicks)
     {
+    	this.bindEntityTexture(entity);
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.pushMatrix();
-        this.bindEntityTexture(entity);
         GlStateManager.translate((float)x, (float)y, (float)z);
-        GlStateManager.enableRescaleNormal();
-        GlStateManager.scale(this.scale, this.scale, this.scale);
-        TextureAtlasSprite textureatlassprite = Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getParticleIcon(Items.fire_charge);
+        GlStateManager.rotate(entity.prevRotationYaw + (entity.rotationYaw - entity.prevRotationYaw) * partialTicks - 90.0F, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(entity.prevRotationPitch + (entity.rotationPitch - entity.prevRotationPitch) * partialTicks, 0.0F, 0.0F, 1.0F);
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        float f = textureatlassprite.getMinU();
-        float f1 = textureatlassprite.getMaxU();
-        float f2 = textureatlassprite.getMinV();
-        float f3 = textureatlassprite.getMaxV();
-        float f4 = 1.0F;
-        float f5 = 0.5F;
-        float f6 = 0.25F;
-        GlStateManager.rotate(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
-        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_NORMAL);
-        worldrenderer.pos(-0.5D, -0.25D, 0.0D).tex((double)f, (double)f3).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(0.5D, -0.25D, 0.0D).tex((double)f1, (double)f3).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(0.5D, 0.75D, 0.0D).tex((double)f1, (double)f2).normal(0.0F, 1.0F, 0.0F).endVertex();
-        worldrenderer.pos(-0.5D, 0.75D, 0.0D).tex((double)f, (double)f2).normal(0.0F, 1.0F, 0.0F).endVertex();
+        int i = 0;
+        float f = 0.0F;
+        float f1 = 0.5F;
+        float f2 = (float)(0 + i * 10) / 32.0F;
+        float f3 = (float)(5 + i * 10) / 32.0F;
+        float f4 = 0.0F;
+        float f5 = 0.15625F;
+        float f6 = (float)(5 + i * 10) / 32.0F;
+        float f7 = (float)(10 + i * 10) / 32.0F;
+        float f8 = 0.05625F;
+        GlStateManager.enableRescaleNormal();
+
+        GlStateManager.rotate(45.0F, 1.0F, 0.0F, 0.0F);
+        GlStateManager.scale(f8, f8, f8);
+        GlStateManager.translate(-4.0F, 0.0F, 0.0F);
+        GL11.glNormal3f(f8, 0.0F, 0.0F);
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+        worldrenderer.pos(-7.0D, -2.0D, -2.0D).tex((double)f4, (double)f6).endVertex();
+        worldrenderer.pos(-7.0D, -2.0D, 2.0D).tex((double)f5, (double)f6).endVertex();
+        worldrenderer.pos(-7.0D, 2.0D, 2.0D).tex((double)f5, (double)f7).endVertex();
+        worldrenderer.pos(-7.0D, 2.0D, -2.0D).tex((double)f4, (double)f7).endVertex();
         tessellator.draw();
+        GL11.glNormal3f(-f8, 0.0F, 0.0F);
+        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+        worldrenderer.pos(-7.0D, 2.0D, -2.0D).tex((double)f4, (double)f6).endVertex();
+        worldrenderer.pos(-7.0D, 2.0D, 2.0D).tex((double)f5, (double)f6).endVertex();
+        worldrenderer.pos(-7.0D, -2.0D, 2.0D).tex((double)f5, (double)f7).endVertex();
+        worldrenderer.pos(-7.0D, -2.0D, -2.0D).tex((double)f4, (double)f7).endVertex();
+        tessellator.draw();
+
+        for (int j = 0; j < 4; ++j)
+        {
+            GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+            GL11.glNormal3f(0.0F, 0.0F, f8);
+            worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
+            worldrenderer.pos(-8.0D, -2.0D, 0.0D).tex((double)f, (double)f2).endVertex();
+            worldrenderer.pos(8.0D, -2.0D, 0.0D).tex((double)f1, (double)f2).endVertex();
+            worldrenderer.pos(8.0D, 2.0D, 0.0D).tex((double)f1, (double)f3).endVertex();
+            worldrenderer.pos(-8.0D, 2.0D, 0.0D).tex((double)f, (double)f3).endVertex();
+            tessellator.draw();
+        }
+
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
@@ -70,12 +97,12 @@ public class RenderGemBolt extends Render<EntityGemBolt>
      */
     protected ResourceLocation getEntityTexture(EntityGemBolt entity)
     {
-    	if (entity.bolt == EnumBoltType.RUBY) return new ResourceLocation(Main.MODID, "textures/entity/ruby.png");
-    	else if (entity.bolt == EnumBoltType.CITRINE) return new ResourceLocation(Main.MODID, "textures/entity/citrine.png");
-    	else if (entity.bolt == EnumBoltType.TOPAZ) return new ResourceLocation(Main.MODID, "textures/entity/topaz.png");
-    	else if (entity.bolt == EnumBoltType.EMERALD) return new ResourceLocation(Main.MODID, "textures/entity/emerald.png");
-    	else if (entity.bolt == EnumBoltType.SAPPHIRE) return new ResourceLocation(Main.MODID, "textures/entity/sapphire.png");
-    	else if (entity.bolt == EnumBoltType.AMETHYST) return new ResourceLocation(Main.MODID, "textures/entity/amethyst.png");
+    	if (entity.bolt == 0) return new ResourceLocation(Main.MODID, "textures/entity/ruby.png");
+    	else if (entity.bolt == 1) return new ResourceLocation(Main.MODID, "textures/entity/citrine.png");
+    	else if (entity.bolt == 2) return new ResourceLocation(Main.MODID, "textures/entity/topaz.png");
+    	else if (entity.bolt == 3) return new ResourceLocation(Main.MODID, "textures/entity/emerald.png");
+    	else if (entity.bolt == 4) return new ResourceLocation(Main.MODID, "textures/entity/sapphire.png");
+    	else if (entity.bolt == 5) return new ResourceLocation(Main.MODID, "textures/entity/amethyst.png");
     	else return new ResourceLocation(Main.MODID, "textures/entity/diamond.png");
     }
 }

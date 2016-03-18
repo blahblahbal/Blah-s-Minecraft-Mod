@@ -20,6 +20,7 @@ public class BlahWorldGen implements IWorldGenerator
 {
 
 	public WorldGenerator gen_tadanite_ore;
+	Random rand = new Random();
 	int[] dimensions;
 	Block what;
 	Predicate<IBlockState> where;
@@ -67,11 +68,12 @@ public class BlahWorldGen implements IWorldGenerator
 	         int dimID = dimensions[0];
 	         if (arg3.provider.getDimensionId() == dimID)
 	         {
-	            for (int j = 0; j < this.vpc; j++) {
+	            for (int j = 0; j < this.vpc; j++)
+	            {
 	               int X = arg1 * 16 + arg0.nextInt(16);
 	               int Y = this.minY + arg0.nextInt(this.maxY - this.minY + 1);
 	               int Z = arg2 * 16 + arg0.nextInt(16);
-	               (new WorldGenMinable(this.what.getDefaultState(), this.opv, this.where)).generate(arg3, arg0, new BlockPos(X, Y, Z));
+	               (new WorldGenMinable(this.what.getDefaultState(), this.opv, this.where)).generate(arg3, rand, new BlockPos(X, Y, Z));
 	            }
 	         }
 		}

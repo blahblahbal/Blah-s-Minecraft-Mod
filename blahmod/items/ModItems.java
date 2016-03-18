@@ -80,13 +80,13 @@ public final class ModItems {
         GameRegistry.registerItem(uraniumIngot = new BasicItem("uraniumIngot"), "uraniumIngot");
         GameRegistry.registerItem(uraniumRod = new BasicItem("uraniumRod"), "uraniumRod");
         
-        GameRegistry.registerItem((Item)(gemStaves[0] = new ItemGemStaff(EnumBoltType.RUBY, ModBlocks.gemNames[0] + "Staff")), ModBlocks.gemNames[0] + "Staff");
-        GameRegistry.registerItem((Item)(gemStaves[1] = new ItemGemStaff(EnumBoltType.CITRINE, ModBlocks.gemNames[1] + "Staff")), ModBlocks.gemNames[1] + "Staff");
-        GameRegistry.registerItem((Item)(gemStaves[2] = new ItemGemStaff(EnumBoltType.TOPAZ, ModBlocks.gemNames[2] + "Staff")), ModBlocks.gemNames[2] + "Staff");
-        GameRegistry.registerItem((Item)(gemStaves[3] = new ItemGemStaff(EnumBoltType.EMERALD, "emeraldStaff")), "emeraldStaff");
-        GameRegistry.registerItem((Item)(gemStaves[4] = new ItemGemStaff(EnumBoltType.SAPPHIRE, ModBlocks.gemNames[3] + "Staff")), ModBlocks.gemNames[3] + "Staff");
-        GameRegistry.registerItem((Item)(gemStaves[5] = new ItemGemStaff(EnumBoltType.AMETHYST, ModBlocks.gemNames[4] + "Staff")), ModBlocks.gemNames[4] + "Staff");
-        GameRegistry.registerItem((Item)(gemStaves[6] = new ItemGemStaff(EnumBoltType.DIAMOND, "diamondStaff")), "diamondStaff");
+        GameRegistry.registerItem((Item)(gemStaves[0] = new ItemGemStaff(0, ModBlocks.gemNames[0] + "Staff")), ModBlocks.gemNames[0] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[1] = new ItemGemStaff(1, ModBlocks.gemNames[1] + "Staff")), ModBlocks.gemNames[1] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[2] = new ItemGemStaff(2, ModBlocks.gemNames[2] + "Staff")), ModBlocks.gemNames[2] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[3] = new ItemGemStaff(3, "emeraldStaff")), "emeraldStaff");
+        GameRegistry.registerItem((Item)(gemStaves[4] = new ItemGemStaff(4, ModBlocks.gemNames[3] + "Staff")), ModBlocks.gemNames[3] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[5] = new ItemGemStaff(5, ModBlocks.gemNames[4] + "Staff")), ModBlocks.gemNames[4] + "Staff");
+        GameRegistry.registerItem((Item)(gemStaves[6] = new ItemGemStaff(6, "diamondStaff")), "diamondStaff");
         
         for (int i = 0; i < 5; i++)
         {

@@ -5,29 +5,51 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.init.Blocks;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class EntityGemBolt extends EntityThrowable
 {
-	public EnumBoltType bolt;
+	public int bolt;
+	/*public int xTile = -1;
+	public int yTile = -1;
+	public int zTile = -1;
+	public Block inTile;*/
 	private Random r = new Random();
 	public int ticksInAir;
 	private double damage;
-	public EntityGemBolt(World worldIn, EntityLivingBase throwerIn, EnumBoltType ebt)
+	private int knockbackStrength;
+	public EntityGemBolt(World worldIn)
+    {
+        super(worldIn);
+        //this.setSize(0.25F, 0.25F);
+    }
+	public EntityGemBolt(World worldIn, EntityLivingBase throwerIn, int ebt)
 	{
 		super(worldIn, throwerIn);
 		bolt = ebt;
 	}
-
+	/**
+     * Sets the amount of knockback the arrow applies when it hits a mob.
+     */
+    public void setKnockbackStrength(int knockbackStrengthIn)
+    {
+        this.knockbackStrength = knockbackStrengthIn;
+    }
 	@Override
 	protected void onImpact(MovingObjectPosition arg0)
 	{
@@ -37,23 +59,22 @@ public class EntityGemBolt extends EntityThrowable
 			{
 				if (arg0.entityHit instanceof EntityLivingBase)
 				{
+					float x = 10F;
 					EntityLivingBase b = (EntityLivingBase)arg0.entityHit;
-					if (this.bolt == EnumBoltType.RUBY)  arg0.entityHit.setFire(7);
-					if (this.bolt == EnumBoltType.CITRINE) b.addPotionEffect(new PotionEffect(Potion.weakness.getId(), 200, 1));
-					if (this.bolt == EnumBoltType.TOPAZ) b.addPotionEffect(new PotionEffect(Potion.blindness.getId(), 140, 1));
-					if (this.bolt == EnumBoltType.EMERALD) b.addPotionEffect(new PotionEffect(Potion.poison.getId(), 200, 0));
-					if (this.bolt == EnumBoltType.SAPPHIRE) b.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 160, 2));
-					if (this.bolt == EnumBoltType.AMETHYST) b.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 200, 2));
-					if (this.bolt == EnumBoltType.DIAMOND)
+					if (this.bolt == 0)  arg0.entityHit.setFire(7);
+					else if (this.bolt == 2) b.addPotionEffect(new PotionEffect(Potion.weakness.getId(), 140, 1));
+					else if (this.bolt == 3) b.addPotionEffect(new PotionEffect(Potion.poison.getId(), 200, 0));
+					else if (this.bolt == 4)
 					{
-						int rn = r.nextInt(6);
-						if (rn == 0) arg0.entityHit.setFire(7);
-						else if (rn == 1) b.addPotionEffect(new PotionEffect(Potion.weakness.getId(), 200, 1));
-						else if (rn == 2) b.addPotionEffect(new PotionEffect(Potion.blindness.getId(), 200, 1));
-						else if (rn == 3) b.addPotionEffect(new PotionEffect(Potion.poison.getId(), 200, 1));
-						else if (rn == 4) b.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 200, 1));
-						else if (rn == 5) b.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 200, 1));
+						x += 2F;
+						b.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 160, 2));
 					}
+					else if (this.bolt == 5) b.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 200, 2));
+					else if (this.bolt == 6)
+					{
+						x += 4F;
+					}
+					b.attackEntityFrom(DamageSource.causeMobDamage(b), x);
 				}
 			}
 		}
@@ -76,7 +97,13 @@ public class EntityGemBolt extends EntityThrowable
 	@Override
 	public void onUpdate()
 	{
-		if (this.inGround) this.setDead();
+		this.lastTickPosX = this.posX;
+        this.lastTickPosY = this.posY;
+        this.lastTickPosZ = this.posZ;
+		if (this.inGround)
+		{
+			this.setDead();
+		}
         else
         {
             ++this.ticksInAir;
@@ -129,7 +156,21 @@ public class EntityGemBolt extends EntityThrowable
                 movingobjectposition = new MovingObjectPosition(entity);
             }
         }
+        if (movingobjectposition != null)
+        {
+        	if (movingobjectposition.entityHit != null && movingobjectposition.entityHit instanceof EntityLivingBase)
+        	{
+        		if (this.knockbackStrength > 0)
+        		{
+        			float f7 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
 
+        			if (f7 > 0.0F)
+        			{
+        				movingobjectposition.entityHit.addVelocity(this.motionX * (double)this.knockbackStrength * 0.6000000238418579D / (double)f7, 0.1D, this.motionZ * (double)this.knockbackStrength * 0.6000000238418579D / (double)f7);
+        			}
+        		}
+        	}
+        }
         if (movingobjectposition != null)
         {
             if (movingobjectposition.typeOfHit == MovingObjectPosition.MovingObjectType.BLOCK && this.worldObj.getBlockState(movingobjectposition.getBlockPos()).getBlock() == Blocks.portal)
@@ -141,16 +182,81 @@ public class EntityGemBolt extends EntityThrowable
                 this.onImpact(movingobjectposition);
             }
         }
+        this.posX += this.motionX;
+        this.posY += this.motionY;
+        this.posZ += this.motionZ;
+        float f1 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
+        this.rotationYaw = (float)(MathHelper.atan2(this.motionX, this.motionZ) * 180.0D / Math.PI);
+
+        for (this.rotationPitch = (float)(MathHelper.atan2(this.motionY, (double)f1) * 180.0D / Math.PI); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F)
+        {
+            ;
+        }
+
+        while (this.rotationPitch - this.prevRotationPitch >= 180.0F)
+        {
+            this.prevRotationPitch += 360.0F;
+        }
+
+        while (this.rotationYaw - this.prevRotationYaw < -180.0F)
+        {
+            this.prevRotationYaw -= 360.0F;
+        }
+
+        while (this.rotationYaw - this.prevRotationYaw >= 180.0F)
+        {
+            this.prevRotationYaw += 360.0F;
+        }
+
+        this.rotationPitch = this.prevRotationPitch + (this.rotationPitch - this.prevRotationPitch) * 0.2F;
+        this.rotationYaw = this.prevRotationYaw + (this.rotationYaw - this.prevRotationYaw) * 0.2F;
+        float f2 = 0.99F;
+        float f3 = this.getGravityVelocity();
+        
+        this.motionX *= (double)f2;
+        this.motionY *= (double)f2;
+        this.motionZ *= (double)f2;
+        this.motionY -= (double)f3;
+        this.setPosition(this.posX, this.posY, this.posZ);
 	}
-	
+	/*@Override
+	public void readEntityFromNBT(NBTTagCompound tagCompund)
+    {
+        this.xTile = tagCompund.getShort("xTile");
+        this.yTile = tagCompund.getShort("yTile");
+        this.zTile = tagCompund.getShort("zTile");
+
+        if (tagCompund.hasKey("inTile", 8))
+        {
+            this.inTile = Block.getBlockFromName(tagCompund.getString("inTile"));
+        }
+        else
+        {
+            this.inTile = Block.getBlockById(tagCompund.getByte("inTile") & 255);
+        }
+    }*/
 	public enum EnumBoltType
 	{
-		RUBY,
-		CITRINE,
-		TOPAZ,
-		EMERALD,
-		SAPPHIRE,
-		AMETHYST,
-		DIAMOND
+		RUBY(0),
+		CITRINE(1),
+		TOPAZ(2),
+		EMERALD(3),
+		SAPPHIRE(4),
+		AMETHYST(5),
+		DIAMOND(6);
+		
+		private int type;
+		private EnumBoltType(int t)
+		{
+			type = t;
+		}
+		public int getType()
+		{
+			return type;
+		}
+		public void setType(int t)
+		{
+			type = t;
+		}
 	}
 }

@@ -40,6 +40,7 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.limestone, 9), new ItemStack(ModBlocks.limestoneBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.sulphur2, 9), new ItemStack(ModBlocks.sulphurBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.uraniumIngot, 9), new ItemStack(ModBlocks.uraniumBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.blaze_rod, 5), new ItemStack(ModBlocks.blazeBrick));
 		GameRegistry.addRecipe(new ItemStack(Items.saddle), "xxx", "xyx", "z z", 'x', new ItemStack(Items.leather), 'y', new ItemStack(Items.string), 'z', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
@@ -59,7 +60,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteBoots), "x x", "x x", 'x', new ItemStack(ModItems.tadaniteShard));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteChestplate), "x x", "xxx", "xxx", 'x', new ItemStack(ModItems.tadaniteShard));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteLeggings), "xxx", "x x", "x x", 'x', new ItemStack(ModItems.tadaniteShard));
-		GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumTorch, 4), "x", "y", 'x', new ItemStack(ModItems.uraniumRod), 'y', new ItemStack(Items.stick));
+		//GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumTorch, 4), "x", "y", 'x', new ItemStack(ModItems.uraniumRod), 'y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.bedrockPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.bedrock), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeBrick), "xxx", "xyx", "xxx", 'x', new ItemStack(Items.blaze_powder), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHelmet), "xxx", "x x", 'x', new ItemStack(ModItems.obsidianIngot));
@@ -89,6 +90,14 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs2[5], 6), "xxx", 'x', new ItemStack(Blocks.mossy_cobblestone));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs2[6], 6), "xxx", 'x', new ItemStack(ModBlocks.endStoneBricks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs2[7], 6), "xxx", 'x', new ItemStack(ModBlocks.tadanite));
+		
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[0]), "x", "y", "z", 'x', new ItemStack(ModItems.gems[0]), 'y', new ItemStack(ModBlocks.gemBlocks[0]), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[1]), "x", "y", "z", 'x', new ItemStack(ModItems.gems[1]), 'y', new ItemStack(ModBlocks.gemBlocks[1]), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[2]), "x", "y", "z", 'x', new ItemStack(ModItems.gems[2]), 'y', new ItemStack(ModBlocks.gemBlocks[2]), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[3]), "x", "y", "z", 'x', new ItemStack(Items.emerald), 'y', new ItemStack(Blocks.emerald_block), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[4]), "x", "y", "z", 'x', new ItemStack(ModItems.gems[3]), 'y', new ItemStack(ModBlocks.gemBlocks[3]), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[5]), "x", "y", "z", 'x', new ItemStack(ModItems.gems[4]), 'y', new ItemStack(ModBlocks.gemBlocks[4]), 'z', new ItemStack(ModBlocks.petrifiedWood));
+		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[6]), "x", "y", "z", 'x', new ItemStack(Items.diamond), 'y', new ItemStack(Blocks.diamond_block), 'z', new ItemStack(ModBlocks.petrifiedWood));
 		
 		GameRegistry.addSmelting(ModBlocks.uraniumOre, new ItemStack(ModItems.uraniumIngot), 5F);
 		GameRegistry.addSmelting(ModBlocks.limestoneOre, new ItemStack(ModItems.limestone), 4F);

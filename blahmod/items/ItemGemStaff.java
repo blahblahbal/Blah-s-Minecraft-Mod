@@ -15,9 +15,9 @@ import net.minecraft.world.World;
 
 public class ItemGemStaff extends Item
 {
-	public static EnumBoltType bt;
+	public int bt;
 	public static String name;
-    public ItemGemStaff(EnumBoltType ebt, String uname)
+    public ItemGemStaff(int ebt, String uname)
     {
         this.maxStackSize = 1;
         this.setMaxDamage(450);
@@ -67,6 +67,10 @@ public class ItemGemStaff extends Item
                 entityarrow.setDamage(entityarrow.getDamage() + (double)j * 0.5D + 0.5D);
             }
 
+            if (entityarrow.bolt == 1)
+            {
+            	entityarrow.setKnockbackStrength(2);
+            }
             /*int k = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, stack);
 
             if (k > 0)
