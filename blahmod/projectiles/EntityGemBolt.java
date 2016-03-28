@@ -72,7 +72,7 @@ public class EntityGemBolt extends EntityThrowable
 					else if (this.bolt == 5) b.addPotionEffect(new PotionEffect(Potion.confusion.getId(), 200, 2));
 					else if (this.bolt == 6)
 					{
-						x += 4F;
+						x += 8F;
 					}
 					b.attackEntityFrom(DamageSource.causeMobDamage(b), x);
 				}
@@ -218,45 +218,5 @@ public class EntityGemBolt extends EntityThrowable
         this.motionZ *= (double)f2;
         this.motionY -= (double)f3;
         this.setPosition(this.posX, this.posY, this.posZ);
-	}
-	/*@Override
-	public void readEntityFromNBT(NBTTagCompound tagCompund)
-    {
-        this.xTile = tagCompund.getShort("xTile");
-        this.yTile = tagCompund.getShort("yTile");
-        this.zTile = tagCompund.getShort("zTile");
-
-        if (tagCompund.hasKey("inTile", 8))
-        {
-            this.inTile = Block.getBlockFromName(tagCompund.getString("inTile"));
-        }
-        else
-        {
-            this.inTile = Block.getBlockById(tagCompund.getByte("inTile") & 255);
-        }
-    }*/
-	public enum EnumBoltType
-	{
-		RUBY(0),
-		CITRINE(1),
-		TOPAZ(2),
-		EMERALD(3),
-		SAPPHIRE(4),
-		AMETHYST(5),
-		DIAMOND(6);
-		
-		private int type;
-		private EnumBoltType(int t)
-		{
-			type = t;
-		}
-		public int getType()
-		{
-			return type;
-		}
-		public void setType(int t)
-		{
-			type = t;
-		}
 	}
 }

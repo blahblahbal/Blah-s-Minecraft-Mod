@@ -1,7 +1,6 @@
 package blahmod.items;
 
 import blahmod.blocks.ModBlocks;
-import blahmod.projectiles.EntityGemBolt.EnumBoltType;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -23,6 +22,7 @@ public final class ModItems {
 	public static Item[] gemStaves = new Item[7];
 	
 	public static Item tadaniteShard;
+	public static Item tadaniteDiamond;
     public static Item obsidianIngot;
     public static Item acidBucket;
     public static Item limestone;
@@ -54,6 +54,7 @@ public final class ModItems {
     public static void createItems()
     {
     	GameRegistry.registerItem(tadaniteShard = new BasicItem("tadaniteShard"), "tadaniteShard");
+    	GameRegistry.registerItem(tadaniteDiamond = new BasicItem("tadaniteDiamond"), "tadaniteDiamond");
         GameRegistry.registerItem(obsidianIngot = new BasicItem("obsidianIngot"), "obsidianIngot");
         GameRegistry.registerItem((Item)(obsidianPickaxe = new ItemModPickaxe("obsidianPickaxe", obsidian)), "obsidianPickaxe");
         GameRegistry.registerItem((Item)(obsidianSword = new ItemModSword("obsidianSword", obsidian)), "obsidianSword");

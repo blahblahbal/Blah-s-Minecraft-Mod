@@ -1,7 +1,6 @@
 package blahmod.items;
 
 import blahmod.projectiles.EntityGemBolt;
-import blahmod.projectiles.EntityGemBolt.EnumBoltType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;

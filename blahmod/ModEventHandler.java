@@ -5,15 +5,27 @@ import blahmod.items.ModItems;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ModEventHandler
 {
+	@SubscribeEvent
+	public void breakBlockEvent(BreakSpeed event)
+	{
+		if(event.state.getBlock() == Blocks.bedrock && !(event.entityPlayer.inventory.getCurrentItem().getItem() == ModItems.bedrockPickaxe))
+		{
+			event.newSpeed = 0F;
+		}
+	}
+	
 	@SubscribeEvent
     public void playerHarvestEvent(HarvestDropsEvent event)
     {
@@ -51,7 +63,7 @@ public class ModEventHandler
     				event.drops.clear();
     				event.drops.add(new ItemStack(Blocks.glass));
     			}
-    			if (event.state.getBlock() == Blocks.stone)
+    			if (event.state.getBlock() == Blocks.stone && Blocks.stone.getMetaFromState(event.state) == 0)
     			{
     				//event.drops.remove(new ItemStack(Blocks.cobblestone));
     				event.drops.clear();

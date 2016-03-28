@@ -26,7 +26,8 @@ public class ModBlockOre extends BlockOre {
 	private int most_quantity;
 	public String name;
 	
-    public ModBlockOre(String unlocalizedName, Material mat, Item drop, float hard, float res, String tool, int level, int meta, int least_quantity, int most_quantity, String name) {
+    public ModBlockOre(String unlocalizedName, Material mat, Item drop, float hard, float res, String tool, int level, int meta, int least_quantity, int most_quantity, String name)
+    {
         super(mat.getMaterialMapColor());
         this.drop = drop;
         this.meta = meta;
@@ -41,17 +42,20 @@ public class ModBlockOre extends BlockOre {
     }
     
     @Override
-    public Item getItemDropped(IBlockState blockstate, Random random, int fortune) {
+    public Item getItemDropped(IBlockState blockstate, Random random, int fortune)
+    {
         return this.drop;
     }
 
     @Override
-    public int damageDropped(IBlockState blockstate) {
+    public int damageDropped(IBlockState blockstate)
+    {
         return this.meta;
     }
 
     @Override
-    public int quantityDropped(IBlockState blockstate, int fortune, Random random) {
+    public int quantityDropped(IBlockState blockstate, int fortune, Random random)
+    {
         if (this.least_quantity >= this.most_quantity)
             return this.least_quantity;
         return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
@@ -74,6 +78,14 @@ public class ModBlockOre extends BlockOre {
         if (this == ModBlocks.sulphurOre)
         {
         	return MathHelper.getRandomIntegerInRange(rand, 15, 17);
+        }
+        if (this == ModBlocks.rubyOre ||
+        	this == ModBlocks.citrineOre ||
+        	this == ModBlocks.topazOre ||
+        	this == ModBlocks.sapphireOre ||
+        	this == ModBlocks.amethystOre)
+        {
+        	return MathHelper.getRandomIntegerInRange(rand, 3, 7);
         }
         return 0;
     }

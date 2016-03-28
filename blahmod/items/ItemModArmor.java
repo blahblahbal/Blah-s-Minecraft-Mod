@@ -31,12 +31,23 @@ public class ItemModArmor extends ItemArmor
 			ItemStack chest = player.getCurrentArmor(2);
 			ItemStack helmet = player.getCurrentArmor(3);
 			
-			if(boots.getItem() == ModItems.tadaniteBoots && legs.getItem() == ModItems.tadaniteLeggings && chest.getItem() == ModItems.tadaniteChestplate && helmet.getItem() == ModItems.tadaniteHelmet){
+			if(boots.getItem() == ModItems.tadaniteBoots &&
+				legs.getItem() == ModItems.tadaniteLeggings &&
+				chest.getItem() == ModItems.tadaniteChestplate &&
+				helmet.getItem() == ModItems.tadaniteHelmet)
+			{
 				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 100, 1));
 				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 100, 1));
 				player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 100, 1));
+				//player.addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 300, 1));
 			}
-			
+			if(boots.getItem() == ModItems.obsidianBoots &&
+				legs.getItem() == ModItems.obsidianLeggings &&
+				chest.getItem() == ModItems.obsidianChestplate &&
+				helmet.getItem() == ModItems.obsidianHelmet)
+			{
+				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 100, 1));
+			}
 		}
 	}
     @Override

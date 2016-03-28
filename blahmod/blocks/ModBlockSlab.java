@@ -1,5 +1,6 @@
 package blahmod.blocks;
 
+import blahmod.Main;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -57,7 +58,7 @@ public abstract class ModBlockSlab extends BlockSlab {
         this.name = uname;
         setUnlocalizedName(uname);
         if (!this.isDouble()) {
-            setCreativeTab(CreativeTabs.tabBlock);
+            setCreativeTab(Main.blahTabBlock);
         }
 
         IBlockState blockState = this.blockState.getBaseState();

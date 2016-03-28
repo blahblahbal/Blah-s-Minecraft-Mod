@@ -30,6 +30,9 @@ public class Main
     public static final String VERSION = "0.2.5";
     public static final Enchantment moltenTouch = new EnchantmentMoltenTouch(84, new ResourceLocation("molten_touch"), 1, EnumEnchantmentType.DIGGER);
     public static final Enchantment pulverize = new EnchantmentPulverize(85, new ResourceLocation("pulverize"), 1);
+    public static CreativeTabBlah blahTab;
+    public static CreativeTabBlahBlocks blahTabBlock;
+    //public static CreativeTabGems gemTab;
     
     @Instance
     public static Main instance = new Main();
@@ -39,6 +42,9 @@ public class Main
     public void preInit(FMLPreInitializationEvent e)
     {
     	this.proxy.preInit(e);
+    	blahTab = new CreativeTabBlah();
+    	blahTabBlock = new CreativeTabBlahBlocks();
+    	//gemTab = new CreativeTabGems();
     	// increment the index for each entity you register
     	int modEntityIndex = 0;
 

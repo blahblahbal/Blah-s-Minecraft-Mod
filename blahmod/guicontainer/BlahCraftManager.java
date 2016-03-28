@@ -36,7 +36,8 @@ public class BlahCraftManager
     /** The static instance of this class */
     public static final BlahCraftManager instance = new BlahCraftManager();
     private final List<BlahRecipes> recipes = Lists.<BlahRecipes>newArrayList();
-
+    public static List<Item> catalyst1List = Lists.<Item>newArrayList();
+    public static List<Item> catalyst2List = Lists.<Item>newArrayList();
     /**
      * Returns the static instance of this class
      */
@@ -67,12 +68,12 @@ public class BlahCraftManager
         this.addRecipe(new ItemStack(Blocks.log2, 1), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 3));
         this.addRecipe(new ItemStack(Blocks.log2, 1, 1), ModItems.sulphur2, new ItemStack(Blocks.log2, 1));
         this.addRecipe(new ItemStack(Blocks.log, 1), ModItems.sulphur2, new ItemStack(Blocks.log2, 1, 1));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 1));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 2));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 3));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2));
-        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2, 1, 1));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log), new ItemStack(Blocks.stone));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 1), new ItemStack(Blocks.stone));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 2), new ItemStack(Blocks.stone));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 3), new ItemStack(Blocks.stone));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2), new ItemStack(Blocks.stone));
+        this.addRecipe(new ItemStack(ModBlocks.petrifiedWood), ModItems.sulphur2, new ItemStack(Blocks.log2, 1, 1), new ItemStack(Blocks.stone));
         this.addRecipe(new ItemStack(ModItems.gems[0]), ModItems.sulphur2, new ItemStack(ModItems.gems[4]));
         this.addRecipe(new ItemStack(ModItems.gems[1]), ModItems.sulphur2, new ItemStack(ModItems.gems[0]));
         this.addRecipe(new ItemStack(ModItems.gems[2]), ModItems.sulphur2, new ItemStack(ModItems.gems[1]));

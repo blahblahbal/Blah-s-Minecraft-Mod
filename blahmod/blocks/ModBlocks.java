@@ -76,11 +76,11 @@ public final class ModBlocks
     		GameRegistry.registerBlock((Block)(gemBlocks[i] = new BasicBlock(gemNames[i] + "Block", Material.iron, 2F, 100F, "pickaxe", 2, gemNames[i] + "Block")), gemNames[i] + "Block");
     		//GameRegistry.registerBlock(gemOres[i] = new ModBlockOre(gemNames[i] + "Ore", Material.rock, ModItems.gems[i], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, gemNames[i] + "Ore"), gemNames[i] + "Ore");
     	}
-    	GameRegistry.registerBlock(rubyOre = new ModBlockOre("rubyOre", Material.rock, ModItems.gems[0], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, "rubyOre"), "rubyOre");
-    	GameRegistry.registerBlock(citrineOre = new ModBlockOre("citrineOre", Material.rock, ModItems.gems[1], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, "citrineOre"), "citrineOre");
-    	GameRegistry.registerBlock(topazOre = new ModBlockOre("topazOre", Material.rock, ModItems.gems[2], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, "topazOre"), "topazOre");
-    	GameRegistry.registerBlock(sapphireOre = new ModBlockOre("sapphireOre", Material.rock, ModItems.gems[3], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, "sapphireOre"), "sapphireOre");
-    	GameRegistry.registerBlock(amethystOre = new ModBlockOre("amethystOre", Material.rock, ModItems.gems[4], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, "amethystOre"), "amethystOre");
+    	GameRegistry.registerBlock(rubyOre = new ModBlockOre("rubyOre", Material.rock, ModItems.gems[0], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "rubyOre"), "rubyOre");
+    	GameRegistry.registerBlock(citrineOre = new ModBlockOre("citrineOre", Material.rock, ModItems.gems[1], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "citrineOre"), "citrineOre");
+    	GameRegistry.registerBlock(topazOre = new ModBlockOre("topazOre", Material.rock, ModItems.gems[2], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "topazOre"), "topazOre");
+    	GameRegistry.registerBlock(sapphireOre = new ModBlockOre("sapphireOre", Material.rock, ModItems.gems[3], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "sapphireOre"), "sapphireOre");
+    	GameRegistry.registerBlock(amethystOre = new ModBlockOre("amethystOre", Material.rock, ModItems.gems[4], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "amethystOre"), "amethystOre");
     	slabs[0] = new ModBlockSlabHalf("woolSlab");
     	slabs[1] = new ModBlockSlabHalf("ironSlab");
     	slabs[2] = new ModBlockSlabHalf("goldSlab");

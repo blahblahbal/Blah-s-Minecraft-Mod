@@ -15,6 +15,7 @@ public final class ItemRenderRegister {
     	reg(ModItems.acidBucket);
     	reg(ModItems.obsidianIngot);
     	reg(ModItems.tadaniteShard);
+    	reg(ModItems.tadaniteDiamond);
     	reg((Item)ModItems.obsidianSword);
     	reg((Item)ModItems.obsidianPickaxe);
     	reg((Item)ModItems.obsidianHoe);

@@ -4,7 +4,6 @@ import org.lwjgl.opengl.GL11;
 
 import blahmod.Main;
 import blahmod.projectiles.EntityGemBolt;
-import blahmod.projectiles.EntityGemBolt.EnumBoltType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -75,15 +74,17 @@ public class RenderGemBolt extends Render<EntityGemBolt>
         worldrenderer.pos(-7.0D, -2.0D, -2.0D).tex((double)f4, (double)f7).endVertex();
         tessellator.draw();
 
-        for (int j = 0; j < 4; ++j)
+        for (int j = 0; j < 6; ++j)
         {
-            GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+        	if (j < 4) GlStateManager.rotate(90.0F, 1.0F, 0.0F, 0.0F);
+        	else if (j == 4) GlStateManager.rotate(90.0F, 0.0F, 1.0F, 0.0F);
+        	else GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
             GL11.glNormal3f(0.0F, 0.0F, f8);
             worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX);
-            worldrenderer.pos(-8.0D, -2.0D, 0.0D).tex((double)f, (double)f2).endVertex();
-            worldrenderer.pos(8.0D, -2.0D, 0.0D).tex((double)f1, (double)f2).endVertex();
-            worldrenderer.pos(8.0D, 2.0D, 0.0D).tex((double)f1, (double)f3).endVertex();
-            worldrenderer.pos(-8.0D, 2.0D, 0.0D).tex((double)f, (double)f3).endVertex();
+            worldrenderer.pos(-16.0D, -2.0D, 0.0D).tex((double)f, (double)f2).endVertex();
+            worldrenderer.pos(16.0D, -2.0D, 0.0D).tex((double)f1, (double)f2).endVertex();
+            worldrenderer.pos(16.0D, 2.0D, 0.0D).tex((double)f1, (double)f3).endVertex();
+            worldrenderer.pos(-16.0D, 2.0D, 0.0D).tex((double)f, (double)f3).endVertex();
             tessellator.draw();
         }
 
