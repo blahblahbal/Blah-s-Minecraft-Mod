@@ -1,5 +1,6 @@
 package blahmod;
 
+import blahmod.blocks.ModBlocks;
 import blahmod.enchantments.EnchantmentMoltenTouch;
 import blahmod.enchantments.EnchantmentPulverize;
 import blahmod.projectiles.EntityGemBolt;
@@ -12,6 +13,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -21,6 +23,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = Main.MODID, name = Main.MODNAME, version = Main.VERSION)
 public class Main
@@ -42,8 +45,13 @@ public class Main
     public void preInit(FMLPreInitializationEvent e)
     {
     	this.proxy.preInit(e);
+    	if (Loader.isModLoaded("BiomesOPlenty"))
+        {
+ 	        ModBOP.addRecipes();
+        }
     	blahTab = new CreativeTabBlah();
     	blahTabBlock = new CreativeTabBlahBlocks();
+    	OreDictionary.registerOre("plankWood", ModBlocks.sequoiaPlanks);
     	//gemTab = new CreativeTabGems();
     	// increment the index for each entity you register
     	int modEntityIndex = 0;

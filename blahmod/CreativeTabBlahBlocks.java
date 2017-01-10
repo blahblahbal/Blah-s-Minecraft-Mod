@@ -45,6 +45,9 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.endStoneBricks).copy());
 		items.add(new ItemStack(ModBlocks.leatherBlock).copy());
 		items.add(new ItemStack(ModBlocks.petrifiedWood).copy());
+		items.add(new ItemStack(ModBlocks.redNetherBrick).copy());
+		items.add(new ItemStack(ModBlocks.netherWartBlock).copy());
+		items.add(new ItemStack(ModBlocks.boneBlock).copy());
 		super.displayAllReleventItems(items);
 	}
 }

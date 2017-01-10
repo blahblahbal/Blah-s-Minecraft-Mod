@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "blahmod:uraniumTorch" },
+        "facing=east": { "model": "blahmod:uraniumTorch_wall" },
+        "facing=south": { "model": "blahmod:uraniumTorch_wall", "y": 90 },
+        "facing=west": { "model": "blahmod:uraniumTorch_wall", "y": 180 },
+        "facing=north": { "model": "blahmod:uraniumTorch_wall", "y": 270 }
+    }
+}

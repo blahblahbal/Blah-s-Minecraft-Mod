@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:clayOre" },
+        "inventory": { "model": "blahmod:clayOre" }
+    }
+}

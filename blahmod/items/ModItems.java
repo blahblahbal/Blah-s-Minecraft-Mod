@@ -20,7 +20,7 @@ public final class ModItems {
 	public static Item[] gems = new Item[5];
 	
 	public static Item[] gemStaves = new Item[7];
-	
+	public static Item[] dyeNew = new Item[10];
 	public static Item tadaniteShard;
 	public static Item tadaniteDiamond;
     public static Item obsidianIngot;
@@ -80,7 +80,10 @@ public final class ModItems {
         GameRegistry.registerItem(sulphur2 = new BasicItem("sulphur2"), "sulphur2");
         GameRegistry.registerItem(uraniumIngot = new BasicItem("uraniumIngot"), "uraniumIngot");
         GameRegistry.registerItem(uraniumRod = new BasicItem("uraniumRod"), "uraniumRod");
-        
+        Items.egg.setMaxStackSize(64);
+        Items.ender_pearl.setMaxStackSize(64);
+        Items.snowball.setMaxStackSize(64);
+        Items.cake.setMaxStackSize(64);
         GameRegistry.registerItem((Item)(gemStaves[0] = new ItemGemStaff(0, ModBlocks.gemNames[0] + "Staff")), ModBlocks.gemNames[0] + "Staff");
         GameRegistry.registerItem((Item)(gemStaves[1] = new ItemGemStaff(1, ModBlocks.gemNames[1] + "Staff")), ModBlocks.gemNames[1] + "Staff");
         GameRegistry.registerItem((Item)(gemStaves[2] = new ItemGemStaff(2, ModBlocks.gemNames[2] + "Staff")), ModBlocks.gemNames[2] + "Staff");
@@ -92,6 +95,10 @@ public final class ModItems {
         for (int i = 0; i < 5; i++)
         {
         	GameRegistry.registerItem(gems[i] = new BasicItem(ModBlocks.gemNames[i]), ModBlocks.gemNames[i]);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+        	GameRegistry.registerItem(dyeNew[i] = new BasicItem("dye" + ModBlocks.woolNames[i]), "dye" + ModBlocks.woolNames[i]);
         }
     }
 }

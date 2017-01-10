@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:catalyzer" },
+        "inventory": { "model": "blahmod:catalyzer" }
+    }
+}

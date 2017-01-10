@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:petrifiedWood" },
+        "inventory": { "model": "blahmod:petrifiedWood" }
+    }
+}

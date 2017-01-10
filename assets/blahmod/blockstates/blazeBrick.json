@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:blazeBrick" },
+        "inventory": { "model": "blahmod:blazeBrick" }
+    }
+}

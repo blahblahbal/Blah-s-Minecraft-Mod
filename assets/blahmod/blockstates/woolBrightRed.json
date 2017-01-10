@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:woolBrightRed" },
+        "inventory": { "model": "blahmod:woolBrightRed" }
+    }
+}

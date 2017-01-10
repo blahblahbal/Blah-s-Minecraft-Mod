@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:tadanite" },
+        "inventory": { "model": "blahmod:tadanite" }
+    }
+}

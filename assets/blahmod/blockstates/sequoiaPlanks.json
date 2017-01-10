@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:sequoiaPlanks" },
+        "inventory": { "model": "blahmod:sequoiaPlanks" }
+    }
+}

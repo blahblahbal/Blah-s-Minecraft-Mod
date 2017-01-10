@@ -11,7 +11,21 @@ public final class ModCrafting
 {
 	public static void initCrafting()
 	{
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
+		for (int i = 0; i < 10; i++)
+		{
+			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.newWool[i]), new ItemStack(ModItems.dyeNew[i]), new ItemStack(Blocks.wool, 1, 0));
+		}
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[0]), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[1]), new ItemStack(Items.dye, 1, 11), new ItemStack(Items.dye, 1, 11), new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[2]), new ItemStack(Items.dye, 1, 6), new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[3]), new ItemStack(Items.dye, 1, 1), new ItemStack(Items.dye, 1, 0));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[4]), new ItemStack(Items.dye, 1, 11), new ItemStack(Items.dye, 1, 0));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[5]), new ItemStack(Items.dye, 1, 11), new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[6]), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 12));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[7]), new ItemStack(Items.dye, 1, 0), new ItemStack(Items.dye, 1, 14));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[8]), new ItemStack(Items.dye, 1, 3), new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[9]), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 11));
+		//GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.limestoneBlock), "###","###", "###", '#', ModItems.limestone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sulphurBlock), "###","###", "###", '#', ModItems.sulphur2);
@@ -21,6 +35,10 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[2]), "###","###", "###", '#', ModItems.gems[2]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[3]), "###","###", "###", '#', ModItems.gems[3]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[4]), "###","###", "###", '#', ModItems.gems[4]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherWartBlock), "###","###", "###", '#', Items.nether_wart);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.boneBlock), "###","###", "###", '#', new ItemStack(Items.dye, 1, 15));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "#x","x#", '#', Items.nether_wart, 'x', Items.netherbrick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "x#","#x", '#', Items.nether_wart, 'x', Items.netherbrick);
 		GameRegistry.addRecipe(new ItemStack(Blocks.obsidian), "##","##", '#', ModItems.obsidianIngot);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.endStoneBricks), "##","##", '#', Blocks.end_stone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cement, 8), "#x#","xxx", "yzy", '#', Blocks.clay, 'x', ModItems.limestone, 'y', Blocks.gravel, 'z', Items.water_bucket);
@@ -28,6 +46,7 @@ public final class ModCrafting
 		// new vanilla item recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.ice, 4), new ItemStack(Blocks.packed_ice));
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 8), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.cobblestone), 'y', new ItemStack(Items.wheat_seeds));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.prefabSapling, 2), "xyz", "wui", "plx", 'x', new ItemStack(Items.diamond), 'y', new ItemStack(Blocks.sapling, 1, 4), 'z', new ItemStack(Blocks.sapling, 1, 2), 'w', new ItemStack(Blocks.sapling, 1, 5), 'u', new ItemStack(Blocks.crafting_table), 'i', new ItemStack(Blocks.sapling, 1, 3), 'p', new ItemStack(Blocks.sapling, 1), 'l', new ItemStack(Blocks.sapling, 1, 1));
 		GameRegistry.addRecipe(new ItemStack(Blocks.packed_ice), "##","##", '#', Blocks.ice);
 		GameRegistry.addRecipe(new ItemStack(Items.saddle), "xxx", "xyx", "z z", 'x', new ItemStack(Items.leather), 'y', new ItemStack(Items.string), 'z', new ItemStack(Items.stick));
 		// vanilla reverse crafting start
@@ -52,6 +71,7 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 3), new ItemStack(Items.jungle_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 4), new ItemStack(Items.acacia_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 5), new ItemStack(Items.dark_oak_door));
+		GameRegistry.addRecipe(new ItemStack(Blocks.planks, 3), "##", "##", '#', new ItemStack(Items.bowl));
 		// end random stuff
 		// slabs start
 		GameRegistry.addRecipe(new ItemStack(Blocks.red_sandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab2));
@@ -88,6 +108,8 @@ public final class ModCrafting
 		// reverse crafting end
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.obsidianIngot, 4), new ItemStack(Blocks.obsidian));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.leather, 9), new ItemStack(ModBlocks.leatherBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.nether_wart, 9), new ItemStack(ModBlocks.netherWartBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 9, 15), new ItemStack(ModBlocks.boneBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[0], 9), new ItemStack(ModBlocks.gemBlocks[0]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[1], 9), new ItemStack(ModBlocks.gemBlocks[1]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[2], 9), new ItemStack(ModBlocks.gemBlocks[2]));

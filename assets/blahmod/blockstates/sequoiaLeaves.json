@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "check_decay=true,decayable=true":  { "model": "blahmod:sequoiaLeaves" },
+        "check_decay=false,decayable=true":  { "model": "blahmod:sequoiaLeaves" },
+        "check_decay=true,decayable=false":  { "model": "blahmod:sequoiaLeaves" },
+        "check_decay=false,decayable=false":  { "model": "blahmod:sequoiaLeaves" }
+    }
+}

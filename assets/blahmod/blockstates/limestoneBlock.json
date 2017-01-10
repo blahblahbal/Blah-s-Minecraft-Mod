@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:limestoneBlock" },
+        "inventory": { "model": "blahmod:limestoneBlock" }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "particle": "blahmod:blocks/boneBlock_top",
+        "up": "blahmod:blocks/boneBlock_top",
+        "down": "blahmod:blocks/boneBlock_top",
+        "north": "blahmod:blocks/boneBlock_side",
+        "east": "blahmod:blocks/boneBlock_side",
+        "south": "blahmod:blocks/boneBlock_side",
+        "west": "blahmod:blocks/boneBlock_side"
+    }
+}

@@ -94,7 +94,7 @@ public class EntityGemBolt extends EntityThrowable
     {
         return 0.01F;
     }
-	@Override
+	/*@Override
 	public void onUpdate()
 	{
 		this.lastTickPosX = this.posX;
@@ -218,5 +218,5 @@ public class EntityGemBolt extends EntityThrowable
         this.motionZ *= (double)f2;
         this.motionY -= (double)f3;
         this.setPosition(this.posX, this.posY, this.posZ);
-	}
+	}*/
 }

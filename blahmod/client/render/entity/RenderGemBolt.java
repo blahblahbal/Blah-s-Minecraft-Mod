@@ -9,25 +9,33 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityFireball;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class RenderGemBolt extends Render<EntityGemBolt>
+public class RenderGemBolt extends Render
 {
     public RenderGemBolt(RenderManager renderManagerIn, float scaleIn)
     {
         super(renderManagerIn);
     }
-
+    /*@Override
+    public void doRender(Entity entity, double x, double y, double z, float entityYaw, float partialTicks)
+    {
+            this.doRender2((EntityGemBolt)entity, x, y, z, entityYaw, partialTicks);
+    }*/
     /**
      * Actually renders the given argument. This is a synthetic bridge method, always casting down its argument and then
      * handing it off to a worker function which does the actual work. In all probabilty, the class Render is generic
@@ -106,4 +114,8 @@ public class RenderGemBolt extends Render<EntityGemBolt>
     	else if (entity.bolt == 5) return new ResourceLocation(Main.MODID, "textures/entity/amethyst.png");
     	else return new ResourceLocation(Main.MODID, "textures/entity/diamond.png");
     }
+	@Override
+	protected ResourceLocation getEntityTexture(Entity arg0) {
+		return this.getEntityTexture((EntityGemBolt)arg0);
+	}
 }

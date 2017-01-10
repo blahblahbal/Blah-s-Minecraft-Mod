@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "variant=false": { "model": "minecraft:diamond_block" },
+        "variant=true":    { "model": "minecraft:diamond_block" }
+    }
+}

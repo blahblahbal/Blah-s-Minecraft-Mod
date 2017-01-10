@@ -49,11 +49,11 @@ public class ModFluids
 				fluid -> new ModBlockFluid(fluid, new MaterialLiquid(MapColor.limeColor), "acid"));
 	}
 
-	public static void registerFluidContainers() {
+	/*public static void registerFluidContainers() {
 		for (Fluid fluid : fluids) {
 			registerBucket(fluid);
 		}
-	}
+	}*/
 
 	/**
 	 * Create a {@link Fluid} and its {@link IFluidBlock}, or use the existing ones if a fluid has already been registered with the same name.
@@ -96,8 +96,8 @@ public class ModFluids
 		return block;
 	}
 
-	private static void registerBucket(Fluid fluid)
+	/*private static void registerBucket(Fluid fluid)
 	{
 		FluidRegistry.addBucketForFluid(fluid);
-	}
+	}*/
 }

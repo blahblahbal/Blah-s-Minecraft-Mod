@@ -47,6 +47,10 @@ public final class ItemRenderRegister {
     	{
     		reg((Item)ModItems.gemStaves[i]);
     	}
+    	for (int i = 0; i < 10; i++)
+    	{
+    		reg((Item)ModItems.dyeNew[i]);
+    	}
     }
     
     public static void reg(Item item) {

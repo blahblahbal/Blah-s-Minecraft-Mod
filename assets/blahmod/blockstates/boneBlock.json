@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:boneBlock" },
+        "inventory": { "model": "blahmod:boneBlock" }
+    }
+}
