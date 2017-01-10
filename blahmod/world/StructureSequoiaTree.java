@@ -97,7 +97,7 @@ public class StructureSequoiaTree extends WorldGenerator
                 makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() - 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
                 makeSphere(worldIn, new BlockPos(corner.getX() + 8, corner.getY() + 52, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
                 makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() + 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 40, corner.getZ()), sequoiaLeaves, 20.0, 30.0, 20.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 40, corner.getZ()), sequoiaLeaves, 9.0, 15.0, 9.0, true);
                 
                 makeCylinder(worldIn, corner, sequoiaLog, 4.0, 4.0, 4, true);
                 makeCylinder(worldIn, corner, sequoiaLog, 3.5, 3.5, 9, true);
@@ -190,7 +190,7 @@ public class StructureSequoiaTree extends WorldGenerator
     }
     /*
      * Makes a cylinder.
-     *
+     * 
      * @param pos Center of the cylinder
      * @param block The block pattern to use
      * @param radiusX The cylinder's largest north/south extent
@@ -198,7 +198,7 @@ public class StructureSequoiaTree extends WorldGenerator
      * @param height The cylinder's up/down extent. If negative, extend downward.
      * @param filled If false, only a shell will be generated.
      * @return number of blocks changed
-     * @throws MaxChangedBlocksException thrown if too many blocks are changed
+     * @author Original programmer is sk89q
      */
     public int makeCylinder(World worldIn, BlockPos pos, IBlockState block, double radiusX, double radiusZ, int height, boolean filled)
     {
@@ -272,15 +272,19 @@ public class StructureSequoiaTree extends WorldGenerator
 
         return affected;
     }
-    private static double lengthSq(double x, double y, double z) {
+    private static double lengthSq(double x, double y, double z)
+    {
         return (x * x) + (y * y) + (z * z);
     }
 
-    private static double lengthSq(double x, double z) {
+    private static double lengthSq(double x, double z)
+    {
         return (x * x) + (z * z);
     }
     
-    
+    /* Makes a sphere
+     * @author Original programmer is sk89q
+     */
     public int makeSphere(World worldIn, BlockPos pos, IBlockState block, double radiusX, double radiusY, double radiusZ, boolean filled)
     {
         int affected = 0;
