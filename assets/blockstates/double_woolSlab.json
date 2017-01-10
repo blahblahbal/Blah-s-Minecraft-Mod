@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "minecraft:white_wool" },
-        "variant=true":    { "model": "minecraft:white_wool" }
-    }
-}

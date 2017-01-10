@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "blahmod:blocks/sulphurBlock",
-        "top": "blahmod:blocks/sulphurBlock",
-        "side": "blahmod:blocks/sulphurBlock"
-    }
-}

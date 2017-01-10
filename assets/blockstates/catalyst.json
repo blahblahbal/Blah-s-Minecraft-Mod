@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:catalyst" },
-        "inventory": { "model": "blahmod:catalyst" }
-    }
-}

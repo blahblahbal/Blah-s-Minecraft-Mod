@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "minecraft:lapis_block" },
-        "variant=true":    { "model": "minecraft:lapis_block" }
-    }
-}

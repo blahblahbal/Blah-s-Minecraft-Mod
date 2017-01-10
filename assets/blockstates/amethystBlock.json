@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:amethystBlock" },
-        "inventory": { "model": "blahmod:amethystBlock" }
-    }
-}

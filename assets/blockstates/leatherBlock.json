@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:leatherBlock" },
-        "inventory": { "model": "blahmod:leatherBlock" }
-    }
-}

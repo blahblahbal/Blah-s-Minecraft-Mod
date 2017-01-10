@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "minecraft:dirt" },
-        "variant=true":    { "model": "minecraft:dirt" }
-    }
-}
