@@ -39,18 +39,18 @@ public class StructureSequoiaTree extends WorldGenerator
         };*/
         private final int[][] logsPos = new int[][]
         {
-        	{2, 53, 0}, {2, 51, 0},
-            {-2, 53, 0}, {-2, 51, 0},
-            {3, 46, 0}, {3, 44, 0},
-            {-3, 46, 0}, {-3, 44, 0},
-            {4, 39, 0}, {4, 37, 0},
-            {-4, 39, 0}, {-4, 37, 0},
-            {0, 53, 2}, {0, 51, 2},
-            {0, 53, -2}, {0, 51, -2},
-            {0, 46, 3}, {0, 44, 3},
-            {0, 46, -3}, {0, 44, -3},
-            {0, 39, 4}, {0, 37, 4},
-            {0, 39, -4}, {0, 37, -4},
+        	{3, 53, 0}, {3, 51, 0},
+            {-3, 53, 0}, {-3, 51, 0},
+            {4, 46, 0}, {4, 44, 0},
+            {-4, 46, 0}, {-4, 44, 0},
+            {5, 39, 0}, {5, 37, 0},
+            {-5, 39, 0}, {-5, 37, 0},
+            {0, 53, 3}, {0, 51, 3},
+            {0, 53, -3}, {0, 51, -3},
+            {0, 46, 4}, {0, 44, 4},
+            {0, 46, -4}, {0, 44, -4},
+            {0, 39, 5}, {0, 37, 5},
+            {0, 39, -5}, {0, 37, -5},
         };
         private final int[][] logsPosEast = new int[][]
         {
@@ -85,19 +85,19 @@ public class StructureSequoiaTree extends WorldGenerator
         {
                 IBlockState sequoiaLog = ModBlocks.sequoiaLog.getDefaultState();
                 IBlockState sequoiaLeaves = ModBlocks.sequoiaLeaves.getDefaultState();
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 38, corner.getZ() - 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 45, corner.getZ() - 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 38, corner.getZ() + 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 45, corner.getZ() + 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() - 8, corner.getY() + 38, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() - 8, corner.getY() + 45, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() + 8, corner.getY() + 38, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() + 8, corner.getY() + 45, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() - 8, corner.getY() + 52, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() - 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX() + 8, corner.getY() + 52, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() + 8), sequoiaLeaves, 4.0, 6.0, 4.0, true);
-                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 40, corner.getZ()), sequoiaLeaves, 9.0, 15.0, 9.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 38, corner.getZ() - 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 45, corner.getZ() - 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 38, corner.getZ() + 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 45, corner.getZ() + 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() - 7, corner.getY() + 38, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() - 7, corner.getY() + 45, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() + 7, corner.getY() + 38, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() + 7, corner.getY() + 45, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() - 7, corner.getY() + 52, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() - 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX() + 7, corner.getY() + 52, corner.getZ()), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 52, corner.getZ() + 7), sequoiaLeaves, 4.0, 6.0, 4.0, true);
+                makeSphere(worldIn, new BlockPos(corner.getX(), corner.getY() + 48, corner.getZ()), sequoiaLeaves, 10.0, 20.0, 10.0, true);
                 
                 makeCylinder(worldIn, corner, sequoiaLog, 4.0, 4.0, 4, true);
                 makeCylinder(worldIn, corner, sequoiaLog, 3.5, 3.5, 9, true);
