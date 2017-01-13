@@ -2,6 +2,8 @@ package blahmod.blocks;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
+import static blahmod.items.ModItems.acidBucket;
+
 import blahmod.Main;
 import blahmod.fluids.AcidFluid;
 import blahmod.fluids.BlockAcidFluid;
@@ -20,6 +22,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemBucket;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.BlockFluidBase;
@@ -183,6 +186,7 @@ public final class ModBlocks
     	acidFluid = AcidFluid.instance;
         FluidRegistry.registerFluid(acidFluid);
         acid = registerFluidBlock(acidFluid, new BlockAcidFluid(acidFluid), "acid");
+        acidBucket = ModItems.registerItem((new ItemBucket(acid)).setContainerItem(Items.bucket), "acidBucket");
     }
     public static Block registerFluidBlock(Fluid fluid, BlockFluidBase fluidBlock, String name)
     {

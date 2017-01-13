@@ -1,5 +1,6 @@
 package blahmod.items;
 
+import blahmod.Main;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -10,7 +11,7 @@ public class BasicItem extends Item {
 
 		this.setUnlocalizedName(unlocalizedName);
 		
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(Main.blahTab);
 	}
 
 }

@@ -1,5 +1,6 @@
 package blahmod.items;
 
+import blahmod.Main;
 import blahmod.projectiles.EntityGemBolt;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
@@ -20,7 +21,7 @@ public class ItemGemStaff extends Item
     {
         this.maxStackSize = 1;
         this.setMaxDamage(450);
-        this.setCreativeTab(CreativeTabs.tabCombat);
+        this.setCreativeTab(Main.blahTab);
         this.setUnlocalizedName(uname);
         name = uname;
         bt = ebt;

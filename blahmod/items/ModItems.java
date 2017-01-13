@@ -61,7 +61,7 @@ public final class ModItems {
         GameRegistry.registerItem((Item)(obsidianAxe = new ItemModAxe("obsidianAxe", obsidian)), "obsidianAxe");
         GameRegistry.registerItem((Item)(obsidianShovel = new ItemModShovel("obsidianShovel", obsidian)), "obsidianShovel");
         GameRegistry.registerItem((Item)(obsidianHoe = new ItemModHoe("obsidianHoe", obsidian)), "obsidianHoe");
-        GameRegistry.registerItem((Item)(acidBucket = new BasicItem("acidBucket")), "acidBucket");
+        //GameRegistry.registerItem((Item)(acidBucket = new BasicItem("acidBucket")), "acidBucket");
         GameRegistry.registerItem((Item)(tadaniteHelmet = new ItemModArmor("tadaniteHelmet", tadaniteA, 1, 0)), "tadaniteHelmet");
         GameRegistry.registerItem((Item)(tadaniteChestplate = new ItemModArmor("tadaniteChestplate", tadaniteA, 1, 1)), "tadaniteChestplate");
         GameRegistry.registerItem((Item)(tadaniteLeggings = new ItemModArmor("tadaniteLeggings", tadaniteA, 2, 2)), "tadaniteLeggings");
@@ -100,5 +100,11 @@ public final class ModItems {
         {
         	GameRegistry.registerItem(dyeNew[i] = new BasicItem("dye" + ModBlocks.woolNames[i]), "dye" + ModBlocks.woolNames[i]);
         }
+    }
+    public static Item registerItem(Item item, String name)
+    {
+    	item.setUnlocalizedName(name);
+    	GameRegistry.registerItem(item,name);
+    	return item;
     }
 }

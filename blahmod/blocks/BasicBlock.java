@@ -1,5 +1,6 @@
 package blahmod.blocks;
 
+import blahmod.Main;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,7 +13,7 @@ public class BasicBlock extends Block
     {
         super(material);
         this.setUnlocalizedName(unlocalizedName);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(Main.blahTabBlock);
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.name = unlocalizedName;

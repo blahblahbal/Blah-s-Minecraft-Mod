@@ -3,6 +3,7 @@ package blahmod.blocks;
 import java.util.ArrayList;
 import java.util.Random;
 
+import blahmod.Main;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
@@ -37,7 +38,7 @@ public class ModBlockOre extends BlockOre {
         this.setHardness(hard);
         this.setResistance(res);
         this.setUnlocalizedName(unlocalizedName);
-        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setCreativeTab(Main.blahTabBlock);
         this.name = unlocalizedName;
     }
     
