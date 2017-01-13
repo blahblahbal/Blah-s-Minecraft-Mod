@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:polishedSaltrock" },
+        "inventory": { "model": "blahmod:polishedSaltrock" }
+    }
+}

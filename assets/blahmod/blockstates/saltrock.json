@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:saltrock" },
+        "inventory": { "model": "blahmod:saltrock" }
+    }
+}
