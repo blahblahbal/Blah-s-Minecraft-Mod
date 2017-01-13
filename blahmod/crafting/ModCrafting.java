@@ -25,7 +25,7 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[7]), new ItemStack(Items.dye, 1, 0), new ItemStack(Items.dye, 1, 14));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[8]), new ItemStack(Items.dye, 1, 3), new ItemStack(Items.dye, 1, 15));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[9]), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 11));
-		//GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 4), new ItemStack(ModBlocks.sequoiaLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIce, 4), "xyx","zzz", "yzy", 'x', Items.nether_wart, 'z', Blocks.netherrack, 'y', Items.ghast_tear);
@@ -45,6 +45,9 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.endStoneBricks), "##","##", '#', Blocks.end_stone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cement, 8), "#x#","xxx", "yzy", '#', Blocks.clay, 'x', ModItems.limestone, 'y', Blocks.gravel, 'z', Items.water_bucket);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tadanite), "xxx", "x x", "xxx", 'x', new ItemStack(ModItems.tadaniteShard));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedSaltrock, 4), "##","##", '#', new ItemStack(ModBlocks.saltrock));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedMagnetite, 4), "##","##", '#', new ItemStack(ModBlocks.magnetite));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedIgneousRock, 4), "##","##", '#', new ItemStack(ModBlocks.igneousRock));
 		// new vanilla item recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.ice, 4), new ItemStack(Blocks.packed_ice));
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 8), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.cobblestone), 'y', new ItemStack(Items.wheat_seeds));

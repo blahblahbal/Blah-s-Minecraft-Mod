@@ -32,18 +32,18 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 
 	}
 
-	private void generateOverworld(World world, Random rand, int blockX, int blockZ) 
+	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{
 		// leaving blank for now		
 	}
 
-	private void generateNether(World world, Random rand, int blockX, int blockZ) 
+	private void generateNether(World world, Random rand, int blockX, int blockZ)
 	{
 		/** CABIN GEN **/
 		WorldGenerator genCabin = new StructureNetherVillageHouse1();
 		// 25% of chunks can have a cabin
 		final int CABIN_CHANCE = 2;
-		if (rand.nextInt(1000) < CABIN_CHANCE)
+		if (rand.nextInt(600) < CABIN_CHANCE)
 		{
 			// get a random position in the chunk
 			int randX = blockX + rand.nextInt(16);

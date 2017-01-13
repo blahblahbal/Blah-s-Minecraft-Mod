@@ -12,15 +12,17 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class ModBlockSapling extends BlockSapling
+public class ModBlockPrefabSapling extends BlockSapling
 {
 	public static String name;
-	public ModBlockSapling(String name)
+	public static int type;
+	public ModBlockPrefabSapling(String name, int ty)
 	{
 		float f = 0.4F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
         this.setUnlocalizedName(name);
         this.name = name;
+        this.type = ty;
         this.setCreativeTab(Main.blahTabBlock);
 	}
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
@@ -64,10 +66,6 @@ public class ModBlockSapling extends BlockSapling
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		WorldGenerator gen;
-		if (this.name == "prefabSapling")
-			gen = (WorldGenerator)(new StructureTreeHouse(worldIn, rand, pos));
-		else if (this.name == "sequoiaSapling")
-			gen = (WorldGenerator)(new StructureSequoiaTree(worldIn, rand, pos));
+		WorldGenerator gen = (WorldGenerator)(new StructureTreeHouse(worldIn, rand, pos));
 	}
 }

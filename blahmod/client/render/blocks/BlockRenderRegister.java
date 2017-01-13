@@ -2,11 +2,11 @@ package blahmod.client.render.blocks;
 
 import blahmod.Main;
 import blahmod.MeshDefinitionFix;
-import blahmod.ModFluids;
 import blahmod.blocks.BasicBlock;
 import blahmod.blocks.ModBlockLeaves;
 import blahmod.blocks.ModBlockLog;
-import blahmod.blocks.ModBlockSapling;
+import blahmod.blocks.ModBlockPrefabSapling;
+import blahmod.blocks.ModBlockSequoiaSapling;
 import blahmod.blocks.ModBlockOre;
 import blahmod.blocks.ModBlockTileEntity;
 import blahmod.blocks.ModBlockSlab;
@@ -29,10 +29,10 @@ public final class BlockRenderRegister
 {
 	public static final BlockRenderRegister INSTANCE = new BlockRenderRegister();
 	
-	public void registerFluidModels()
+	/*public void registerFluidModels()
 	{
 		ModFluids.modFluidBlocks.forEach(this::registerFluidModel);
-	}
+	}*/
 
 	private void registerFluidModel(IFluidBlock fluidBlock)
 	{
@@ -70,6 +70,13 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.netherIce);
 	    reg((BasicBlock)ModBlocks.obsidianBrick);
 	    reg((BasicBlock)ModBlocks.sequoiaPlanks);
+	    reg((BasicBlock)ModBlocks.hardenedLava);
+	    reg((BasicBlock)ModBlocks.igneousRock);
+	    reg((BasicBlock)ModBlocks.magnetite);
+	    reg((BasicBlock)ModBlocks.saltrock);
+	    reg((BasicBlock)ModBlocks.polishedSaltrock);
+	    reg((BasicBlock)ModBlocks.polishedIgneousRock);
+	    reg((BasicBlock)ModBlocks.polishedMagnetite);
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
@@ -98,8 +105,8 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sulphurOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.sulphurOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.catalyzer), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockTileEntity)(ModBlocks.catalyzer)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.clayOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.clayOre)).name, "inventory"));
-	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.prefabSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSapling)(ModBlocks.prefabSapling)).name, "inventory"));
-	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSapling)(ModBlocks.sequoiaSapling)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.prefabSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockPrefabSapling)(ModBlocks.prefabSapling)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSequoiaSapling)(ModBlocks.sequoiaSapling)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockLog)(ModBlocks.sequoiaLog)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockLeaves)(ModBlocks.sequoiaLeaves)).name, "inventory"));
 	}

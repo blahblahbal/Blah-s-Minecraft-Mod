@@ -31,30 +31,37 @@ public class ModBlockLeaves extends BlockLeaves
 		setCreativeTab(Main.blahTabBlock);
 	}
 
-	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-		//return Item.getItemFromBlock(TreeOresBlocks.Saplings1);
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	{
+		if (rand.nextInt(70) == 0)
+			return Item.getItemFromBlock(ModBlocks.sequoiaSapling);
 		return null;
 	}
 
-	protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
+	protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance)
+	{
 		if (worldIn.rand.nextInt(chance) == 0) {
 			spawnAsEntity(worldIn, pos, new ItemStack(Items.apple, 1, 0));
 		}
 	}
 
-	public IBlockState getStateFromMeta(int meta) {
+	public IBlockState getStateFromMeta(int meta)
+	{
 		return this.getDefaultState().withProperty(DECAYABLE, Boolean.valueOf((meta & 4) == 0)).withProperty(CHECK_DECAY, Boolean.valueOf((meta & 8) > 0));
 	}
 
-	public int getMetaFromState(IBlockState state) {
+	public int getMetaFromState(IBlockState state)
+	{
 		byte b0 = 0;
 		int i = b0;
 
-		if (!((Boolean) state.getValue(DECAYABLE)).booleanValue()) {
+		if (!((Boolean) state.getValue(DECAYABLE)).booleanValue())
+		{
 			i |= 4;
 		}
 
-		if (((Boolean) state.getValue(CHECK_DECAY)).booleanValue()) {
+		if (((Boolean) state.getValue(CHECK_DECAY)).booleanValue())
+		{
 			i |= 8;
 		}
 
@@ -68,18 +75,24 @@ public class ModBlockLeaves extends BlockLeaves
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public EnumWorldBlockLayer getBlockLayer() {
-		return Blocks.leaves.getBlockLayer();
+	public EnumWorldBlockLayer getBlockLayer()
+	{
+		return EnumWorldBlockLayer.CUTOUT;
 	}
 
 	@Override
-	public List<ItemStack> onSheared(ItemStack arg0, IBlockAccess arg1, BlockPos arg2, int arg3) {
+	public List<ItemStack> onSheared(ItemStack arg0, IBlockAccess arg1, BlockPos arg2, int arg3)
+	{
 		IBlockState state = arg1.getBlockState(arg2);
 		return new java.util.ArrayList(java.util.Arrays.asList(new ItemStack(this, 1, 0)));
 	}
-
+	public boolean isOpaqueCube()
+    {
+        return false;
+    }
 	@Override
-	public EnumType getWoodType(int arg0) {
+	public EnumType getWoodType(int arg0)
+	{
 		// TODO Auto-generated method stub
 		return null;
 	}

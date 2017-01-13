@@ -3,7 +3,8 @@ package blahmod.blocks;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import blahmod.Main;
-import blahmod.ModFluids;
+import blahmod.fluids.AcidFluid;
+import blahmod.fluids.BlockAcidFluid;
 import blahmod.items.ItemLog;
 import blahmod.items.ModItemBlockSlab;
 import blahmod.items.ModItemSlab;
@@ -21,6 +22,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -32,10 +34,19 @@ public final class ModBlocks
 	public static Block[] gemOres = new Block[5];
 	public static Block[] newWool = new Block[10];
 	public static String[] woolNames = new String[] { "BrightRed", "BrightYellow", "BrightCyan", "DarkRed", "DarkYellow", "PaleYellow", "Turquoise", "DarkOrange", "LightBrown", "YellowGreen" };
-	public static ModBlockSapling prefabSapling;
-	public static ModBlockSapling sequoiaSapling;
+	public static ModBlockPrefabSapling prefabSapling;
+	public static ModBlockSequoiaSapling sequoiaSapling;
 	public static ModBlockLog sequoiaLog;
 	public static ModBlockLeaves sequoiaLeaves;
+	public static Fluid acidFluid;
+	public static Block acid;
+	public static Block hardenedLava;
+	public static Block saltrock;
+	public static Block magnetite;
+	public static Block igneousRock;
+	public static Block polishedSaltrock;
+	public static Block polishedMagnetite;
+	public static Block polishedIgneousRock;
 	public static Block sequoiaPlanks;
 	public static Block obsidianBrick;
 	public static Block netherIce;
@@ -71,6 +82,13 @@ public final class ModBlocks
     
     public static void createBlocks()
     {
+    	GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1F, 8F, "pickaxe", 1, "saltrock")), "saltrock");
+    	GameRegistry.registerBlock((Block)(polishedSaltrock = new BasicBlock("polishedSaltrock", Material.rock, 1F, 8F, "pickaxe", 1, "polishedSaltrock")), "polishedSaltrock");
+    	GameRegistry.registerBlock((Block)(magnetite = new BasicBlock("magnetite", Material.rock, 1F, 8F, "pickaxe", 1, "magnetite")), "magnetite");
+    	GameRegistry.registerBlock((Block)(polishedMagnetite = new BasicBlock("polishedMagnetite", Material.rock, 1F, 8F, "pickaxe", 1, "polishedMagnetite")), "polishedMagnetite");
+    	GameRegistry.registerBlock((Block)(igneousRock = new BasicBlock("igneousRock", Material.rock, 1F, 8F, "pickaxe", 1, "igneousRock")), "igneousRock");
+    	GameRegistry.registerBlock((Block)(polishedIgneousRock = new BasicBlock("polishedIgneousRock", Material.rock, 1F, 8F, "pickaxe", 1, "polishedIgneousRock")), "polishedIgneousRock");
+    	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1F, 8F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
     	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 40F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
     	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
@@ -87,16 +105,16 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(redNetherBrick = new BasicBlock("redNetherBrick", Material.rock, 2F, 100F, "pickaxe", 1, "redNetherBrick")), "redNetherBrick");
     	GameRegistry.registerBlock((Block)(netherWartBlock = new BasicBlock("netherWartBlock", Material.rock, 2F, 100F, "pickaxe", 1, "netherWartBlock")), "netherWartBlock");
     	GameRegistry.registerBlock((Block)(boneBlock = new BasicBlock("boneBlock", Material.rock, 2F, 90F, "pickaxe", 1, "boneBlock")), "boneBlock");
-    	GameRegistry.registerBlock((Block)(sequoiaPlanks = new BasicBlock("sequoiaPlanks", Material.wood, 1F, 8F, "hand", 0, "sequoiaPlanks")), "sequoiaPlanks");
-		GameRegistry.registerBlock((Block)(prefabSapling = new ModBlockSapling("prefabSapling")), "prefabSapling");
-		GameRegistry.registerBlock((Block)(sequoiaSapling = new ModBlockSapling("sequoiaSapling")), "sequoiaSapling");
+    	GameRegistry.registerBlock((Block)(sequoiaPlanks = new BasicBlock("sequoiaPlanks", Material.wood, 1F, 8F, "hand", 0, "sequoiaPlanks")).setStepSound(Block.soundTypeWood), "sequoiaPlanks");
+		GameRegistry.registerBlock((Block)(prefabSapling = new ModBlockPrefabSapling("prefabSapling", 1)), "prefabSapling");
+		GameRegistry.registerBlock((Block)(sequoiaSapling = new ModBlockSequoiaSapling("sequoiaSapling", 2)), "sequoiaSapling");
 		GameRegistry.registerBlock((Block)(sequoiaLog = new ModBlockLog("sequoiaLog")), "sequoiaLog");
 		GameRegistry.registerBlock((Block)(sequoiaLeaves = new ModBlockLeaves("sequoiaLeaves")), "sequoiaLeaves");
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 	    RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	    GameRegistry.registerBlock(sequoiaLog, ItemLog.class, renderItem, "sequoiaLog");
 	    ModelBakery.addVariantName(Item.getItemFromBlock(sequoiaLog), new String[]{Main.MODID + ":" + "sequoiaLog"});*/
-    	GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(14), "blazeBrick");
+    	GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(14F), "blazeBrick");
     	GameRegistry.registerBlock((Block)(obsidianBrick = new BasicBlock("obsidianBrick", Material.rock, 2F, 50F, "pickaxe", 2, "obsidianBrick")), "obsidianBrick");
     	GameRegistry.registerBlock((Block)(netherIce = new BasicBlock("netherIce", Material.ice, 2F, 50F, "pickaxe", 0, "netherIce")).setStepSound(Block.soundTypeGlass), "netherIce");
     	GameRegistry.registerBlock(uraniumTorch = new ModBlockTorch(3F, "uraniumTorch"), "uraniumTorch");
@@ -162,5 +180,15 @@ public final class ModBlocks
     		GameRegistry.registerBlock(slabs2[i], ModItemBlockSlab.class, slabs2[i].name, slabs2[i], doubleSlabs2[i], false);
     		GameRegistry.registerBlock(doubleSlabs2[i], ModItemBlockSlab.class, doubleSlabs2[i].name, slabs2[i], doubleSlabs2[i], false);
     	}
+    	acidFluid = AcidFluid.instance;
+        FluidRegistry.registerFluid(acidFluid);
+        acid = registerFluidBlock(acidFluid, new BlockAcidFluid(acidFluid), "acid");
+    }
+    public static Block registerFluidBlock(Fluid fluid, BlockFluidBase fluidBlock, String name)
+    {
+        Block block = GameRegistry.registerBlock(fluidBlock, null, name);
+        Main.proxy.registerFluidBlockRendering(block, name);
+        fluid.setBlock(fluidBlock);
+        return block;
     }
 }

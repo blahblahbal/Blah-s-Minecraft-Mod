@@ -33,7 +33,7 @@ public class CommonProxy
     	ModBlocks.createBlocks();
     	ModCrafting.initCrafting();
     	ModTileEntities.init();
-    	ModFluids.registerFluids();
+    	//ModFluids.registerFluids();
     	//ModFluids.registerFluidContainers();
     }
     public void init(FMLInitializationEvent e)
@@ -56,6 +56,10 @@ public class CommonProxy
     	GameRegistry.registerWorldGenerator(new BlahWorldGen2((Block)ModBlocks.sapphireOre, (Blocks.stone), new int[]{0}, 40, 20, 4, 3, "Ocean"), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.amethystOre, (Blocks.stone), new int[]{0}, 35, 22, 2, 3), 0);
     	GameRegistry.registerWorldGenerator(new WorldGeneratorNetherVillage(), 10);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.saltrock, (Blocks.stone), new int[]{0}, 60, 15, 1, 30), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.igneousRock, (Blocks.stone), new int[]{0}, 35, 15, 1, 30), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.magnetite, (Blocks.stone), new int[]{0}, 55, 20, 1, 30), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.hardenedLava, (Blocks.stone), new int[]{0}, 15, 1, 1, 25), 0);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new ModGuiHandler());
     	MinecraftForge.EVENT_BUS.register(new ModEventHandler());
     	Enchantment.addToBookList(Main.moltenTouch);
@@ -64,4 +68,5 @@ public class CommonProxy
     public void postInit(FMLPostInitializationEvent e)
     {
     }
+	public void registerFluidBlockRendering(Block block, String name) {	}
 }

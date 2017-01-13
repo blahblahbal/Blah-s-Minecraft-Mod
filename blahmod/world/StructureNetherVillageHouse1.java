@@ -228,6 +228,17 @@ public class StructureNetherVillageHouse1 extends WorldGenerator
 			IBlockState doorUpper = Blocks.iron_door.getDefaultState().withProperty(BlockDoor.HALF, BlockDoor.EnumDoorHalf.UPPER);
 			IBlockState chest = Blocks.chest.getDefaultState();
 			
+			for (int x = 0; x < 7; x++)
+			{
+				for (int y = 0; y < 6; y++)
+				{
+					for (int z = 0; z < 7; z++)
+					{
+						arg0.setBlockToAir(new BlockPos(arg2.getX() + x, arg2.getY() + y, arg2.getZ() + z));
+					}
+				}
+			}
+			
 			buildLayer(arg0, arg2, obsBrickPos, obsBrick);
 			buildLayerEast(arg0, arg2, eastStairsPos, netherBrickStairs);
 			buildLayerWest(arg0, arg2, westStairsPos, netherBrickStairs);

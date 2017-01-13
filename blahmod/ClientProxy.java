@@ -5,8 +5,13 @@ import blahmod.client.render.entity.RenderGemBolt;
 import blahmod.client.render.items.ItemRenderRegister;
 import blahmod.projectiles.EntityGemBolt;
 import blahmod.tileentity.ModTileEntities;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -19,7 +24,7 @@ public class ClientProxy extends CommonProxy {
         super.preInit(e);
 
         BlockRenderRegister.registerBlockRenderer();
-        BlockRenderRegister.INSTANCE.registerFluidModels();
+        //BlockRenderRegister.INSTANCE.registerFluidModels();
     }
 
     @Override
@@ -32,7 +37,23 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void postInit(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent e)
+    {
         super.postInit(e);
     }
+    @Override
+    public void registerFluidBlockRendering(Block block, String name) 
+    {
+        final ModelResourceLocation fluidLocation = new ModelResourceLocation("blahmod:fluids", name);
+
+        // use a custom state mapper which will ignore the LEVEL property
+        ModelLoader.setCustomStateMapper(block, new StateMapperBase()
+        {
+            @Override
+            protected ModelResourceLocation getModelResourceLocation(IBlockState state)
+            {
+                return fluidLocation;
+            }
+        });
+}
 }
