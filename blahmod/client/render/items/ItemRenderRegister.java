@@ -6,8 +6,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 
-public final class ItemRenderRegister {
-
+public final class ItemRenderRegister
+{
 	public static String modid = Main.MODID;
 	
     public static void registerItemRenderer()
@@ -35,10 +35,22 @@ public final class ItemRenderRegister {
     	reg((Item)ModItems.obsidianChestplate);
     	reg((Item)ModItems.obsidianLeggings);
     	reg((Item)ModItems.obsidianBoots);
+    	reg((Item)ModItems.lumiteHelmet);
+    	reg((Item)ModItems.lumiteChestplate);
+    	reg((Item)ModItems.lumiteLeggings);
+    	reg((Item)ModItems.lumiteBoots);
+    	reg((Item)ModItems.lumiteSword);
+    	reg((Item)ModItems.lumitePickaxe);
+    	reg((Item)ModItems.lumiteHoe);
+    	reg((Item)ModItems.lumiteShovel);
+    	reg((Item)ModItems.lumiteAxe);
+    	reg((Item)ModItems.lumite);
     	reg((Item)ModItems.limestone);
     	reg((Item)ModItems.sulphur2);
     	reg((Item)ModItems.uraniumIngot);
     	reg((Item)ModItems.uraniumRod);
+    	reg((Item)ModItems.osborgnenFuel);
+    	reg((Item)ModItems.catalyticInverter);
     	for (int i = 0; i < 5; i++)
     	{
     		reg(ModItems.gems[i]);

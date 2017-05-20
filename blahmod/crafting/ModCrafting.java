@@ -27,9 +27,13 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[9]), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 11));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 4), new ItemStack(ModBlocks.sequoiaLog));
+		GameRegistry.addRecipe(new ItemStack(ModItems.osborgnenFuel, 2), "xyx","yzy", "xyx", 'x', Blocks.obsidian, 'z', Items.coal, 'y', ModItems.tadaniteDiamond);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.imperviousBrick, 8), "#x#","x#x", "#x#", '#', new ItemStack(ModBlocks.blackSand), 'x', new ItemStack(Blocks.obsidian));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIce, 4), "xyx","zzz", "yzy", 'x', Items.nether_wart, 'z', Blocks.netherrack, 'y', Items.ghast_tear);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.limestoneBlock), "###","###", "###", '#', ModItems.limestone);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.carrotBlock), "###","###", "###", '#', Items.carrot);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.potatoBlock), "###","###", "###", '#', Items.potato);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sulphurBlock), "###","###", "###", '#', ModItems.sulphur2);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumBlock), "###","###", "###", '#', ModItems.uraniumIngot);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[0]), "###","###", "###", '#', ModItems.gems[0]);
@@ -38,6 +42,12 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[3]), "###","###", "###", '#', ModItems.gems[3]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[4]), "###","###", "###", '#', ModItems.gems[4]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherWartBlock), "###","###", "###", '#', Items.nether_wart);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaCreamBlock), "###","###", "###", '#', Items.magma_cream);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.enderPearlBlock), "###","###", "###", '#', Items.ender_pearl);
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tadaniteSmeltery), "xyx","yzy", "zwz", 'x', ModBlocks.lumiteBlock, 'y', ModBlocks.tadanite, 'w', ModItems.catalyticInverter, 'z', Blocks.diamond_block);
+		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.lumiteBlock), "###","###", "###", '#', ModItems.lumite);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.boneBlock), "###","###", "###", '#', new ItemStack(Items.dye, 1, 15));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "#x","x#", '#', Items.nether_wart, 'x', Items.netherbrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "x#","#x", '#', Items.nether_wart, 'x', Items.netherbrick);
@@ -62,8 +72,8 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.iron_ingot, 7), new ItemStack(Items.cauldron));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.brick, 3), new ItemStack(Items.flower_pot));
 		GameRegistry.addRecipe(new ItemStack(Blocks.planks, 2), "##","##", '#', Items.stick);
-		GameRegistry.addRecipe(new ItemStack(Items.quartz, 4), "##","##", '#', Blocks.quartz_block);
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.string, 4), new ItemStack(Blocks.wool));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 3), new ItemStack(Blocks.trapdoor));
 		GameRegistry.addRecipe(new ItemStack(Blocks.log), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks));
 		GameRegistry.addRecipe(new ItemStack(Blocks.log, 1, 1), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks, 1, 1));
 		GameRegistry.addRecipe(new ItemStack(Blocks.log, 1, 2), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks, 1, 2));
@@ -76,7 +86,10 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 3), new ItemStack(Items.jungle_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 4), new ItemStack(Items.acacia_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 5), new ItemStack(Items.dark_oak_door));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.obsidianIngot, 4), new ItemStack(ModBlocks.obsidianBrick));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.quartz, 4), new ItemStack(Blocks.quartz_block));
 		GameRegistry.addRecipe(new ItemStack(Blocks.planks, 3), "##", "##", '#', new ItemStack(Items.bowl));
+		GameRegistry.addRecipe(new ItemStack(Blocks.glass, 3), "xxx", "x x", "xxx", 'x', new ItemStack(Blocks.glass_pane));
 		// end random stuff
 		// slabs start
 		GameRegistry.addRecipe(new ItemStack(Blocks.red_sandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab2));
@@ -92,7 +105,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.brick_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 4));
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 5));
 		GameRegistry.addRecipe(new ItemStack(Blocks.nether_brick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 6));
-		GameRegistry.addRecipe(new ItemStack(Blocks.quartz_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 7));		
+		GameRegistry.addRecipe(new ItemStack(Blocks.quartz_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 7));
 		// slabs end
 		// stairs start
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 6), "##","##", '#', Blocks.stone_brick_stairs);
@@ -111,10 +124,13 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.quartz_block, 6), "##","##", '#', Blocks.quartz_stairs);
 		// stairs end
 		// reverse crafting end
+		
 		//GameRegistry.addShapelessRecipe(new ItemStack(ModItems.obsidianIngot, 4), new ItemStack(Blocks.obsidian));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.leather, 9), new ItemStack(ModBlocks.leatherBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.magma_cream, 9), new ItemStack(ModBlocks.magmaCreamBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.ender_pearl, 9), new ItemStack(ModBlocks.enderPearlBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.nether_wart, 9), new ItemStack(ModBlocks.netherWartBlock));
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.dye, 9, 15), new ItemStack(ModBlocks.boneBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.bone, 3), new ItemStack(ModBlocks.boneBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[0], 9), new ItemStack(ModBlocks.gemBlocks[0]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[1], 9), new ItemStack(ModBlocks.gemBlocks[1]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[2], 9), new ItemStack(ModBlocks.gemBlocks[2]));
@@ -122,7 +138,10 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.gems[4], 9), new ItemStack(ModBlocks.gemBlocks[4]));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.tadaniteShard, 8), new ItemStack(ModBlocks.tadanite));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.limestone, 9), new ItemStack(ModBlocks.limestoneBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.carrot, 9), new ItemStack(ModBlocks.carrotBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.potato, 9), new ItemStack(ModBlocks.potatoBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.sulphur2, 9), new ItemStack(ModBlocks.sulphurBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.lumite, 9), new ItemStack(ModBlocks.lumiteBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.uraniumIngot, 9), new ItemStack(ModBlocks.uraniumBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.blaze_rod, 5), new ItemStack(ModBlocks.blazeBrick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteDiamond), " x ", "xyx", " x ", 'x', new ItemStack(ModItems.tadaniteShard), 'y', new ItemStack(Items.diamond));
@@ -133,6 +152,17 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumitePickaxe), "xxx", " z ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadanitePickaxe));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteSword));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), "xx ", "xz ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadaniteAxe));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), " xx", " zx", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadaniteAxe));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteShovel), " x ", " z ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadaniteShovel));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), "xx ", " z ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadaniteHoe));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), " xx", " z ", " y ", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteDiamond), 'z', new ItemStack(ModItems.tadaniteHoe));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHelmet), "xxx", "xyx", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteHelmet));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteBoots), "x x", "xyx", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteBoots));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteChestplate), "x x", "xyx", "xxx", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteChestplate));
+		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteLeggings), "xxx", "xyx", "x x", 'x', new ItemStack(ModItems.lumite), 'y', new ItemStack(ModItems.tadaniteLeggings));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadanitePickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteAxe), "xx ", "xy ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
@@ -157,6 +187,9 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.catalyzer), "xxx", "uuu", "yzy", 'x', new ItemStack(Blocks.planks, 1, 3), 'y', new ItemStack(ModBlocks.sulphurBlock), 'z', new ItemStack(Blocks.crafting_table), 'u', new ItemStack(Items.iron_ingot));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.catalyzer), "xxx", "uuu", "yzy", 'x', new ItemStack(Blocks.planks, 1, 4), 'y', new ItemStack(ModBlocks.sulphurBlock), 'z', new ItemStack(Blocks.crafting_table), 'u', new ItemStack(Items.iron_ingot));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.catalyzer), "xxx", "uuu", "yzy", 'x', new ItemStack(Blocks.planks, 1, 5), 'y', new ItemStack(ModBlocks.sulphurBlock), 'z', new ItemStack(Blocks.crafting_table), 'u', new ItemStack(Items.iron_ingot));
+		
+		//GameRegistry.addRecipe(new ItemStack(ModBlocks.catalyzer), "xxx", "uuu", "yzy", 'x', "woodPlank", 'y', new ItemStack(ModBlocks.sulphurBlock), 'z', new ItemStack(Blocks.crafting_table), 'u', new ItemStack(Items.iron_ingot));
+		
 		// custom slab crafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs[0], 6), "xxx", 'x', new ItemStack(Blocks.wool, 1, 0));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs[1], 6), "xxx", 'x', new ItemStack(Blocks.iron_block));
@@ -202,11 +235,13 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[6]), "y", "y", "z", 'y', new ItemStack(Blocks.diamond_block), 'z', new ItemStack(ModBlocks.petrifiedWood));
 		// end gem staves
 		// smelting recipes
-		GameRegistry.addSmelting(ModBlocks.uraniumOre, new ItemStack(ModItems.uraniumIngot), 5F);
-		GameRegistry.addSmelting(ModBlocks.limestoneOre, new ItemStack(ModItems.limestone), 4F);
-		GameRegistry.addSmelting(ModBlocks.sulphurOre, new ItemStack(ModItems.sulphur2), 2F);
-		GameRegistry.addSmelting(ModBlocks.tadaniteOre, new ItemStack(ModItems.tadaniteShard), 6F);
+		GameRegistry.addSmelting(ModBlocks.uraniumOre, new ItemStack(ModItems.uraniumIngot), 20F);
+		GameRegistry.addSmelting(ModBlocks.lumiteOre, new ItemStack(ModItems.lumite), 25F);
+		GameRegistry.addSmelting(ModBlocks.limestoneOre, new ItemStack(ModItems.limestone), 2F);
+		GameRegistry.addSmelting(ModBlocks.sulphurOre, new ItemStack(ModItems.sulphur2), 10F);
+		GameRegistry.addSmelting(ModBlocks.tadaniteOre, new ItemStack(ModItems.tadaniteShard, 2), 15F);
 		GameRegistry.addSmelting(ModBlocks.clayOre, new ItemStack(Items.clay_ball, 2), .5F);
 		GameRegistry.addSmelting(Blocks.obsidian, new ItemStack(ModItems.obsidianIngot), 3F);
+		GameRegistry.addSmelting(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass, 2), .5F);
 	}
 }

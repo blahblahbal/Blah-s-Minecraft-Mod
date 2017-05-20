@@ -14,9 +14,11 @@ public final class ModItems {
 
 	public static ToolMaterial obsidian = EnumHelper.addToolMaterial("OBSIDIAN", 4, 56, 20F, 4.0F, 25);
 	public static ToolMaterial tadaniteM = EnumHelper.addToolMaterial("TADANITE", 4, 3000, 18F, 8.0F, 30);
+	public static ToolMaterial lumiteM = EnumHelper.addToolMaterial("LUMITE", 5, 5000, 30F, 11.0F, 45);
 	public static ToolMaterial bedrockM = EnumHelper.addToolMaterial("BEDROCKM", 6, 5000, 20F, 4.0F, 10);
 	public static ArmorMaterial tadaniteA = EnumHelper.addArmorMaterial("TADANITEA", "blahmod:tadanite", 150, new int[] {4, 9, 8, 3}, 32);
 	public static ArmorMaterial obsidianA = EnumHelper.addArmorMaterial("OBSIDIANA", "blahmod:obsidian", 50, new int[] {2, 6, 6, 2}, 32);
+	public static ArmorMaterial lumiteA = EnumHelper.addArmorMaterial("LUMITEA", "blahmod:obsidian", 250, new int[] {4, 9, 8, 3}, 32);
 	public static Item[] gems = new Item[5];
 	
 	public static Item[] gemStaves = new Item[7];
@@ -29,6 +31,8 @@ public final class ModItems {
     public static Item sulphur2;
     public static Item uraniumRod;
     public static Item uraniumIngot;
+    public static Item osborgnenFuel;
+    public static Item catalyticInverter;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;
@@ -44,6 +48,18 @@ public final class ModItems {
     public static ItemModArmor obsidianLeggings;
     public static ItemModArmor obsidianBoots;
     
+    public static ItemModArmor lumiteHelmet;
+    public static ItemModArmor lumiteChestplate;
+    public static ItemModArmor lumiteLeggings;
+    public static ItemModArmor lumiteBoots;
+    
+    public static LumitePickaxe lumitePickaxe;
+    public static ItemModSword lumiteSword;
+    public static ItemModAxe lumiteAxe;
+    public static ItemModShovel lumiteShovel;
+    public static ItemModHoe lumiteHoe;
+    public static Item lumite;
+    
     public static ItemModPickaxe tadanitePickaxe;
     public static ItemModPickaxe bedrockPickaxe;
     public static ItemModSword tadaniteSword;
@@ -54,8 +70,11 @@ public final class ModItems {
     public static void createItems()
     {
     	GameRegistry.registerItem(tadaniteShard = new BasicItem("tadaniteShard"), "tadaniteShard");
+    	GameRegistry.registerItem(osborgnenFuel = new BasicItem("osborgnenFuel"), "osborgnenFuel");
     	GameRegistry.registerItem(tadaniteDiamond = new BasicItem("tadaniteDiamond"), "tadaniteDiamond");
         GameRegistry.registerItem(obsidianIngot = new BasicItem("obsidianIngot"), "obsidianIngot");
+        GameRegistry.registerItem(lumite = new BasicItem("lumite"), "lumite");
+        GameRegistry.registerItem(catalyticInverter = new ItemInverter("catalyticInverter"), "catalyticInverter");
         GameRegistry.registerItem((Item)(obsidianPickaxe = new ItemModPickaxe("obsidianPickaxe", obsidian)), "obsidianPickaxe");
         GameRegistry.registerItem((Item)(obsidianSword = new ItemModSword("obsidianSword", obsidian)), "obsidianSword");
         GameRegistry.registerItem((Item)(obsidianAxe = new ItemModAxe("obsidianAxe", obsidian)), "obsidianAxe");
@@ -75,7 +94,18 @@ public final class ModItems {
         GameRegistry.registerItem((Item)(tadaniteAxe = new ItemModAxe("tadaniteAxe", tadaniteM)), "tadaniteAxe");
         GameRegistry.registerItem((Item)(tadaniteShovel = new ItemModShovel("tadaniteShovel", tadaniteM)), "tadaniteShovel");
         GameRegistry.registerItem((Item)(tadaniteHoe = new ItemModHoe("tadaniteHoe", tadaniteM)), "tadaniteHoe");
-        GameRegistry.registerItem((Item)(bedrockPickaxe = new ItemModPickaxe("bedrockPickaxe", bedrockM)), "bedrockPickaxe");
+        
+        GameRegistry.registerItem((Item)(lumiteHelmet = new ItemModArmor("lumiteHelmet", lumiteA, 1, 0)), "lumiteHelmet");
+        GameRegistry.registerItem((Item)(lumiteChestplate = new ItemModArmor("lumiteChestplate", lumiteA, 1, 1)), "lumiteChestplate");
+        GameRegistry.registerItem((Item)(lumiteLeggings = new ItemModArmor("lumiteLeggings", lumiteA, 2, 2)), "lumiteLeggings");
+        GameRegistry.registerItem((Item)(lumiteBoots = new ItemModArmor("lumiteBoots", lumiteA, 1, 3)), "lumiteBoots");
+        GameRegistry.registerItem((Item)(lumitePickaxe = new LumitePickaxe("lumitePickaxe", lumiteM)), "lumitePickaxe");
+        GameRegistry.registerItem((Item)(lumiteSword = new ItemModSword("lumiteSword", lumiteM)), "lumiteSword");
+        GameRegistry.registerItem((Item)(lumiteAxe = new ItemModAxe("lumiteAxe", lumiteM)), "lumiteAxe");
+        GameRegistry.registerItem((Item)(lumiteShovel = new ItemModShovel("lumiteShovel", lumiteM)), "lumiteShovel");
+        GameRegistry.registerItem((Item)(lumiteHoe = new ItemModHoe("lumiteHoe", lumiteM)), "lumiteHoe");
+        
+        GameRegistry.registerItem((Item)(bedrockPickaxe = new BedrockPickaxe("bedrockPickaxe", bedrockM)), "bedrockPickaxe");
         GameRegistry.registerItem(limestone = new BasicItem("limestone"), "limestone");
         GameRegistry.registerItem(sulphur2 = new BasicItem("sulphur2"), "sulphur2");
         GameRegistry.registerItem(uraniumIngot = new BasicItem("uraniumIngot"), "uraniumIngot");
@@ -84,6 +114,7 @@ public final class ModItems {
         Items.ender_pearl.setMaxStackSize(64);
         Items.snowball.setMaxStackSize(64);
         Items.cake.setMaxStackSize(64);
+        Items.bucket.setMaxStackSize(64);
         GameRegistry.registerItem((Item)(gemStaves[0] = new ItemGemStaff(0, ModBlocks.gemNames[0] + "Staff")), ModBlocks.gemNames[0] + "Staff");
         GameRegistry.registerItem((Item)(gemStaves[1] = new ItemGemStaff(1, ModBlocks.gemNames[1] + "Staff")), ModBlocks.gemNames[1] + "Staff");
         GameRegistry.registerItem((Item)(gemStaves[2] = new ItemGemStaff(2, ModBlocks.gemNames[2] + "Staff")), ModBlocks.gemNames[2] + "Staff");

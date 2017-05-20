@@ -15,7 +15,7 @@ public class BlockAcidFluid extends ModBlockFluid
 {
     public BlockAcidFluid(Fluid fluid)
     {
-        super(fluid.setDensity(1000).setViscosity(1000).setLuminosity(7), Material.water, "acid");
+        super(fluid.setDensity(1000).setViscosity(500).setLuminosity(7), Material.water, "acid");
         this.setLightOpacity(3);
         this.quantaPerBlock = 4;
     }
@@ -25,7 +25,7 @@ public class BlockAcidFluid extends ModBlockFluid
     {
         if (entity instanceof EntityLivingBase)
         {
-            //((EntityLivingBase)entity).addPotionEffect(new PotionEffect(Potion.poison.id, 100));
+            ((EntityLivingBase)entity).addPotionEffect(new PotionEffect(Potion.poison.id, 60));
         }
     }
 }

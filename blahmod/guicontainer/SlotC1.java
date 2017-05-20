@@ -1,8 +1,10 @@
 package blahmod.guicontainer;
 
+import blahmod.blocks.ModBlocks;
 import blahmod.items.ModItems;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class SlotC1 extends Slot
@@ -15,6 +17,6 @@ public class SlotC1 extends Slot
 	@Override
 	public boolean isItemValid(ItemStack stack)
 	{
-		 return (stack.getItem() == ModItems.sulphur2);
+		 return (stack.getItem() == ModItems.sulphur2 || stack.getItem() == Item.getItemFromBlock(ModBlocks.sulphurBlock));
 	}
 }

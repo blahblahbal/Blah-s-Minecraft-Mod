@@ -54,7 +54,7 @@ public class ModBlockTileEntity extends BlockContainer {
 	@Override
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (!world.isRemote) {
-			player.openGui(Main.instance, ModGuiHandler.MOD_TILE_ENTITY_GUI, world, pos.getX(), pos.getY(), pos.getZ());
+			player.openGui(Main.instance, ModGuiHandler.CATALYZER, world, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;
 	}

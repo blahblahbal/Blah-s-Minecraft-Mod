@@ -20,7 +20,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 		int blockX = chunkX * 16;
 		int blockZ = chunkZ * 16;
 		// generate differently based on dimension
-		switch(world.provider.getDimensionId())
+		switch (world.provider.getDimensionId())
 		{
 		case -1: generateNether(world, random, blockX, blockZ);
 		break;
@@ -34,7 +34,19 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 
 	private void generateOverworld(World world, Random rand, int blockX, int blockZ)
 	{
-		// leaving blank for now		
+		/** CABIN GEN **/
+		WorldGenerator genCabin = new StructureIceShrine();
+		// 25% of chunks can have a cabin
+		final int CABIN_CHANCE = 2;
+		if (rand.nextInt(550) < CABIN_CHANCE)
+		{
+			// get a random position in the chunk
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			// use our custom function to get the ground height
+			genCabin.generate(world, rand, new BlockPos(randX, rand.nextInt(15) + 25, randZ));
+		}
+		/** END CABIN GEN **/		
 	}
 
 	private void generateNether(World world, Random rand, int blockX, int blockZ)
@@ -43,7 +55,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 		WorldGenerator genCabin = new StructureNetherVillageHouse1();
 		// 25% of chunks can have a cabin
 		final int CABIN_CHANCE = 2;
-		if (rand.nextInt(600) < CABIN_CHANCE)
+		if (rand.nextInt(300) < CABIN_CHANCE)
 		{
 			// get a random position in the chunk
 			int randX = blockX + rand.nextInt(16);

@@ -54,7 +54,10 @@ public class BlahCraftManager
         this.addRecipe(new ItemStack(Blocks.log, 1), ModItems.sulphur2, Items.coal);
         this.addRecipe(new ItemStack(Blocks.brick_block, 1), ModItems.sulphur2, Blocks.clay);
         this.addRecipe(new ItemStack(Blocks.sand, 1, 1), ModItems.sulphur2, Blocks.sand);
-        this.addRecipe(new ItemStack(Blocks.sand, 1), ModItems.sulphur2, new ItemStack(Blocks.sand, 1, 1));
+        this.addRecipe(new ItemStack(ModBlocks.blackSand, 1), ModItems.sulphur2, new ItemStack(Blocks.sand, 1, 1));
+        this.addRecipe(new ItemStack(Blocks.sand, 1), ModItems.sulphur2, new ItemStack(ModBlocks.blackSand));
+        this.addRecipe(new ItemStack(ModBlocks.blackSand), ModItems.sulphur2, new ItemStack(Blocks.sand, 1, 1), ModItems.tadaniteShard);
+        this.addRecipe(new ItemStack(ModBlocks.blackSand), ModItems.sulphur2, Blocks.sand, ModItems.tadaniteShard);
         this.addRecipe(new ItemStack(Blocks.end_stone, 1), ModItems.sulphur2, Blocks.cobblestone);
         this.addRecipe(new ItemStack(Blocks.cobblestone, 1), ModItems.sulphur2, Blocks.end_stone);
         this.addRecipe(new ItemStack(Items.melon_seeds, 1), ModItems.sulphur2, Items.wheat_seeds);
@@ -87,7 +90,7 @@ public class BlahCraftManager
         this.addRecipe(new ItemStack(Blocks.sapling, 1, 5), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 4));
         this.addRecipe(new ItemStack(Blocks.sapling, 1), ModItems.sulphur2, new ItemStack(Blocks.sapling, 1, 5));
         
-        
+        this.addRecipe(new ItemStack(ModItems.catalyticInverter, 1), ModBlocks.sulphurBlock, new ItemStack(ModBlocks.lumiteBlock), new ItemStack(ModItems.osborgnenFuel));
         
         
         

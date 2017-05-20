@@ -3,15 +3,23 @@ package blahmod;
 import blahmod.blocks.ModBlocks;
 import blahmod.enchantments.EnchantmentMoltenTouch;
 import blahmod.enchantments.EnchantmentPulverize;
+import blahmod.enchantments.EnchantmentStepping;
+import blahmod.items.ModItems;
 import blahmod.projectiles.EntityGemBolt;
+import blahmod.world.BiomeGenTropics;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.common.BiomeManager.BiomeEntry;
+import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -31,8 +39,11 @@ public class Main
     public static final String MODID = "blahmod";
     public static final String MODNAME = "Blah's Mod";
     public static final String VERSION = "0.2.5";
+    
+    public static BiomeGenBase tropicsBiome;
     public static final Enchantment moltenTouch = new EnchantmentMoltenTouch(84, new ResourceLocation("molten_touch"), 1, EnumEnchantmentType.DIGGER);
     public static final Enchantment pulverize = new EnchantmentPulverize(85, new ResourceLocation("pulverize"), 1);
+    public static final Enchantment stepping = new EnchantmentStepping(86, new ResourceLocation("stepping"), 1, EnumEnchantmentType.ARMOR_FEET);
     public static CreativeTabBlah blahTab;
     public static CreativeTabBlahBlocks blahTabBlock;
     //public static CreativeTabGems gemTab;
@@ -49,9 +60,15 @@ public class Main
         {
  	        ModBOP.addRecipes();
         }
+    	tropicsBiome = new BiomeGenTropics(252).setBiomeName("Tropics").setTemperatureRainfall(0.8F, 0.4F);
+    	BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(tropicsBiome, 5));
     	blahTab = new CreativeTabBlah();
     	blahTabBlock = new CreativeTabBlahBlocks();
     	OreDictionary.registerOre("plankWood", ModBlocks.sequoiaPlanks);
+    	OreDictionary.registerOre("oreLumite", ModBlocks.lumiteOre);
+    	OreDictionary.registerOre("oreSulphur", ModBlocks.sulphurOre);
+    	OreDictionary.registerOre("oreLimestone", ModBlocks.limestoneOre);
+    	OreDictionary.registerOre("oreTadanite", ModBlocks.tadaniteOre);
     	//gemTab = new CreativeTabGems();
     	// increment the index for each entity you register
     	int modEntityIndex = 0;
@@ -72,15 +89,39 @@ public class Main
     {
         return EnchantmentHelper.getEnchantmentLevel(moltenTouch.effectId, player.getHeldItem()) > 0;
     }
+    public static boolean getLumitePick(EntityLivingBase player)
+    {
+        if (player instanceof EntityPlayer)
+        {
+        	EntityPlayer p = (EntityPlayer)player;
+        	if (p.inventory.getCurrentItem() != null)
+        	{
+        		if (p.inventory.getCurrentItem().getItem() == ModItems.lumitePickaxe)
+        		{
+        			return true;
+        		}
+        	}
+        }
+        return false;
+    }
     @EventHandler
     public void init(FMLInitializationEvent e)
     {
     	this.proxy.init(e);
+    	AchievementHandler.init();
+    	/*if (Loader.isModLoaded("BiomesOPlenty"))
+        {
+ 	        ModBOP.genStuff();
+        }*/
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
     	this.proxy.postInit(e);
+    	if (Loader.isModLoaded("Thaumcraft"))
+        {
+ 	        ModTC.addRecipes();
+        }
     }
 }

@@ -11,11 +11,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ClientProxy extends CommonProxy {
 
@@ -24,6 +26,10 @@ public class ClientProxy extends CommonProxy {
         super.preInit(e);
 
         BlockRenderRegister.registerBlockRenderer();
+        Item itemBlockSimple = GameRegistry.findItem("blahmod", "tadaniteSmeltery");
+        ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("blahmod:tadaniteSmeltery", "inventory");
+        final int DEFAULT_ITEM_SUBTYPE = 0;
+        ModelLoader.setCustomModelResourceLocation(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
         //BlockRenderRegister.INSTANCE.registerFluidModels();
     }
 

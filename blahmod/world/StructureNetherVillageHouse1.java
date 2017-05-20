@@ -238,7 +238,6 @@ public class StructureNetherVillageHouse1 extends WorldGenerator
 					}
 				}
 			}
-			
 			buildLayer(arg0, arg2, obsBrickPos, obsBrick);
 			buildLayerEast(arg0, arg2, eastStairsPos, netherBrickStairs);
 			buildLayerWest(arg0, arg2, westStairsPos, netherBrickStairs);

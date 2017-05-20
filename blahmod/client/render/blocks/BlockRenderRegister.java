@@ -3,27 +3,28 @@ package blahmod.client.render.blocks;
 import blahmod.Main;
 import blahmod.MeshDefinitionFix;
 import blahmod.blocks.BasicBlock;
+import blahmod.blocks.BlockInventoryFurnace;
+import blahmod.blocks.BlockPalmLeaves;
+import blahmod.blocks.BlockPotato;
+import blahmod.blocks.ModBlockGlass;
 import blahmod.blocks.ModBlockLeaves;
 import blahmod.blocks.ModBlockLog;
+import blahmod.blocks.ModBlockOre;
+import blahmod.blocks.ModBlockPalmSapling;
 import blahmod.blocks.ModBlockPrefabSapling;
 import blahmod.blocks.ModBlockSequoiaSapling;
-import blahmod.blocks.ModBlockOre;
-import blahmod.blocks.ModBlockTileEntity;
 import blahmod.blocks.ModBlockSlab;
+import blahmod.blocks.ModBlockTileEntity;
 import blahmod.blocks.ModBlockTorch;
 import blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.ItemMeshDefinition;
-import net.minecraft.client.renderer.block.statemap.StateMapperBase;
-import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraftforge.fluids.IFluidBlock;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public final class BlockRenderRegister
 {
@@ -66,17 +67,27 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.blazeBrick);
 	    reg((BasicBlock)ModBlocks.redNetherBrick);
 	    reg((BasicBlock)ModBlocks.netherWartBlock);
+	    reg((BasicBlock)ModBlocks.lumiteBlock);
 	    reg((BasicBlock)ModBlocks.boneBlock);
 	    reg((BasicBlock)ModBlocks.netherIce);
 	    reg((BasicBlock)ModBlocks.obsidianBrick);
 	    reg((BasicBlock)ModBlocks.sequoiaPlanks);
 	    reg((BasicBlock)ModBlocks.hardenedLava);
 	    reg((BasicBlock)ModBlocks.igneousRock);
+	    reg((BasicBlock)ModBlocks.lumiteOre);
 	    reg((BasicBlock)ModBlocks.magnetite);
 	    reg((BasicBlock)ModBlocks.saltrock);
 	    reg((BasicBlock)ModBlocks.polishedSaltrock);
 	    reg((BasicBlock)ModBlocks.polishedIgneousRock);
 	    reg((BasicBlock)ModBlocks.polishedMagnetite);
+	    reg((BasicBlock)ModBlocks.imperviousBrick);
+	    reg((BasicBlock)ModBlocks.blackSand);
+	    reg((BasicBlock)ModBlocks.netherIceBrick);
+	    reg((BasicBlock)ModBlocks.magmaCreamBlock);
+	    reg((BasicBlock)ModBlocks.enderPearlBlock);
+	    reg((BasicBlock)ModBlocks.carrotBlock);
+	    reg((BasicBlock)ModBlocks.quicksilverBlock);
+	    reg((BasicBlock)ModBlocks.blackSandstone);
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
@@ -101,6 +112,7 @@ public final class BlockRenderRegister
 	    }
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.uraniumTorch), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockTorch)(ModBlocks.uraniumTorch)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tadaniteOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.potatoBlock), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((BlockPotato)(ModBlocks.potatoBlock)).Name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.limestoneOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.limestoneOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sulphurOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.sulphurOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.catalyzer), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockTileEntity)(ModBlocks.catalyzer)).name, "inventory"));
@@ -109,6 +121,11 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSequoiaSapling)(ModBlocks.sequoiaSapling)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockLog)(ModBlocks.sequoiaLog)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockLeaves)(ModBlocks.sequoiaLeaves)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockLog)(ModBlocks.palmLog)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockPalmSapling)(ModBlocks.palmSapling)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((BlockPalmLeaves)(ModBlocks.palmLeaves)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.reinforcedGlass), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockGlass)(ModBlocks.reinforcedGlass)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteSmeltery), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tadaniteSmeltery", "inventory"));
 	}
 	public static void reg(BasicBlock block)
 	{

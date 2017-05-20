@@ -11,6 +11,8 @@ import blahmod.items.ItemLog;
 import blahmod.items.ModItemBlockSlab;
 import blahmod.items.ModItemSlab;
 import blahmod.items.ModItems;
+import blahmod.items.itemBlocks.ItemCatalyzerBlock;
+import blahmod.items.itemBlocks.ItemSmelteryBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.Block.SoundType;
@@ -30,6 +32,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+
 public final class ModBlocks
 {
 	public static String[] gemNames = new String[] { "ruby", "citrine", "topaz", "sapphire", "amethyst" };
@@ -39,10 +42,20 @@ public final class ModBlocks
 	public static String[] woolNames = new String[] { "BrightRed", "BrightYellow", "BrightCyan", "DarkRed", "DarkYellow", "PaleYellow", "Turquoise", "DarkOrange", "LightBrown", "YellowGreen" };
 	public static ModBlockPrefabSapling prefabSapling;
 	public static ModBlockSequoiaSapling sequoiaSapling;
+	public static ModBlockPalmSapling palmSapling;
 	public static ModBlockLog sequoiaLog;
 	public static ModBlockLeaves sequoiaLeaves;
+	public static ModBlockLog palmLog;
+	public static BlockPalmLeaves palmLeaves;
+	public static ModBlockGlass reinforcedGlass;
+	public static Block imperviousBrick;
+	public static Block blackSand;
+	public static Block blackSandstone;
 	public static Fluid acidFluid;
+	public static BlockInventoryFurnace tadaniteSmeltery;
 	public static Block acid;
+	public static Block netherIceBrick;
+	public static Block potatoBlock;
 	public static Block hardenedLava;
 	public static Block saltrock;
 	public static Block magnetite;
@@ -50,6 +63,8 @@ public final class ModBlocks
 	public static Block polishedSaltrock;
 	public static Block polishedMagnetite;
 	public static Block polishedIgneousRock;
+	public static Block carrotBlock;
+	public static Block quicksilverBlock;
 	public static Block sequoiaPlanks;
 	public static Block obsidianBrick;
 	public static Block netherIce;
@@ -60,11 +75,15 @@ public final class ModBlocks
 	public static Block rubyOre;
 	public static Block tadanite;
     public static Block leatherBlock;
+    public static Block magmaCreamBlock;
+    public static Block enderPearlBlock;
     public static Block tadaniteOre;
     public static Block limestoneOre;
     public static Block limestoneBlock;
     public static Block cement;
     public static Block sulphurOre;
+    public static Block lumiteOre;
+    public static Block lumiteBlock;
     public static Block uraniumOre;
     public static Block sulphurBlock;
     public static Block catalyzer;
@@ -85,41 +104,58 @@ public final class ModBlocks
     
     public static void createBlocks()
     {
-    	GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1F, 8F, "pickaxe", 1, "saltrock")), "saltrock");
-    	GameRegistry.registerBlock((Block)(polishedSaltrock = new BasicBlock("polishedSaltrock", Material.rock, 1F, 8F, "pickaxe", 1, "polishedSaltrock")), "polishedSaltrock");
-    	GameRegistry.registerBlock((Block)(magnetite = new BasicBlock("magnetite", Material.rock, 1F, 8F, "pickaxe", 1, "magnetite")), "magnetite");
-    	GameRegistry.registerBlock((Block)(polishedMagnetite = new BasicBlock("polishedMagnetite", Material.rock, 1F, 8F, "pickaxe", 1, "polishedMagnetite")), "polishedMagnetite");
-    	GameRegistry.registerBlock((Block)(igneousRock = new BasicBlock("igneousRock", Material.rock, 1F, 8F, "pickaxe", 1, "igneousRock")), "igneousRock");
-    	GameRegistry.registerBlock((Block)(polishedIgneousRock = new BasicBlock("polishedIgneousRock", Material.rock, 1F, 8F, "pickaxe", 1, "polishedIgneousRock")), "polishedIgneousRock");
-    	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1F, 8F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
-    	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 40F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
+    	GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 1, "saltrock")), "saltrock");
+    	GameRegistry.registerBlock((Block)(polishedSaltrock = new BasicBlock("polishedSaltrock", Material.rock, 1.5F, 10F, "pickaxe", 1, "polishedSaltrock")), "polishedSaltrock");
+    	GameRegistry.registerBlock((Block)(magnetite = new BasicBlock("magnetite", Material.rock, 1.5F, 10F, "pickaxe", 1, "magnetite")), "magnetite");
+    	GameRegistry.registerBlock((Block)(polishedMagnetite = new BasicBlock("polishedMagnetite", Material.rock, 1.5F, 10F, "pickaxe", 1, "polishedMagnetite")), "polishedMagnetite");
+    	GameRegistry.registerBlock((Block)(igneousRock = new BasicBlock("igneousRock", Material.rock, 1.F, 10F, "pickaxe", 1, "igneousRock")), "igneousRock");
+    	GameRegistry.registerBlock((Block)(polishedIgneousRock = new BasicBlock("polishedIgneousRock", Material.rock, 1.5F, 10F, "pickaxe", 1, "polishedIgneousRock")), "polishedIgneousRock");
+    	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1.5F, 10F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
+    	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 35F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
     	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
-    	GameRegistry.registerBlock((Block)(limestoneBlock = new BasicBlock("limestoneBlock", Material.iron, 7F, 100F, "pickaxe", 1, "limestoneBlock")).setStepSound(Block.soundTypeMetal), "limestoneBlock");
-    	GameRegistry.registerBlock((Block)(sulphurBlock = new BasicBlock("sulphurBlock", Material.iron, 8F, 200F, "pickaxe", 1, "sulphurBlock")).setStepSound(Block.soundTypeMetal), "sulphurBlock");
+    	GameRegistry.registerBlock((Block)(limestoneBlock = new BasicBlock("limestoneBlock", Material.iron, 3F, 100F, "pickaxe", 1, "limestoneBlock")).setStepSound(Block.soundTypeMetal), "limestoneBlock");
+    	GameRegistry.registerBlock((Block)(carrotBlock = new BasicBlock("carrotBlock", Material.cake, 0.5F, 30F, "axe", 0, "carrotBlock")).setStepSound(Block.soundTypeWood), "carrotBlock");
+    	GameRegistry.registerBlock((Block)(quicksilverBlock = new BasicBlock("quicksilverBlock", Material.iron, 3F, 100F, "pickaxe", 1, "quicksilverBlock")).setStepSound(Block.soundTypeMetal), "quicksilverBlock");
+    	GameRegistry.registerBlock((Block)(sulphurBlock = new BasicBlock("sulphurBlock", Material.iron, 3F, 200F, "pickaxe", 1, "sulphurBlock")).setStepSound(Block.soundTypeMetal), "sulphurBlock");
+    	GameRegistry.registerBlock((Block)(lumiteBlock = new BasicBlock("lumiteBlock", Material.iron, 5F, 150F, "pickaxe", 1, "lumiteBlock")).setStepSound(Block.soundTypeMetal), "lumiteBlock");
+    	GameRegistry.registerBlock((Block)(netherIceBrick = new BasicBlock("netherIceBrick", Material.rock, 8F, 150F, "pickaxe", 1, "netherIceBrick")).setStepSound(Block.soundTypeStone), "netherIceBrick");
     	GameRegistry.registerBlock(limestoneOre = new ModBlockOre("limestoneOre", Material.rock, ModItems.limestone, 3.5F, 100F, "pickaxe", 1, 0, 1, 2, "limestoneOre"), "limestoneOre");
     	GameRegistry.registerBlock(sulphurOre = new ModBlockOre("sulphurOre", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre"), "sulphurOre");
-    	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 5F, 150F, "pickaxe", 1, "cement")), "cement");
+    	GameRegistry.registerBlock((Block)(lumiteOre = new BasicBlock("lumiteOre", Material.rock, 3F, 200F, "pickaxe", 5, "lumiteOre")), "lumiteOre");
+    	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 3F, 150F, "pickaxe", 1, "cement")), "cement");
     	GameRegistry.registerBlock((Block)(uraniumBlock = new BasicBlock("uraniumBlock", Material.iron, 10F, 150F, "pickaxe", 2, "uraniumBlock")).setStepSound(Block.soundTypeMetal).setLightLevel(.3F), "uraniumBlock");
+    	GameRegistry.registerBlock((Block)(magmaCreamBlock = new BasicBlock("magmaCreamBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "magmaCreamBlock")).setStepSound(Block.soundTypeGravel), "magmaCreamBlock");
+    	GameRegistry.registerBlock(potatoBlock = new BlockPotato(Material.cloth, "potatoBlock"), "potatoBlock");
+    	GameRegistry.registerBlock((Block)(enderPearlBlock = new BasicBlock("enderPearlBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "enderPearlBlock")).setStepSound(Block.soundTypeStone), "enderPearlBlock");
     	GameRegistry.registerBlock((Block)(endStoneBricks = new BasicBlock("endStoneBricks", Material.rock, 10F, 150F, "pickaxe", 1, "endStoneBricks")).setStepSound(Block.soundTypeStone), "endStoneBricks");
-    	GameRegistry.registerBlock(catalyzer = new ModBlockTileEntity("catalyzer"), "catalyzer");
+    	GameRegistry.registerBlock(catalyzer = new ModBlockTileEntity("catalyzer"), ItemCatalyzerBlock.class, "catalyzer");
     	GameRegistry.registerBlock((Block)(uraniumOre = new BasicBlock("uraniumOre", Material.rock, 3F, 200F, "pickaxe", 3, "uraniumOre")), "uraniumOre");
     	GameRegistry.registerBlock((Block)(petrifiedWood = new BasicBlock("petrifiedWood", Material.rock, 2F, 100F, "pickaxe", 1, "petrifiedWood")), "petrifiedWood");
     	GameRegistry.registerBlock((Block)(redNetherBrick = new BasicBlock("redNetherBrick", Material.rock, 2F, 100F, "pickaxe", 1, "redNetherBrick")), "redNetherBrick");
     	GameRegistry.registerBlock((Block)(netherWartBlock = new BasicBlock("netherWartBlock", Material.rock, 2F, 100F, "pickaxe", 1, "netherWartBlock")), "netherWartBlock");
     	GameRegistry.registerBlock((Block)(boneBlock = new BasicBlock("boneBlock", Material.rock, 2F, 90F, "pickaxe", 1, "boneBlock")), "boneBlock");
-    	GameRegistry.registerBlock((Block)(sequoiaPlanks = new BasicBlock("sequoiaPlanks", Material.wood, 1F, 8F, "hand", 0, "sequoiaPlanks")).setStepSound(Block.soundTypeWood), "sequoiaPlanks");
+    	GameRegistry.registerBlock((Block)(sequoiaPlanks = new BasicBlock("sequoiaPlanks", Material.wood, 2F, 5F, "hand", 0, "sequoiaPlanks")).setStepSound(Block.soundTypeWood), "sequoiaPlanks");
 		GameRegistry.registerBlock((Block)(prefabSapling = new ModBlockPrefabSapling("prefabSapling", 1)), "prefabSapling");
 		GameRegistry.registerBlock((Block)(sequoiaSapling = new ModBlockSequoiaSapling("sequoiaSapling", 2)), "sequoiaSapling");
 		GameRegistry.registerBlock((Block)(sequoiaLog = new ModBlockLog("sequoiaLog")), "sequoiaLog");
 		GameRegistry.registerBlock((Block)(sequoiaLeaves = new ModBlockLeaves("sequoiaLeaves")), "sequoiaLeaves");
+		GameRegistry.registerBlock((Block)(palmSapling = new ModBlockPalmSapling("palmSapling", 2)), "palmSapling");
+		GameRegistry.registerBlock((Block)(palmLog = new ModBlockLog("palmLog")), "palmLog");
+		GameRegistry.registerBlock((Block)(palmLeaves = new BlockPalmLeaves("palmLeaves")), "palmLeaves");
+		GameRegistry.registerBlock((Block)(tadaniteSmeltery = new BlockInventoryFurnace()), ItemSmelteryBlock.class, "tadaniteSmeltery");
+		GameRegistry.registerBlock((Block)(reinforcedGlass = new ModBlockGlass("reinforcedGlass", Material.glass, 1F, 8F, "pickaxe", 1, "reinforcedGlass")).setStepSound(Block.soundTypeGlass), "reinforcedGlass");
+		GameRegistry.registerBlock((Block)(imperviousBrick = new BasicBlock("imperviousBrick", Material.rock, 1F, 8F, "pickaxe", 1, "imperviousBrick")), "imperviousBrick");
+		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 8F, "shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
+		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
+		
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 	    RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	    GameRegistry.registerBlock(sequoiaLog, ItemLog.class, renderItem, "sequoiaLog");
 	    ModelBakery.addVariantName(Item.getItemFromBlock(sequoiaLog), new String[]{Main.MODID + ":" + "sequoiaLog"});*/
-    	GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(14F), "blazeBrick");
+    	GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(12F), "blazeBrick");
     	GameRegistry.registerBlock((Block)(obsidianBrick = new BasicBlock("obsidianBrick", Material.rock, 2F, 50F, "pickaxe", 2, "obsidianBrick")), "obsidianBrick");
-    	GameRegistry.registerBlock((Block)(netherIce = new BasicBlock("netherIce", Material.ice, 2F, 50F, "pickaxe", 0, "netherIce")).setStepSound(Block.soundTypeGlass), "netherIce");
+    	GameRegistry.registerBlock((Block)(netherIce = new BasicBlock("netherIce", Material.ice, 2F, 7F, "pickaxe", 0, "netherIce")).setStepSound(Block.soundTypeGlass), "netherIce");
     	GameRegistry.registerBlock(uraniumTorch = new ModBlockTorch(3F, "uraniumTorch"), "uraniumTorch");
     	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "shovel", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
     	for (int i = 0; i < woolNames.length; i++)

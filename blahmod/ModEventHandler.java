@@ -1,31 +1,185 @@
 package blahmod;
 
+import java.util.List;
+import java.util.Random;
+
 import blahmod.blocks.ModBlocks;
+import blahmod.enchantments.EnchantmentStepping;
 import blahmod.fluids.BlockAcidFluid;
 import blahmod.items.ModItems;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.GameSettings;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class ModEventHandler
 {
 	@SubscribeEvent
+	public void playerTick(TickEvent.PlayerTickEvent event)
+	{
+		if (event.phase == TickEvent.Phase.END) // && event.side == Side.SERVER)
+		{
+			EntityPlayer player = (EntityPlayer)event.player;
+			GameSettings gs = Minecraft.getMinecraft().gameSettings;
+			if (!GameSettings.isKeyDown(gs.keyBindForward) && !GameSettings.isKeyDown(gs.keyBindBack)
+				&& !GameSettings.isKeyDown(gs.keyBindRight) && !GameSettings.isKeyDown(gs.keyBindLeft) &&
+				player.capabilities.isFlying)
+			{
+				player.motionX = player.motionZ = 0.0d;
+			}
+			if (player.inventory.armorInventory[0] != null)
+			{
+				if (EnchantmentHelper.getEnchantments(player.getCurrentArmor(0)).containsKey(86))
+				{
+					if (EnchantmentHelper.getEnchantmentLevel(86, player.getCurrentArmor(0)) == 2)
+					{
+						if (player.worldObj.isRemote)
+						{
+							int x = (int) Math.floor(player.posX);
+							int y = (int) (player.posY - player.getYOffset());
+							int z = (int) Math.floor(player.posZ);
+							BlockPos pos = new BlockPos(x, y, z);
+
+							Block b = player.worldObj.getBlockState(pos.down()).getBlock();
+
+							if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water) && player.worldObj.isAirBlock(pos))
+							{
+								if (!player.isSneaking())
+								{
+									player.motionY = 0.0d;
+									player.fallDistance = 0.0f;
+									player.onGround = true;
+								}
+							}
+						}
+			        }
+					if ((!player.capabilities.isFlying) && (player.moveForward > 0.0F))
+				    {
+						if ((player.worldObj.isRemote) && (!player.isSneaking()))
+				    	{
+							if (!PlayerEvents.INSTANCE.prevStep.containsKey(Integer.valueOf(player.getEntityId())))
+							{
+								PlayerEvents.INSTANCE.prevStep.put(Integer.valueOf(player.getEntityId()), Float.valueOf(player.stepHeight));
+							}
+							player.stepHeight = 1.0F;
+				    	}
+				    }
+				}
+			}
+		}
+	}
+	/*@SubscribeEvent
+	public void onLivingUpdate(LivingEvent event)
+	{
+		if (event.entityLiving instanceof EntityPlayer)
+		{
+			EntityPlayer player = (EntityPlayer)event.entityLiving;
+			if (EnchantmentHelper.getEnchantments(player.getCurrentArmor(3)).containsValue(86))
+			{
+				if (EnchantmentHelper.getEnchantmentLevel(86, new ItemStack(player.getCurrentArmor(3).getItem())) == 2)
+				{
+					if (player.worldObj.isRemote)
+					{
+						int x = (int) Math.floor(player.posX);
+						int y = (int) (player.posY - player.getYOffset());
+						int z = (int) Math.floor(player.posZ);
+						BlockPos pos = new BlockPos(x, y, z);
+
+						Block b = player.worldObj.getBlockState(pos.down()).getBlock();
+
+						if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water) && player.worldObj.isAirBlock(pos))
+						{
+							if (!player.isSneaking())
+							{
+								player.motionY = 0.0d;
+								player.fallDistance = 0.0f;
+								player.onGround = true;
+							}
+						}
+					}
+		        }
+				if ((!player.capabilities.isFlying) && (player.moveForward > 0.0F))
+			    {
+					if ((player.worldObj.isRemote) && (!player.isSneaking()))
+			    	{
+						if (!PlayerEvents.INSTANCE.prevStep.containsKey(Integer.valueOf(player.getEntityId())))
+						{
+							PlayerEvents.INSTANCE.prevStep.put(Integer.valueOf(player.getEntityId()), Float.valueOf(player.stepHeight));
+						}
+						player.stepHeight = 1.0F;
+			    	}
+			    }
+			}
+		}
+	}*/
+	@SubscribeEvent
+	public void onLivingHurt(LivingHurtEvent event)
+	{
+		if (event.entityLiving instanceof EntityPlayer)
+		{
+			EntityPlayer p = (EntityPlayer)event.entityLiving;
+			if(p.getCurrentArmor(0) != null && p.getCurrentArmor(1) != null && p.getCurrentArmor(2) != null && p.getCurrentArmor(3) != null)
+			{
+				ItemStack boots = p.getCurrentArmor(0);
+				ItemStack legs = p.getCurrentArmor(1);
+				ItemStack chest = p.getCurrentArmor(2);
+				ItemStack helmet = p.getCurrentArmor(3);
+				if (boots.getItem() == ModItems.lumiteBoots &&
+						legs.getItem() == ModItems.lumiteLeggings &&
+						chest.getItem() == ModItems.lumiteChestplate &&
+						helmet.getItem() == ModItems.lumiteHelmet)
+				{
+					AxisAlignedBB aabb = p.getEntityBoundingBox().expand(8, 8, 8);
+					List entities = p.worldObj.getEntitiesWithinAABBExcludingEntity(p, aabb);
+					for(int j = 0; j < entities.size(); j++)
+					{
+						Entity entity = (Entity)entities.get(j);
+						int eid = entity.getEntityId();
+						if (entity instanceof EntityMob)
+						{
+							entity.attackEntityFrom(DamageSource.causeThornsDamage(p), 4);
+						}
+					}
+				}
+			}
+		}
+	}
+	@SubscribeEvent
 	public void breakBlockEvent(BreakSpeed event)
 	{
 		if(event.state.getBlock() == Blocks.bedrock && !(event.entityPlayer.inventory.getCurrentItem().getItem() == ModItems.bedrockPickaxe))
+		{
+			event.newSpeed = 0F;
+		}
+		if (event.state.getBlock() == ModBlocks.lumiteOre && (event.entityPlayer.inventory.getCurrentItem().getItem() != ModItems.lumitePickaxe && event.entityPlayer.inventory.getCurrentItem().getItem() != ModItems.bedrockPickaxe))
 		{
 			event.newSpeed = 0F;
 		}
@@ -63,6 +217,52 @@ public class ModEventHandler
     {
     	if (event.harvester != null)
     	{
+    		if (Main.getLumitePick(event.harvester))
+    		{
+    			/*if (event.state.getBlock().getUnlocalizedName().toLowerCase().contains("ore"))
+    			{
+    				BlockOre bo = (BlockOre)event.state.getBlock();
+    				event.drops.add(new ItemStack(bo.getItemDropped(event.state, new Random(), 6)));
+    			}*/
+    			if (event.state.getBlock() == Blocks.diamond_ore ||
+    				event.state.getBlock() == Blocks.emerald_ore ||
+    				event.state.getBlock() == Blocks.gold_ore ||
+    				event.state.getBlock() == Blocks.iron_ore ||
+    				event.state.getBlock() == Blocks.quartz_ore ||
+    				event.state.getBlock() == Blocks.coal_ore ||
+    				event.state.getBlock() == ModBlocks.limestoneOre ||
+    				event.state.getBlock() == ModBlocks.lumiteOre ||
+    				event.state.getBlock() == ModBlocks.sulphurOre ||
+    				event.state.getBlock() == ModBlocks.rubyOre ||
+    				event.state.getBlock() == ModBlocks.citrineOre ||
+    				event.state.getBlock() == ModBlocks.topazOre ||
+    				event.state.getBlock() == ModBlocks.sapphireOre ||
+    				event.state.getBlock() == ModBlocks.amethystOre ||
+    				event.state.getBlock() == ModBlocks.tadaniteOre)
+    			{
+    				if (event.state.getBlock() == Blocks.gold_ore)
+    				{
+    					event.drops.clear();
+        				event.drops.add(new ItemStack(Items.gold_ingot, 3));
+    				}
+    				else if (event.state.getBlock() == Blocks.iron_ore)
+    				{
+    					event.drops.clear();
+        				event.drops.add(new ItemStack(Items.iron_ingot, 3));
+    				}
+    				else if (event.state.getBlock() == ModBlocks.lumiteOre)
+    				{
+    					event.drops.clear();
+        				event.drops.add(new ItemStack(ModItems.lumite, 2));
+    				}
+    				else
+    				{
+    					BlockOre bo = (BlockOre)event.state.getBlock();
+        				event.drops.add(new ItemStack(bo.getItemDropped(event.state, new Random(), 6)));
+    				}
+    				
+    			}
+    		}
     		if (Main.getMoltenTouchModifier(event.harvester))
     		{
     			if (event.state.getBlock() == Blocks.iron_ore)

@@ -2,6 +2,12 @@ package blahmod;
 
 import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.api.item.BOPItems;
+import biomesoplenty.common.block.BlockBOPStone;
+import biomesoplenty.common.block.BlockBOPStone.StoneType;
+import blahmod.blocks.ModBlocks;
+import blahmod.world.BlahWorldGen;
+import net.minecraft.block.Block;
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -9,24 +15,25 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModBOP
 {
-        public static void addRecipes()
-        {
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 1));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 2));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 3));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 4));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 5));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 6));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 7));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 8));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 9));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 10));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 11));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 12));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 13));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 14));
-                GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 15));
+	public static final PropertyEnum VARIANT = PropertyEnum.create("variant", StoneType.class);
+    public static void addRecipes()
+    {
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 1));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 2));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_0, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 3));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 4));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 5));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 6));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_1, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 7));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 8));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 9));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 10));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_2, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 11));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 4), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 12));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 5), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 13));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 6), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 14));
+        GameRegistry.addRecipe(new ItemStack(BOPBlocks.log_3, 1, 7), "# #", "   ", "# #", '#', new ItemStack(BOPBlocks.planks_0, 1, 15));
 
         GameRegistry.addShapelessRecipe(new ItemStack(BOPBlocks.planks_0, 2, 0), new ItemStack(BOPItems.sacred_oak_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(BOPBlocks.planks_0, 2, 1), new ItemStack(BOPItems.cherry_door));
@@ -70,5 +77,11 @@ public class ModBOP
 		GameRegistry.addShapelessRecipe(new ItemStack(BOPItems.gem, 9, 5), new ItemStack(BOPBlocks.gem_block, 1, 5));
 		GameRegistry.addShapelessRecipe(new ItemStack(BOPItems.gem, 9, 6), new ItemStack(BOPBlocks.gem_block, 1, 6));
 		GameRegistry.addShapelessRecipe(new ItemStack(BOPItems.gem, 9, 7), new ItemStack(BOPBlocks.gem_block, 1, 7));
-        }
+	}
+	public static void genStuff()
+	{
+		GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)BOPBlocks.stone.getDefaultState().withProperty(BlockBOPStone.POLISHED, Boolean.valueOf(false)).withProperty(BlockBOPStone.VARIANT, BlockBOPStone.StoneType.SHALE).getBlock(), (Blocks.stone), new int[]{0}, 35, 10, 1, 15), 0);
+		GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)BOPBlocks.stone.getDefaultState().withProperty(BlockBOPStone.POLISHED, Boolean.valueOf(false)).withProperty(BlockBOPStone.VARIANT, BlockBOPStone.StoneType.SILTSTONE).getBlock(), (Blocks.stone), new int[]{0}, 45, 24, 1, 10), 0);
+		GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)BOPBlocks.stone.getDefaultState().withProperty(BlockBOPStone.POLISHED, Boolean.valueOf(false)).withProperty(BlockBOPStone.VARIANT, BlockBOPStone.StoneType.LIMESTONE).getBlock(), (Blocks.stone), new int[]{0}, 35, 30, 1, 10), 0);
+	}
 }

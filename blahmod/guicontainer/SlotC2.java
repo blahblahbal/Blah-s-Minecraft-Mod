@@ -17,6 +17,6 @@ public class SlotC2 extends Slot
 	@Override
 	public boolean isItemValid(ItemStack stack)
 	{
-		 return (stack.getItem() == Items.gunpowder || stack.getItem() == Items.lava_bucket || stack.getItem() == Item.getItemFromBlock(Blocks.stone));
+		 return (stack.getItem() == Items.gunpowder || stack.getItem() == Items.lava_bucket || stack.getItem() == Item.getItemFromBlock(Blocks.stone) || stack.getItem() == ModItems.osborgnenFuel);
 	}
 }
