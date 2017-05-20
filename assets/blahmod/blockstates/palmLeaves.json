@@ -1,6 +1,8 @@
 {
     "variants": {
-        "normal": { "model": "blahmod:palmLeaves" },
-        "inventory": { "model": "blahmod:palmLeaves" }
+        "check_decay=true,decayable=true":  { "model": "blahmod:palmLeaves" },
+        "check_decay=false,decayable=true":  { "model": "blahmod:palmLeaves" },
+        "check_decay=true,decayable=false":  { "model": "blahmod:palmLeaves" },
+        "check_decay=false,decayable=false":  { "model": "blahmod:palmLeaves" }
     }
 }

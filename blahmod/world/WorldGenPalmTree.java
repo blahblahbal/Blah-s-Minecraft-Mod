@@ -84,7 +84,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
             {
                 BlockPos down = position.down();
                 Block block = worldIn.getBlockState(down).getBlock();
-                boolean isSoil = block.canSustainPlant(worldIn, down, net.minecraft.util.EnumFacing.UP, ((net.minecraft.block.BlockSapling)Blocks.sapling));
+                boolean isSoil = (block == ModBlocks.blackSand || block == Blocks.sand);
 
                 if (isSoil && position.getY() < 256 - i - 1)
                 {

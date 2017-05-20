@@ -27,6 +27,7 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.dyeNew[9]), new ItemStack(Items.dye, 1, 10), new ItemStack(Items.dye, 1, 11));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 4), new ItemStack(ModBlocks.sequoiaLog));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.palmPlanks, 4), new ItemStack(ModBlocks.palmLog));
 		GameRegistry.addRecipe(new ItemStack(ModItems.osborgnenFuel, 2), "xyx","yzy", "xyx", 'x', Blocks.obsidian, 'z', Items.coal, 'y', ModItems.tadaniteDiamond);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.imperviousBrick, 8), "#x#","x#x", "#x#", '#', new ItemStack(ModBlocks.blackSand), 'x', new ItemStack(Blocks.obsidian));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
@@ -80,6 +81,8 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.log, 1, 3), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks, 1, 3));
 		GameRegistry.addRecipe(new ItemStack(Blocks.log2, 1), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks, 1, 4));
 		GameRegistry.addRecipe(new ItemStack(Blocks.log2, 1, 1), "# #", "   ", "# #", '#', new ItemStack(Blocks.planks, 1, 5));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.sequoiaPlanks));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.palmPlanks));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 0), new ItemStack(Items.oak_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 1), new ItemStack(Items.spruce_door));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.planks, 2, 2), new ItemStack(Items.birch_door));

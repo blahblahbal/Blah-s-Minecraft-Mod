@@ -1,6 +1,5 @@
 {
     "variants": {
-        "stage=0": { "model": "blahmod:prefabSapling" },
-        "stage=1": { "model": "blahmod:prefabSapling" }
-    }
+        "normal": { "model": "blahmod:prefabSapling" }
+	}
 }

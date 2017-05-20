@@ -47,17 +47,16 @@ public class BiomeGenTropics extends BiomeGenBase
         int k = (int)(p_180628_6_ / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
         int l = p_180628_4_ & 15;
         int i1 = p_180628_5_ & 15;
-        BlockPos.MutableBlockPos mbp = new BlockPos.MutableBlockPos();
 
-        for (int j1 = 255; j1 >= 0; --j1)
+        for (int ypos = 255; ypos >= 0; --ypos)
         {
-            if (j1 <= rand.nextInt(5))
+            if (ypos <= rand.nextInt(5))
             {
-                chunkPrimerIn.setBlockState(i1, j1, l, Blocks.bedrock.getDefaultState());
+                chunkPrimerIn.setBlockState(i1, ypos, l, Blocks.bedrock.getDefaultState());
             }
             else
             {
-                IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, j1, l);
+                IBlockState iblockstate2 = chunkPrimerIn.getBlockState(i1, ypos, l);
 
                 if (iblockstate2.getBlock().getMaterial() == Material.air)
                 {
@@ -70,23 +69,37 @@ public class BiomeGenTropics extends BiomeGenBase
                     	if (k <= 0)
                     	{
                     		iblockstate = null;
-                    		iblockstate1 = Blocks.stone.getDefaultState();
+                    		iblockstate1 = ModBlocks.blackSand.getDefaultState();
                     	}
-                    	else if (j1 >= i - 4 && j1 <= i + 1)
+                    	else if (ypos >= i - 4 && ypos <= i + 1)
                     	{
-                    		iblockstate = this.topBlock;
-                    		iblockstate1 = this.fillerBlock;
+                    		iblockstate = ModBlocks.blackSand.getDefaultState();
+                    		iblockstate1 = ModBlocks.blackSand.getDefaultState();
                     	}
                         j = k;
+                        if (ypos >= i - 1)
+                        {
+                            chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.blackSand.getDefaultState());
+                        }
+                        else if (ypos < i - 7 - k)
+                        {
+                            iblockstate = null;
+                            iblockstate1 = Blocks.stone.getDefaultState();
+                            chunkPrimerIn.setBlockState(i1, ypos, l, Blocks.gravel.getDefaultState());
+                        }
+                        else
+                        {
+                            chunkPrimerIn.setBlockState(i1, ypos, l, iblockstate1);
+                        }
                     }
                     else if (j > 0)
                     {
                         --j;
-                        chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
+                        chunkPrimerIn.setBlockState(i1, ypos, l, iblockstate1);
 
                         if (j == 0 && iblockstate1.getBlock() == ModBlocks.blackSand)
                         {
-                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
+                            j = rand.nextInt(4) + Math.max(0, ypos - 63);
                             iblockstate1 = ModBlocks.blackSandstone.getDefaultState();
                         }
                     }

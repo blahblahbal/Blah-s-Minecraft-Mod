@@ -66,6 +66,7 @@ public final class ModBlocks
 	public static Block carrotBlock;
 	public static Block quicksilverBlock;
 	public static Block sequoiaPlanks;
+	public static Block palmPlanks;
 	public static Block obsidianBrick;
 	public static Block netherIce;
 	public static Block amethystOre;
@@ -136,6 +137,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(netherWartBlock = new BasicBlock("netherWartBlock", Material.rock, 2F, 100F, "pickaxe", 1, "netherWartBlock")), "netherWartBlock");
     	GameRegistry.registerBlock((Block)(boneBlock = new BasicBlock("boneBlock", Material.rock, 2F, 90F, "pickaxe", 1, "boneBlock")), "boneBlock");
     	GameRegistry.registerBlock((Block)(sequoiaPlanks = new BasicBlock("sequoiaPlanks", Material.wood, 2F, 5F, "hand", 0, "sequoiaPlanks")).setStepSound(Block.soundTypeWood), "sequoiaPlanks");
+    	GameRegistry.registerBlock((Block)(palmPlanks = new BasicBlock("palmPlanks", Material.wood, 2F, 5F, "hand", 0, "palmPlanks")).setStepSound(Block.soundTypeWood), "palmPlanks");
 		GameRegistry.registerBlock((Block)(prefabSapling = new ModBlockPrefabSapling("prefabSapling", 1)), "prefabSapling");
 		GameRegistry.registerBlock((Block)(sequoiaSapling = new ModBlockSequoiaSapling("sequoiaSapling", 2)), "sequoiaSapling");
 		GameRegistry.registerBlock((Block)(sequoiaLog = new ModBlockLog("sequoiaLog")), "sequoiaLog");

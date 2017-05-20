@@ -65,6 +65,7 @@ public class Main
     	blahTab = new CreativeTabBlah();
     	blahTabBlock = new CreativeTabBlahBlocks();
     	OreDictionary.registerOre("plankWood", ModBlocks.sequoiaPlanks);
+    	OreDictionary.registerOre("plankWood", ModBlocks.palmPlanks);
     	OreDictionary.registerOre("oreLumite", ModBlocks.lumiteOre);
     	OreDictionary.registerOre("oreSulphur", ModBlocks.sulphurOre);
     	OreDictionary.registerOre("oreLimestone", ModBlocks.limestoneOre);

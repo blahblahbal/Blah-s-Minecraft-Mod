@@ -9,6 +9,7 @@ import blahmod.world.WorldGenPalmTree;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -63,6 +64,11 @@ public class ModBlockPalmSapling extends BlockSapling
     public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
     {
         this.grow(worldIn, pos, state, rand);
+    }
+    @Override
+    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    {
+    	return (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.blackSand || worldIn.getBlockState(pos.down()).getBlock() == Blocks.sand);
     }
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)

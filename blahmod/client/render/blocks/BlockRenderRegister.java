@@ -88,6 +88,7 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.carrotBlock);
 	    reg((BasicBlock)ModBlocks.quicksilverBlock);
 	    reg((BasicBlock)ModBlocks.blackSandstone);
+	    reg((BasicBlock)ModBlocks.palmPlanks);
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
