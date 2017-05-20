@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:blackSandstone" },
+        "inventory": { "model": "blahmod:blackSandstone" }
+    }
+}

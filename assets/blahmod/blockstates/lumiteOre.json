@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:lumiteOre" },
+        "inventory": { "model": "blahmod:lumiteOre" }
+    }
+}

@@ -1,6 +1,12 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "blahmod:blocks/saltrock"
+        "particle": "blahmod:blocks/saltrock_top",
+        "up": "blahmod:blocks/saltrock_top",
+        "down": "blahmod:blocks/saltrock_top",
+        "north": "blahmod:blocks/saltrock_side",
+        "east": "blahmod:blocks/saltrock_side",
+        "south": "blahmod:blocks/saltrock_side",
+        "west": "blahmod:blocks/saltrock_side"
     }
 }

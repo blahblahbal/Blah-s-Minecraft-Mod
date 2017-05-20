@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:palmLeaves" },
+        "inventory": { "model": "blahmod:palmLeaves" }
+    }
+}

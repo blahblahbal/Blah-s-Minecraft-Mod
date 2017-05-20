@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:netherIceBrick" },
+        "inventory": { "model": "blahmod:netherIceBrick" }
+    }
+}

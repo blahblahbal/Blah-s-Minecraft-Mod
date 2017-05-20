@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:carrotBlock" },
+        "inventory": { "model": "blahmod:carrotBlock" }
+    }
+}
