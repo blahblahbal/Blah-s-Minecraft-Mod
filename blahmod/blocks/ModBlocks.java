@@ -75,7 +75,8 @@ public final class ModBlocks
 	public static Block sapphireOre;
 	public static Block rubyOre;
 	public static Block tadanite;
-	public static Block seashell;
+	public static BlockSeashell seashell;
+	public static BlockLargeSeashell largeSeashell;
     public static Block leatherBlock;
     public static Block magmaCreamBlock;
     public static Block enderPearlBlock;
@@ -114,7 +115,8 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(polishedIgneousRock = new BasicBlock("polishedIgneousRock", Material.rock, 1.5F, 10F, "pickaxe", 1, "polishedIgneousRock")), "polishedIgneousRock");
     	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1.5F, 10F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
     	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 35F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
-    	GameRegistry.registerBlock((Block)(seashell = new BasicBlock("seashell", Material.rock, 0.5F, 2F, "pickaxe", 0, "seashell")), "seashell");
+    	GameRegistry.registerBlock((Block)(seashell = new BlockSeashell("seashell", Material.rock)), "seashell");
+    	GameRegistry.registerBlock((Block)(largeSeashell = new BlockLargeSeashell("largeSeashell", Material.rock)), "largeSeashell");
     	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
     	GameRegistry.registerBlock((Block)(limestoneBlock = new BasicBlock("limestoneBlock", Material.iron, 3F, 100F, "pickaxe", 1, "limestoneBlock")).setStepSound(Block.soundTypeMetal), "limestoneBlock");
@@ -150,7 +152,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(tadaniteSmeltery = new BlockInventoryFurnace()), ItemSmelteryBlock.class, "tadaniteSmeltery");
 		GameRegistry.registerBlock((Block)(reinforcedGlass = new ModBlockGlass("reinforcedGlass", Material.glass, 1F, 8F, "pickaxe", 1, "reinforcedGlass")).setStepSound(Block.soundTypeGlass), "reinforcedGlass");
 		GameRegistry.registerBlock((Block)(imperviousBrick = new BasicBlock("imperviousBrick", Material.rock, 1F, 8F, "pickaxe", 1, "imperviousBrick")), "imperviousBrick");
-		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 8F, "shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
+		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 8F, "spade", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
 		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
 		
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
@@ -161,7 +163,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(obsidianBrick = new BasicBlock("obsidianBrick", Material.rock, 2F, 50F, "pickaxe", 2, "obsidianBrick")), "obsidianBrick");
     	GameRegistry.registerBlock((Block)(netherIce = new BasicBlock("netherIce", Material.ice, 2F, 7F, "pickaxe", 0, "netherIce")).setStepSound(Block.soundTypeGlass), "netherIce");
     	GameRegistry.registerBlock(uraniumTorch = new ModBlockTorch(3F, "uraniumTorch"), "uraniumTorch");
-    	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "shovel", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
+    	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "spade", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
     	for (int i = 0; i < woolNames.length; i++)
     	{
     		GameRegistry.registerBlock((Block)(newWool[i] = new BasicBlock("wool" + woolNames[i], Material.cloth, 0.5F, 5F, "shears", 0, "wool" + woolNames[i]).setStepSound(Block.soundTypeCloth)), "wool" + woolNames[i]);

@@ -44,6 +44,8 @@ public class BiomeGenTropics extends BiomeGenBase
         int i = 63;
         IBlockState iblockstate = this.topBlock;
         IBlockState iblockstate1 = this.fillerBlock;
+        IBlockState seashell = ModBlocks.seashell.getDefaultState();
+        IBlockState l_seashell = ModBlocks.largeSeashell.getDefaultState();
         int j = -1;
         int k = (int)(p_180628_6_ / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
         int l = p_180628_4_ & 15;
@@ -62,6 +64,12 @@ public class BiomeGenTropics extends BiomeGenBase
                 if (iblockstate2.getBlock().getMaterial() == Material.air)
                 {
                     j = -1;
+                    /*BlockPos bp = new BlockPos(i1, ypos, l).down();
+                    IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
+                	if (down.getBlock() == ModBlocks.blackSand)
+                	{
+                		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
+                	}*/
                 }
                 else if (iblockstate2.getBlock() == Blocks.stone)
                 {
@@ -78,13 +86,22 @@ public class BiomeGenTropics extends BiomeGenBase
                     		iblockstate1 = ModBlocks.blackSand.getDefaultState();
                     	}
                         j = k;
-                        /*if (ypos >= i && rand.nextInt(20) == 0)
+                        /*if (ypos > i && ypos <= i + 20 && rand.nextInt(20) == 0)
                         {
-                        	chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
+                        	IBlockState ibs3 = chunkPrimerIn.getBlockState(i1, ypos, l);
+                        	BlockPos bp = new BlockPos(i1, ypos, l).down();
+                        	IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
+                        	if (ibs3.getBlock().getMaterial() == Material.air && down.getBlock() == ModBlocks.blackSand)
+                        		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
                         }*/
                         if (ypos >= i - 1)
                         {
-                            chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.blackSand.getDefaultState());
+                        	if (rand.nextInt(40) == 0 && chunkPrimerIn.getBlockState(i1, ypos + 1, l).getBlock().getMaterial() == Material.air)
+                        	{
+                        		if (rand.nextInt(35) == 0) chunkPrimerIn.setBlockState(i1, ypos + 1, l, l_seashell);
+                        		else chunkPrimerIn.setBlockState(i1, ypos + 1, l, seashell);
+                        	}
+                        	chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.blackSand.getDefaultState());
                         }
                         else if (ypos < i - 7 - k)
                         {
@@ -96,6 +113,12 @@ public class BiomeGenTropics extends BiomeGenBase
                         {
                             chunkPrimerIn.setBlockState(i1, ypos, l, iblockstate1);
                         }
+                        /*BlockPos bp = new BlockPos(i1, ypos, l).down();
+                        IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
+                    	if (down.getBlock() == ModBlocks.blackSand && rand.nextInt(20) == 0)
+                    	{
+                    		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
+                    	}*/
                     }
                     else if (j > 0)
                     {
@@ -111,19 +134,19 @@ public class BiomeGenTropics extends BiomeGenBase
                 }
             }
         }
-        for (int j3 = 0; j3 < 5; ++j3)
+        /*for (int j3 = 0; j3 < 5; ++j3) // 5 = number of seashells to place per chunk
         {
             int k7 = rand.nextInt(16) + 8;
             int j11 = rand.nextInt(16) + 8;
-            BiomeDecorator bd = new BiomeDecorator();
-            int l14 = worldIn.getHeight(bd.field_180294_c.add(k7, 0, j11)).getY() * 2;
+            BlockPos bp = new BlockPos(i1, 90, l);
+            int l14 = worldIn.getHeight(bp.add(k7, 0, j11)).getY() * 2;
 
             if (l14 > 0)
             {
                 int i18 = rand.nextInt(l14);
-                (new WorldGenSeashell()).generate(worldIn, rand, bd.field_180294_c.add(k7, i18, j11));
+                (new WorldGenSeashell()).generate(worldIn, rand, bp.add(k7, i18, j11));
             }
-        }
+        }*/
     }
 	public WorldGenAbstractTree genBigTreeChance(Random rand)
     {
