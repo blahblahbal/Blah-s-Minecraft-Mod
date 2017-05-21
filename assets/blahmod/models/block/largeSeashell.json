@@ -2,8 +2,8 @@
     "__createdwith": "opl's Model Creator",
     "ambientocclusion": false,
     "textures": {
-        "all": "blocks/blahmod:seashell",
-        "particle": "blocks/blahmod:seashell"
+        "all": "blahmod:blocks/seashell",
+        "particle": "blahmod:blocks/seashell"
     },
     "elements": [
         {
