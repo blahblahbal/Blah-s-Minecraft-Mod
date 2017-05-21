@@ -152,7 +152,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(tadaniteSmeltery = new BlockInventoryFurnace()), ItemSmelteryBlock.class, "tadaniteSmeltery");
 		GameRegistry.registerBlock((Block)(reinforcedGlass = new ModBlockGlass("reinforcedGlass", Material.glass, 1F, 8F, "pickaxe", 1, "reinforcedGlass")).setStepSound(Block.soundTypeGlass), "reinforcedGlass");
 		GameRegistry.registerBlock((Block)(imperviousBrick = new BasicBlock("imperviousBrick", Material.rock, 1F, 8F, "pickaxe", 1, "imperviousBrick")), "imperviousBrick");
-		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 8F, "spade", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
+		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 5F, "Shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
 		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
 		
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
