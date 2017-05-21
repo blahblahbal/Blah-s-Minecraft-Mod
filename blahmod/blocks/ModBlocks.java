@@ -75,6 +75,7 @@ public final class ModBlocks
 	public static Block sapphireOre;
 	public static Block rubyOre;
 	public static Block tadanite;
+	public static Block seashell;
     public static Block leatherBlock;
     public static Block magmaCreamBlock;
     public static Block enderPearlBlock;
@@ -113,6 +114,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(polishedIgneousRock = new BasicBlock("polishedIgneousRock", Material.rock, 1.5F, 10F, "pickaxe", 1, "polishedIgneousRock")), "polishedIgneousRock");
     	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1.5F, 10F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
     	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 35F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
+    	GameRegistry.registerBlock((Block)(seashell = new BasicBlock("seashell", Material.rock, 0.5F, 2F, "pickaxe", 0, "seashell")), "seashell");
     	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
     	GameRegistry.registerBlock((Block)(limestoneBlock = new BasicBlock("limestoneBlock", Material.iron, 3F, 100F, "pickaxe", 1, "limestoneBlock")).setStepSound(Block.soundTypeMetal), "limestoneBlock");

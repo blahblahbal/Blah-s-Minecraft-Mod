@@ -21,12 +21,12 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenPalmTree extends WorldGenAbstractTree
 {
-    private static final IBlockState field_181643_a = ModBlocks.palmLog.getDefaultState();
-    private static final IBlockState field_181644_b = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false));
+    private static final IBlockState log = ModBlocks.palmLog.getDefaultState();
+    private static final IBlockState leaves = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false));
 
     public WorldGenPalmTree(boolean p_i45463_1_)
     {
-        super(p_i45463_1_);
+        super(false);
     }
     public WorldGenPalmTree(World w, Random r, BlockPos bp)
     {
@@ -41,6 +41,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
 
         if (position.getY() >= 1 && position.getY() + i + 1 <= 256)
         {
+        	this.setBlockToLog(worldIn, position);
             for (int j = position.getY(); j <= position.getY() + 1 + i; ++j)
             {
                 int k = 1;
@@ -112,7 +113,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
 
                         if (block.isAir(worldIn, blockpos) || block.isLeaves(worldIn, blockpos))
                         {
-                            this.func_181642_b(worldIn, blockpos);
+                            this.setBlockToLog(worldIn, blockpos);
                             k1 = i2;
                         }
                     }
@@ -125,7 +126,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
                         {
                             if (Math.abs(j3) != 3 || Math.abs(i4) != 3)
                             {
-                                this.func_175924_b(worldIn, blockpos2.add(j3, 0, i4));
+                                this.setBlockToLeaves(worldIn, blockpos2.add(j3, 0, i4));
                             }
                         }
                     }
@@ -136,14 +137,14 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
                     {
                         for (int j4 = -1; j4 <= 1; ++j4)
                         {
-                            this.func_175924_b(worldIn, blockpos2.add(k3, 0, j4));
+                            this.setBlockToLeaves(worldIn, blockpos2.add(k3, 0, j4));
                         }
                     }
 
-                    this.func_175924_b(worldIn, blockpos2.east(2));
-                    this.func_175924_b(worldIn, blockpos2.west(2));
-                    this.func_175924_b(worldIn, blockpos2.south(2));
-                    this.func_175924_b(worldIn, blockpos2.north(2));
+                    this.setBlockToLeaves(worldIn, blockpos2.east(2));
+                    this.setBlockToLeaves(worldIn, blockpos2.west(2));
+                    this.setBlockToLeaves(worldIn, blockpos2.south(2));
+                    this.setBlockToLeaves(worldIn, blockpos2.north(2));
                     i3 = position.getX();
                     j1 = position.getZ();
                     EnumFacing enumfacing1 = EnumFacing.Plane.HORIZONTAL.random(rand);
@@ -166,7 +167,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
 
                                 if (block.isAir(worldIn, blockpos2) || block.isLeaves(worldIn, blockpos2))
                                 {
-                                    this.func_181642_b(worldIn, blockpos1);
+                                    this.setBlockToLog(worldIn, blockpos1);
                                     k1 = j2;
                                 }
                             }
@@ -184,7 +185,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
                                 {
                                     if (Math.abs(i5) != 2 || Math.abs(k5) != 2)
                                     {
-                                        this.func_175924_b(worldIn, blockpos3.add(i5, 0, k5));
+                                        this.setBlockToLeaves(worldIn, blockpos3.add(i5, 0, k5));
                                     }
                                 }
                             }
@@ -195,7 +196,7 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
                             {
                                 for (int l5 = -1; l5 <= 1; ++l5)
                                 {
-                                    this.func_175924_b(worldIn, blockpos3.add(j5, 0, l5));
+                                    this.setBlockToLeaves(worldIn, blockpos3.add(j5, 0, l5));
                                 }
                             }
                         }
@@ -215,18 +216,18 @@ public class WorldGenPalmTree extends WorldGenAbstractTree
         }
     }
 
-    private void func_181642_b(World p_181642_1_, BlockPos p_181642_2_)
+    private void setBlockToLog(World p_181642_1_, BlockPos p_181642_2_)
     {
-        this.setBlockAndNotifyAdequately(p_181642_1_, p_181642_2_, field_181643_a);
+        this.setBlockAndNotifyAdequately(p_181642_1_, p_181642_2_, log);
     }
 
-    private void func_175924_b(World worldIn, BlockPos p_175924_2_)
+    private void setBlockToLeaves(World worldIn, BlockPos p_175924_2_)
     {
         Block block = worldIn.getBlockState(p_175924_2_).getBlock();
 
         if (block.isAir(worldIn, p_175924_2_) || block.isLeaves(worldIn, p_175924_2_))
         {
-            this.setBlockAndNotifyAdequately(worldIn, p_175924_2_, field_181644_b);
+            this.setBlockAndNotifyAdequately(worldIn, p_175924_2_, leaves);
         }
     }
 }

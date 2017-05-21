@@ -8,6 +8,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -22,7 +23,7 @@ public class BiomeGenTropics extends BiomeGenBase
         this.topBlock = ModBlocks.blackSand.getDefaultState();
         this.fillerBlock = ModBlocks.blackSand.getDefaultState();
         
-        this.theBiomeDecorator.treesPerChunk = 3;
+        this.theBiomeDecorator.treesPerChunk = 2;
         this.theBiomeDecorator.deadBushPerChunk = 2;
         this.theBiomeDecorator.reedsPerChunk = 5;
         this.theBiomeDecorator.cactiPerChunk = 0;
@@ -77,6 +78,10 @@ public class BiomeGenTropics extends BiomeGenBase
                     		iblockstate1 = ModBlocks.blackSand.getDefaultState();
                     	}
                         j = k;
+                        /*if (ypos >= i && rand.nextInt(20) == 0)
+                        {
+                        	chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
+                        }*/
                         if (ypos >= i - 1)
                         {
                             chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.blackSand.getDefaultState());
@@ -104,6 +109,19 @@ public class BiomeGenTropics extends BiomeGenBase
                         }
                     }
                 }
+            }
+        }
+        for (int j3 = 0; j3 < 5; ++j3)
+        {
+            int k7 = rand.nextInt(16) + 8;
+            int j11 = rand.nextInt(16) + 8;
+            BiomeDecorator bd = new BiomeDecorator();
+            int l14 = worldIn.getHeight(bd.field_180294_c.add(k7, 0, j11)).getY() * 2;
+
+            if (l14 > 0)
+            {
+                int i18 = rand.nextInt(l14);
+                (new WorldGenSeashell()).generate(worldIn, rand, bd.field_180294_c.add(k7, i18, j11));
             }
         }
     }

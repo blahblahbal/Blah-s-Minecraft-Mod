@@ -26,7 +26,8 @@ public class ModBlockLog extends BlockRotatedPillar
 		this.name = name;
 		this.setUnlocalizedName(name);
         this.setCreativeTab(Main.blahTabBlock);
-        this.setHardness(2.0F);
+        this.setHardness(2F);
+        this.setResistance(5F);
         this.setStepSound(soundTypeWood);
 	}
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)

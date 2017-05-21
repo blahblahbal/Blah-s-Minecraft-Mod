@@ -152,6 +152,7 @@ tile.palmLeaves.name=Palm Leaves
 tile.palmSapling.name=Palm Sapling
 tile.blackSandstone.name=Black Sandstone
 tile.palmPlanks.name=Palm Wood Planks
+tile.seashell.name=Seashell
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer
