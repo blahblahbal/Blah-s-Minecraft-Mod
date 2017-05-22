@@ -85,7 +85,8 @@ public class ModBlockOre extends BlockOre {
         	this == ModBlocks.citrineOre ||
         	this == ModBlocks.topazOre ||
         	this == ModBlocks.sapphireOre ||
-        	this == ModBlocks.amethystOre)
+        	this == ModBlocks.amethystOre ||
+        	this == ModBlocks.rubyOreTrop)
         {
         	return MathHelper.getRandomIntegerInRange(rand, 3, 7);
         }

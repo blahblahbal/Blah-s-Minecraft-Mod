@@ -249,5 +249,8 @@ public final class ModCrafting
 		GameRegistry.addSmelting(Blocks.obsidian, new ItemStack(ModItems.obsidianIngot), 3F);
 		GameRegistry.addSmelting(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass), .5F);
 		GameRegistry.addSmelting(ModBlocks.tropicCobblestone, new ItemStack(ModBlocks.tropicStone), .5F);
+		GameRegistry.addSmelting(ModBlocks.ironOre, new ItemStack(Items.iron_ingot), 2F);
+		GameRegistry.addSmelting(ModBlocks.goldOre, new ItemStack(Items.gold_ingot), 2F);
+		GameRegistry.addSmelting(ModBlocks.coalOre, new ItemStack(Items.coal), 2F);
 	}
 }

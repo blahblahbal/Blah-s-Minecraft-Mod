@@ -50,6 +50,7 @@ public class WorldGenDifferentPalmTree extends WorldGenAbstractTree
 	@Override
 	public boolean generate(World arg0, Random arg1, BlockPos arg2)
 	{
+		if (arg0.getBlockState(arg2.down()).getBlock() != ModBlocks.blackSand) return false;
 		buildLayer(arg0, arg2, logPos, log);
 		buildLayer(arg0, arg2, leavesPos, leaves);
 		return true;

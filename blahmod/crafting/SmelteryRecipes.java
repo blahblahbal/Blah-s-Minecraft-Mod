@@ -63,6 +63,9 @@ public class SmelteryRecipes
         this.addSmeltingRecipeForBlock(Blocks.obsidian, new ItemStack(ModItems.obsidianIngot, 2), 3F);
         this.addSmeltingRecipeForBlock(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass, 2), .5F);
         this.addSmeltingRecipeForBlock(ModBlocks.tropicCobblestone, new ItemStack(ModBlocks.tropicStone, 2), .5F);
+        this.addSmeltingRecipeForBlock(ModBlocks.coalOre, new ItemStack(Items.coal, 2), .5F);
+        this.addSmeltingRecipeForBlock(ModBlocks.ironOre, new ItemStack(Items.iron_ingot, 2), 2F);
+        this.addSmeltingRecipeForBlock(ModBlocks.goldOre, new ItemStack(Items.gold_ingot, 2), 2F);
         //this.addSmeltingRecipeForBlock(ModBlocks.caesiumOre, new ItemStack(ModItems.caesiumIngot), .5F);
         
         for (ItemFishFood.FishType itemfishfood$fishtype : ItemFishFood.FishType.values())

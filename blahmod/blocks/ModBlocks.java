@@ -81,6 +81,10 @@ public final class ModBlocks
 	public static Block tadanite;
 	public static Block tropicMud;
 	public static Block diamondDoor;
+	public static Block ironOre;
+	public static Block coalOre;
+	public static Block goldOre;
+	public static Block rubyOreTrop;
 	public static BlockSeashell seashell;
 	public static BlockLargeSeashell largeSeashell;
     public static Block leatherBlock;
@@ -134,6 +138,11 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(lumiteBlock = new BasicBlock("lumiteBlock", Material.iron, 5F, 150F, "pickaxe", 1, "lumiteBlock")).setStepSound(Block.soundTypeMetal), "lumiteBlock");
     	GameRegistry.registerBlock((Block)(netherIceBrick = new BasicBlock("netherIceBrick", Material.rock, 8F, 150F, "pickaxe", 1, "netherIceBrick")).setStepSound(Block.soundTypeStone), "netherIceBrick");
     	GameRegistry.registerBlock(limestoneOre = new ModBlockOre("limestoneOre", Material.rock, ModItems.limestone, 3.5F, 100F, "pickaxe", 1, 0, 1, 2, "limestoneOre"), "limestoneOre");
+    	
+    	GameRegistry.registerBlock(coalOre = new ModBlockOre("coalOre", Material.rock, Items.coal, 3.5F, 50F, "pickaxe", 1, 0, 1, 1, "coalOre"), "coalOre");
+    	GameRegistry.registerBlock((Block)(ironOre = new BasicBlock("ironOre", Material.rock, 3F, 75F, "pickaxe", 2, "ironOre")), "ironOre");
+    	GameRegistry.registerBlock((Block)(goldOre = new BasicBlock("goldOre", Material.rock, 3F, 80F, "pickaxe", 3, "goldOre")), "goldOre");
+    	
     	GameRegistry.registerBlock(sulphurOre = new ModBlockOre("sulphurOre", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre"), "sulphurOre");
     	GameRegistry.registerBlock((Block)(lumiteOre = new BasicBlock("lumiteOre", Material.rock, 3F, 200F, "pickaxe", 5, "lumiteOre")), "lumiteOre");
     	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 3F, 150F, "pickaxe", 1, "cement")), "cement");
@@ -191,6 +200,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock(topazOre = new ModBlockOre("topazOre", Material.rock, ModItems.gems[2], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "topazOre"), "topazOre");
     	GameRegistry.registerBlock(sapphireOre = new ModBlockOre("sapphireOre", Material.rock, ModItems.gems[3], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "sapphireOre"), "sapphireOre");
     	GameRegistry.registerBlock(amethystOre = new ModBlockOre("amethystOre", Material.rock, ModItems.gems[4], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "amethystOre"), "amethystOre");
+    	GameRegistry.registerBlock(rubyOreTrop = new ModBlockOre("rubyOreTrop", Material.rock, ModItems.gems[0], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "rubyOreTrop"), "rubyOreTrop");
     	slabs[0] = new ModBlockSlabHalf("woolSlab");
     	slabs[1] = new ModBlockSlabHalf("ironSlab");
     	slabs[2] = new ModBlockSlabHalf("goldSlab");

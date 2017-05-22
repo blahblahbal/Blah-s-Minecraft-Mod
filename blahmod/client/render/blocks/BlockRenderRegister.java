@@ -91,6 +91,8 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.palmPlanks);
 	    reg((BasicBlock)ModBlocks.tropicCobblestone);
 	    reg((BasicBlock)ModBlocks.tropicMud);
+	    reg((BasicBlock)ModBlocks.ironOre);
+	    reg((BasicBlock)ModBlocks.goldOre);
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
@@ -133,6 +135,8 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.diamondDoor), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteSmeltery), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tadaniteSmeltery", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStone), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tropicStone)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.coalOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.coalOre)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.rubyOreTrop), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.rubyOreTrop)).name, "inventory"));
 	}
 	public static void reg(BasicBlock block)
 	{

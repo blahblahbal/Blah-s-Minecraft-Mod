@@ -158,6 +158,10 @@ tile.diamondDoor.name=Diamond Door
 tile.tropicStone.name=Tropics Stone
 tile.tropicCobblestone.name=Tropics Cobblestone
 tile.tropicMud.name=Tropics Mud
+tile.coalOre.name=Coal Ore
+tile.ironOre.name=Iron Ore
+tile.goldOre.name=Gold Ore
+tile.rubyOreTrop.name=Ruby Ore
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer
