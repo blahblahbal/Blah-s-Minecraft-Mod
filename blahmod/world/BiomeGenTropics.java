@@ -22,7 +22,7 @@ public class BiomeGenTropics extends BiomeGenBase
 	public BiomeGenTropics(int i)
 	{
 		super(i);
-		this.waterColorMultiplier = 0x4ec0ff;
+		this.waterColorMultiplier = 0x3D2891;
 		this.spawnableCreatureList.clear();
         this.topBlock = ModBlocks.blackSand.getDefaultState();
         this.fillerBlock = ModBlocks.blackSand.getDefaultState();
@@ -31,16 +31,22 @@ public class BiomeGenTropics extends BiomeGenBase
         this.theBiomeDecorator.reedsPerChunk = 5;
         this.theBiomeDecorator.cactiPerChunk = 0;
 	}
-	public int getBiomeGrassColor()
-	{
-	   return 0x14d914;
-	}
 	public BiomeGenTropics setMinMaxHeight(int min, int max)
 	{
 		this.maxHeight = max;
 		this.minHeight = min;
 		return this;
 	}
+	@Override
+	public int getFoliageColorAtPos(BlockPos pos)
+	{
+		return 0x8FFF00;
+	}
+	@Override
+    public int getGrassColorAtPos(BlockPos pos)
+    {
+        return 0xE8CEAB;
+}
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int varOne, int varTwo, double varThree)
 	{
@@ -89,12 +95,6 @@ public class BiomeGenTropics extends BiomeGenBase
                 if (iblockstate2.getBlock().getMaterial() == Material.air)
                 {
                     j = -1;
-                    /*BlockPos bp = new BlockPos(i1, ypos, l).down();
-                    IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
-                	if (down.getBlock() == ModBlocks.blackSand)
-                	{
-                		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
-                	}*/
                 }
                 else if (iblockstate2.getBlock() == Blocks.stone)
                 {
@@ -111,14 +111,6 @@ public class BiomeGenTropics extends BiomeGenBase
                     		iblockstate1 = ModBlocks.blackSand.getDefaultState();
                     	}
                         j = k;
-                        /*if (ypos > i && ypos <= i + 20 && rand.nextInt(20) == 0)
-                        {
-                        	IBlockState ibs3 = chunkPrimerIn.getBlockState(i1, ypos, l);
-                        	BlockPos bp = new BlockPos(i1, ypos, l).down();
-                        	IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
-                        	if (ibs3.getBlock().getMaterial() == Material.air && down.getBlock() == ModBlocks.blackSand)
-                        		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
-                        }*/
                         if (ypos >= i - 1)
                         {
                         	if (rand.nextInt(40) == 0 && chunkPrimerIn.getBlockState(i1, ypos + 1, l).getBlock().getMaterial() == Material.air)
@@ -138,12 +130,6 @@ public class BiomeGenTropics extends BiomeGenBase
                         {
                             chunkPrimerIn.setBlockState(i1, ypos, l, iblockstate1);
                         }
-                        /*BlockPos bp = new BlockPos(i1, ypos, l).down();
-                        IBlockState down = chunkPrimerIn.getBlockState(bp.getX(), bp.getY(), bp.getZ());
-                    	if (down.getBlock() == ModBlocks.blackSand && rand.nextInt(20) == 0)
-                    	{
-                    		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.seashell.getDefaultState());
-                    	}*/
                     }
                     else if (j > 0)
                     {
@@ -159,19 +145,6 @@ public class BiomeGenTropics extends BiomeGenBase
                 }
             }
         }
-        /*for (int j3 = 0; j3 < 5; ++j3) // 5 = number of seashells to place per chunk
-        {
-            int k7 = rand.nextInt(16) + 8;
-            int j11 = rand.nextInt(16) + 8;
-            BlockPos bp = new BlockPos(i1, 90, l);
-            int l14 = worldIn.getHeight(bp.add(k7, 0, j11)).getY() * 2;
-
-            if (l14 > 0)
-            {
-                int i18 = rand.nextInt(l14);
-                (new WorldGenSeashell()).generate(worldIn, rand, bp.add(k7, i18, j11));
-            }
-        }*/
     }
 	public WorldGenAbstractTree genBigTreeChance(Random rand)
     {

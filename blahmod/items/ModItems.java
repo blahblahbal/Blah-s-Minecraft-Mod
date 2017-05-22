@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemDoor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.common.util.EnumHelper;
@@ -33,6 +34,7 @@ public final class ModItems {
     public static Item uraniumIngot;
     public static Item osborgnenFuel;
     public static Item catalyticInverter;
+    public static Item diamondDoorItem;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;
@@ -135,7 +137,7 @@ public final class ModItems {
     public static Item registerItem(Item item, String name)
     {
     	item.setUnlocalizedName(name);
-    	GameRegistry.registerItem(item,name);
+    	GameRegistry.registerItem(item, name);
     	return item;
     }
 }

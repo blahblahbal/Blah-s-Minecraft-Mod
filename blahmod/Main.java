@@ -46,7 +46,6 @@ public class Main
     public static final Enchantment stepping = new EnchantmentStepping(86, new ResourceLocation("stepping"), 1, EnumEnchantmentType.ARMOR_FEET);
     public static CreativeTabBlah blahTab;
     public static CreativeTabBlahBlocks blahTabBlock;
-    //public static CreativeTabGems gemTab;
     
     @Instance
     public static Main instance = new Main();
@@ -61,7 +60,7 @@ public class Main
  	        ModBOP.addRecipes();
         }
     	tropicsBiome = new BiomeGenTropics(252).setBiomeName("Tropics").setTemperatureRainfall(0.8F, 0.4F);
-    	BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(tropicsBiome, 5));
+    	BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(tropicsBiome, 25));
     	blahTab = new CreativeTabBlah();
     	blahTabBlock = new CreativeTabBlahBlocks();
     	OreDictionary.registerOre("plankWood", ModBlocks.sequoiaPlanks);
