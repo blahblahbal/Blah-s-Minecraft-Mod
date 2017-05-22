@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
@@ -70,7 +71,7 @@ public class ModEventHandler
 
 							Block b = player.worldObj.getBlockState(pos.down()).getBlock();
 
-							if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water) && player.worldObj.isAirBlock(pos))
+							if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water || b instanceof BlockFluidClassic) && player.worldObj.isAirBlock(pos))
 							{
 								if (!player.isSneaking())
 								{

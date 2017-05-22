@@ -22,8 +22,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 public class WorldGenPalmTree extends WorldGenAbstractTree
 {
     private static final IBlockState log = ModBlocks.palmLog.getDefaultState();
-    private static final IBlockState leaves = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false));
-
+    private static final IBlockState leaves = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false)).withProperty(BlockPalmLeaves.DECAYABLE, Boolean.valueOf(false));
     public WorldGenPalmTree(boolean p_i45463_1_)
     {
         super(false);

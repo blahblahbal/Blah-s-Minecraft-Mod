@@ -57,6 +57,8 @@ public final class ModBlocks
 	public static BlockInventoryFurnace tadaniteSmeltery;
 	public static Block acid;
 	public static Block netherIceBrick;
+	public static Block tropicStone;
+	public static Block tropicCobblestone;
 	public static Block potatoBlock;
 	public static Block hardenedLava;
 	public static Block saltrock;
@@ -77,6 +79,7 @@ public final class ModBlocks
 	public static Block sapphireOre;
 	public static Block rubyOre;
 	public static Block tadanite;
+	public static Block tropicMud;
 	public static Block diamondDoor;
 	public static BlockSeashell seashell;
 	public static BlockLargeSeashell largeSeashell;
@@ -159,7 +162,9 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(imperviousBrick = new BasicBlock("imperviousBrick", Material.rock, 1F, 8F, "pickaxe", 1, "imperviousBrick")), "imperviousBrick");
 		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 5F, "Shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
 		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
-		
+		GameRegistry.registerBlock((Block)(tropicCobblestone = new BasicBlock("tropicCobblestone", Material.rock, 1F, 8F, "pickaxe", 1, "tropicCobblestone")).setStepSound(Block.soundTypeStone), "tropicCobblestone");
+		GameRegistry.registerBlock((Block)(tropicMud = new BasicBlock("tropicMud", Material.clay, 1F, 2F, "Shovel", 0, "tropicMud")).setStepSound(Block.soundTypeSand), "tropicMud");
+		GameRegistry.registerBlock(tropicStone = new ModBlockOre("tropicStone", Material.rock, Item.getItemFromBlock(ModBlocks.tropicCobblestone), 1.5F, 10F, "pickaxe", 1, 0, 1, 1, "tropicStone"), "tropicStone");
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 	    RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 	    GameRegistry.registerBlock(sequoiaLog, ItemLog.class, renderItem, "sequoiaLog");

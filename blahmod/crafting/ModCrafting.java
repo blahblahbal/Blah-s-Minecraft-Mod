@@ -247,6 +247,7 @@ public final class ModCrafting
 		GameRegistry.addSmelting(ModBlocks.tadaniteOre, new ItemStack(ModItems.tadaniteShard, 2), 15F);
 		GameRegistry.addSmelting(ModBlocks.clayOre, new ItemStack(Items.clay_ball, 2), .5F);
 		GameRegistry.addSmelting(Blocks.obsidian, new ItemStack(ModItems.obsidianIngot), 3F);
-		GameRegistry.addSmelting(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass, 2), .5F);
+		GameRegistry.addSmelting(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass), .5F);
+		GameRegistry.addSmelting(ModBlocks.tropicCobblestone, new ItemStack(ModBlocks.tropicStone), .5F);
 	}
 }

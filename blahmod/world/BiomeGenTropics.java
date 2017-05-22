@@ -18,6 +18,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class BiomeGenTropics extends BiomeGenBase
 {
 	private static final WorldGenPalmTree tree = new WorldGenPalmTree(false);
+	private static final WorldGenDifferentPalmTree treeDiff = new WorldGenDifferentPalmTree(false);
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public BiomeGenTropics(int i)
 	{
@@ -45,7 +46,7 @@ public class BiomeGenTropics extends BiomeGenBase
 	@Override
     public int getGrassColorAtPos(BlockPos pos)
     {
-        return 0xE8CEAB;
+        return 0x8FFF00; //0xE8CEAB;
 }
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int varOne, int varTwo, double varThree)
@@ -120,6 +121,11 @@ public class BiomeGenTropics extends BiomeGenBase
                         	}
                         	chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.blackSand.getDefaultState());
                         }
+                        else if (ypos < i - 1 && ypos >= i - 7 - k)
+                        {
+                        	iblockstate = null;
+                        	iblockstate1 = ModBlocks.tropicStone.getDefaultState();
+                        }
                         else if (ypos < i - 7 - k)
                         {
                             iblockstate = null;
@@ -141,6 +147,13 @@ public class BiomeGenTropics extends BiomeGenBase
                             j = rand.nextInt(4) + Math.max(0, ypos - 63);
                             iblockstate1 = ModBlocks.blackSandstone.getDefaultState();
                         }
+                        /*if (j == 0 && iblockstate1.getBlock() == Blocks.stone)
+                        {
+                        	//j = rand.nextInt(4) + Math.max(0, ypos - 63);
+                        	int rn3 = 7 + rand.nextInt(15) 
+                        	if (ypos >= rn3)
+                        	chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.tropicStone.getDefaultState());
+                        }*/
                     }
                 }
             }
@@ -148,7 +161,7 @@ public class BiomeGenTropics extends BiomeGenBase
     }
 	public WorldGenAbstractTree genBigTreeChance(Random rand)
     {
-        return (WorldGenAbstractTree)(rand.nextInt(5) > 0 ? tree : this.worldGeneratorTrees);
+        return (WorldGenAbstractTree)(rand.nextInt(5) > 0 ? tree : treeDiff);
     }
 	
 }

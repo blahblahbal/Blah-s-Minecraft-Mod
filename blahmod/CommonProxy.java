@@ -13,6 +13,7 @@ import blahmod.tileentity.ModTileEntities;
 import blahmod.world.BlahWorldGen;
 import blahmod.world.BlahWorldGen2;
 import blahmod.world.GeneratorAcidLake;
+import blahmod.world.WorldGenMud;
 import blahmod.world.WorldGeneratorNetherVillage;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.pattern.BlockHelper;
@@ -71,6 +72,7 @@ public class CommonProxy
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.lumiteOre, (ModBlocks.hardenedLava), new int[]{0}, 15, 1, 3, 4), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.saltrock, (Blocks.stone), new int[]{0}, 60, 15, 1, 25), 0);
     	GameRegistry.registerWorldGenerator(new GeneratorAcidLake(0.2F, ModBlocks.acid.getDefaultState(), Blocks.stone.getDefaultState()), 0);
+    	GameRegistry.registerWorldGenerator(new WorldGenMud(10, ModBlocks.tropicMud), 0);
     	NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new ModGuiHandler());
     	MinecraftForge.EVENT_BUS.register(new ModEventHandler());
     	Enchantment.addToBookList(Main.moltenTouch);

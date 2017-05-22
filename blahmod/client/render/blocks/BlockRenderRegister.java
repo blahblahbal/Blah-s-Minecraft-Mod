@@ -89,6 +89,8 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.quicksilverBlock);
 	    reg((BasicBlock)ModBlocks.blackSandstone);
 	    reg((BasicBlock)ModBlocks.palmPlanks);
+	    reg((BasicBlock)ModBlocks.tropicCobblestone);
+	    reg((BasicBlock)ModBlocks.tropicMud);
 	    for (int i = 0; i < 5; i++)
 	    {
 	    	reg((BasicBlock)ModBlocks.gemBlocks[i]);
@@ -130,6 +132,7 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.largeSeashell), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":largeSeashell", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.diamondDoor), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteSmeltery), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tadaniteSmeltery", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStone), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tropicStone)).name, "inventory"));
 	}
 	public static void reg(BasicBlock block)
 	{

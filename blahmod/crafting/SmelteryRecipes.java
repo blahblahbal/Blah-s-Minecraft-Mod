@@ -61,8 +61,8 @@ public class SmelteryRecipes
         this.addSmeltingRecipeForBlock(ModBlocks.tadaniteOre, new ItemStack(ModItems.tadaniteShard, 4), 15F);
         this.addSmeltingRecipeForBlock(ModBlocks.clayOre, new ItemStack(Items.clay_ball, 4), .5F);
         this.addSmeltingRecipeForBlock(Blocks.obsidian, new ItemStack(ModItems.obsidianIngot, 2), 3F);
-        this.addSmeltingRecipeForBlock(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass, 4), .5F);
-        
+        this.addSmeltingRecipeForBlock(ModBlocks.blackSand, new ItemStack(ModBlocks.reinforcedGlass, 2), .5F);
+        this.addSmeltingRecipeForBlock(ModBlocks.tropicCobblestone, new ItemStack(ModBlocks.tropicStone, 2), .5F);
         //this.addSmeltingRecipeForBlock(ModBlocks.caesiumOre, new ItemStack(ModItems.caesiumIngot), .5F);
         
         for (ItemFishFood.FishType itemfishfood$fishtype : ItemFishFood.FishType.values())

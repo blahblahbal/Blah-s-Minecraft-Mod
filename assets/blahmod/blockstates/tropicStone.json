@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:tropicStone" },
+        "inventory": { "model": "blahmod:tropicStone" }
+    }
+}

@@ -155,6 +155,9 @@ tile.palmPlanks.name=Palm Wood Planks
 tile.seashell.name=Seashell
 tile.largeSeashell.name=Conch Shell
 tile.diamondDoor.name=Diamond Door
+tile.tropicStone.name=Tropics Stone
+tile.tropicCobblestone.name=Tropics Cobblestone
+tile.tropicMud.name=Tropics Mud
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer

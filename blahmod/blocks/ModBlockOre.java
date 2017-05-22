@@ -57,6 +57,7 @@ public class ModBlockOre extends BlockOre {
     @Override
     public int quantityDropped(IBlockState blockstate, int fortune, Random random)
     {
+    	if (this.drop == Item.getItemFromBlock(ModBlocks.tropicCobblestone)) return 1;
         if (this.least_quantity >= this.most_quantity)
             return this.least_quantity;
         return this.least_quantity + random.nextInt(this.most_quantity - this.least_quantity + fortune + 1);
