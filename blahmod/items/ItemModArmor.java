@@ -23,6 +23,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -42,16 +43,6 @@ public class ItemModArmor extends ItemArmor
 			ItemStack legs = player.getCurrentArmor(1);
 			ItemStack chest = player.getCurrentArmor(2);
 			ItemStack helmet = player.getCurrentArmor(3);
-			Minecraft mc = Minecraft.getMinecraft();
-			World worldz = mc.thePlayer.worldObj;
-			AxisAlignedBB aabb = mc.thePlayer.getEntityBoundingBox().expand(8, 8, 8);
-			List entities = world.getEntitiesWithinAABBExcludingEntity(mc.thePlayer, aabb);
-			for(int j = 0; j < entities.size(); j++)
-			{
-				Random rand = new Random();
-				Entity entity = (Entity)entities.get(j);
-				
-			}
 			if(boots.getItem() == ModItems.tadaniteBoots &&
 				legs.getItem() == ModItems.tadaniteLeggings &&
 				chest.getItem() == ModItems.tadaniteChestplate &&
@@ -90,7 +81,7 @@ public class ItemModArmor extends ItemArmor
 
 		            Block b = world.getBlockState(pos.down()).getBlock();
 
-		            if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water) && world.isAirBlock(pos))
+		            if ((b == Blocks.lava || b == Blocks.flowing_lava || b == Blocks.water || b == Blocks.flowing_water || b instanceof BlockFluidClassic) && world.isAirBlock(pos))
 		            {
 		                if (!player.isSneaking())
 		                {
@@ -113,7 +104,7 @@ public class ItemModArmor extends ItemArmor
 			      
 			      if (player.onGround)
 			      {
-			        float bonus = 0.055F;
+			        float bonus = 0.02F;
 			        if (player.isInWater()) bonus /= 4.0F;
 			        player.moveFlying(0.0F, 1.0F, bonus);
 			      }

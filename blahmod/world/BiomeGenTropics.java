@@ -4,9 +4,11 @@ import java.util.Random;
 
 import blahmod.blocks.ModBlocks;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -16,17 +18,22 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 public class BiomeGenTropics extends BiomeGenBase
 {
 	private static final WorldGenPalmTree tree = new WorldGenPalmTree(false);
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	public BiomeGenTropics(int i)
 	{
 		super(i);
+		this.waterColorMultiplier = 0x4ec0ff;
 		this.spawnableCreatureList.clear();
         this.topBlock = ModBlocks.blackSand.getDefaultState();
         this.fillerBlock = ModBlocks.blackSand.getDefaultState();
-        
         this.theBiomeDecorator.treesPerChunk = 2;
         this.theBiomeDecorator.deadBushPerChunk = 2;
         this.theBiomeDecorator.reedsPerChunk = 5;
         this.theBiomeDecorator.cactiPerChunk = 0;
+	}
+	public int getBiomeGrassColor()
+	{
+	   return 0x14d914;
 	}
 	public BiomeGenTropics setMinMaxHeight(int min, int max)
 	{
@@ -45,7 +52,25 @@ public class BiomeGenTropics extends BiomeGenBase
         IBlockState iblockstate = this.topBlock;
         IBlockState iblockstate1 = this.fillerBlock;
         IBlockState seashell = ModBlocks.seashell.getDefaultState();
+        int rn2 = rand.nextInt(4);
+        if (rn2 == 0)
+        	seashell = ModBlocks.seashell.getDefaultState().withProperty(FACING, EnumFacing.EAST);
+        else if (rn2 == 1)
+        	seashell = ModBlocks.seashell.getDefaultState().withProperty(FACING, EnumFacing.WEST);
+        else if (rn2 == 2)
+        	seashell = ModBlocks.seashell.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
+        else if (rn2 == 3)
+        	seashell = ModBlocks.seashell.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
         IBlockState l_seashell = ModBlocks.largeSeashell.getDefaultState();
+        int rn = rand.nextInt(4);
+        if (rn == 0)
+        	l_seashell = ModBlocks.largeSeashell.getDefaultState().withProperty(FACING, EnumFacing.EAST);
+        else if (rn == 1)
+        	l_seashell = ModBlocks.largeSeashell.getDefaultState().withProperty(FACING, EnumFacing.WEST);
+        else if (rn == 2)
+        	l_seashell = ModBlocks.largeSeashell.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
+        else if (rn == 3)
+        	l_seashell = ModBlocks.largeSeashell.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
         int j = -1;
         int k = (int)(p_180628_6_ / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
         int l = p_180628_4_ & 15;
