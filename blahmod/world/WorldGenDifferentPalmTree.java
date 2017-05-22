@@ -14,6 +14,7 @@ public class WorldGenDifferentPalmTree extends WorldGenAbstractTree
 {
 	private static final IBlockState log = ModBlocks.palmLog.getDefaultState();
     private static final IBlockState leaves = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false)).withProperty(BlockPalmLeaves.DECAYABLE, Boolean.valueOf(false));
+    private static final IBlockState coco = ModBlocks.coconut.getDefaultState();
     private int[][] logPos = new int[][]
     {
     	{0, 0, 0}, {0, 1, 0}, {0, 2, 0}, {0, 3, 0},
@@ -38,6 +39,10 @@ public class WorldGenDifferentPalmTree extends WorldGenAbstractTree
     	{-4, 7, -3},
     	{4, 7, -3}
     };
+    private int[][] cocoPos = new int[][]
+    {
+    	{0, 7, -4}, {0, 7, -2}, {1, 7, -3}, {-1, 7, -3}
+    };
     public WorldGenDifferentPalmTree(boolean f)
     {
     	super(false);
@@ -53,6 +58,7 @@ public class WorldGenDifferentPalmTree extends WorldGenAbstractTree
 		if (arg0.getBlockState(arg2.down()).getBlock() != ModBlocks.blackSand) return false;
 		buildLayer(arg0, arg2, logPos, log);
 		buildLayer(arg0, arg2, leavesPos, leaves);
+		buildLayer(arg0, arg2, cocoPos, coco);
 		return true;
 	}
 	private void buildLayer(World world, BlockPos frontLeftCorner, int[][] blockPositions, IBlockState toPlace)

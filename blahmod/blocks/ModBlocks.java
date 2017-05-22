@@ -55,6 +55,8 @@ public final class ModBlocks
 	public static Block blackSandstone;
 	public static Fluid acidFluid;
 	public static BlockInventoryFurnace tadaniteSmeltery;
+	public static BlockCoconut groundCoconut;
+	public static BlockCoconut coconut;
 	public static Block acid;
 	public static Block netherIceBrick;
 	public static Block tropicStone;
@@ -138,11 +140,11 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(lumiteBlock = new BasicBlock("lumiteBlock", Material.iron, 5F, 150F, "pickaxe", 1, "lumiteBlock")).setStepSound(Block.soundTypeMetal), "lumiteBlock");
     	GameRegistry.registerBlock((Block)(netherIceBrick = new BasicBlock("netherIceBrick", Material.rock, 8F, 150F, "pickaxe", 1, "netherIceBrick")).setStepSound(Block.soundTypeStone), "netherIceBrick");
     	GameRegistry.registerBlock(limestoneOre = new ModBlockOre("limestoneOre", Material.rock, ModItems.limestone, 3.5F, 100F, "pickaxe", 1, 0, 1, 2, "limestoneOre"), "limestoneOre");
-    	
+    	GameRegistry.registerBlock((Block)(coconut = new BlockCoconut("coconut", Material.rock)), "coconut");
+    	GameRegistry.registerBlock((Block)(groundCoconut = new BlockCoconut("coconutGround", Material.rock)), "coconutGround");
     	GameRegistry.registerBlock(coalOre = new ModBlockOre("coalOre", Material.rock, Items.coal, 3.5F, 50F, "pickaxe", 1, 0, 1, 1, "coalOre"), "coalOre");
     	GameRegistry.registerBlock((Block)(ironOre = new BasicBlock("ironOre", Material.rock, 3F, 75F, "pickaxe", 2, "ironOre")), "ironOre");
     	GameRegistry.registerBlock((Block)(goldOre = new BasicBlock("goldOre", Material.rock, 3F, 80F, "pickaxe", 3, "goldOre")), "goldOre");
-    	
     	GameRegistry.registerBlock(sulphurOre = new ModBlockOre("sulphurOre", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre"), "sulphurOre");
     	GameRegistry.registerBlock((Block)(lumiteOre = new BasicBlock("lumiteOre", Material.rock, 3F, 200F, "pickaxe", 5, "lumiteOre")), "lumiteOre");
     	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 3F, 150F, "pickaxe", 1, "cement")), "cement");

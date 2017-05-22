@@ -162,6 +162,8 @@ tile.coalOre.name=Coal Ore
 tile.ironOre.name=Iron Ore
 tile.goldOre.name=Gold Ore
 tile.rubyOreTrop.name=Ruby Ore
+tile.coconutGround.name=Coconut
+tile.coconut.name=Coconut
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer

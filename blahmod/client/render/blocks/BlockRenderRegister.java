@@ -132,6 +132,8 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.reinforcedGlass), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockGlass)(ModBlocks.reinforcedGlass)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.seashell), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":seashell", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.largeSeashell), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":largeSeashell", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.coconut), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":coconut", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.groundCoconut), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":coconutGround", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.diamondDoor), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteSmeltery), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tadaniteSmeltery", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStone), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tropicStone)).name, "inventory"));

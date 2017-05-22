@@ -68,6 +68,7 @@ public class CreativeTabBlah extends CreativeTabs
 		items.add(new ItemStack(ModItems.uraniumRod).copy());
 		items.add(new ItemStack(ModItems.lumite).copy());
 		items.add(new ItemStack(ModItems.osborgnenFuel).copy());
+		items.add(new ItemStack(ModItems.catalyticInverter).copy());
 		for (int i = 0; i < ModItems.dyeNew.length; i++)
 		{
 			items.add(new ItemStack(ModItems.dyeNew[i]).copy());
