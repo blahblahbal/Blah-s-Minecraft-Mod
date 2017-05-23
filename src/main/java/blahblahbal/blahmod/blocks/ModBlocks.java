@@ -128,10 +128,9 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1.5F, 10F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
     	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 35F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
     	GameRegistry.registerBlock((Block)(seashell = new BlockSeashell("seashell", Material.rock)), "seashell");
-    	//GameRegistry.registerBlock((Block)(diamondDoor = new BlockDiamondDoor(Material.iron)), "diamondDoor");
     	diamondDoor = registerDoor(new BlockDiamondDoor(Material.iron), "diamondDoor", ModItems.diamondDoorItem);
     	GameRegistry.registerBlock((Block)(largeSeashell = new BlockLargeSeashell("largeSeashell", Material.rock)), "largeSeashell");
-    	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
+    	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 1500F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
     	GameRegistry.registerBlock((Block)(limestoneBlock = new BasicBlock("limestoneBlock", Material.iron, 3F, 100F, "pickaxe", 1, "limestoneBlock")).setStepSound(Block.soundTypeMetal), "limestoneBlock");
     	GameRegistry.registerBlock((Block)(carrotBlock = new BasicBlock("carrotBlock", Material.cake, 0.5F, 30F, "axe", 0, "carrotBlock")).setStepSound(Block.soundTypeWood), "carrotBlock");
@@ -149,7 +148,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(lumiteOre = new BasicBlock("lumiteOre", Material.rock, 3F, 200F, "pickaxe", 5, "lumiteOre")), "lumiteOre");
     	GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 3F, 150F, "pickaxe", 1, "cement")), "cement");
     	GameRegistry.registerBlock((Block)(uraniumBlock = new BasicBlock("uraniumBlock", Material.iron, 10F, 150F, "pickaxe", 2, "uraniumBlock")).setStepSound(Block.soundTypeMetal).setLightLevel(.3F), "uraniumBlock");
-    	GameRegistry.registerBlock((Block)(magmaCreamBlock = new BasicBlock("magmaCreamBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "magmaCreamBlock")).setStepSound(Block.soundTypeGravel), "magmaCreamBlock");
+    	GameRegistry.registerBlock((Block)(magmaCreamBlock = new BasicBlock("magmaCreamBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "magmaCreamBlock")).setStepSound(Block.soundTypeStone), "magmaCreamBlock");
     	GameRegistry.registerBlock(potatoBlock = new BlockPotato(Material.cloth, "potatoBlock"), "potatoBlock");
     	GameRegistry.registerBlock((Block)(enderPearlBlock = new BasicBlock("enderPearlBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "enderPearlBlock")).setStepSound(Block.soundTypeStone), "enderPearlBlock");
     	GameRegistry.registerBlock((Block)(endStoneBricks = new BasicBlock("endStoneBricks", Material.rock, 10F, 150F, "pickaxe", 1, "endStoneBricks")).setStepSound(Block.soundTypeStone), "endStoneBricks");
@@ -174,7 +173,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 1F, 5F, "Shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
 		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
 		GameRegistry.registerBlock((Block)(tropicCobblestone = new BasicBlock("tropicCobblestone", Material.rock, 1F, 8F, "pickaxe", 1, "tropicCobblestone")).setStepSound(Block.soundTypeStone), "tropicCobblestone");
-		GameRegistry.registerBlock((Block)(tropicMud = new BasicBlock("tropicMud", Material.clay, 1F, 2F, "Shovel", 0, "tropicMud")).setStepSound(Block.soundTypeSand), "tropicMud");
+		GameRegistry.registerBlock((Block)(tropicMud = new BasicBlock("tropicMud", Material.clay, 1F, 2F, "Shovel", 0, "tropicMud")).setStepSound(Block.soundTypeGravel), "tropicMud");
 		GameRegistry.registerBlock(tropicStone = new ModBlockOre("tropicStone", Material.rock, Item.getItemFromBlock(ModBlocks.tropicCobblestone), 1.5F, 10F, "pickaxe", 1, 0, 1, 1, "tropicStone"), "tropicStone");
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 	    RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
@@ -184,7 +183,7 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(obsidianBrick = new BasicBlock("obsidianBrick", Material.rock, 2F, 50F, "pickaxe", 2, "obsidianBrick")), "obsidianBrick");
     	GameRegistry.registerBlock((Block)(netherIce = new BasicBlock("netherIce", Material.ice, 1.5F, 10F, "pickaxe", 0, "netherIce")).setStepSound(Block.soundTypeGlass), "netherIce");
     	GameRegistry.registerBlock(uraniumTorch = new ModBlockTorch(3F, "uraniumTorch"), "uraniumTorch");
-    	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "Shovel", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
+    	GameRegistry.registerBlock(clayOre = new ModBlockOre("clayOre", Material.grass, Items.clay_ball, 1F, 30F, "shovel", 0, 0, 3, 6, "clayOre").setStepSound(Block.soundTypeGrass), "clayOre");
     	for (int i = 0; i < woolNames.length; i++)
     	{
     		GameRegistry.registerBlock((Block)(newWool[i] = new BasicBlock("wool" + woolNames[i], Material.cloth, 0.5F, 5F, "shears", 0, "wool" + woolNames[i]).setStepSound(Block.soundTypeCloth)), "wool" + woolNames[i]);
@@ -194,7 +193,7 @@ public final class ModBlocks
     	
     	for (int i = 0; i < gemNames.length; i++)
     	{
-    		GameRegistry.registerBlock((Block)(gemBlocks[i] = new BasicBlock(gemNames[i] + "Block", Material.iron, 2F, 100F, "pickaxe", 2, gemNames[i] + "Block")), gemNames[i] + "Block");
+    		GameRegistry.registerBlock((Block)(gemBlocks[i] = new BasicBlock(gemNames[i] + "Block", Material.iron, 2F, 100F, "pickaxe", 2, gemNames[i] + "Block")).setStepSound(Block.soundTypeMetal), gemNames[i] + "Block");
     		//GameRegistry.registerBlock(gemOres[i] = new ModBlockOre(gemNames[i] + "Ore", Material.rock, ModItems.gems[i], 3.5F, 100F, "pickaxe", 1, 0, 1, 1, gemNames[i] + "Ore"), gemNames[i] + "Ore");
     	}
     	GameRegistry.registerBlock(rubyOre = new ModBlockOre("rubyOre", Material.rock, ModItems.gems[0], 2.5F, 100F, "pickaxe", 1, 0, 1, 2, "rubyOre"), "rubyOre");

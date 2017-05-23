@@ -73,6 +73,10 @@ public class ModBlockOre extends BlockOre {
         {
         	return MathHelper.getRandomIntegerInRange(rand, 10, 15);
         }
+        if (this == ModBlocks.coalOre)
+        {
+        	return MathHelper.getRandomIntegerInRange(rand, 0, 2);
+        }
         if (this == ModBlocks.limestoneOre)
         {
         	return MathHelper.getRandomIntegerInRange(rand, 1, 5);

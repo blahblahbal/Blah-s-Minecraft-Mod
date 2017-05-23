@@ -5,6 +5,7 @@ import java.util.Random;
 import main.java.blahblahbal.blahmod.Main;
 import main.java.blahblahbal.blahmod.world.StructureSequoiaTree;
 import main.java.blahblahbal.blahmod.world.StructureTreeHouse;
+import main.java.blahblahbal.blahmod.world.WorldGenDifferentPalmTree;
 import main.java.blahblahbal.blahmod.world.WorldGenPalmTree;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
@@ -73,6 +74,7 @@ public class ModBlockPalmSapling extends BlockSapling
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		WorldGenerator gen = (WorldGenerator)(new WorldGenPalmTree(worldIn, rand, pos));
+		WorldGenerator gen = (WorldGenerator)(rand.nextInt(3) == 0 ? new WorldGenPalmTree(worldIn, rand, pos) : new WorldGenDifferentPalmTree(worldIn, rand, pos));
+		
 	}
 }

@@ -34,6 +34,7 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.coalOre).copy());
 		items.add(new ItemStack(ModBlocks.ironOre).copy());
 		items.add(new ItemStack(ModBlocks.goldOre).copy());
+		items.add(new ItemStack(ModBlocks.rubyOreTrop).copy());
 		items.add(new ItemStack(ModBlocks.clayOre).copy());
 		items.add(new ItemStack(ModBlocks.limestoneOre).copy());
 		items.add(new ItemStack(ModBlocks.sulphurOre).copy());
@@ -64,6 +65,9 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.hardenedLava).copy());
 		items.add(new ItemStack(ModBlocks.blazeBrick).copy());
 		items.add(new ItemStack(ModBlocks.cement).copy());
+		items.add(new ItemStack(ModBlocks.quicksilverBlock).copy());
+		items.add(new ItemStack(ModBlocks.magmaCreamBlock).copy());
+		items.add(new ItemStack(ModBlocks.enderPearlBlock).copy());
 		items.add(new ItemStack(ModBlocks.endStoneBricks).copy());
 		items.add(new ItemStack(ModBlocks.leatherBlock).copy());
 		items.add(new ItemStack(ModBlocks.petrifiedWood).copy());
@@ -99,12 +103,13 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.blackSandstone).copy());
 		items.add(new ItemStack(ModBlocks.palmLog).copy());
 		items.add(new ItemStack(ModBlocks.palmLeaves).copy());
-		items.add(new ItemStack(ModBlocks.groundCoconut).copy());
+		items.add(new ItemStack(ModBlocks.palmPlanks).copy());
 		items.add(new ItemStack(ModBlocks.tropicStone).copy());
 		items.add(new ItemStack(ModBlocks.tropicCobblestone).copy());
 		items.add(new ItemStack(ModBlocks.tropicMud).copy());
 		items.add(new ItemStack(ModBlocks.seashell).copy());
 		items.add(new ItemStack(ModBlocks.largeSeashell).copy());
+		items.add(new ItemStack(ModBlocks.groundCoconut).copy());
 		super.displayAllReleventItems(items);
 	}
 }
