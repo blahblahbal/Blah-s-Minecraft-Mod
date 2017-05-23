@@ -10,6 +10,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+/**
+* From MinecraftByExample - author = brandon3055
+*/
+
 public class ContainerInventoryFurnace extends Container
 {
 	// Stores the tile entity instance for later use
