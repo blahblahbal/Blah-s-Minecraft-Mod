@@ -24,13 +24,6 @@ version = "1.0.0"
 group= "blahblahbal.blahmod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BlahMod"
 
-sourceSets {
-    main {
-        java { srcDirs = ["$projectDir/bin/blahblahbal"] }
-        resources { srcDirs = ["$projectDir/bin/assets"] }
-    }
-}
-
 minecraft {
     version = "1.8.9-11.15.1.1722"
     runDir = "run"
