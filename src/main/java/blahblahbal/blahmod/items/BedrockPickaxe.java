@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
-import main.java.blahblahbal.blahmod.AchievementHandler;
+import blahblahbal.blahmod.AchievementHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

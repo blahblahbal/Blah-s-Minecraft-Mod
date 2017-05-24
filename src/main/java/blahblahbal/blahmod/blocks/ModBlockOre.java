@@ -1,9 +1,10 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;

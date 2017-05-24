@@ -1,10 +1,10 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.world.StructureSequoiaTree;
-import main.java.blahblahbal.blahmod.world.StructureTreeHouse;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.world.StructureSequoiaTree;
+import blahblahbal.blahmod.world.StructureTreeHouse;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;

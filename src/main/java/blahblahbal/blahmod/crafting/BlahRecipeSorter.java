@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod.crafting;
+package blahblahbal.blahmod.crafting;
 
 import java.util.Comparator;
 
-import main.java.blahblahbal.blahmod.guicontainer.BlahCraftManager;
+import blahblahbal.blahmod.guicontainer.BlahCraftManager;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;

@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.Main;
 import net.minecraft.item.ItemAxe;
 
 public class ItemModAxe extends ItemAxe {

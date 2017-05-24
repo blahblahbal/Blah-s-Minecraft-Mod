@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.items.itemBlocks;
+package blahblahbal.blahmod.items.itemBlocks;
 
-import main.java.blahblahbal.blahmod.AchievementHandler;
+import blahblahbal.blahmod.AchievementHandler;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;

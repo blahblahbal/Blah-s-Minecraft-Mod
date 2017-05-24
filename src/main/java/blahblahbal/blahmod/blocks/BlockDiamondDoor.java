@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;

@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -10,8 +10,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 
 public class CreativeTabBlahBlocks extends CreativeTabs
 {
@@ -65,9 +65,9 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.hardenedLava).copy());
 		items.add(new ItemStack(ModBlocks.blazeBrick).copy());
 		items.add(new ItemStack(ModBlocks.cement).copy());
-		items.add(new ItemStack(ModBlocks.quicksilverBlock).copy());
 		items.add(new ItemStack(ModBlocks.magmaCreamBlock).copy());
 		items.add(new ItemStack(ModBlocks.enderPearlBlock).copy());
+		items.add(new ItemStack(ModBlocks.quicksilverBlock).copy());
 		items.add(new ItemStack(ModBlocks.endStoneBricks).copy());
 		items.add(new ItemStack(ModBlocks.leatherBlock).copy());
 		items.add(new ItemStack(ModBlocks.petrifiedWood).copy());

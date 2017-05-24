@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.guicontainer;
+package blahblahbal.blahmod.guicontainer;
 
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;

@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod.crafting;
+package blahblahbal.blahmod.crafting;
 
 import com.google.common.collect.Lists;
 
-import main.java.blahblahbal.blahmod.tileentity.ModTileEntity;
+import blahblahbal.blahmod.tileentity.ModTileEntity;
 
 import java.util.List;
 import net.minecraft.inventory.InventoryCrafting;

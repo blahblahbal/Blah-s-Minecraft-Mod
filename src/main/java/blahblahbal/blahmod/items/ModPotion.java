@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.potion.Potion;

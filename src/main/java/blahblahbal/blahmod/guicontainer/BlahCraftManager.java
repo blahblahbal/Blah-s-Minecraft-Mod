@@ -1,13 +1,13 @@
-package main.java.blahblahbal.blahmod.guicontainer;
+package blahblahbal.blahmod.guicontainer;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.crafting.BlahRecipeSorter;
-import main.java.blahblahbal.blahmod.crafting.BlahRecipes;
-import main.java.blahblahbal.blahmod.items.ModItems;
-import main.java.blahblahbal.blahmod.tileentity.ModTileEntity;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.crafting.BlahRecipeSorter;
+import blahblahbal.blahmod.crafting.BlahRecipes;
+import blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.tileentity.ModTileEntity;
 
 import java.util.Collections;
 import java.util.Comparator;

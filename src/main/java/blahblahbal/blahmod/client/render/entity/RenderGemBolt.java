@@ -1,9 +1,9 @@
-package main.java.blahblahbal.blahmod.client.render.entity;
+package blahblahbal.blahmod.client.render.entity;
 
 import org.lwjgl.opengl.GL11;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.projectiles.EntityGemBolt;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.projectiles.EntityGemBolt;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;

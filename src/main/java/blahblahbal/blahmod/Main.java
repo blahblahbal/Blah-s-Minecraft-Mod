@@ -1,14 +1,14 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import java.io.File;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.enchantments.EnchantmentMoltenTouch;
-import main.java.blahblahbal.blahmod.enchantments.EnchantmentPulverize;
-import main.java.blahblahbal.blahmod.enchantments.EnchantmentStepping;
-import main.java.blahblahbal.blahmod.items.ModItems;
-import main.java.blahblahbal.blahmod.projectiles.EntityGemBolt;
-import main.java.blahblahbal.blahmod.world.BiomeGenTropics;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.enchantments.EnchantmentMoltenTouch;
+import blahblahbal.blahmod.enchantments.EnchantmentPulverize;
+import blahblahbal.blahmod.enchantments.EnchantmentStepping;
+import blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.projectiles.EntityGemBolt;
+import blahblahbal.blahmod.world.BiomeGenTropics;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnumEnchantmentType;
@@ -52,7 +52,7 @@ public class Main
     
     @Instance
     public static Main instance = new Main();
-    @SidedProxy(clientSide="main.java.blahblahbal.blahmod.ClientProxy", serverSide="main.java.blahblahbal.blahmod.ServerProxy")
+    @SidedProxy(clientSide="blahblahbal.blahmod.ClientProxy", serverSide="blahblahbal.blahmod.ServerProxy")
     public static CommonProxy proxy;
     @EventHandler
     public void preInit(FMLPreInitializationEvent e)

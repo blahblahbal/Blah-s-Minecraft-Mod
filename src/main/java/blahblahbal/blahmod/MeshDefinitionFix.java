@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.ItemMeshDefinition;

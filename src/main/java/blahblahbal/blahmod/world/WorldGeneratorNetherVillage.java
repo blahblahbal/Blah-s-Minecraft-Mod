@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.world;
+package blahblahbal.blahmod.world;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.enchantments;
+package blahblahbal.blahmod.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;

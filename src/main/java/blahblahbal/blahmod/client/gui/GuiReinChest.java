@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.client.gui;
+package blahblahbal.blahmod.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -8,8 +8,8 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import main.java.blahblahbal.blahmod.guicontainer.ContainerCatalyzer;
-import main.java.blahblahbal.blahmod.guicontainer.ContainerReinforcedChest;
+import blahblahbal.blahmod.guicontainer.ContainerCatalyzer;
+import blahblahbal.blahmod.guicontainer.ContainerReinforcedChest;
 
 public class GuiReinChest extends GuiContainer
 {

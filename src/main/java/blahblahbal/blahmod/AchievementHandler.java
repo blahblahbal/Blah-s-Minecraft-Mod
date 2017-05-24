@@ -1,9 +1,9 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import com.google.common.collect.ImmutableList;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;

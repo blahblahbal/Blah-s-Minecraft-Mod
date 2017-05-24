@@ -1,9 +1,9 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import java.util.List;
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.Main;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;

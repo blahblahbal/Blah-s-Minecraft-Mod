@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.tileentity;
+package blahblahbal.blahmod.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

@@ -1,11 +1,11 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import biomesoplenty.api.block.BOPBlocks;
 import biomesoplenty.api.item.BOPItems;
 import biomesoplenty.common.block.BlockBOPStone;
 import biomesoplenty.common.block.BlockBOPStone.StoneType;
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.world.BlahWorldGen;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.world.BlahWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.init.Blocks;

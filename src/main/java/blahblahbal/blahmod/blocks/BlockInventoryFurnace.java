@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.guicontainer.TileInventoryFurnace;
-import main.java.blahblahbal.blahmod.network.ModGuiHandler;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.guicontainer.TileInventoryFurnace;
+import blahblahbal.blahmod.network.ModGuiHandler;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

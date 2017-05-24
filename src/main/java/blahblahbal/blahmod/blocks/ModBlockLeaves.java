@@ -1,9 +1,9 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import java.util.List;
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.Main;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.properties.IProperty;
@@ -25,7 +25,7 @@ public class ModBlockLeaves extends BlockLeaves
 	public static String name;
 	public ModBlockLeaves(String name)
 	{
-		this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(false)).withProperty(DECAYABLE, Boolean.valueOf(false)));
 		setUnlocalizedName(name);
 		this.name = name;
 		setCreativeTab(Main.blahTabBlock);

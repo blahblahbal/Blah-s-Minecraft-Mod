@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod.world;
+package blahblahbal.blahmod.world;
 
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

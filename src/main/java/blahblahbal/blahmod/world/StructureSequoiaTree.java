@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.world;
+package blahblahbal.blahmod.world;
  
 import java.util.List;
 import java.util.Random;
@@ -7,8 +7,8 @@ import org.apache.commons.lang3.ArrayUtils;
  
 import com.google.common.collect.Lists;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlockLog;
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.blocks.ModBlockLog;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockLog;

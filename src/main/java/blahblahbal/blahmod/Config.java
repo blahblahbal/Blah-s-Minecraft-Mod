@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import java.io.File;
 

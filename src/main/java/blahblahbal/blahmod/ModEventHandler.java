@@ -1,12 +1,12 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import java.util.List;
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.enchantments.EnchantmentStepping;
-import main.java.blahblahbal.blahmod.fluids.BlockAcidFluid;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.enchantments.EnchantmentStepping;
+import blahblahbal.blahmod.fluids.BlockAcidFluid;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;

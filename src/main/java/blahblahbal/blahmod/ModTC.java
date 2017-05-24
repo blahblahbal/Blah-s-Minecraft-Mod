@@ -1,7 +1,7 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import thaumcraft.api.items.ItemsTC;
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;

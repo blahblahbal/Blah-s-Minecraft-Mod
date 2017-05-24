@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.fluids;
+package blahblahbal.blahmod.fluids;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;

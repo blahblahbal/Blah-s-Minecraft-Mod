@@ -1,8 +1,8 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import java.util.HashMap;
 
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.living.LivingEvent;

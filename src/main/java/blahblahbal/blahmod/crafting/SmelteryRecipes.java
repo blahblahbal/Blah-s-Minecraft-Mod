@@ -1,9 +1,9 @@
-package main.java.blahblahbal.blahmod.crafting;
+package blahblahbal.blahmod.crafting;
 
 import com.google.common.collect.Maps;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 
 import java.util.Map;
 import java.util.Map.Entry;

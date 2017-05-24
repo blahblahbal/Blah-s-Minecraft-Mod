@@ -1,10 +1,10 @@
-package main.java.blahblahbal.blahmod.world;
+package blahblahbal.blahmod.world;
 
 import java.util.Random;
 
-import main.java.blahblahbal.blahmod.blocks.BlockPalmLeaves;
-import main.java.blahblahbal.blahmod.blocks.ModBlockLeaves;
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.blocks.BlockPalmLeaves;
+import blahblahbal.blahmod.blocks.ModBlockLeaves;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;

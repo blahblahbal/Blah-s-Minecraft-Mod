@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.guicontainer;
+package blahblahbal.blahmod.guicontainer;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;

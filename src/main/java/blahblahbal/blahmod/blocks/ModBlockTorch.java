@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockTorch;

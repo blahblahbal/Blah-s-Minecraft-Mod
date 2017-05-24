@@ -1,11 +1,11 @@
-package main.java.blahblahbal.blahmod.world;
+package blahblahbal.blahmod.world;
 
 import java.util.Random;
 
 import com.google.common.collect.Lists;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockQuartz;
 import net.minecraft.block.BlockStainedGlassPane;

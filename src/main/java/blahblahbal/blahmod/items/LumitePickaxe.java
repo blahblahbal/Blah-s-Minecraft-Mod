@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;

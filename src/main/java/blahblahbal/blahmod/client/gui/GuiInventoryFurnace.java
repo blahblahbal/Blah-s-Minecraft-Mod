@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.client.gui;
+package blahblahbal.blahmod.client.gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -7,7 +7,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import main.java.blahblahbal.blahmod.guicontainer.*;
+import blahblahbal.blahmod.guicontainer.*;
 
 import java.awt.*;
 import java.util.ArrayList;

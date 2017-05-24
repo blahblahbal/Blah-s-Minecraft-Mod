@@ -1,10 +1,10 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
-import main.java.blahblahbal.blahmod.client.render.blocks.BlockRenderRegister;
-import main.java.blahblahbal.blahmod.client.render.entity.RenderGemBolt;
-import main.java.blahblahbal.blahmod.client.render.items.ItemRenderRegister;
-import main.java.blahblahbal.blahmod.projectiles.EntityGemBolt;
-import main.java.blahblahbal.blahmod.tileentity.ModTileEntities;
+import blahblahbal.blahmod.client.render.blocks.BlockRenderRegister;
+import blahblahbal.blahmod.client.render.entity.RenderGemBolt;
+import blahblahbal.blahmod.client.render.items.ItemRenderRegister;
+import blahblahbal.blahmod.projectiles.EntityGemBolt;
+import blahblahbal.blahmod.tileentity.ModTileEntities;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

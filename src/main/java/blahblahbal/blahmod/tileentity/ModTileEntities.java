@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.tileentity;
+package blahblahbal.blahmod.tileentity;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

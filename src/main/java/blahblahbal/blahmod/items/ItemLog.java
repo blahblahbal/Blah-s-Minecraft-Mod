@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;

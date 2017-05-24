@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.fluids;
+package blahblahbal.blahmod.fluids;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlockFluid;
+import blahblahbal.blahmod.blocks.ModBlockFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

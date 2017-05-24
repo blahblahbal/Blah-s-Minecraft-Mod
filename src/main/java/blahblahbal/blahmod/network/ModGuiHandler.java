@@ -1,11 +1,11 @@
-package main.java.blahblahbal.blahmod.network;
+package blahblahbal.blahmod.network;
 
-import main.java.blahblahbal.blahmod.client.gui.GuiCatalyzer;
-import main.java.blahblahbal.blahmod.client.gui.GuiInventoryFurnace;
-import main.java.blahblahbal.blahmod.guicontainer.ContainerCatalyzer;
-import main.java.blahblahbal.blahmod.guicontainer.ContainerInventoryFurnace;
-import main.java.blahblahbal.blahmod.guicontainer.ContainerReinforcedChest;
-import main.java.blahblahbal.blahmod.guicontainer.TileInventoryFurnace;
+import blahblahbal.blahmod.client.gui.GuiCatalyzer;
+import blahblahbal.blahmod.client.gui.GuiInventoryFurnace;
+import blahblahbal.blahmod.guicontainer.ContainerCatalyzer;
+import blahblahbal.blahmod.guicontainer.ContainerInventoryFurnace;
+import blahblahbal.blahmod.guicontainer.ContainerReinforcedChest;
+import blahblahbal.blahmod.guicontainer.TileInventoryFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryLargeChest;

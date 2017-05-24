@@ -1,7 +1,7 @@
-package main.java.blahblahbal.blahmod.client.render.items;
+package blahblahbal.blahmod.client.render.items;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;

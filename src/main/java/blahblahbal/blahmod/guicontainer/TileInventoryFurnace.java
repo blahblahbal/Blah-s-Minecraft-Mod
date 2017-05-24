@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.guicontainer;
+package blahblahbal.blahmod.guicontainer;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -16,8 +16,8 @@ import net.minecraft.util.*;
 import net.minecraft.world.EnumSkyBlock;
 import java.util.Arrays;
 
-import main.java.blahblahbal.blahmod.crafting.SmelteryRecipes;
-import main.java.blahblahbal.blahmod.items.ModItems;
+import blahblahbal.blahmod.crafting.SmelteryRecipes;
+import blahblahbal.blahmod.items.ModItems;
 
 /**
  * User: brandon3055

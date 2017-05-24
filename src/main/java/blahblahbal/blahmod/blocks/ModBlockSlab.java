@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.Main;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

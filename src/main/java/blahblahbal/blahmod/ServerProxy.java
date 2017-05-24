@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod;
+package blahblahbal.blahmod;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

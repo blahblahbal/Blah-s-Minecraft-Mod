@@ -1,6 +1,6 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
-import main.java.blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;

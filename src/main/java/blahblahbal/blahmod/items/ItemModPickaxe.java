@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.google.common.collect.Lists;
 
-import main.java.blahblahbal.blahmod.AchievementHandler;
-import main.java.blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.AchievementHandler;
+import blahblahbal.blahmod.Main;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.Enchantment;

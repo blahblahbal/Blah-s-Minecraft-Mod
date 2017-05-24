@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.projectiles;
+package blahblahbal.blahmod.projectiles;
 
 import java.time.Instant;
 import java.util.Date;

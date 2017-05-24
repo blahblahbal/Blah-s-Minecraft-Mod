@@ -1,4 +1,4 @@
-package main.java.blahblahbal.blahmod.blocks;
+package blahblahbal.blahmod.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -13,10 +13,10 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
-import main.java.blahblahbal.blahmod.tileentity.ModTileEntity;
+import blahblahbal.blahmod.tileentity.ModTileEntity;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.network.ModGuiHandler;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.network.ModGuiHandler;
 
 public class ModBlockTileEntity extends BlockContainer {
 

@@ -1,7 +1,7 @@
-package main.java.blahblahbal.blahmod.items;
+package blahblahbal.blahmod.items;
 
-import main.java.blahblahbal.blahmod.Main;
-import main.java.blahblahbal.blahmod.projectiles.EntityGemBolt;
+import blahblahbal.blahmod.Main;
+import blahblahbal.blahmod.projectiles.EntityGemBolt;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
