@@ -34,8 +34,8 @@ public class CommonProxy
 	
     public void preInit(FMLPreInitializationEvent e)
     {
-    	ModItems.createItems();
-    	ModBlocks.createBlocks();
+	    ModBlocks.createBlocks();
+	    ModItems.createItems();
     	GameRegistry.registerTileEntity(TileInventoryFurnace.class, "tadaniteSmeltery");
     	ModCrafting.initCrafting();
     	GameRegistry.registerFuelHandler(new FuelHandler());
