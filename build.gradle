@@ -24,6 +24,9 @@ version = "1.0.0"
 group= "blahblahbal.blahmod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BlahMod"
 
+srcCompat = JavaVersion.VERSION_1_8
+targetCompat = JavaVersion.VERSION_1_8
+
 minecraft {
     version = "1.8.9-11.15.1.1722"
     runDir = "run"
