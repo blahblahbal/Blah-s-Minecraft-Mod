@@ -35,7 +35,7 @@ public class BlockDiamondDoor extends BlockDoor
 
     public Item getDoorItem()
     {
-        return ModItems.diamondDoorItem;
+        return doorItem;
     }
     
     @Override
