@@ -3,6 +3,7 @@ package blahblahbal.blahmod.client.render.blocks;
 import blahblahbal.blahmod.Main;
 import blahblahbal.blahmod.MeshDefinitionFix;
 import blahblahbal.blahmod.blocks.BasicBlock;
+import blahblahbal.blahmod.blocks.BlockDiamondDoor;
 import blahblahbal.blahmod.blocks.BlockInventoryFurnace;
 import blahblahbal.blahmod.blocks.BlockPalmLeaves;
 import blahblahbal.blahmod.blocks.BlockPotato;
@@ -19,6 +20,7 @@ import blahblahbal.blahmod.blocks.ModBlockTorch;
 import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -139,6 +141,8 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStone), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tropicStone)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.coalOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.coalOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.rubyOreTrop), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.rubyOreTrop)).name, "inventory"));
+
+	    ModelLoader.setCustomStateMapper(ModBlocks.diamondDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
 	}
 	public static void reg(BasicBlock block)
 	{

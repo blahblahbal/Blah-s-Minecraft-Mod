@@ -32,13 +32,10 @@ public class BlockDiamondDoor extends BlockDoor
     {
         this.doorItem = doorItem;
     }
-    public int getRenderType()
-    {
-    	return 7;
-    }
+
     public Item getDoorItem()
     {
-        return ModItems.diamondDoorItem;
+        return doorItem;
     }
     
     @Override
