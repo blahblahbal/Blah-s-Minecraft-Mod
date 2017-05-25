@@ -18,6 +18,7 @@ import blahblahbal.blahmod.blocks.ModBlockSlab;
 import blahblahbal.blahmod.blocks.ModBlockTileEntity;
 import blahblahbal.blahmod.blocks.ModBlockTorch;
 import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.statemap.StateMap;
@@ -136,12 +137,12 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.largeSeashell), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":largeSeashell", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.coconut), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":coconut", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.groundCoconut), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":coconutGround", "inventory"));
-	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.diamondDoor), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteSmeltery), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tadaniteSmeltery", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStone), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tropicStone)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.coalOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.coalOre)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.rubyOreTrop), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.rubyOreTrop)).name, "inventory"));
 
+	    ModelLoader.setCustomModelResourceLocation(ModItems.diamondDoorItem, 0, new ModelResourceLocation(Main.MODID + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomStateMapper(ModBlocks.diamondDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
 	}
 	public static void reg(BasicBlock block)
