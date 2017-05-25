@@ -8,5 +8,6 @@ public class ItemDiamondDoor extends ItemDoor
     public ItemDiamondDoor(BlockDiamondDoor block)
     {
         super(block);
+        block.setDoorItem(this);
     }
 }

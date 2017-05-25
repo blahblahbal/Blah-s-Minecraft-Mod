@@ -82,7 +82,7 @@ public final class ModBlocks
 	public static Block rubyOre;
 	public static Block tadanite;
 	public static Block tropicMud;
-	public static Block diamondDoor;
+	public static BlockDiamondDoor diamondDoor;
 	public static Block ironOre;
 	public static Block coalOre;
 	public static Block goldOre;
@@ -128,8 +128,10 @@ public final class ModBlocks
     	GameRegistry.registerBlock((Block)(hardenedLava = new BasicBlock("hardenedLava", Material.rock, 1.5F, 10F, "pickaxe", 1, "hardenedLava")), "hardenedLava");
     	GameRegistry.registerBlock((Block)(tadanite = new BasicBlock("tadanite", Material.rock, 35F, 1000F, "pickaxe", 4, "tadanite")), "tadanite");
     	GameRegistry.registerBlock((Block)(seashell = new BlockSeashell("seashell", Material.rock)), "seashell");
-    	//GameRegistry.registerBlock((Block)(diamondDoor = new BlockDiamondDoor(Material.iron)), "diamondDoor");
-    	diamondDoor = registerDoor(new BlockDiamondDoor(Material.iron), "diamondDoor", ModItems.diamondDoorItem);
+
+    	GameRegistry.registerBlock(diamondDoor = new BlockDiamondDoor(Material.iron), null, "diamondDoor_block");
+    	ModItems.registerItem(ModItems.diamondDoorItem = new ItemDiamondDoor(diamondDoor), "diamondDoor");
+        
     	GameRegistry.registerBlock((Block)(largeSeashell = new BlockLargeSeashell("largeSeashell", Material.rock)), "largeSeashell");
     	GameRegistry.registerBlock(tadaniteOre = new ModBlockOre("tadaniteOre", Material.rock, ModItems.tadaniteShard, 40F, 2000F, "pickaxe", 4, 0, 1, 3, "tadaniteOre"), "tadaniteOre");
     	GameRegistry.registerBlock((Block)(leatherBlock = new BasicBlock("leatherBlock", Material.cake, 0.5F, 50F, "axe", 0, "leatherBlock")).setStepSound(Block.soundTypeCloth), "leatherBlock");
@@ -252,13 +254,7 @@ public final class ModBlocks
         acid = registerFluidBlock(acidFluid, new BlockAcidFluid(acidFluid), "acid");
         acidBucket = ModItems.registerItem((new ItemBucket(acid)).setContainerItem(Items.bucket), "acidBucket");
     }
-    public static Block registerDoor(BlockDiamondDoor door_block, String name, Item door_item)
-    {
-        Block block = GameRegistry.registerBlock(door_block, name + "_block");
-        door_item = ModItems.registerItem(ModItems.diamondDoorItem = new ItemDiamondDoor(block), name);
-        door_block.setDoorItem(door_item);
-        return block;
-}
+
     public static Block registerFluidBlock(Fluid fluid, BlockFluidBase fluidBlock, String name)
     {
         Block block = GameRegistry.registerBlock(fluidBlock, null, name);
