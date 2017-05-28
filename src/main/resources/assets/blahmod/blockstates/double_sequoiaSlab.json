@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "half=top,variant=false": { "model": "blahmod:sequoiaPlanks" },
+        "half=top,variant=true":    { "model": "blahmod:sequoiaPlanks" },
+        "half=bottom,variant=false": { "model": "blahmod:sequoiaPlanks" },
+        "half=bottom,variant=true":    { "model": "blahmod:sequoiaPlanks" }
+    }
+}

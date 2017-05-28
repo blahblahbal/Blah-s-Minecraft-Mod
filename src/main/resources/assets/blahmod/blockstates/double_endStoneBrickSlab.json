@@ -1,6 +1,9 @@
 {
     "variants": {
-        "variant=false": { "model": "blahmod:endStoneBricks" },
-        "variant=true":    { "model": "blahmod:endStoneBricks" }
+        "half=top,variant=false": { "model": "blahmod:endStoneBricks" },
+        "half=top,variant=true":    { "model": "blahmod:endStoneBricks" },
+"half=bottom,variant=false": { "model": "blahmod:endStoneBricks" },
+        "half=bottom,variant=true":    { "model": "blahmod:endStoneBricks" }
+
     }
 }

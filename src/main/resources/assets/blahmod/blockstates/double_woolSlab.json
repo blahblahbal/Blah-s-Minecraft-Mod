@@ -1,6 +1,8 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:white_wool" },
-        "variant=true":    { "model": "minecraft:white_wool" }
+        "half=top,variant=false": { "model": "minecraft:white_wool" },
+        "half=top,variant=true":    { "model": "minecraft:white_wool" },
+        "half=bottom,variant=false": { "model": "minecraft:white_wool" },
+        "half=bottom,variant=true":    { "model": "minecraft:white_wool" }
     }
 }

@@ -1,6 +1,8 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:lapis_block" },
-        "variant=true":    { "model": "minecraft:lapis_block" }
+        "half=top,variant=false": { "model": "minecraft:lapis_block" },
+        "half=top,variant=true":    { "model": "minecraft:lapis_block" },
+        "half=bottom,variant=false": { "model": "minecraft:lapis_block" },
+        "half=bottom,variant=true":    { "model": "minecraft:lapis_block" }
     }
 }

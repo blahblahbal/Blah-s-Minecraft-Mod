@@ -62,6 +62,9 @@ item.diamondDoor.name=Diamond Door
 item.cobbleDoor.name=Cobblestone Door
 item.goldDoor.name=Gold Door
 item.lumiteDoor.name=Lumite Door
+item.palmDoor.name=Palm Door
+item.sequoiaDoor.name=Sequoia Door
+item.cedarDoor.name=Cedar Door
 
 enchantment.moltenTouch=Molten Touch
 enchantment.pulverize=Pulverize
@@ -171,6 +174,13 @@ tile.coconut.name=Coconut
 tile.cobbleDoor.name=Cobblestone Door
 tile.goldDoor.name=Gold Door
 tile.lumiteDoor.name=Lumite Door
+tile.cedarLog.name=Cedar Wood
+tile.cedarPlanks.name=Cedar Planks
+tile.cedarLeaves.name=Cedar Leaves
+tile.cedarSapling.name=Cedar Sapling
+tile.cedarSlab.name=Cedar Slab
+tile.palmSlab.name=Palm Slab
+tile.sequoiaSlab.name=Sequoia Slab
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer

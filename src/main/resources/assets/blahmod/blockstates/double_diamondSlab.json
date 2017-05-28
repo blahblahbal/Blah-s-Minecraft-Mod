@@ -1,6 +1,9 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:diamond_block" },
-        "variant=true":    { "model": "minecraft:diamond_block" }
+        "half=top,variant=false": { "model": "minecraft:diamond_block" },
+        "half=bottom,variant=false":    { "model": "minecraft:diamond_block" },
+        "half=top,variant=true": { "model": "minecraft:diamond_block" },
+        "half=bottom,variant=true":    { "model": "minecraft:diamond_block" }
+
     }
 }

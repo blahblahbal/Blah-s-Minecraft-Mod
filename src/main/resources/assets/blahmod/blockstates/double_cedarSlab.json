@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "half=top,variant=false": { "model": "blahmod:cedarPlanks" },
+        "half=top,variant=true":    { "model": "blahmod:cedarPlanks" },
+	   "half=bottom,variant=false": { "model": "blahmod:cedarPlanks" },
+        "half=bottom,variant=true":    { "model": "blahmod:cedarPlanks" }
+
+    }
+}

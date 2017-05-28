@@ -1,6 +1,8 @@
 {
     "variants": {
-        "variant=false": { "model": "blahmod:leatherBlock" },
-        "variant=true":    { "model": "blahmod:leatherBlock" }
+        "half=top,variant=false": { "model": "blahmod:leatherBlock" },
+        "half=top,variant=true":    { "model": "blahmod:leatherBlock" },
+        "half=bottom,variant=false": { "model": "blahmod:leatherBlock" },
+        "half=bottom,variant=true":    { "model": "blahmod:leatherBlock" }
     }
 }

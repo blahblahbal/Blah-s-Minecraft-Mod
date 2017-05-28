@@ -1,6 +1,8 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:gold_block" },
-        "variant=true":    { "model": "minecraft:gold_block" }
+        "half=top,variant=false": { "model": "minecraft:gold_block" },
+        "half=top,variant=true":    { "model": "minecraft:gold_block" },
+        "half=bottom,variant=false": { "model": "minecraft:gold_block" },
+        "half=bottom,variant=true":    { "model": "minecraft:gold_block" }
     }
 }

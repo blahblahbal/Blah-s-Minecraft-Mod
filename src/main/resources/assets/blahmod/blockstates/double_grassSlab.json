@@ -1,6 +1,9 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:grass" },
-        "variant=true":    { "model": "minecraft:grass" }
+        "half=top,variant=false": { "model": "minecraft:grass" },
+        "half=top,variant=true":    { "model": "minecraft:grass" },
+        "half=bottom,variant=false": { "model": "minecraft:grass" },
+        "half=bottom,variant=true":    { "model": "minecraft:grass" }
+
     }
 }

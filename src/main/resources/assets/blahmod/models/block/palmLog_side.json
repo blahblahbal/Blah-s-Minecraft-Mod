@@ -1,0 +1,7 @@
+{
+    "parent": "block/column_side",
+    "textures": {
+        "end": "blahmod:blocks/palmLog_top",
+        "side": "blahmod:blocks/palmLog"
+    }
+}
