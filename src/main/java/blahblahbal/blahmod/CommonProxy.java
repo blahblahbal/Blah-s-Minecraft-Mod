@@ -34,8 +34,8 @@ public class CommonProxy
 	
     public void preInit(FMLPreInitializationEvent e)
     {
-    	ModItems.createItems();
     	ModBlocks.createBlocks();
+    	ModItems.createItems();
     	GameRegistry.registerTileEntity(TileInventoryFurnace.class, "tadaniteSmeltery");
     	ModCrafting.initCrafting();
     	GameRegistry.registerFuelHandler(new FuelHandler());
@@ -52,12 +52,6 @@ public class CommonProxy
     	//GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.uraniumOre, (Blocks.stone), new int[]{0}, 35, 10, 2, 5), 0);
     	//GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.uraniumOre, (Blocks.stone), new int[]{0}, 7, 5, 1, 7), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.clayOre, (Blocks.dirt), new int[]{0}, 45, 25, 3, 5), 0);
-    	
-    	
-    	/*for (int i = 0; i < 5; i++)
-    	{
-    		GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.gemOres[i], (Blocks.stone), new int[]{0}, 40, 20, 1, 3), 0);
-    	}*/
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.rubyOre, (Blocks.stone), new int[]{0}, 45, 25, 1, 3), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.citrineOre, (Blocks.stone), new int[]{0}, 50, 15, 2, 3), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen2((Block)ModBlocks.topazOre, (Blocks.stone), new int[]{0}, 43, 27, 3, 3, "Desert"), 0);
@@ -69,7 +63,7 @@ public class CommonProxy
     	GameRegistry.registerWorldGenerator(new BlahWorldGen(ModBlocks.goldOre, (ModBlocks.tropicStone), new int[]{0}, 42, 35, 3, 9), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen(ModBlocks.rubyOreTrop, (ModBlocks.tropicStone), new int[]{0}, 42, 35, 1, 1), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.igneousRock, (Blocks.stone), new int[]{0}, 35, 15, 1, 25), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.sulphurOre, (ModBlocks.igneousRock), new int[]{0}, 35, 15, 2, 5), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.sulphurOre, (Blocks.netherrack), new int[]{-1}, 35, 15, 2, 5), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.magnetite, (Blocks.stone), new int[]{0}, 55, 20, 1, 25), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.hardenedLava, (Blocks.stone), new int[]{0}, 15, 1, 1, 20), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.lumiteOre, (ModBlocks.hardenedLava), new int[]{0}, 15, 1, 3, 4), 0);

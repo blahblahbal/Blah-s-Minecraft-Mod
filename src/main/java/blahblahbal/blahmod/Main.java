@@ -8,6 +8,7 @@ import blahblahbal.blahmod.enchantments.EnchantmentPulverize;
 import blahblahbal.blahmod.enchantments.EnchantmentStepping;
 import blahblahbal.blahmod.items.ModItems;
 import blahblahbal.blahmod.projectiles.EntityGemBolt;
+import blahblahbal.blahmod.world.BiomeGenCedarGrove;
 import blahblahbal.blahmod.world.BiomeGenTropics;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -43,6 +44,7 @@ public class Main
     public static final String VERSION = "1.0.0";
     
     public static BiomeGenBase tropicsBiome;
+    public static BiomeGenBase cedarBiome;
     public static Enchantment moltenTouch; // = new EnchantmentMoltenTouch(84, new ResourceLocation("molten_touch"), 1, EnumEnchantmentType.DIGGER);
     public static Enchantment pulverize; // = new EnchantmentPulverize(85, new ResourceLocation("pulverize"), 1);
     public static Enchantment stepping; // = new EnchantmentStepping(86, new ResourceLocation("stepping"), 1, EnumEnchantmentType.ARMOR_FEET);
@@ -70,10 +72,13 @@ public class Main
         }
     	tropicsBiome = new BiomeGenTropics(Config.biomeTropicsID).setBiomeName("Tropics").setTemperatureRainfall(0.8F, 0.4F);
     	BiomeManager.addBiome(BiomeType.WARM, new BiomeEntry(tropicsBiome, 25));
+    	cedarBiome = new BiomeGenCedarGrove(Config.biomeCedarGroveID).setBiomeName("Cedar Grove").setTemperatureRainfall(0.8F, 0.4F);
+    	BiomeManager.addBiome(BiomeType.COOL, new BiomeEntry(cedarBiome, 38));
     	blahTab = new CreativeTabBlah();
     	blahTabBlock = new CreativeTabBlahBlocks();
     	OreDictionary.registerOre("plankWood", ModBlocks.sequoiaPlanks);
     	OreDictionary.registerOre("plankWood", ModBlocks.palmPlanks);
+    	OreDictionary.registerOre("plankWood", ModBlocks.cedarPlanks);
     	OreDictionary.registerOre("oreLumite", ModBlocks.lumiteOre);
     	OreDictionary.registerOre("oreSulphur", ModBlocks.sulphurOre);
     	OreDictionary.registerOre("oreLimestone", ModBlocks.limestoneOre);

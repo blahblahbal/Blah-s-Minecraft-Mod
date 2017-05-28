@@ -58,6 +58,10 @@ item.lumiteShovel.name=Lumite Shovel
 item.lumiteSword.name=Lumite Sword
 item.lumiteHoe.name=Lumite Hoe
 item.catalyticInverter.name=Catalytic Inverter
+item.diamondDoor.name=Diamond Door
+item.cobbleDoor.name=Cobblestone Door
+item.goldDoor.name=Gold Door
+item.lumiteDoor.name=Lumite Door
 
 enchantment.moltenTouch=Molten Touch
 enchantment.pulverize=Pulverize
@@ -164,6 +168,9 @@ tile.goldOre.name=Gold Ore
 tile.rubyOreTrop.name=Ruby Ore
 tile.coconutGround.name=Coconut
 tile.coconut.name=Coconut
+tile.cobbleDoor.name=Cobblestone Door
+tile.goldDoor.name=Gold Door
+tile.lumiteDoor.name=Lumite Door
 tile.blahmod:fluid.acid.name=Acid
 
 achievement.catalyzer=Catalyzer

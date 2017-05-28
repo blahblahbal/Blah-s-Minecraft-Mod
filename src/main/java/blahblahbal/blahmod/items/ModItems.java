@@ -35,6 +35,12 @@ public final class ModItems {
     public static Item osborgnenFuel;
     public static Item catalyticInverter;
     public static Item diamondDoorItem;
+    public static Item cobbleDoorItem;
+    public static Item goldDoorItem;
+    public static Item lumiteDoorItem;
+    public static Item palmDoorItem;
+    public static Item sequoiaDoorItem;
+    public static Item cedarDoorItem;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;

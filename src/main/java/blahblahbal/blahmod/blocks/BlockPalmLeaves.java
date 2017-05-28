@@ -25,17 +25,17 @@ public class BlockPalmLeaves extends BlockLeaves
 	public static String name;
 	public BlockPalmLeaves(String name)
 	{
-		this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(true)).withProperty(DECAYABLE, Boolean.valueOf(true)));
+		this.setDefaultState(this.blockState.getBaseState().withProperty(CHECK_DECAY, Boolean.valueOf(false)).withProperty(DECAYABLE, Boolean.valueOf(false)));
 		setUnlocalizedName(name);
 		this.name = name;
 		setCreativeTab(Main.blahTabBlock);
 	}
-
+	//@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		if (rand.nextInt(20) == 0)
+		if (rand.nextInt(20) == 0 && state.getBlock() == this)
 			return Item.getItemFromBlock(ModBlocks.palmSapling);
-		return null;
+		return state.getBlock().getItemDropped(state, rand, fortune);
 	}
 
 	public IBlockState getStateFromMeta(int meta)

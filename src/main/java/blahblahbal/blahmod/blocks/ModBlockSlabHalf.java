@@ -4,9 +4,9 @@ import net.minecraft.block.material.Material;
 
 public class ModBlockSlabHalf extends ModBlockSlab
 {
-    public ModBlockSlabHalf(String uname)
+    public ModBlockSlabHalf(String uname, Material m)
     {
-		super(uname);
+		super(uname, m);
 	}
 
     @Override

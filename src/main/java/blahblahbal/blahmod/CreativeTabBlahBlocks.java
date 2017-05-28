@@ -110,6 +110,9 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.seashell).copy());
 		items.add(new ItemStack(ModBlocks.largeSeashell).copy());
 		items.add(new ItemStack(ModBlocks.groundCoconut).copy());
+		items.add(new ItemStack(ModBlocks.cedarLeaves).copy());
+		items.add(new ItemStack(ModBlocks.cedarLog).copy());
+		items.add(new ItemStack(ModBlocks.cedarPlanks).copy());
 		super.displayAllReleventItems(items);
 	}
 }

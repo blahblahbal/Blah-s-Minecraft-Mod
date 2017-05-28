@@ -26,6 +26,7 @@ public class ModBlockLog extends BlockRotatedPillar
 		this.name = name;
 		this.setUnlocalizedName(name);
         this.setCreativeTab(Main.blahTabBlock);
+        this.setHarvestLevel("axe", 0);
         this.setHardness(2F);
         this.setResistance(5F);
         this.setStepSound(soundTypeWood);
@@ -54,11 +55,11 @@ public class ModBlockLog extends BlockRotatedPillar
     }
 	public int getMetaFromState(IBlockState state)
 	{
-		return 0;
+		return ((BlockLog.EnumAxis)state.getValue(LOG_AXIS)).ordinal() * 4;
 	}
 	public IBlockState getStateFromMeta(int meta)
 	{
-		return this.getDefaultState();
+		return this.getDefaultState().withProperty(LOG_AXIS, BlockLog.EnumAxis.values()[meta >> 2]);
 	}
 	@Override
 	protected BlockState createBlockState()

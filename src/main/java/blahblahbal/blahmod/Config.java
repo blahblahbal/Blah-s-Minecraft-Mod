@@ -11,6 +11,7 @@ public class Config
 	public static int enchPulverizeID;
 	public static int enchSteppingID;
 	public static int biomeTropicsID;
+	public static int biomeCedarGroveID;
 	public static void init(File configFile)
     {
         if (config == null)
@@ -27,6 +28,7 @@ public class Config
 			enchPulverizeID = config.getInt("Pulverize Enchantment ID", "BlahMod", 85, 60, 200, "");
 			enchSteppingID = config.getInt("Stepping Enchantment ID", "BlahMod", 86, 60, 200, "");
 			biomeTropicsID = config.getInt("Tropics Biome ID", "BlahMod", 252, 40, 255, "");
+			biomeCedarGroveID = config.getInt("Cedar Grove Biome ID", "BlahMod", 253, 40, 255, "");
 		}
 		catch (Exception e)
 		{
