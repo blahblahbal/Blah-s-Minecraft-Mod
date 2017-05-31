@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:cedarPlanks" },
+        "inventory": { "model": "blahmod:cedarPlanks" }
+    }
+}

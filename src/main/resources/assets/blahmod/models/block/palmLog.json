@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "blahmod:blocks/palmLog",
+        "end": "blahmod:blocks/palmLog_top",
         "side": "blahmod:blocks/palmLog"
     }
 }

@@ -51,6 +51,7 @@ public final class ItemRenderRegister
     	reg((Item)ModItems.uraniumRod);
     	reg((Item)ModItems.osborgnenFuel);
     	reg((Item)ModItems.catalyticInverter);
+    	reg((Item)ModItems.coconutFood);
     	for (int i = 0; i < 5; i++)
     	{
     		reg(ModItems.gems[i]);

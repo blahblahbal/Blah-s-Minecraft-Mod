@@ -30,14 +30,16 @@ public class ModBlockLeaves extends BlockLeaves
 		this.name = name;
 		setCreativeTab(Main.blahTabBlock);
 	}
-
+	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		if (rand.nextInt(70) == 0)
-			return Item.getItemFromBlock(ModBlocks.sequoiaSapling);
-		return null;
+		return Item.getItemFromBlock(ModBlocks.sequoiaSapling);
 	}
-
+	@Override
+    protected int getSaplingDropChance(IBlockState state)
+    {
+        return 55;
+    }
 	protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance)
 	{
 		if (worldIn.rand.nextInt(chance) == 0) {

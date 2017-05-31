@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "blahmod:blocks/cedarDoor_lower",
+        "top": "blahmod:blocks/cedarDoor_upper"
+    }
+}

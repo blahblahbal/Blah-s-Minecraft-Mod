@@ -1,6 +1,7 @@
 {
     "variants": {
-        "variant=false": { "model": "blahmod:sulphurBlock" },
-        "variant=true":    { "model": "blahmod:sulphurBlock" }
+        "half=top": { "model": "blahmod:sulphurBlock" },
+        "normal":    { "model": "blahmod:sulphurBlock" },
+        "half=bottom": { "model": "blahmod:sulphurBlock" }
     }
 }

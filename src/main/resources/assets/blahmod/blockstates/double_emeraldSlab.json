@@ -1,6 +1,7 @@
 {
     "variants": {
-        "variant=false": { "model": "minecraft:emerald_block" },
-        "variant=true":    { "model": "minecraft:emerald_block" }
+	"half=top": { "model": "minecraft:emerald_block" },
+	"half=bottom":    { "model": "minecraft:emerald_block" },
+	"normal": { "model": "minecraft:emerald_block" }
     }
 }

@@ -98,6 +98,7 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.tadaniteSmeltery).copy());
 		items.add(new ItemStack(ModBlocks.sequoiaSapling).copy());
 		items.add(new ItemStack(ModBlocks.prefabSapling).copy());
+		items.add(new ItemStack(ModBlocks.cedarSapling).copy());
 		items.add(new ItemStack(ModBlocks.palmSapling).copy());
 		items.add(new ItemStack(ModBlocks.blackSand).copy());
 		items.add(new ItemStack(ModBlocks.blackSandstone).copy());
@@ -110,6 +111,39 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.seashell).copy());
 		items.add(new ItemStack(ModBlocks.largeSeashell).copy());
 		items.add(new ItemStack(ModBlocks.groundCoconut).copy());
+		items.add(new ItemStack(ModBlocks.cedarLeaves).copy());
+		items.add(new ItemStack(ModBlocks.cedarLog).copy());
+		items.add(new ItemStack(ModBlocks.cedarPlanks).copy());
+		items.add(new ItemStack(ModItems.cedarDoorItem).copy());
+		items.add(new ItemStack(ModItems.cobbleDoorItem).copy());
+		items.add(new ItemStack(ModItems.diamondDoorItem).copy());
+		items.add(new ItemStack(ModItems.goldDoorItem).copy());
+		items.add(new ItemStack(ModItems.lumiteDoorItem).copy());
+		items.add(new ItemStack(ModItems.palmDoorItem).copy());
+		items.add(new ItemStack(ModItems.sequoiaDoorItem).copy());
+		items.add(new ItemStack(ModBlocks.slabs[0]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[1]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[2]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[3]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[4]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[5]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[6]).copy());
+		items.add(new ItemStack(ModBlocks.slabs[7]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[0]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[1]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[2]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[3]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[4]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[5]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[6]).copy());
+		items.add(new ItemStack(ModBlocks.slabs2[7]).copy());
+		items.add(new ItemStack(ModBlocks.woodSlabs[0]).copy());
+		items.add(new ItemStack(ModBlocks.woodSlabs[1]).copy());
+		items.add(new ItemStack(ModBlocks.woodSlabs[2]).copy());
+		items.add(new ItemStack(ModBlocks.palmFence).copy());
+		items.add(new ItemStack(ModBlocks.cedarFence).copy());
+		items.add(new ItemStack(ModBlocks.sequoiaFence).copy());
+		items.add(new ItemStack(ModBlocks.petrifiedWoodWall).copy());
 		super.displayAllReleventItems(items);
 	}
 }

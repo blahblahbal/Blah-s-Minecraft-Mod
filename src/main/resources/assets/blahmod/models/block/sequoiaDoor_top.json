@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "blahmod:blocks/sequoiaDoor_lower",
+        "top": "blahmod:blocks/sequoiaDoor_upper"
+    }
+}

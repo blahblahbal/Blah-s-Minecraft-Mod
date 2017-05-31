@@ -21,18 +21,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockDiamondDoor extends BlockDoor
 {
 	private Item doorItem;
-    public BlockDiamondDoor(Material material)
+    public BlockDiamondDoor(Material material, String uName)
     {
 		super(material);
 		this.setHardness(3.0F);
 		this.setHarvestLevel("pickaxe", 0);
-		this.setUnlocalizedName("diamondDoor");
+		this.setUnlocalizedName(uName);
 	}
     public void setDoorItem(Item doorItem)
     {
         this.doorItem = doorItem;
     }
-
     public Item getDoorItem()
     {
         return doorItem;

@@ -30,6 +30,7 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerEvent.BreakSpeed;
 import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
@@ -43,6 +44,12 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class ModEventHandler
 {
+	/*@SubscribeEvent
+	public void onEntityUpdate(LivingUpdateEvent event)
+	{
+		
+	}*/
+	
 	@SubscribeEvent
 	public void playerTick(TickEvent.PlayerTickEvent event)
 	{
@@ -174,6 +181,7 @@ public class ModEventHandler
     {
     	if (event.harvester != null)
     	{
+    	
     		if (Main.getLumitePick(event.harvester))
     		{
     			if (event.state.getBlock() == Blocks.diamond_ore ||
@@ -279,6 +287,11 @@ public class ModEventHandler
     			{
     				event.drops.clear();
     				event.drops.add(new ItemStack(ModItems.uraniumIngot));
+    			}
+    			if (event.state.getBlock() == ModBlocks.lumiteOre)
+    			{
+    				event.drops.clear();
+    				event.drops.add(new ItemStack(ModItems.lumite));
     			}
     		}
     	}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:sequoiaPlanks" },
+        "normal":    { "model": "blahmod:sequoiaPlanks" },
+        "half=bottom": { "model": "blahmod:sequoiaPlanks" }
+    }
+}

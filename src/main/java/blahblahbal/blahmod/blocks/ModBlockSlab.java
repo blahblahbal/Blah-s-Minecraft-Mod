@@ -1,6 +1,9 @@
 package blahblahbal.blahmod.blocks;
 
+import java.util.Random;
+
 import blahblahbal.blahmod.Main;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -19,7 +22,7 @@ public abstract class ModBlockSlab extends BlockSlab {
      * The property used for the variant.
      * Needed for interactions with ItemSlab.
      */
-    private static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant");
+    public static final PropertyBool VARIANT_PROPERTY = PropertyBool.create("variant");
     /**
      * The unlocalized name.
      */
@@ -44,23 +47,36 @@ public abstract class ModBlockSlab extends BlockSlab {
      * Name - needed for creating the model.
      */
     public String name;
-
+    public abstract Item getHalfSlabReference();
     /**
      * Initializes a new instance of the ModBlockSlab class.
      * @param uname the unlocalized name of this ModBlockSlab
      */
-    public ModBlockSlab(String uname) {
-        super(Material.rock);
+    public ModBlockSlab(String uname, Material m) {
+        super(m);
         this.useNeighborBrightness = !this.isDouble();
         setHardness(HARDNESS);
         setResistance(RESISTANCE);
         setStepSound(soundTypePiston);
         this.name = uname;
         setUnlocalizedName(uname);
+        if (uname == "sequoiaSlab" || uname == "palmSlab" || uname == "cedarSlab")
+        {
+        	this.setStepSound(soundTypeWood);
+        	this.setHarvestLevel("axe", 0);
+        }
+        if (uname == "dirtSlab" || uname == "grassSlab")
+        {
+        	this.setStepSound(soundTypeGrass);
+        	this.setHarvestLevel("shovel", 0);
+        }
+        if (uname == "leatherSlab" || uname == "woolSlab")
+        {
+        	this.setStepSound(soundTypeCloth);
+        }
         if (!this.isDouble()) {
             setCreativeTab(Main.blahTabBlock);
         }
-
         IBlockState blockState = this.blockState.getBaseState();
         blockState = blockState.withProperty(VARIANT_PROPERTY, false);
         if (!this.isDouble()) {
@@ -127,7 +143,11 @@ public abstract class ModBlockSlab extends BlockSlab {
 
         return blockState;
     }
-
+    @Override
+    public int quantityDropped(Random r)
+    {
+    	return this.isDouble() ? 2 : 1;
+    }
     /**
      * Gets the metadata value from a block state.
      * @param state the block state.
@@ -164,26 +184,17 @@ public abstract class ModBlockSlab extends BlockSlab {
      * @return the half slab item.
      */
     @Override
-    public final Item getItemDropped(
-        final IBlockState blockState,
-        final java.util.Random random,
-        final int unused) {
-        String blockId = this.innerGetId(this.isDouble());
-        if (blockId.substring(0, 7) == "double_")
-        {
-        	ItemStack i = new ItemStack(GameRegistry.findItem("blahmod", blockId.substring(7)), 2);
-        	return i.getItem();
-        }
-        return GameRegistry.findItem("blahmod", blockId);
+    public final Item getItemDropped(final IBlockState blockState, final java.util.Random random, final int unused)
+    {
+        return this.getHalfSlabReference();
     }
-
     /**
      * Gets the item dropped when the block is broken.
      * @param world the world
      * @param blockPos the block position.
      * @return the item dropped, the half slab.
      */
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
     @Override
     public final net.minecraft.item.Item getItem(
         final net.minecraft.world.World world,
@@ -195,7 +206,7 @@ public abstract class ModBlockSlab extends BlockSlab {
         	return i.getItem();
         }
         return GameRegistry.findItem("blahmod", blockId);
-    }
+    }*/
 
     /**
      * Creates the block state object.
@@ -223,38 +234,44 @@ public abstract class ModBlockSlab extends BlockSlab {
             result = "double_";
         }
         String ID = "";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[0].getIdFromBlock(ModBlocks.slabs[0]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[0]))
         	ID = "woolSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[1].getIdFromBlock(ModBlocks.slabs[1]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[1]))
         	ID = "ironSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[2].getIdFromBlock(ModBlocks.slabs[2]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[2]))
         	ID = "goldSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[3].getIdFromBlock(ModBlocks.slabs[3]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[3]))
         	ID = "diamondSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[4].getIdFromBlock(ModBlocks.slabs[4]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[4]))
         	ID = "emeraldSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[5].getIdFromBlock(ModBlocks.slabs[5]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[5]))
         	ID = "sulphurSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[6].getIdFromBlock(ModBlocks.slabs[6]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[6]))
         	ID = "limestoneSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs[7].getIdFromBlock(ModBlocks.slabs[7]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs[7]))
         	ID = "uraniumSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[0].getIdFromBlock(ModBlocks.slabs2[0]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[0]))
         	ID = "dirtSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[1].getIdFromBlock(ModBlocks.slabs2[1]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[1]))
         	ID = "grassSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[2].getIdFromBlock(ModBlocks.slabs2[2]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[2]))
         	ID = "leatherSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[3].getIdFromBlock(ModBlocks.slabs2[3]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[3]))
         	ID = "lapisSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[4].getIdFromBlock(ModBlocks.slabs2[4]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[4]))
         	ID = "obsidianSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[5].getIdFromBlock(ModBlocks.slabs2[5]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[5]))
         	ID = "mossSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[6].getIdFromBlock(ModBlocks.slabs2[6]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[6]))
         	ID = "endStoneBrickSlab";
-        if (this.getIdFromBlock(this) == ModBlocks.slabs2[7].getIdFromBlock(ModBlocks.slabs2[7]))
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs2[7]))
         	ID = "tadaniteSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[0]))
+        	ID = "sequoiaSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[1]))
+        	ID = "palmSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[2]))
+        	ID = "cedarSlab";
 
         return result + ID;
     }

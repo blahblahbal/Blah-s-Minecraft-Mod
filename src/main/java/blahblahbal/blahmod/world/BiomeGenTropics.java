@@ -47,7 +47,7 @@ public class BiomeGenTropics extends BiomeGenBase
     public int getGrassColorAtPos(BlockPos pos)
     {
         return 0x8FFF00; //0xE8CEAB;
-}
+    }
 	@Override
 	public void genTerrainBlocks(World worldIn, Random rand, ChunkPrimer chunkPrimerIn, int varOne, int varTwo, double varThree)
 	{
@@ -165,7 +165,6 @@ public class BiomeGenTropics extends BiomeGenBase
     }
 	public WorldGenAbstractTree genBigTreeChance(Random rand)
     {
-        return (WorldGenAbstractTree)(rand.nextInt(5) > 0 ? tree : treeDiff);
+        return (WorldGenAbstractTree)(rand.nextInt(3) > 0 ? tree : treeDiff);
     }
-	
 }

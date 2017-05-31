@@ -4,12 +4,14 @@ import java.util.Random;
 
 import blahblahbal.blahmod.blocks.BlockPalmLeaves;
 import blahblahbal.blahmod.blocks.ModBlockLeaves;
+import blahblahbal.blahmod.blocks.ModBlockPalmLog;
 import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockNewLog;
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.BlockLog.EnumAxis;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -21,7 +23,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenPalmTree extends WorldGenAbstractTree
 {
-    private static final IBlockState log = ModBlocks.palmLog.getDefaultState();
+    private static final IBlockState log = ModBlocks.palmLog.getDefaultState().withProperty(ModBlockPalmLog.LOG_AXIS, EnumAxis.Y);
     private static final IBlockState leaves = ModBlocks.palmLeaves.getDefaultState().withProperty(BlockPalmLeaves.CHECK_DECAY, Boolean.valueOf(false)).withProperty(BlockPalmLeaves.DECAYABLE, Boolean.valueOf(false));
     public WorldGenPalmTree(boolean p_i45463_1_)
     {

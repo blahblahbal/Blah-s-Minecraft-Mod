@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "blahmod:blocks/cobbleDoor_lower",
+        "top": "blahmod:blocks/cobbleDoor_upper"
+    }
+}

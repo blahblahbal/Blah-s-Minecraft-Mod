@@ -1,6 +1,7 @@
 {
     "variants": {
-        "variant=false": { "model": "blahmod:limestoneBlock" },
-        "variant=true":    { "model": "blahmod:limestoneBlock" }
+        "half=top": { "model": "blahmod:limestoneBlock" },
+        "normal":    { "model": "blahmod:limestoneBlock" },
+        "half=bottom": { "model": "blahmod:limestoneBlock" }
     }
 }

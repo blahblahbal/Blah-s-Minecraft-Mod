@@ -1,5 +1,8 @@
 {
     "variants": {
-        "normal": { "model": "blahmod:sequoiaSapling" }
-    }
+	"normal": { "model": "blahmod:sequoiaSapling" },
+	"stage=0": { "model": "blahmod:sequoiaSapling" },
+	"stage=1": { "model": "blahmod:sequoiaSapling" }
+	}
 }
+

@@ -1,5 +1,6 @@
 package blahblahbal.blahmod.enchantments;
 
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.item.ItemStack;
@@ -31,7 +32,7 @@ public class EnchantmentMoltenTouch extends Enchantment
 	@Override
 	public boolean canApply(ItemStack stack)
     {
-        return super.canApply(stack);
+        return super.canApply(stack) && stack.getItem() != ModItems.lumitePickaxe;
     }
 	@Override
 	public int getMaxLevel()

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import blahblahbal.blahmod.Main;
 import blahblahbal.blahmod.blocks.ModBlocks;
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
@@ -46,6 +47,15 @@ public class ModBlockOre extends BlockOre {
     @Override
     public Item getItemDropped(IBlockState blockstate, Random random, int fortune)
     {
+        if (this == ModBlocks.sulphurOre) return ModItems.sulphur2;
+        else if (this == ModBlocks.rubyOre) return ModItems.gems[0];
+        else if (this == ModBlocks.citrineOre) return ModItems.gems[1];
+        else if (this == ModBlocks.topazOre) return ModItems.gems[2];
+        else if (this == ModBlocks.sapphireOre) return ModItems.gems[3];
+        else if (this == ModBlocks.amethystOre) return ModItems.gems[4];
+        else if (this == ModBlocks.limestoneOre) return ModItems.limestone;
+        else if (this == ModBlocks.tadaniteOre) return ModItems.tadaniteShard;
+        else if (this == ModBlocks.rubyOreTrop) return ModItems.gems[0];
         return this.drop;
     }
 
