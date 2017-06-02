@@ -25,34 +25,33 @@ public class ModBlockLog extends BlockRotatedPillar
 		this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
 		this.name = name;
 		this.setUnlocalizedName(name);
-        this.setCreativeTab(Main.blahTabBlock);
-        this.setHarvestLevel("axe", 0);
-        this.setHardness(2F);
-        this.setResistance(5F);
-        this.setStepSound(soundTypeWood);
+		this.setCreativeTab(Main.blahTabBlock);
+		this.setHarvestLevel("axe", 0);
+		this.setHardness(2F);
+		this.setResistance(5F);
+		this.setStepSound(soundTypeWood);
 	}
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
-        int i = 4;
-        int j = i + 1;
+	{
+		int i = 4;
+		int j = i + 1;
 
-        if (worldIn.isAreaLoaded(pos.add(-j, -j, -j), pos.add(j, j, j)))
-        {
-            for (BlockPos blockpos : BlockPos.getAllInBox(pos.add(-i, -i, -i), pos.add(i, i, i)))
-            {
-                IBlockState iblockstate = worldIn.getBlockState(blockpos);
-
-                if (iblockstate.getBlock().isLeaves(worldIn, blockpos))
-                {
-                    iblockstate.getBlock().beginLeavesDecay(worldIn, blockpos);
-                }
-            }
-        }
-    }
+		if (worldIn.isAreaLoaded(pos.add(-j, -j, -j), pos.add(j, j, j)))
+		{
+			for (BlockPos blockpos : BlockPos.getAllInBox(pos.add(-i, -i, -i), pos.add(i, i, i)))
+			{
+				IBlockState iblockstate = worldIn.getBlockState(blockpos);
+				if (iblockstate.getBlock().isLeaves(worldIn, blockpos))
+				{
+					iblockstate.getBlock().beginLeavesDecay(worldIn, blockpos);
+				}
+			}
+		}
+	}
 	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-    {
-        return super.onBlockPlaced(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(LOG_AXIS, BlockLog.EnumAxis.fromFacingAxis(facing.getAxis()));
-    }
+	{
+		return super.onBlockPlaced(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer).withProperty(LOG_AXIS, BlockLog.EnumAxis.fromFacingAxis(facing.getAxis()));
+	}
 	public int getMetaFromState(IBlockState state)
 	{
 		return ((BlockLog.EnumAxis)state.getValue(LOG_AXIS)).ordinal() * 4;
@@ -63,7 +62,7 @@ public class ModBlockLog extends BlockRotatedPillar
 	}
 	@Override
 	protected BlockState createBlockState()
-    {
-        return new BlockState(this, new IProperty[]{LOG_AXIS});
-    }
+	{
+		return new BlockState(this, new IProperty[]{LOG_AXIS});
+	}
 }
