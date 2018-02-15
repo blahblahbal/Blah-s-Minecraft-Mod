@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "minecraft:gold_block" },
+        "normal":    { "model": "minecraft:gold_block" },
+        "half=bottom": { "model": "minecraft:gold_block" }
+    }
+}

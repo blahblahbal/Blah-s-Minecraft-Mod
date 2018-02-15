@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "axis=y":  { "model": "blahmod:dreadLog" },
+        "axis=z":   { "model": "blahmod:dreadLog_side" },
+        "axis=x":   { "model": "blahmod:dreadLog_side", "y": 90 },
+        "axis=none": { "model": "blahmod:dreadLog_bark" }
+    }
+}

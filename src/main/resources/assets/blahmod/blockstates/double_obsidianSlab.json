@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "minecraft:obsidian" },
+        "normal":    { "model": "minecraft:obsidian" },
+        "half=bottom": { "model": "minecraft:obsidian" }
+    }
+}

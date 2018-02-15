@@ -1,0 +1,7 @@
+{
+    "parent": "block/column_side",
+    "textures": {
+        "end": "blahmod:blocks/cedarLog_top",
+        "side": "blahmod:blocks/cedarLog"
+    }
+}

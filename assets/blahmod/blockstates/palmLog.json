@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "blahmod:palmLog" },
-        "axis=z":   { "model": "blahmod:palmLog" },
-        "axis=x":   { "model": "blahmod:palmLog", "y": 90 },
-        "axis=none": { "model": "blahmod:palmLog" }
-    }
-}

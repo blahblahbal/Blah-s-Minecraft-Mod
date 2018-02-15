@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "blahmod:blocks/dreadDoor_lower",
+        "top": "blahmod:blocks/dreadDoor_upper"
+    }
+}

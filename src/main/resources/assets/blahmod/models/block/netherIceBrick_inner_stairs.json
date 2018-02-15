@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "blahmod:blocks/netherIceBrick",
+        "top": "blahmod:blocks/netherIceBrick",
+        "side": "blahmod:blocks/netherIceBrick"
+    }
+}

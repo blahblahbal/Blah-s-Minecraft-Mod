@@ -1,0 +1,20 @@
+{
+    "variants": {
+        "facing=south,in_wall=false,open=false": { "model": "blahmod:palmFenceGate_closed" },
+        "facing=west,in_wall=false,open=false":  { "model": "blahmod:palmFenceGate_closed", "y": 90, "uvlock": true },
+        "facing=north,in_wall=false,open=false": { "model": "blahmod:palmFenceGate_closed", "y": 180, "uvlock": true },
+        "facing=east,in_wall=false,open=false":  { "model": "blahmod:palmFenceGate_closed", "y": 270, "uvlock": true },
+        "facing=south,in_wall=false,open=true": { "model": "blahmod:palmFenceGate_open" },
+        "facing=west,in_wall=false,open=true":  { "model": "blahmod:palmFenceGate_open", "y": 90, "uvlock": true },
+        "facing=north,in_wall=false,open=true": { "model": "blahmod:palmFenceGate_open", "y": 180, "uvlock": true },
+        "facing=east,in_wall=false,open=true":  { "model": "blahmod:palmFenceGate_open", "y": 270, "uvlock": true },
+        "facing=south,in_wall=true,open=false": { "model": "blahmod:palmWallGate_closed" },
+        "facing=west,in_wall=true,open=false":  { "model": "blahmod:palmWallGate_closed", "y": 90, "uvlock": true },
+        "facing=north,in_wall=true,open=false": { "model": "blahmod:palmWallGate_closed", "y": 180, "uvlock": true },
+        "facing=east,in_wall=true,open=false":  { "model": "blahmod:palmWallGate_closed", "y": 270, "uvlock": true },
+        "facing=south,in_wall=true,open=true": { "model": "blahmod:palmWallGate_open" },
+        "facing=west,in_wall=true,open=true":  { "model": "blahmod:palmWallGate_open", "y": 90, "uvlock": true },
+        "facing=north,in_wall=true,open=true": { "model": "blahmod:palmWallGate_open", "y": 180, "uvlock": true },
+        "facing=east,in_wall=true,open=true":  { "model": "blahmod:palmWallGate_open", "y": 270, "uvlock": true }
+    }
+}

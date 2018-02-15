@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "minecraft:iron_block" },
+        "normal":    { "model": "minecraft:iron_block" },
+        "half=bottom": { "model": "minecraft:iron_block" }
+    }
+}

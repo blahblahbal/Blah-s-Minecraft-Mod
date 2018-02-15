@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:dreadSandSlab" },
+        "normal":    { "model": "blahmod:dreadSandSlab" },
+        "half=bottom": { "model": "blahmod:dreadSandSlab" }
+    }
+}

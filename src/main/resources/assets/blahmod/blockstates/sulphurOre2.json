@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:sulphurOre2" },
+        "inventory": { "model": "blahmod:sulphurOre2" }
+    }
+}

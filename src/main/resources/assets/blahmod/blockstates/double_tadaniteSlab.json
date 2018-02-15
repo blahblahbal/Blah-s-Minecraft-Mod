@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:tadanite" },
+        "normal":    { "model": "blahmod:tadanite" },
+        "half=bottom": { "model": "blahmod:tadanite" }
+    }
+}

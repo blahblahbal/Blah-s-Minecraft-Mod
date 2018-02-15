@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "minecraft:grass" },
-        "variant=true":    { "model": "minecraft:grass" }
-    }
-}

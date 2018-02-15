@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:endStoneBricks" },
+        "normal":    { "model": "blahmod:endStoneBricks" },
+        "half=bottom": { "model": "blahmod:endStoneBricks" }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:uraniumBlock" },
+        "normal":    { "model": "blahmod:uraniumBlock" },
+        "half=bottom": { "model": "blahmod:uraniumBlock" }
+    }
+}

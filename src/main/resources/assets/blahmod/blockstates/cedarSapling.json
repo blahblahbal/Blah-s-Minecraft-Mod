@@ -1,0 +1,8 @@
+{
+    "variants": {
+	"normal": { "model": "blahmod:cedarSapling" },
+	"stage=0": { "model": "blahmod:cedarSapling" },
+	"stage=1": { "model": "blahmod:cedarSapling" }
+	}
+}
+

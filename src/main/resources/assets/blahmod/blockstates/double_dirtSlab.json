@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "minecraft:dirt" },
+        "half=bottom":    { "model": "minecraft:dirt" },
+        "normal": { "model": "minecraft:dirt" }
+    }
+}

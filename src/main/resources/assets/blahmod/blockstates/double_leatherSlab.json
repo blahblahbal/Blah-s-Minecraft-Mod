@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "blahmod:leatherBlock" },
+        "normal":    { "model": "blahmod:leatherBlock" },
+        "half=bottom": { "model": "blahmod:leatherBlock" }
+    }
+}

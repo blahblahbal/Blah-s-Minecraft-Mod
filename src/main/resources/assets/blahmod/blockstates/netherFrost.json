@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:netherFrost" },
+        "inventory": { "model": "blahmod:netherFrost" }
+    }
+}

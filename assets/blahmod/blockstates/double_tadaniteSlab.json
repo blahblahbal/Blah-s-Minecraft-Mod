@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "variant=false": { "model": "blahmod:tadanite" },
-        "variant=true":    { "model": "blahmod:tadanite" }
-    }
-}

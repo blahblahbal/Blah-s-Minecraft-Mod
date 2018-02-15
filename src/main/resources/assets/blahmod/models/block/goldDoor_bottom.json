@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "blahmod:blocks/goldDoor_lower",
+        "top": "blahmod:blocks/goldDoor_upper"
+    }
+}

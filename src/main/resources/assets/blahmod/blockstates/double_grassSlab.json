@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "half=top": { "model": "minecraft:grass" },
+        "normal":    { "model": "minecraft:grass" },
+        "half=bottom": { "model": "minecraft:grass" }
+    }
+}

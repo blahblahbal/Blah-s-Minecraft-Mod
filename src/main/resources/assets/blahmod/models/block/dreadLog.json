@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "blahmod:blocks/dreadLog_top",
+        "side": "blahmod:blocks/dreadLog"
+    }
+}
