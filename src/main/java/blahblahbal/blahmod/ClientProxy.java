@@ -35,8 +35,8 @@ public class ClientProxy extends CommonProxy {
         final int DEFAULT_ITEM_SUBTYPE = 0;
         ModelLoader.setCustomModelResourceLocation(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
         //BlockRenderRegister.INSTANCE.registerFluidModels();
-        RenderingRegistry.registerEntityRenderingHandler(EntityEskimoZombie.class, manager -> new RenderEskimoZombie(manager));
-        RenderingRegistry.registerEntityRenderingHandler(EntityIceCube.class, manager -> new RenderIceCube(manager));
+        //RenderingRegistry.registerEntityRenderingHandler(EntityEskimoZombie.class, manager -> new RenderEskimoZombie(manager));
+        //RenderingRegistry.registerEntityRenderingHandler(EntityIceCube.class, manager -> new RenderIceCube(manager));
     }
 
     @Override
