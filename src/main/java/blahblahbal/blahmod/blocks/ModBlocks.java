@@ -271,7 +271,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(frostSapling = new ModBlockFrostSapling("frostSapling", 2)), "frostSapling");
 		GameRegistry.registerBlock((Block)(frostPlanks = new BasicBlock("frostPlanks", Material.wood, 2F, 5F, "hand", 0, "frostPlanks")).setStepSound(Block.soundTypeWood), "frostPlanks");
 		GameRegistry.registerBlock(frostFence = new ModBlockFence(Material.wood, "frostFence"), "frostFence");
-		GameRegistry.registerBlock(frostDoor = new BlockDiamondDoor(Material.wood, "frostDoor"), null, "diamondDoor_block");
+		GameRegistry.registerBlock(frostDoor = new BlockDiamondDoor(Material.wood, "frostDoor"), null, "frostDoor_block");
     	ModItems.registerItem(ModItems.frostDoorItem = new ItemDiamondDoor(frostDoor), "frostDoor");
     	GameRegistry.registerBlock(frostStairs = new ModBlockStairs(frostPlanks.getDefaultState(), "frostStairs"), "frostStairs");
     	GameRegistry.registerBlock(frostFenceGate = new ModBlockFenceGate("frostFenceGate"), "frostFenceGate");

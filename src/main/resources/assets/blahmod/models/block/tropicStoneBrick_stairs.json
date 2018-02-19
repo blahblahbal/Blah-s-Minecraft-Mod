@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "blahmod:blocks/tropicStoneBrick",
+        "top": "blahmod:blocks/tropicStoneBrick",
+        "side": "blahmod:blocks/tropicStoneBrick"
+    }
+}

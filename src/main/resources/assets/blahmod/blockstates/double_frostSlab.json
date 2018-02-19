@@ -1,0 +1,7 @@
+{
+    "variants": {
+	"half=top": { "model": "blahmod:frostPlanks" },
+	"normal":    { "model": "blahmod:frostPlanks" },
+	"half=bottom": { "model": "blahmod:frostPlanks" }
+    }
+}
