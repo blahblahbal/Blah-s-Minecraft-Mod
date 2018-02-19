@@ -51,6 +51,7 @@ public class BlahCraftManager
     {
         
         this.addRecipe(new ItemStack(Items.diamond, 1), ModItems.sulphur2, Blocks.coal_block, Items.lava_bucket);
+        this.addRecipe(new ItemStack(Items.lava_bucket, 1), ModItems.sulphur2, Items.bucket, ModBlocks.hardenedLava);
         this.addRecipe(new ItemStack(Blocks.log, 1), ModItems.sulphur2, Items.coal);
         this.addRecipe(new ItemStack(Blocks.brick_block, 1), ModItems.sulphur2, Blocks.clay);
         this.addRecipe(new ItemStack(Blocks.sand, 1, 1), ModItems.sulphur2, Blocks.sand);

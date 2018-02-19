@@ -102,6 +102,7 @@ public class Main
     	OreDictionary.registerOre("plankWood", ModBlocks.palmPlanks);
     	OreDictionary.registerOre("plankWood", ModBlocks.cedarPlanks);
     	OreDictionary.registerOre("plankWood", ModBlocks.deadPlanks);
+    	OreDictionary.registerOre("plankWood", ModBlocks.frostPlanks);
     	OreDictionary.registerOre("oreLumite", ModBlocks.lumiteOre);
     	OreDictionary.registerOre("oreSulphur", ModBlocks.sulphurOre);
     	OreDictionary.registerOre("oreLimestone", ModBlocks.limestoneOre);
@@ -112,10 +113,12 @@ public class Main
     	OreDictionary.registerOre("logWood", ModBlocks.palmLog);
     	OreDictionary.registerOre("logWood", ModBlocks.cedarLog);
     	OreDictionary.registerOre("logWood", ModBlocks.dreadLog);
+    	OreDictionary.registerOre("logWood", ModBlocks.frostLog);
     	OreDictionary.registerOre("treeSapling", ModBlocks.sequoiaSapling);
     	OreDictionary.registerOre("treeSapling", ModBlocks.palmSapling);
     	OreDictionary.registerOre("treeSapling", ModBlocks.cedarSapling);
     	OreDictionary.registerOre("treeSapling", ModBlocks.dreadSapling);
+    	OreDictionary.registerOre("treeSapling", ModBlocks.frostSapling);
     	// increment the index for each entity you register
     	int modEntityIndex = 0;
 

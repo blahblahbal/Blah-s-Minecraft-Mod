@@ -60,7 +60,7 @@ public abstract class ModBlockSlab extends BlockSlab {
         setStepSound(soundTypePiston);
         this.name = uname;
         setUnlocalizedName(uname);
-        if (uname == "sequoiaSlab" || uname == "palmSlab" || uname == "cedarSlab" || uname == "dreadSlab")
+        if (uname == "sequoiaSlab" || uname == "palmSlab" || uname == "cedarSlab" || uname == "dreadSlab" || uname == "frostSlab")
         {
         	this.setStepSound(soundTypeWood);
         	this.setHarvestLevel("axe", 0);
@@ -272,6 +272,16 @@ public abstract class ModBlockSlab extends BlockSlab {
         	ID = "palmSlab";
         if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[2]))
         	ID = "cedarSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[3]))
+        	ID = "petrifiedWoodSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[4]))
+        	ID = "dreadSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[5]))
+        	ID = "dreadSandSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[6]))
+        	ID = "blackSandSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[7]))
+        	ID = "frostSlab";
 
         return result + ID;
     }

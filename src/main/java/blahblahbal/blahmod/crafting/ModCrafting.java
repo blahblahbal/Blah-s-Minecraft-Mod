@@ -45,9 +45,11 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.acidBucket), new ItemStack(Items.redstone), new ItemStack(Items.slime_ball), new ItemStack(Items.water_bucket));
 		// -- WOOD STUFF --
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 4), new ItemStack(ModBlocks.sequoiaLog));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.frostPlanks, 4), new ItemStack(ModBlocks.frostLog));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.palmPlanks, 4), new ItemStack(ModBlocks.palmLog));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cedarPlanks, 4), new ItemStack(ModBlocks.cedarLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.sequoiaPlanks));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.frostPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.deadPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.palmPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.cedarPlanks));
@@ -56,20 +58,27 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.sequoiaPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cementStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.cement);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.deadPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.frostPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrickStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.tropicStoneBrick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrickStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.netherIceBrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.petrifiedWoodStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.petrifiedWood);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.cedarPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.palmPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.sequoiaPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cementStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.cement);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.deadPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.frostPlanks);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrickStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.netherIceBrick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrickStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.tropicStoneBrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.petrifiedWoodStairs, 4), "  x", " xx", "xxx", 'x', ModBlocks.petrifiedWood);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.deadPlanks, 4), new ItemStack(ModBlocks.dreadLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarFence, 3), "xyx", "xyx", 'x', ModBlocks.cedarPlanks, 'y', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostFence, 3), "xyx", "xyx", 'x', ModBlocks.frostPlanks, 'y', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmFence, 3), "xyx", "xyx", 'x', ModBlocks.palmPlanks, 'y', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaFence, 3), "xyx", "xyx", 'x', ModBlocks.sequoiaPlanks, 'y', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadFence, 3), "xyx", "xyx", 'x', ModBlocks.deadPlanks, 'y', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarFenceGate, 3), "xyx", "xyx", 'y', ModBlocks.cedarPlanks, 'x', Items.stick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostFenceGate, 3), "xyx", "xyx", 'y', ModBlocks.frostPlanks, 'x', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmFenceGate, 3), "xyx", "xyx", 'y', ModBlocks.palmPlanks, 'x', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaFenceGate, 3), "xyx", "xyx", 'y', ModBlocks.sequoiaPlanks, 'x', Items.stick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadFenceGate, 3), "xyx", "xyx", 'y', ModBlocks.deadPlanks, 'x', Items.stick);
@@ -87,6 +96,7 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 2), new ItemStack(ModItems.sequoiaDoorItem));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cedarPlanks, 2), new ItemStack(ModItems.cedarDoorItem));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.deadPlanks, 2), new ItemStack(ModItems.dreadDoorItem));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.frostPlanks, 2), new ItemStack(ModItems.frostDoorItem));
 		// -- END CUSTOM DOOR REVERSE CRAFTING --
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledDreadSandstone), "x", "x", 'x', ModBlocks.woodSlabs[5]);
@@ -184,7 +194,9 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrick), "##", "##", '#', ModBlocks.netherIce);
 		// stairs start
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrick, 6), "##","##", '#', ModBlocks.netherIceBrickStairs);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 6), "##","##", '#', ModBlocks.tropicStoneBrickStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cement, 6), "##","##", '#', ModBlocks.cementStairs);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostPlanks, 6), "##","##", '#', ModBlocks.frostStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarPlanks, 6), "##","##", '#', ModBlocks.cedarStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmPlanks, 6), "##","##", '#', ModBlocks.palmStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaPlanks, 6), "##","##", '#', ModBlocks.sequoiaStairs);
@@ -286,6 +298,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.sequoiaDoorItem, 3), "xx", "xx", "xx", 'x', new ItemStack(ModBlocks.sequoiaPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModItems.cedarDoorItem, 3), "xx", "xx", "xx", 'x', new ItemStack(ModBlocks.cedarPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModItems.dreadDoorItem, 3), "xx", "xx", "xx", 'x', new ItemStack(ModBlocks.deadPlanks));
+		GameRegistry.addRecipe(new ItemStack(ModItems.frostDoorItem, 3), "xx", "xx", "xx", 'x', new ItemStack(ModBlocks.frostPlanks));
 		// -- END CUSTOM DOORS --
 		// custom slab crafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs[0], 6), "xxx", 'x', new ItemStack(Blocks.wool, 1, 0));
@@ -311,6 +324,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.woodSlabs[4], 6), "xxx", 'x', new ItemStack(ModBlocks.deadPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.woodSlabs[5], 6), "xxx", 'x', new ItemStack(ModBlocks.dreadSandstone));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.woodSlabs[6], 6), "xxx", 'x', new ItemStack(ModBlocks.blackSandstone));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.woodSlabs[7], 6), "xxx", 'x', new ItemStack(ModBlocks.frostPlanks));
 		// custom slab decrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.dirt, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[0]));
 		GameRegistry.addRecipe(new ItemStack(Blocks.grass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[1]));
@@ -335,6 +349,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.deadPlanks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.woodSlabs[4]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadSandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.woodSlabs[5]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blackSandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.woodSlabs[6]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostPlanks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.woodSlabs[7]));
 		// end custom slab crafting/decrafting		
 		// gem staves
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[0]), "y", "y", "z", 'y', new ItemStack(ModBlocks.gemBlocks[0]), 'z', new ItemStack(ModBlocks.petrifiedWood));

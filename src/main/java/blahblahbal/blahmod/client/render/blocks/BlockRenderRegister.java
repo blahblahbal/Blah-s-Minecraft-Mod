@@ -90,6 +90,7 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.ironOre);
 	    reg((BasicBlock)ModBlocks.goldOre);
 	    reg((BasicBlock)ModBlocks.deadPlanks);
+	    reg((BasicBlock)ModBlocks.frostPlanks);
 	    reg((BasicBlock)ModBlocks.dreadRock);
 	    reg((BasicBlock)ModBlocks.dreadSand);
 	    reg((BasicBlock)ModBlocks.flintBlock);
@@ -122,7 +123,7 @@ public final class BlockRenderRegister
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.slabs2[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.slabs2[i])).name, "inventory"));
 	    	ModelLoader.setCustomStateMapper(ModBlocks.doubleSlabs2[i], new StateMap.Builder().ignore(ModBlockSlab.VARIANT_PROPERTY).build());
 	    }
-	    for (int i = 0; i < 7; i++)
+	    for (int i = 0; i < 8; i++)
 	    {
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.doubleWoodSlabs[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.doubleWoodSlabs[i])).name, "inventory"));
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.woodSlabs[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.woodSlabs[i])).name, "inventory"));
@@ -147,7 +148,9 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockPalmSapling)(ModBlocks.palmSapling)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cedarSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockCedarSapling)(ModBlocks.cedarSapling)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockDreadSapling)(ModBlocks.dreadSapling)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostSapling), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockFrostSapling)(ModBlocks.frostSapling)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((BlockPalmLeaves)(ModBlocks.palmLeaves)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockFrostLeaves)(ModBlocks.frostLeaves)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.reinforcedGlass), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockGlass)(ModBlocks.reinforcedGlass)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cedarLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockCedarLog)(ModBlocks.cedarLog)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockDreadLog)(ModBlocks.dreadLog)).name, "inventory"));
@@ -166,6 +169,9 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadFence), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":dreadFence", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cedarFenceGate), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":cedarFenceGate", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaFenceGate), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":sequoiaFenceGate", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostFence), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":frostFence", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostFenceGate), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":frostFenceGate", "inventory"));
+	    
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmFenceGate), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":palmFenceGate", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadFenceGate), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":dreadFenceGate", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.petrifiedWoodWall), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":petrifiedWoodWall", "inventory"));
@@ -174,12 +180,15 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomStateMapper(ModBlocks.palmFenceGate, new StateMap.Builder().ignore(ModBlockFenceGate.POWERED).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.sequoiaFenceGate, new StateMap.Builder().ignore(ModBlockFenceGate.POWERED).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.dreadFenceGate, new StateMap.Builder().ignore(ModBlockFenceGate.POWERED).build());
+	    ModelLoader.setCustomStateMapper(ModBlocks.frostFenceGate, new StateMap.Builder().ignore(ModBlockFenceGate.POWERED).build());
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.petrifiedWoodStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":petrifiedWoodStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cementStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":cementStairs", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":frostStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cedarStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":cedarStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":palmStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":sequoiaStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":dreadStairs", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":frostStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.netherIceBrickStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":netherIceBrickStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStoneBrickStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tropicStoneBrickStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.diamondDoorItem, 0, new ModelResourceLocation(Main.MODID + ":diamondDoor", "inventory"));
@@ -190,8 +199,8 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(ModItems.sequoiaDoorItem, 0, new ModelResourceLocation(Main.MODID + ":sequoiaDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.cedarDoorItem, 0, new ModelResourceLocation(Main.MODID + ":cedarDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.dreadDoorItem, 0, new ModelResourceLocation(Main.MODID + ":dreadDoor", "inventory"));
-	    
-	    
+	    ModelLoader.setCustomModelResourceLocation(ModItems.frostDoorItem, 0, new ModelResourceLocation(Main.MODID + ":frostDoor", "inventory"));
+	    ModelLoader.setCustomStateMapper(ModBlocks.frostDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.diamondDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.cobbleDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.goldDoor, new StateMap.Builder().ignore(BlockDiamondDoor.POWERED).build());
@@ -205,10 +214,12 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomStateMapper(ModBlocks.prefabSapling, new StateMap.Builder().ignore(ModBlockPrefabSapling.STAGE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.cedarSapling, new StateMap.Builder().ignore(ModBlockCedarSapling.STAGE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.sequoiaSapling, new StateMap.Builder().ignore(ModBlockSequoiaSapling.TYPE).build());
+	    ModelLoader.setCustomStateMapper(ModBlocks.frostSapling, new StateMap.Builder().ignore(ModBlockFrostSapling.STAGE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.palmSapling, new StateMap.Builder().ignore(ModBlockPalmSapling.TYPE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.prefabSapling, new StateMap.Builder().ignore(ModBlockPrefabSapling.TYPE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.cedarSapling, new StateMap.Builder().ignore(ModBlockCedarSapling.TYPE).build());
 	    ModelLoader.setCustomStateMapper(ModBlocks.dreadSapling, new StateMap.Builder().ignore(ModBlockDreadSapling.TYPE).build());
+	    ModelLoader.setCustomStateMapper(ModBlocks.frostSapling, new StateMap.Builder().ignore(ModBlockFrostSapling.TYPE).build());
 	}
 	public static void reg(BasicBlock block)
 	{

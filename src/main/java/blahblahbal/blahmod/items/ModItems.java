@@ -45,6 +45,7 @@ public final class ModItems {
     public static Item sequoiaDoorItem;
     public static Item cedarDoorItem;
     public static Item dreadDoorItem;
+    public static Item frostDoorItem;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;

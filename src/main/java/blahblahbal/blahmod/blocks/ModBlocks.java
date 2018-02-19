@@ -47,6 +47,7 @@ public final class ModBlocks
 	public static String[] woolNames = new String[] { "BrightRed", "BrightYellow", "BrightCyan", "DarkRed", "DarkYellow", "PaleYellow", "Turquoise", "DarkOrange", "LightBrown", "YellowGreen" };
 	public static ModBlockPrefabSapling prefabSapling;
 	public static ModBlockSequoiaSapling sequoiaSapling;
+	public static ModBlockFrostSapling frostSapling;
 	public static Block iceFire;
 	public static Block netherCorePortal;
 	public static Block netherFrost;
@@ -59,10 +60,13 @@ public final class ModBlocks
 	public static ModBlockPalmLog palmLog;
 	public static ModBlockCedarLog cedarLog;
 	public static BlockCedarLeaves cedarLeaves;
+	public static ModBlockFrostLog frostLog;
+	public static ModBlockFrostLeaves frostLeaves;
 	public static ModBlockCedarSapling cedarSapling;
 	public static ModBlockDreadSapling dreadSapling;
 	public static BlockPalmLeaves palmLeaves;
 	public static ModBlockGlass reinforcedGlass;
+	public static Block frostPlanks;
 	public static Block lantern;
 	public static Block lanternFloor;
 	public static Block zirconOre;
@@ -114,6 +118,7 @@ public final class ModBlocks
 	public static BlockDiamondDoor sequoiaDoor;
 	public static BlockDiamondDoor cedarDoor;
 	public static BlockDiamondDoor dreadDoor;
+	public static BlockDiamondDoor frostDoor;
 	public static Block ironOre;
 	public static Block coalOre;
 	public static Block goldOre;
@@ -150,14 +155,17 @@ public final class ModBlocks
     public static ModBlockFence sequoiaFence;
     public static ModBlockFence cedarFence;
     public static ModBlockFence dreadFence;
+    public static ModBlockFence frostFence;
     
     public static ModBlockFenceGate palmFenceGate;
     public static ModBlockFenceGate sequoiaFenceGate;
     public static ModBlockFenceGate cedarFenceGate;
     public static ModBlockFenceGate dreadFenceGate;
+    public static ModBlockFenceGate frostFenceGate;
     
     public static ModBlockWall petrifiedWoodWall;
     public static ModBlockStairs palmStairs;
+    public static ModBlockStairs frostStairs;
     public static ModBlockStairs cedarStairs;
     public static ModBlockStairs sequoiaStairs;
     public static ModBlockStairs dreadStairs;
@@ -169,8 +177,8 @@ public final class ModBlocks
     public static ModBlockSlab[] doubleSlabs = new ModBlockSlab[8];
     public static ModBlockSlab[] slabs2 = new ModBlockSlab[8];
     public static ModBlockSlab[] doubleSlabs2 = new ModBlockSlab[8];
-    public static ModBlockSlab[] woodSlabs = new ModBlockSlab[7];
-    public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[7];
+    public static ModBlockSlab[] woodSlabs = new ModBlockSlab[8];
+    public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[8];
     public static Block petrifiedWood;
     public static Block blazeBrick;
     public static Block tropicStoneBrick;
@@ -257,6 +265,17 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(dreadSapling = new ModBlockDreadSapling("dreadSapling", 2)), "dreadSapling");
 		GameRegistry.registerBlock((Block)(sequoiaLog = new ModBlockLog("sequoiaLog")), "sequoiaLog");
 		GameRegistry.registerBlock((Block)(sequoiaLeaves = new ModBlockLeaves("sequoiaLeaves")), "sequoiaLeaves");
+		
+		GameRegistry.registerBlock((Block)(frostLog = new ModBlockFrostLog("frostLog")), "frostLog");
+		GameRegistry.registerBlock((Block)(frostLeaves = new ModBlockFrostLeaves("frostLeaves")), "frostLeaves");
+		GameRegistry.registerBlock((Block)(frostSapling = new ModBlockFrostSapling("frostSapling", 2)), "frostSapling");
+		GameRegistry.registerBlock((Block)(frostPlanks = new BasicBlock("frostPlanks", Material.wood, 2F, 5F, "hand", 0, "frostPlanks")).setStepSound(Block.soundTypeWood), "frostPlanks");
+		GameRegistry.registerBlock(frostFence = new ModBlockFence(Material.wood, "frostFence"), "frostFence");
+		GameRegistry.registerBlock(frostDoor = new BlockDiamondDoor(Material.wood, "frostDoor"), null, "diamondDoor_block");
+    	ModItems.registerItem(ModItems.frostDoorItem = new ItemDiamondDoor(frostDoor), "frostDoor");
+    	GameRegistry.registerBlock(frostStairs = new ModBlockStairs(frostPlanks.getDefaultState(), "frostStairs"), "frostStairs");
+    	GameRegistry.registerBlock(frostFenceGate = new ModBlockFenceGate("frostFenceGate"), "frostFenceGate");
+    	
 		GameRegistry.registerBlock((Block)(palmSapling = new ModBlockPalmSapling("palmSapling", 2)), "palmSapling");
 		GameRegistry.registerBlock((Block)(cedarSapling = new ModBlockCedarSapling("cedarSapling", 2)), "cedarSapling");
 		GameRegistry.registerBlock((Block)(palmLog = new ModBlockPalmLog("palmLog")), "palmLog");
@@ -363,6 +382,7 @@ public final class ModBlocks
     	woodSlabs[4] = new ModBlockSlabHalf("dreadSlab", Material.wood);
     	woodSlabs[5] = new ModBlockSlabHalf("dreadSandSlab", Material.rock);
     	woodSlabs[6] = new ModBlockSlabHalf("blackSandSlab", Material.rock);
+    	woodSlabs[7] = new ModBlockSlabHalf("frostSlab", Material.rock);
     	
     	doubleWoodSlabs[0] = new ModBlockSlabDouble("double_sequoiaSlab", Material.wood, woodSlabs[0]);
     	doubleWoodSlabs[1] = new ModBlockSlabDouble("double_palmSlab", Material.wood, woodSlabs[1]);
@@ -371,6 +391,7 @@ public final class ModBlocks
     	doubleWoodSlabs[4] = new ModBlockSlabDouble("double_dreadSlab", Material.wood, woodSlabs[4]);
     	doubleWoodSlabs[5] = new ModBlockSlabDouble("double_dreadSandSlab", Material.wood, woodSlabs[5]);
     	doubleWoodSlabs[6] = new ModBlockSlabDouble("double_blackSandSlab", Material.wood, woodSlabs[6]);
+    	doubleWoodSlabs[7] = new ModBlockSlabDouble("double_frostSlab", Material.wood, woodSlabs[7]);
     	
     	for (int i = 0; i < 8; i++)
     	{
@@ -380,7 +401,7 @@ public final class ModBlocks
     		GameRegistry.registerBlock(slabs2[i], ModItemBlockSlab.class, slabs2[i].name, slabs2[i], doubleSlabs2[i], false);
     		GameRegistry.registerBlock(doubleSlabs2[i], ModItemBlockSlab.class, doubleSlabs2[i].name, slabs2[i], doubleSlabs2[i], false);
     	}
-    	for (int i = 0; i < 7; i++)
+    	for (int i = 0; i < 8; i++)
     	{
     		GameRegistry.registerBlock(woodSlabs[i], ModItemBlockSlab.class, woodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
     		GameRegistry.registerBlock(doubleWoodSlabs[i], ModItemBlockSlab.class, doubleWoodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
