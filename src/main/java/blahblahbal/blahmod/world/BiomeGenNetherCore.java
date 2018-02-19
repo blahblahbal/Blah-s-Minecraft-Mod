@@ -6,6 +6,7 @@ import blahblahbal.blahmod.entity.EntityEskimoZombie;
 import blahblahbal.blahmod.entity.EntityIceCube;
 import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
@@ -28,4 +29,9 @@ public class BiomeGenNetherCore extends BiomeGenBase
     {
         return (WorldGenAbstractTree)tree;
     }
+    @Override
+	public int getFoliageColorAtPos(BlockPos pos)
+	{
+		return 0x8FFF00;
+	}
 }

@@ -33,6 +33,24 @@ public class ModBlockFrostLeaves extends BlockLeaves
 		setCreativeTab(Main.blahTabBlock);
 	}
 	@Override
+    @SideOnly(Side.CLIENT)
+    public int getBlockColor()
+    {
+        return 0xFFFFFF;
+    }
+	@Override
+	@SideOnly(Side.CLIENT)
+    public int colorMultiplier(IBlockAccess worldIn, BlockPos pos, int renderPass)
+    {
+        return 0xFFFFFF;
+    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public int getRenderColor(IBlockState state)
+    {
+        return 0xFFFFFF;
+    }
+	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
 		return Item.getItemFromBlock(ModBlocks.frostSapling);
@@ -189,7 +207,7 @@ public class ModBlockFrostLeaves extends BlockLeaves
 	@SideOnly(Side.CLIENT)
 	public EnumWorldBlockLayer getBlockLayer()
 	{
-		return EnumWorldBlockLayer.CUTOUT;
+		return Blocks.leaves.getBlockLayer();
 	}
 
 	@Override
