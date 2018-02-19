@@ -52,6 +52,7 @@ public final class ModBlocks
 	public static Block netherFrost;
 	public static Block netherSnow;
 	public static Block frostBrick;
+	public static Block chiseledBlackSandstone;
 	public static ModBlockPalmSapling palmSapling;
 	public static ModBlockLog sequoiaLog;
 	public static ModBlockLeaves sequoiaLeaves;
@@ -163,6 +164,7 @@ public final class ModBlocks
     public static ModBlockStairs petrifiedWoodStairs;
     public static ModBlockStairs netherIceBrickStairs;
     public static ModBlockStairs cementStairs;
+    public static ModBlockStairs tropicStoneBrickStairs;
     public static ModBlockSlab[] slabs = new ModBlockSlab[8];
     public static ModBlockSlab[] doubleSlabs = new ModBlockSlab[8];
     public static ModBlockSlab[] slabs2 = new ModBlockSlab[8];
@@ -176,6 +178,7 @@ public final class ModBlocks
     public static void createBlocks()
     {
     	GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
+    	GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
     	GameRegistry.registerBlock((Block)(frostBrick = new BasicBlock("frostBrick", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostBrick")), "frostBrick");
     	GameRegistry.registerBlock((Block)(netherFrost = new BasicBlock("netherFrost", Material.rock, 1.5F, 10F, "pickaxe", 0, "netherFrost")), "netherFrost");
     	GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 10F, "shovel", 0, "netherSnow")), "netherSnow");
@@ -284,6 +287,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock(palmStairs = new ModBlockStairs(palmPlanks.getDefaultState(), "palmStairs"), "palmStairs");
 		GameRegistry.registerBlock(sequoiaStairs = new ModBlockStairs(sequoiaPlanks.getDefaultState(), "sequoiaStairs"), "sequoiaStairs");
 		GameRegistry.registerBlock(cementStairs = new ModBlockStairs(cement.getDefaultState(), "cementStairs"), "cementStairs");
+		GameRegistry.registerBlock(tropicStoneBrickStairs = new ModBlockStairs(tropicStoneBrick.getDefaultState(), "tropicStoneBrickStairs"), "tropicStoneBrickStairs");
 		GameRegistry.registerBlock(netherIceBrickStairs = new ModBlockStairs(netherIceBrick.getDefaultState(), "netherIceBrickStairs"), "netherIceBrickStairs");
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 	    RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();

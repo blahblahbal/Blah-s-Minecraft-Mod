@@ -90,6 +90,7 @@ public final class ModCrafting
 		// -- END CUSTOM DOOR REVERSE CRAFTING --
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledDreadSandstone), "x", "x", 'x', ModBlocks.woodSlabs[5]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledBlackSandstone), "x", "x", 'x', ModBlocks.woodSlabs[6]);
 		GameRegistry.addRecipe(new ItemStack(ModItems.osborgnenFuel, 2), "xyx","yzy", "xyx", 'x', Blocks.obsidian, 'z', Items.coal, 'y', ModItems.tadaniteDiamond);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.imperviousBrick, 8), "#x#","x#x", "#x#", '#', new ItemStack(ModBlocks.blackSand), 'x', new ItemStack(Blocks.obsidian));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
@@ -115,6 +116,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "#x","x#", '#', Items.nether_wart, 'x', Items.netherbrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.redNetherBrick), "x#","#x", '#', Items.nether_wart, 'x', Items.netherbrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.obsidianBrick), "##","##", '#', ModItems.obsidianIngot);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBrick), "##","##", '#', ModBlocks.netherFrost);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blackSandstone), "##","##", '#', ModBlocks.blackSand);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.endStoneBricks), "##","##", '#', Blocks.end_stone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cement, 8), "#x#","xxx", "yzy", '#', Blocks.clay, 'x', ModItems.limestone, 'y', Blocks.gravel, 'z', Items.water_bucket);

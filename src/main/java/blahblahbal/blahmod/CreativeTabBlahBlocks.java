@@ -105,6 +105,7 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.dreadSapling).copy());
 		items.add(new ItemStack(ModBlocks.blackSand).copy());
 		items.add(new ItemStack(ModBlocks.blackSandstone).copy());
+		items.add(new ItemStack(ModBlocks.chiseledBlackSandstone).copy());
 		items.add(new ItemStack(ModBlocks.palmLog).copy());
 		items.add(new ItemStack(ModBlocks.palmLeaves).copy());
 		items.add(new ItemStack(ModBlocks.palmPlanks).copy());
@@ -167,10 +168,13 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.cementStairs).copy());
 		items.add(new ItemStack(ModBlocks.petrifiedWoodStairs).copy());
 		items.add(new ItemStack(ModBlocks.dreadStairs).copy());
+		items.add(new ItemStack(ModBlocks.tropicStoneBrickStairs).copy());
+		items.add(new ItemStack(ModBlocks.netherIceBrickStairs).copy());
 		items.add(new ItemStack(ModBlocks.lantern).copy());
 		items.add(new ItemStack(ModBlocks.lanternFloor).copy());
 		items.add(new ItemStack(ModBlocks.netherFrost).copy());
 		items.add(new ItemStack(ModBlocks.netherSnow).copy());
+		items.add(new ItemStack(ModBlocks.frostBrick).copy());
 		super.displayAllReleventItems(items);
 	}
 }

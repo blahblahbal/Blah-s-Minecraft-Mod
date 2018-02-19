@@ -46,6 +46,7 @@ public final class BlockRenderRegister
 	public static void registerBlockRenderer()
 	{
 	    reg((BasicBlock)ModBlocks.tadanite);
+	    reg((BasicBlock)ModBlocks.chiseledBlackSandstone);
 	    reg((BasicBlock)ModBlocks.frostBrick);
 	    reg((BasicBlock)ModBlocks.netherSnow);
 	    reg((BasicBlock)ModBlocks.netherFrost);
@@ -180,6 +181,7 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.sequoiaStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":sequoiaStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":dreadStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.netherIceBrickStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":netherIceBrickStairs", "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStoneBrickStairs), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tropicStoneBrickStairs", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.diamondDoorItem, 0, new ModelResourceLocation(Main.MODID + ":diamondDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.cobbleDoorItem, 0, new ModelResourceLocation(Main.MODID + ":cobbleDoor", "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(ModItems.goldDoorItem, 0, new ModelResourceLocation(Main.MODID + ":goldDoor", "inventory"));

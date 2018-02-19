@@ -28,8 +28,8 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 		break;
 		case 1: generateEnd(world, random, blockX, blockZ);
 		break;
-		case 255: generateCore(world, random, blockX, blockZ);
-		break;
+		/*case 255: generateCore(world, random, blockX, blockZ);
+		break;*/
 		}
 
 	}
@@ -73,9 +73,9 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 	{
 		// leaving blank for now
 	}
-	private void generateCore(World world, Random rand, int blockX, int blockZ) 
+	/*private void generateCore(World world, Random rand, int blockX, int blockZ) 
 	{
-		/** CABIN GEN **/
+		*//** CABIN GEN **//*
 		WorldGenerator genCabin = new StructureNetherCoreIglooDungeon();
 		// 25% of chunks can have a cabin
 		final int CABIN_CHANCE = 10;
@@ -88,8 +88,8 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int groundY = rand.nextInt(20) + 45;
 			genCabin.generate(world, rand, new BlockPos(randX, groundY, randZ));
 		}
-		/** END CABIN GEN **/
-	}
+		*//** END CABIN GEN **//*
+	}*/
 
 	/** HELPER METHODS **/
 
