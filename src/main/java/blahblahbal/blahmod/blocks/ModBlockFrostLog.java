@@ -32,6 +32,11 @@ public class ModBlockFrostLog extends BlockRotatedPillar
         this.setResistance(5F);
         this.setStepSound(soundTypeWood);
 	}
+	@Override
+	public boolean canSustainLeaves(IBlockAccess world, BlockPos pos)
+	{
+		return true;
+	}
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
     {
         int i = 4;

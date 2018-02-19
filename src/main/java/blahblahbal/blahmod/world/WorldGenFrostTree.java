@@ -86,7 +86,7 @@ public class WorldGenFrostTree extends WorldGenAbstractTree
             {
                 BlockPos down = position.down();
                 Block block = worldIn.getBlockState(down).getBlock();
-                boolean isSoil = (block == ModBlocks.blackSand || block == Blocks.sand) && worldIn.getBlockState(position).getBlock().getMaterial() != Material.water;
+                boolean isSoil = (block == ModBlocks.netherFrost || block == ModBlocks.netherIce) && worldIn.getBlockState(position).getBlock().getMaterial() != Material.water;
 
                 if (isSoil && position.getY() < 256 - i - 1)
                 {

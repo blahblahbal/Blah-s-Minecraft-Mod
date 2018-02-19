@@ -110,6 +110,9 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.palmLog).copy());
 		items.add(new ItemStack(ModBlocks.palmLeaves).copy());
 		items.add(new ItemStack(ModBlocks.palmPlanks).copy());
+		items.add(new ItemStack(ModBlocks.frostLog).copy());
+		items.add(new ItemStack(ModBlocks.frostLeaves).copy());
+		items.add(new ItemStack(ModBlocks.frostPlanks).copy());
 		items.add(new ItemStack(ModBlocks.tropicStone).copy());
 		items.add(new ItemStack(ModBlocks.tropicStoneBrick).copy());
 		items.add(new ItemStack(ModBlocks.tropicCobblestone).copy());
