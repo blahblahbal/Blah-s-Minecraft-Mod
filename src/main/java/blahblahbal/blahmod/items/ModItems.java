@@ -26,6 +26,7 @@ public final class ModItems {
 	public static Item[] gemStaves = new Item[7];
 	public static Item[] dyeNew = new Item[10];
 	public static Item zircon;
+	public static Item frostRod;
 	public static Item tadaniteShard;
 	public static Item tadaniteDiamond;
     public static Item obsidianIngot;
@@ -84,6 +85,7 @@ public final class ModItems {
     public static void createItems()
     {
     	GameRegistry.registerItem(zircon = new BasicItem("zircon"), "zircon");
+    	GameRegistry.registerItem(frostRod = new BasicItem("frostRod"), "frostRod");
     	GameRegistry.registerItem(tadaniteShard = new BasicItem("tadaniteShard"), "tadaniteShard");
     	GameRegistry.registerItem(osborgnenFuel = new BasicItem("osborgnenFuel"), "osborgnenFuel");
     	GameRegistry.registerItem(tadaniteDiamond = new BasicItem("tadaniteDiamond"), "tadaniteDiamond");

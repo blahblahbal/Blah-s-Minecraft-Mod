@@ -2,7 +2,9 @@ package blahblahbal.blahmod.world;
 
 import java.util.Random;
 
+import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -63,7 +65,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
 			// use our custom function to get the ground height
-			int groundY = getGroundFromAbove(world, randX, randZ);
+			int groundY = getGroundFromAbove(world, randX, randZ, Blocks.netherrack.getDefaultState());
 			genCabin.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 		/** END CABIN GEN **/
@@ -73,10 +75,11 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 	{
 		// leaving blank for now
 	}
-	private void generateCore(World world, Random rand, int blockX, int blockZ) 
+	private void generateCore(World world, Random rand, int blockX, int blockZ)
 	{
 		/** CABIN GEN **/
 		WorldGenerator genCabin = new WorldGenFrostTree(false);
+		WorldGenerator genIgloo = new StructureNetherCoreIglooDungeon();
 		// 25% of chunks can have a cabin
 		final int CABIN_CHANCE = 10;
 		if (rand.nextInt(30) < CABIN_CHANCE)
@@ -85,16 +88,25 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int randX = blockX + rand.nextInt(16);
 			int randZ = blockZ + rand.nextInt(16);
 			// use our custom function to get the ground height
-			int groundY = getGroundFromAbove(world, randX, randZ);
+			int groundY = getGroundFromAbove(world, randX, randZ, ModBlocks.netherFrost.getDefaultState());
 			genCabin.generate(world, rand, new BlockPos(randX, groundY, randZ));
 		}
 		/** END CABIN GEN **/
+		if (rand.nextInt(300) < 5)
+		{
+			// get a random position in the chunk
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			// use our custom function to get the ground height
+			int groundY = rand.nextInt(10) + 35;
+			genIgloo.generate(world, rand, new BlockPos(randX, groundY, randZ));
+		}
 	}
 
 	/** HELPER METHODS **/
 
 	// find a grass or dirt block to place the bush on
-	public static int getGroundFromAbove(World world, int x, int z)
+	public static int getGroundFromAbove(World world, int x, int z, IBlockState b)
 	{
 		int y = 100;
 		boolean foundGround = false;
@@ -106,10 +118,10 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			Block blockAt4 = world.getBlockState(new BlockPos(x + 6, y, z + 7)).getBlock();
 			Block blockAtIsAir = world.getBlockState(new BlockPos(x, y + 1, z)).getBlock();
 			// "ground" for our bush is grass or dirt
-			foundGround = blockAt == Blocks.netherrack &&
-					blockAt2 == Blocks.netherrack &&
-					blockAt3 == Blocks.netherrack &&
-					blockAt4 == Blocks.netherrack &&
+			foundGround = blockAt == b.getBlock() &&
+					blockAt2 == b.getBlock() &&
+					blockAt3 == b.getBlock() &&
+					blockAt4 == b.getBlock() &&
 					blockAtIsAir == Blocks.air;
 		}
 

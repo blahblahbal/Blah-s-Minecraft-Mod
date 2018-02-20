@@ -7,6 +7,7 @@ import blahblahbal.blahmod.enchantments.EnchantmentMoltenTouch;
 import blahblahbal.blahmod.enchantments.EnchantmentPulverize;
 import blahblahbal.blahmod.enchantments.EnchantmentStepping;
 import blahblahbal.blahmod.entity.EntityEskimoZombie;
+import blahblahbal.blahmod.entity.EntityFrostblaze;
 import blahblahbal.blahmod.entity.EntityIceCube;
 import blahblahbal.blahmod.items.ModItems;
 import blahblahbal.blahmod.projectiles.EntityGemBolt;
@@ -135,6 +136,7 @@ public class Main
     	EntityRegistry.addSpawn(EntityEskimoZombie.class, 10, 1, 3, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
     	EntityRegistry.registerModEntity(EntityEskimoZombie.class, "Eskimo Zombie", 50, this, 80, 3, true);
     	EntityRegistry.registerModEntity(EntityIceCube.class, "Ice Cube", 51, this, 80, 3, true);
+    	EntityRegistry.registerModEntity(EntityFrostblaze.class, "Frostblaze", 52, this, 80, 3, true);
     }
     /*public static void harvestTreeRecursive(HarvestDropsEvent e, World w, BlockPos bp, Block b, int i, int j, int k)
     {

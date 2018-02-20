@@ -72,6 +72,7 @@ item.megaBerry.name=Mega Berry
 item.zircon.name=Zircon
 item.iceBucket.name=Molten Ice Bucket
 item.netherCoreKey.name=Nether Core Key
+item.frostRod.name=Frostblaze Rod
 
 enchantment.moltenTouch=Molten Touch
 enchantment.pulverize=Pulverize
@@ -251,3 +252,4 @@ achievement.bed_pick.desc=Craft a Bedrock Pickaxe
 
 entity.blahmod.Ice Cube.name=Ice Cube
 entity.blahmod.Eskimo Zombie.name=Eskimo Zombie
+entity.blahmod.Frostblaze.name=Frostblaze
