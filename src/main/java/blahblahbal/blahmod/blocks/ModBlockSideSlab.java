@@ -54,19 +54,19 @@ public class ModBlockSideSlab extends Block
 
         if (iblockstate.getBlock() == this)
         {
-            if (iblockstate.getValue(FACING) == EnumFacing.NORTH)
+            if (iblockstate.getValue(FACING) == EnumFacing.WEST)
             {
                 this.setBlockBounds(0F, 0F, 0.5F, 1F, 1F, 1F);
             }
-            else if (iblockstate.getValue(FACING) == EnumFacing.EAST)
+            else if (iblockstate.getValue(FACING) == EnumFacing.NORTH)
             {
                 this.setBlockBounds(0.5F, 0F, 0F, 1F, 1F, 1F);
             }
-            else if (iblockstate.getValue(FACING) == EnumFacing.WEST)
+            else if (iblockstate.getValue(FACING) == EnumFacing.SOUTH)
             {
                 this.setBlockBounds(0F, 0F, 0F, 0.5F, 1F, 1F); 
             }
-            else if (iblockstate.getValue(FACING) == EnumFacing.SOUTH)
+            else if (iblockstate.getValue(FACING) == EnumFacing.EAST)
             {
                 this.setBlockBounds(0F, 0F, 0F, 1F, 1F, 0.5F);
             }
@@ -116,19 +116,19 @@ public class ModBlockSideSlab extends Block
         {
           if (flag2)
           {
-            blockFacing = EnumFacing.WEST;
+            blockFacing = EnumFacing.SOUTH;
           }
           else {
-            blockFacing = EnumFacing.NORTH;
+            blockFacing = EnumFacing.EAST;
           }
           
         }
         else if (flag2)
         {
-          blockFacing = EnumFacing.SOUTH;
+          blockFacing = EnumFacing.WEST;
         }
         else {
-          blockFacing = EnumFacing.EAST;
+          blockFacing = EnumFacing.NORTH;
         }
         return getDefaultState().withProperty(FACING, blockFacing);
     }
