@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:goldSideSlab_north" },
+        "facing=south": { "model": "blahmod:goldSideSlab_south" },
+        "facing=east": { "model": "blahmod:goldSideSlab_east" },
+        "facing=west": { "model": "blahmod:goldSideSlab_west" }
+    }
+}

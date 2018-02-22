@@ -1,0 +1,8 @@
+{
+    "parent": "blahmod:block/sideSlab_east_base",
+    "textures": {
+        "bottom": "blahmod:blocks/sulphurBlock",
+        "top": "blahmod:blocks/sulphurBlock",
+        "side": "blahmod:blocks/sulphurBlock"
+    }
+}

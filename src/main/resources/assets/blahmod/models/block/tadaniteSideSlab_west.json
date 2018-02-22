@@ -1,0 +1,8 @@
+{
+    "parent": "blahmod:block/sideSlab_west_base",
+    "textures": {
+        "bottom": "blahmod:blocks/tadanite",
+        "top": "blahmod:blocks/tadanite",
+        "side": "blahmod:blocks/tadanite"
+    }
+}

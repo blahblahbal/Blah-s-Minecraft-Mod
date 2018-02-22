@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:blazeSideSlab_north" },
+        "facing=south": { "model": "blahmod:blazeSideSlab_south" },
+        "facing=east": { "model": "blahmod:blazeSideSlab_east" },
+        "facing=west": { "model": "blahmod:blazeSideSlab_west" }
+    }
+}

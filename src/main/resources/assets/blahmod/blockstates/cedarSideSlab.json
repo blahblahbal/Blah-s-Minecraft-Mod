@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:cedarSideSlab_north" },
+        "facing=south": { "model": "blahmod:cedarSideSlab_south" },
+        "facing=east": { "model": "blahmod:cedarSideSlab_east" },
+        "facing=west": { "model": "blahmod:cedarSideSlab_west" }
+    }
+}

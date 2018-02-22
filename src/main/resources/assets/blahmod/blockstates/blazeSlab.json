@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom,variant=false": { "model": "blahmod:half_blazeSlab" },
+        "half=top,variant=false": { "model": "blahmod:upper_blazeSlab" }
+    }
+}
