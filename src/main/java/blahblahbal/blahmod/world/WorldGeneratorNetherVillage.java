@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -89,6 +90,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int randZ = blockZ + rand.nextInt(16);
 			// use our custom function to get the ground height
 			int groundY = getGroundFromAbove(world, randX, randZ, ModBlocks.netherFrost.getDefaultState());
+			if (groundY < 35) return;
 			genCabin.generate(world, rand, new BlockPos(randX, groundY, randZ));
 		}
 		/** END CABIN GEN **/

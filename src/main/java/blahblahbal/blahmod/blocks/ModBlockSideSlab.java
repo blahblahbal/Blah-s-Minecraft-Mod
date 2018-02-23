@@ -33,15 +33,18 @@ public class ModBlockSideSlab extends Block
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
     private static final float HARDNESS = 2.0f;
     private static final float RESISTANCE = 10.0f;
+    public static String name;
     
-    public ModBlockSideSlab(Material m)
+    
+    public ModBlockSideSlab(String uname, Material m)
     {
         super(m);
         this.useNeighborBrightness = true;
         setHardness(HARDNESS);
         setResistance(RESISTANCE);
         setStepSound(soundTypePiston);
-        setUnlocalizedName("sideSlab");
+        this.name = uname;
+        setUnlocalizedName(uname);
         setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 
@@ -132,7 +135,7 @@ public class ModBlockSideSlab extends Block
         }
         return getDefaultState().withProperty(FACING, blockFacing);
     }
-    public final IBlockState getStateFromMeta(final int meta)
+    public IBlockState getStateFromMeta(int meta)
     {
     	EnumFacing enumfacing = EnumFacing.getFront(meta);
 
@@ -142,10 +145,6 @@ public class ModBlockSideSlab extends Block
         }
 
         return this.getDefaultState().withProperty(FACING, enumfacing);
-    }
-    public int quantityDropped(Random r)
-    {
-    	return 1;
     }
     public void addCollisionBoxesToList(World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity)
     {
@@ -160,17 +159,67 @@ public class ModBlockSideSlab extends Block
     {
         return false;
     }
-    public final int getMetaFromState(final IBlockState state)
+    public int getMetaFromState(IBlockState state)
     {
     	return ((EnumFacing)state.getValue(FACING)).getIndex();
     }
-    public final int damageDropped(final IBlockState state) {
-        return 0;
-    }
-    public final Item getItemDropped(final IBlockState blockState, final java.util.Random random, final int unused)
+    /*@Override
+    public Item getItemDropped(IBlockState blockState, java.util.Random random, int unused)
     {
-        return Item.getItemFromBlock(this);
-    }
+    	return new ItemStack(this, 1, 0).getItem();
+        switch (this.name.replace("SideSlab", ""))
+        {
+        	if (this == ModBlocks.sideSlabs[0]
+        		return new ItemStack(ModBlocks.sideSlabs[0], 1, 0).getItem();
+        	case "gold":
+        		return new ItemStack(ModBlocks.sideSlabs[1], 1, 0).getItem();
+        	case "diamond":
+        		return new ItemStack(ModBlocks.sideSlabs[2], 1, 0).getItem();
+        	case "emerald":
+        		return new ItemStack(ModBlocks.sideSlabs[3], 1, 0).getItem();
+        	case "sulphur":
+        		return new ItemStack(ModBlocks.sideSlabs[4], 1, 0).getItem();
+        	case "limestone":
+        		return new ItemStack(ModBlocks.sideSlabs[5], 1, 0).getItem();
+        	case "oak":
+        		return new ItemStack(ModBlocks.sideSlabs[6], 1, 0).getItem();
+        	case "acacia":
+        		return new ItemStack(ModBlocks.sideSlabs[7], 1, 0).getItem();
+        	case "darkOak":
+        		return new ItemStack(ModBlocks.sideSlabs2[0], 1, 0).getItem();
+        	case "spruce":
+        		return new ItemStack(ModBlocks.sideSlabs2[1], 1, 0).getItem();
+        	case "jungle":
+        		return new ItemStack(ModBlocks.sideSlabs2[2], 1, 0).getItem();
+        	case "birch":
+        		return new ItemStack(ModBlocks.sideSlabs2[3], 1, 0).getItem();
+        	case "sequoia":
+        		return new ItemStack(ModBlocks.sideSlabs2[4], 1, 0).getItem();
+        	case "cedar":
+        		return new ItemStack(ModBlocks.sideSlabs2[5], 1, 0).getItem();
+        	case "tropics":
+        		return new ItemStack(ModBlocks.sideSlabs2[6], 1, 0).getItem();
+        	case "dread":
+        		return new ItemStack(ModBlocks.sideSlabs2[7], 1, 0).getItem();
+        	case "frost":
+        		return new ItemStack(ModBlocks.sideSlabs3[0], 1, 0).getItem();
+        	case "blaze":
+        		return new ItemStack(ModBlocks.sideSlabs3[1], 1, 0).getItem();
+        	case "lapis":
+        		return new ItemStack(ModBlocks.sideSlabs3[2], 1, 0).getItem();
+        	case "obsidian":
+        		return new ItemStack(ModBlocks.sideSlabs3[3], 1, 0).getItem();
+        	case "tadanite":
+        		return new ItemStack(ModBlocks.sideSlabs3[4], 1, 0).getItem();
+        	case "moss":
+        		return new ItemStack(ModBlocks.sideSlabs3[5], 1, 0).getItem();
+        	case "dirt":
+        		return new ItemStack(ModBlocks.sideSlabs3[6], 1, 0).getItem();
+        	case "petrifiedWood":
+        		return new ItemStack(ModBlocks.sideSlabs3[7], 1, 0).getItem();
+        	default:
+        //return super.getItemDropped(blockState, random, unused);
+    }*/
     protected final BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[] {FACING});

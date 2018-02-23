@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:cobblestoneSideSlab_north" },
+        "facing=south": { "model": "blahmod:cobblestoneSideSlab_south" },
+        "facing=east": { "model": "blahmod:cobblestoneSideSlab_east" },
+        "facing=west": { "model": "blahmod:cobblestoneSideSlab_west" }
+    }
+}

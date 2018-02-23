@@ -267,6 +267,11 @@ tile.tadaniteSideSlab.name=Tadanite Side Slab
 tile.mossSideSlab.name=Moss Stone Side Slab
 tile.jungleSideSlab.name=Jungle Wood Side Slab
 tile.darkOakSideSlab.name=Dark Oak Wood Side Slab
+tile.oakSideSlab.name=Oak Wood Side Slab
+tile.netherFrostBrickSideSlab.name=Netherfrost Brick Side Slab
+tile.cobblestoneSideSlab.name=Cobblestone Side Slab
+tile.quartzSideSlab.name=Quartz Side Slab
+tile.netherBrickSideSlab.name=Nether Brick Side Slab
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun

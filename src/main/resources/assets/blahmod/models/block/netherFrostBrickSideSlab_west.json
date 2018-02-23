@@ -1,0 +1,8 @@
+{
+    "parent": "blahmod:block/sideSlab_west_base",
+    "textures": {
+        "bottom": "blahmod:blocks/frostBrick",
+        "top": "blahmod:blocks/frostBrick",
+        "side": "blahmod:blocks/frostBrick"
+    }
+}

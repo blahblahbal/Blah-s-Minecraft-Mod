@@ -1,8 +1,8 @@
 {
     "parent": "blahmod:block/sideSlab_south_base",
     "textures": {
-        "bottom": "blocks/moss_stone",
-        "top": "blocks/moss_stone",
-        "side": "blocks/moss_stone"
+        "bottom": "blocks/cobblestone_mossy",
+        "top": "blocks/cobblestone_mossy",
+        "side": "blocks/cobblestone_mossy"
     }
 }

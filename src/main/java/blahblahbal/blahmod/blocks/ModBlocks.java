@@ -209,14 +209,73 @@ public final class ModBlocks
 	public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[8];
 	public static ModBlockSlab[] slabs3 = new ModBlockSlab[2];
 	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[2];
-	
-	public static ModBlockSideSlab[] sideSlabs = new ModBlockSideSlab[8];
-	public static ModBlockSideSlab[] sideSlabs2 = new ModBlockSideSlab[8];
-	public static ModBlockSideSlab[] sideSlabs3 = new ModBlockSideSlab[8];
-	public static Item[] itemSideSlabs = new Item[8];
-	public static Item[] itemSideSlabs2 = new Item[8];
-	public static Item[] itemSideSlabs3 = new Item[8];
 	// End Slabs
+	
+	// Side Slabs
+	public static ModBlockSideSlab ironSideSlab;
+	public static ModBlockSideSlab goldSideSlab;
+	public static ModBlockSideSlab diamondSideSlab;
+	public static ModBlockSideSlab emeraldSideSlab;
+	public static ModBlockSideSlab sulphurSideSlab;
+	public static ModBlockSideSlab limestoneSideSlab;
+	public static ModBlockSideSlab oakSideSlab;
+	public static ModBlockSideSlab acaciaSideSlab;
+	
+	public static ModBlockSideSlab darkOakSideSlab;
+	public static ModBlockSideSlab spruceSideSlab;
+	public static ModBlockSideSlab jungleSideSlab;
+	public static ModBlockSideSlab birchSideSlab;
+	public static ModBlockSideSlab sequoiaSideSlab;
+	public static ModBlockSideSlab cedarSideSlab;
+	public static ModBlockSideSlab tropicsSideSlab;
+	public static ModBlockSideSlab dreadSideSlab;
+	
+	public static ModBlockSideSlab frostSideSlab;
+	public static ModBlockSideSlab blazeSideSlab;
+	public static ModBlockSideSlab lapisSideSlab;
+	public static ModBlockSideSlab obsidianSideSlab;
+	public static ModBlockSideSlab tadaniteSideSlab;
+	public static ModBlockSideSlab mossSideSlab;
+	public static ModBlockSideSlab dirtSideSlab;
+	public static ModBlockSideSlab petrifiedWoodSideSlab;
+	
+	public static ModBlockSideSlab netherBrickSideSlab;
+	public static ModBlockSideSlab netherFrostBrickSideSlab;
+	public static ModBlockSideSlab quartzSideSlab;
+	public static ModBlockSideSlab cobblestoneSideSlab;
+	
+	public static Item itemIronSideSlab;
+	public static Item itemGoldSideSlab;
+	public static Item itemDiamondSideSlab;
+	public static Item itemEmeraldSideSlab;
+	public static Item itemSulphurSideSlab;
+	public static Item itemLimestoneSideSlab;
+	public static Item itemOakSideSlab;
+	public static Item itemAcaciaSideSlab;
+	
+	public static Item itemDarkOakSideSlab;
+	public static Item itemSpruceSideSlab;
+	public static Item itemJungleSideSlab;
+	public static Item itemBirchSideSlab;
+	public static Item itemSequoiaSideSlab;
+	public static Item itemCedarSideSlab;
+	public static Item itemTropicsSideSlab;
+	public static Item itemDreadSideSlab;
+	
+	public static Item itemFrostSideSlab;
+	public static Item itemBlazeSideSlab;
+	public static Item itemLapisSideSlab;
+	public static Item itemObsidianSideSlab;
+	public static Item itemTadaniteSideSlab;
+	public static Item itemMossSideSlab;
+	public static Item itemDirtSideSlab;
+	public static Item itemPetrifiedWoodSideSlab;
+	
+	public static Item itemNetherBrickSideSlab;
+	public static Item itemNetherFrostBrickSideSlab;
+	public static Item itemQuartzSideSlab;
+	public static Item itemCobblestoneSideSlab;
+	// End SS
 	
 	
 	// Other
@@ -450,83 +509,97 @@ public final class ModBlocks
 		doubleSlabs3[0] = new ModBlockSlabDouble("double_blazeSlab", Material.rock, slabs3[0]);
 		doubleSlabs3[1] = new ModBlockSlabDouble("double_frostBrickSlab", Material.rock, slabs3[1]);
 		
-		sideSlabs[0] = new ModBlockSideSlab(Material.iron); // iron -
-		sideSlabs[1] = new ModBlockSideSlab(Material.iron); // gold -
-		sideSlabs[2] = new ModBlockSideSlab(Material.iron); // diamond-
-		sideSlabs[3] = new ModBlockSideSlab(Material.iron); // emerald-
-		sideSlabs[4] = new ModBlockSideSlab(Material.iron); // sulphur-
-		sideSlabs[5] = new ModBlockSideSlab(Material.iron); // limestone-
-		sideSlabs[6] = new ModBlockSideSlab(Material.wood); // oak-
-		sideSlabs[7] = new ModBlockSideSlab(Material.wood); // acacia-
+		ironSideSlab = new ModBlockSideSlab("ironSideSlab", Material.iron); // iron -
+		goldSideSlab = new ModBlockSideSlab("goldSideSlab", Material.iron); // gold -
+		diamondSideSlab = new ModBlockSideSlab("diamondSideSlab", Material.iron); // diamond-
+		emeraldSideSlab = new ModBlockSideSlab("emeraldSideSlab", Material.iron); // emerald-
+		sulphurSideSlab = new ModBlockSideSlab("sulphurSideSlab", Material.iron); // sulphur-
+		limestoneSideSlab = new ModBlockSideSlab("limestoneSideSlab", Material.iron); // limestone-
+		oakSideSlab = new ModBlockSideSlab("oakSideSlab", Material.wood); // oak-
+		acaciaSideSlab = new ModBlockSideSlab("acaciaSideSlab", Material.wood); // acacia-
 
-		sideSlabs2[0] = new ModBlockSideSlab(Material.wood); // dark oak-
-		sideSlabs2[1] = new ModBlockSideSlab(Material.wood); // spruce-
-		sideSlabs2[2] = new ModBlockSideSlab(Material.wood); // jungle-
-		sideSlabs2[3] = new ModBlockSideSlab(Material.wood); // birch-
-		sideSlabs2[4] = new ModBlockSideSlab(Material.wood); // sequoia-
-		sideSlabs2[5] = new ModBlockSideSlab(Material.wood); // cedar-
-		sideSlabs2[6] = new ModBlockSideSlab(Material.wood); // tropics-
-		sideSlabs2[7] = new ModBlockSideSlab(Material.wood); // dread-
+		darkOakSideSlab = new ModBlockSideSlab("darkOakSideSlab", Material.wood); // dark oak-
+		spruceSideSlab = new ModBlockSideSlab("spruceSideSlab", Material.wood); // spruce-
+		jungleSideSlab = new ModBlockSideSlab("jungleSideSlab", Material.wood); // jungle-
+		birchSideSlab = new ModBlockSideSlab("birchSideSlab", Material.wood); // birch-
+		sequoiaSideSlab = new ModBlockSideSlab("sequoiaSideSlab", Material.wood); // sequoia-
+		cedarSideSlab = new ModBlockSideSlab("cedarSideSlab", Material.wood); // cedar-
+		tropicsSideSlab = new ModBlockSideSlab("tropicsSideSlab", Material.wood); // tropics-
+		dreadSideSlab = new ModBlockSideSlab("dreadSideSlab", Material.wood); // dread-
 		
-		sideSlabs3[0] = new ModBlockSideSlab(Material.wood); // frost
-		sideSlabs3[1] = new ModBlockSideSlab(Material.rock); // blaze-
-		sideSlabs3[2] = new ModBlockSideSlab(Material.iron); // lapis-
-		sideSlabs3[3] = new ModBlockSideSlab(Material.rock); // obsidian-
-		sideSlabs3[4] = new ModBlockSideSlab(Material.rock); // tadanite
-		sideSlabs3[5] = new ModBlockSideSlab(Material.rock); // moss stone-
-		sideSlabs3[6] = new ModBlockSideSlab(Material.grass); // dirt-
-		sideSlabs3[7] = new ModBlockSideSlab(Material.rock); // petrified wood
+		frostSideSlab = new ModBlockSideSlab("frostSideSlab", Material.wood); // frost
+		blazeSideSlab = new ModBlockSideSlab("blazeSideSlab", Material.rock); // blaze-
+		lapisSideSlab = new ModBlockSideSlab("lapisSideSlab", Material.iron); // lapis-
+		obsidianSideSlab = new ModBlockSideSlab("obsidianSideSlab", Material.rock); // obsidian-
+		tadaniteSideSlab = new ModBlockSideSlab("tadaniteSideSlab", Material.rock); // tadanite
+		mossSideSlab = new ModBlockSideSlab("mossSideSlab", Material.rock); // moss stone-
+		dirtSideSlab = new ModBlockSideSlab("dirtSideSlab", Material.grass); // dirt-
+		petrifiedWoodSideSlab = new ModBlockSideSlab("petrifiedWoodSideSlab", Material.rock); // petrified wood
 		
-		GameRegistry.registerBlock(sideSlabs[0], "ironSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[0] = new ItemBlock(sideSlabs[0]), "itemIronSideSlab");
-		GameRegistry.registerBlock(sideSlabs[1], "goldSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[1] = new ItemBlock(sideSlabs[1]), "itemGoldSideSlab");
-		GameRegistry.registerBlock(sideSlabs[2], "diamondSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[2] = new ItemBlock(sideSlabs[2]), "itemDiamondSideSlab");
-		GameRegistry.registerBlock(sideSlabs[3], "emeraldSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[3] = new ItemBlock(sideSlabs[3]), "itemEmeraldSideSlab");
-		GameRegistry.registerBlock(sideSlabs[4], "sulphurSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[4] = new ItemBlock(sideSlabs[4]), "itemSulphurSideSlab");
-		GameRegistry.registerBlock(sideSlabs[5], "limestoneSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[5] = new ItemBlock(sideSlabs[5]), "itemLimestoneSideSlab");
-		GameRegistry.registerBlock(sideSlabs[6], "oakSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[6] = new ItemBlock(sideSlabs[6]), "itemOakSideSlab");
-		GameRegistry.registerBlock(sideSlabs[7], "acaciaSideSlab");
-		GameRegistry.registerItem(itemSideSlabs[7] = new ItemBlock(sideSlabs[7]), "itemAcaciaSideSlab");
+		netherBrickSideSlab = new ModBlockSideSlab("netherBrickSideSlab", Material.rock);
+		netherFrostBrickSideSlab = new ModBlockSideSlab("netherFrostBrickSideSlab", Material.grass); // dirt-
+		quartzSideSlab = new ModBlockSideSlab("quartzSideSlab", Material.rock);
+		cobblestoneSideSlab = new ModBlockSideSlab("cobblestoneSideSlab", Material.rock);
 		
-		GameRegistry.registerBlock(sideSlabs2[0], "darkOakSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[0] = new ItemBlock(sideSlabs2[0]), "itemDarkOakSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[1], "spruceSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[1] = new ItemBlock(sideSlabs2[1]), "itemSpruceSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[2], "jungleSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[2] = new ItemBlock(sideSlabs2[2]), "itemJungleSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[3], "birchSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[3] = new ItemBlock(sideSlabs2[3]), "itemBirchSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[4], "sequoiaSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[4] = new ItemBlock(sideSlabs2[4]), "itemSequoiaSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[5], "cedarSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[5] = new ItemBlock(sideSlabs2[5]), "itemCedarSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[6], "tropicsSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[6] = new ItemBlock(sideSlabs2[6]), "itemTropicsSideSlab");
-		GameRegistry.registerBlock(sideSlabs2[7], "dreadSideSlab");
-		GameRegistry.registerItem(itemSideSlabs2[7] = new ItemBlock(sideSlabs2[7]), "itemDreadSideSlab");
+		GameRegistry.registerBlock(ironSideSlab, "ironSideSlab");
+		GameRegistry.registerItem(itemIronSideSlab = new ItemBlock(ironSideSlab), "itemIronSideSlab");
+		GameRegistry.registerBlock(goldSideSlab, "goldSideSlab");
+		GameRegistry.registerItem(itemGoldSideSlab = new ItemBlock(goldSideSlab), "itemGoldSideSlab");
+		GameRegistry.registerBlock(diamondSideSlab, "diamondSideSlab");
+		GameRegistry.registerItem(itemDiamondSideSlab = new ItemBlock(diamondSideSlab), "itemDiamondSideSlab");
+		GameRegistry.registerBlock(emeraldSideSlab, "emeraldSideSlab");
+		GameRegistry.registerItem(itemEmeraldSideSlab = new ItemBlock(emeraldSideSlab), "itemEmeraldSideSlab");
+		GameRegistry.registerBlock(sulphurSideSlab, "sulphurSideSlab");
+		GameRegistry.registerItem(itemSulphurSideSlab = new ItemBlock(sulphurSideSlab), "itemSulphurSideSlab");
+		GameRegistry.registerBlock(limestoneSideSlab, "limestoneSideSlab");
+		GameRegistry.registerItem(itemLimestoneSideSlab = new ItemBlock(limestoneSideSlab), "itemLimestoneSideSlab");
+		GameRegistry.registerBlock(oakSideSlab, "oakSideSlab");
+		GameRegistry.registerItem(itemOakSideSlab = new ItemBlock(oakSideSlab), "itemOakSideSlab");
+		GameRegistry.registerBlock(acaciaSideSlab, "acaciaSideSlab");
+		GameRegistry.registerItem(itemAcaciaSideSlab = new ItemBlock(acaciaSideSlab), "itemAcaciaSideSlab");
 		
-		GameRegistry.registerBlock(sideSlabs3[0], "frostSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[0] = new ItemBlock(sideSlabs3[0]), "itemFrostSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[1], "blazeSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[1] = new ItemBlock(sideSlabs3[1]), "itemBlazeSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[2], "lapisSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[2] = new ItemBlock(sideSlabs3[2]), "itemLapisSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[3], "obsidianSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[3] = new ItemBlock(sideSlabs3[3]), "itemObsidianSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[4], "tadaniteSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[4] = new ItemBlock(sideSlabs3[4]), "itemTadaniteSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[5], "mossSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[5] = new ItemBlock(sideSlabs3[5]), "itemMossSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[6], "dirtSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[6] = new ItemBlock(sideSlabs3[6]), "itemDirtSideSlab");
-		GameRegistry.registerBlock(sideSlabs3[7], "petrifiedWoodSideSlab");
-		GameRegistry.registerItem(itemSideSlabs3[7] = new ItemBlock(sideSlabs3[7]), "itemPetrifiedWoodSideSlab");
+		GameRegistry.registerBlock(darkOakSideSlab, "darkOakSideSlab");
+		GameRegistry.registerItem(itemDarkOakSideSlab = new ItemBlock(darkOakSideSlab), "itemDarkOakSideSlab");
+		GameRegistry.registerBlock(spruceSideSlab, "spruceSideSlab");
+		GameRegistry.registerItem(itemSpruceSideSlab = new ItemBlock(spruceSideSlab), "itemSpruceSideSlab");
+		GameRegistry.registerBlock(jungleSideSlab, "jungleSideSlab");
+		GameRegistry.registerItem(itemJungleSideSlab = new ItemBlock(jungleSideSlab), "itemJungleSideSlab");
+		GameRegistry.registerBlock(birchSideSlab, "birchSideSlab");
+		GameRegistry.registerItem(itemBirchSideSlab = new ItemBlock(birchSideSlab), "itemBirchSideSlab");
+		GameRegistry.registerBlock(sequoiaSideSlab, "sequoiaSideSlab");
+		GameRegistry.registerItem(itemSequoiaSideSlab = new ItemBlock(sequoiaSideSlab), "itemSequoiaSideSlab");
+		GameRegistry.registerBlock(cedarSideSlab, "cedarSideSlab");
+		GameRegistry.registerItem(itemCedarSideSlab = new ItemBlock(cedarSideSlab), "itemCedarSideSlab");
+		GameRegistry.registerBlock(tropicsSideSlab, "tropicsSideSlab");
+		GameRegistry.registerItem(itemTropicsSideSlab = new ItemBlock(tropicsSideSlab), "itemTropicsSideSlab");
+		GameRegistry.registerBlock(dreadSideSlab, "dreadSideSlab");
+		GameRegistry.registerItem(itemDreadSideSlab = new ItemBlock(dreadSideSlab), "itemDreadSideSlab");
+		
+		GameRegistry.registerBlock(frostSideSlab, "frostSideSlab");
+		GameRegistry.registerItem(itemFrostSideSlab = new ItemBlock(frostSideSlab), "itemFrostSideSlab");
+		GameRegistry.registerBlock(blazeSideSlab, "blazeSideSlab");
+		GameRegistry.registerItem(itemBlazeSideSlab = new ItemBlock(blazeSideSlab), "itemBlazeSideSlab");
+		GameRegistry.registerBlock(lapisSideSlab, "lapisSideSlab");
+		GameRegistry.registerItem(itemLapisSideSlab = new ItemBlock(lapisSideSlab), "itemLapisSideSlab");
+		GameRegistry.registerBlock(obsidianSideSlab, "obsidianSideSlab");
+		GameRegistry.registerItem(itemObsidianSideSlab = new ItemBlock(obsidianSideSlab), "itemObsidianSideSlab");
+		GameRegistry.registerBlock(tadaniteSideSlab, "tadaniteSideSlab");
+		GameRegistry.registerItem(itemTadaniteSideSlab = new ItemBlock(tadaniteSideSlab), "itemTadaniteSideSlab");
+		GameRegistry.registerBlock(mossSideSlab, "mossSideSlab");
+		GameRegistry.registerItem(itemMossSideSlab = new ItemBlock(mossSideSlab), "itemMossSideSlab");
+		GameRegistry.registerBlock(dirtSideSlab, "dirtSideSlab");
+		GameRegistry.registerItem(itemDirtSideSlab = new ItemBlock(dirtSideSlab), "itemDirtSideSlab");
+		GameRegistry.registerBlock(petrifiedWoodSideSlab, "petrifiedWoodSideSlab");
+		GameRegistry.registerItem(itemPetrifiedWoodSideSlab = new ItemBlock(petrifiedWoodSideSlab), "itemPetrifiedWoodSideSlab");
+		
+		GameRegistry.registerBlock(netherBrickSideSlab, "netherBrickSideSlab");
+		GameRegistry.registerItem(itemNetherBrickSideSlab = new ItemBlock(netherBrickSideSlab), "itemNetherBrickSideSlab");
+		GameRegistry.registerBlock(netherFrostBrickSideSlab, "netherFrostBrickSideSlab");
+		GameRegistry.registerItem(itemNetherFrostBrickSideSlab = new ItemBlock(netherFrostBrickSideSlab), "itemNetherFrostBrickSideSlab");
+		GameRegistry.registerBlock(quartzSideSlab, "quartzSideSlab");
+		GameRegistry.registerItem(itemQuartzSideSlab = new ItemBlock(quartzSideSlab), "itemQuartzSideSlab");
+		GameRegistry.registerBlock(cobblestoneSideSlab, "cobblestoneSideSlab");
+		GameRegistry.registerItem(itemCobblestoneSideSlab = new ItemBlock(cobblestoneSideSlab), "itemCobblestoneSideSlab");
 		
 		
 		for (int i = 0; i < 8; i++)
