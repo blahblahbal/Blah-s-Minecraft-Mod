@@ -47,6 +47,9 @@ public final class BlockRenderRegister
 	{
 	    reg((BasicBlock)ModBlocks.tadanite);
 	    reg((BasicBlock)ModBlocks.chiseledBlackSandstone);
+	    reg((BasicBlock)ModBlocks.chiseledFrostSandstone);
+	    reg((BasicBlock)ModBlocks.frostSandstone);
+	    reg((BasicBlock)ModBlocks.frostSand);
 	    reg((BasicBlock)ModBlocks.frostBrick);
 	    reg((BasicBlock)ModBlocks.netherSnow);
 	    reg((BasicBlock)ModBlocks.netherFrost);
@@ -126,7 +129,7 @@ public final class BlockRenderRegister
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.woodSlabs[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.woodSlabs[i])).name, "inventory"));
 	    	ModelLoader.setCustomStateMapper(ModBlocks.doubleWoodSlabs[i], new StateMap.Builder().ignore(ModBlockSlab.VARIANT_PROPERTY).build());
 	    }
-	    for (int i = 0; i < 2; i++)
+	    for (int i = 0; i < 3; i++)
 	    {
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.doubleSlabs3[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.doubleSlabs3[i])).name, "inventory"));
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.slabs3[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.slabs3[i])).name, "inventory"));

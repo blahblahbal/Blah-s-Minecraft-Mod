@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "blahmod:blocks/frostSandstone_bottom",
+        "top": "blahmod:blocks/frostSandstone_top",
+        "side": "blahmod:blocks/frostSandstone"
+    }
+}

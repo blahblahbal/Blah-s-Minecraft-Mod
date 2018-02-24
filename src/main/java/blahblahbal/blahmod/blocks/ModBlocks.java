@@ -135,6 +135,9 @@ public final class ModBlocks
 	public static ModBlockStairs frostStairs;
 	public static BlockDiamondDoor frostDoor;
 	public static BlockDiamondDoor lumiteDoor;
+	public static Block frostSand;
+	public static Block frostSandstone;
+	public static Block chiseledFrostSandstone;
 	// End Nether Core stuff
 
 	// End Stuff
@@ -207,8 +210,8 @@ public final class ModBlocks
 	public static ModBlockSlab[] doubleSlabs2 = new ModBlockSlab[8];
 	public static ModBlockSlab[] woodSlabs = new ModBlockSlab[8];
 	public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[8];
-	public static ModBlockSlab[] slabs3 = new ModBlockSlab[2];
-	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[2];
+	public static ModBlockSlab[] slabs3 = new ModBlockSlab[3];
+	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[3];
 	// End Slabs
 	
 	// Side Slabs
@@ -294,9 +297,12 @@ public final class ModBlocks
 	{
 		GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
 		GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
+		GameRegistry.registerBlock((Block)(chiseledFrostSandstone = new BasicBlock("chiseledFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledFrostSandstone")), "chiseledFrostSandstone");
+		GameRegistry.registerBlock((Block)(frostSandstone = new BasicBlock("frostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostSandstone")), "frostSandstone");
+		GameRegistry.registerBlock((Block)(frostSand = new BasicBlock("frostSand", Material.sand, 1.5F, 5F, "shovel", 0, "frostSand")).setStepSound(Block.soundTypeSand), "frostSand");
 		GameRegistry.registerBlock((Block)(frostBrick = new BasicBlock("frostBrick", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostBrick")), "frostBrick");
 		GameRegistry.registerBlock((Block)(netherFrost = new BasicBlock("netherFrost", Material.rock, 1.5F, 10F, "pickaxe", 0, "netherFrost")), "netherFrost");
-		GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 10F, "shovel", 0, "netherSnow")), "netherSnow");
+		GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 5F, "shovel", 0, "netherSnow")).setStepSound(Block.soundTypeSand), "netherSnow");
 		GameRegistry.registerBlock((BlockNetherCorePortal)(netherCorePortal = new BlockNetherCorePortal("ncportal").setUnlocalizedName("ncportal")), "ncportal");
 		GameRegistry.registerBlock((BlockIceFlame)(iceFire = new BlockIceFlame().setUnlocalizedName("iceFire")), "iceFire");
 		GameRegistry.registerBlock((Block)(magma = new BasicBlock("magma", Material.rock, 1.5F, 10F, "pickaxe", 1, "magma")), "magma");
@@ -505,9 +511,11 @@ public final class ModBlocks
 		
 		slabs3[0] = new ModBlockSlabHalf("blazeSlab", Material.rock);
 		slabs3[1] = new ModBlockSlabHalf("frostBrickSlab", Material.rock);
+		slabs3[2] = new ModBlockSlabHalf("frostSandstoneSlab", Material.rock);
 		
 		doubleSlabs3[0] = new ModBlockSlabDouble("double_blazeSlab", Material.rock, slabs3[0]);
 		doubleSlabs3[1] = new ModBlockSlabDouble("double_frostBrickSlab", Material.rock, slabs3[1]);
+		doubleSlabs3[2] = new ModBlockSlabDouble("double_frostSandstoneSlab", Material.rock, slabs3[2]);
 		
 		ironSideSlab = new ModBlockSideSlab("ironSideSlab", Material.iron); // iron -
 		goldSideSlab = new ModBlockSideSlab("goldSideSlab", Material.iron); // gold -

@@ -165,6 +165,7 @@ public final class ModCrafting
 		
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledDreadSandstone), "x", "x", 'x', ModBlocks.woodSlabs[5]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledBlackSandstone), "x", "x", 'x', ModBlocks.woodSlabs[6]);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.chiseledFrostSandstone), "x", "x", 'x', ModBlocks.slabs3[2]);
 		GameRegistry.addRecipe(new ItemStack(ModItems.osborgnenFuel, 2), "xyx","yzy", "xyx", 'x', Blocks.obsidian, 'z', Items.coal, 'y', ModItems.tadaniteDiamond);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.imperviousBrick, 8), "#x#","x#x", "#x#", '#', new ItemStack(ModBlocks.blackSand), 'x', new ItemStack(Blocks.obsidian));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.leatherBlock), "###","###", "###", '#', Items.leather);
@@ -200,6 +201,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedIgneousRock, 4), "##","##", '#', new ItemStack(ModBlocks.igneousRock));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 4), "##","##", '#', new ItemStack(ModBlocks.tropicStone));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadSandstone), "##","##", '#', new ItemStack(ModBlocks.dreadSand));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostSandstone), "##","##", '#', new ItemStack(ModBlocks.frostSand));
 		// new vanilla item recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.ice, 4), new ItemStack(Blocks.packed_ice));
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 8), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.cobblestone), 'y', new ItemStack(Items.wheat_seeds));
@@ -393,6 +395,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.woodSlabs[7], 6), "xxx", 'x', new ItemStack(ModBlocks.frostPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[0], 6), "xxx", 'x', new ItemStack(ModBlocks.blazeBrick));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[1], 6), "xxx", 'x', new ItemStack(ModBlocks.frostBrick));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[2], 6), "xxx", 'x', new ItemStack(ModBlocks.frostSandstone));
 		// custom slab decrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.dirt, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[0]));
 		GameRegistry.addRecipe(new ItemStack(Blocks.grass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[1]));
@@ -420,6 +423,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostPlanks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.woodSlabs[7]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[0]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[1]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostSandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[2]));
 		// end custom slab crafting/decrafting		
 		// gem staves
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[0]), "y", "y", "z", 'y', new ItemStack(ModBlocks.gemBlocks[0]), 'z', new ItemStack(ModBlocks.petrifiedWood));

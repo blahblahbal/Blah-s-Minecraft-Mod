@@ -213,7 +213,7 @@ public class ChunkProviderNetherCore implements IChunkProvider
 
                                         if (flag1)
                                         {
-                                            iblockstate = Blocks.gravel.getDefaultState();
+                                            iblockstate = ModBlocks.frostSand.getDefaultState();
                                             iblockstate1 = ModBlocks.netherFrost.getDefaultState();
                                         }
 

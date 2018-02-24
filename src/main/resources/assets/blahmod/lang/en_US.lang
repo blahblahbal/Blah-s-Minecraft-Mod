@@ -272,6 +272,10 @@ tile.netherFrostBrickSideSlab.name=Netherfrost Brick Side Slab
 tile.cobblestoneSideSlab.name=Cobblestone Side Slab
 tile.quartzSideSlab.name=Quartz Side Slab
 tile.netherBrickSideSlab.name=Nether Brick Side Slab
+tile.frostSandstoneSlab.name=Frost Sandstone Slab
+tile.frostSandstone.name=Frost Sandstone
+tile.frostSand.name=Frost Sand
+tile.chiseledFrostSandstone.name=Chiseled Frost Sandstone
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun
