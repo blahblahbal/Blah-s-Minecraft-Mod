@@ -2,6 +2,7 @@ package blahblahbal.blahmod.items;
 
 import java.util.List;
 
+import blahblahbal.blahmod.AchievementHandler;
 import blahblahbal.blahmod.Config;
 import blahblahbal.blahmod.blocks.ModBlocks;
 import net.minecraft.block.state.IBlockState;
@@ -32,7 +33,15 @@ public class ItemNetherCoreKey extends Item
 	{
 		return true;
 	}
-
+	@Override
+	public void onCreated(ItemStack stack, World world, EntityPlayer player) 
+	{
+		super.onCreated(stack, world, player);
+		if (!world.isRemote)
+		{
+			player.addStat(AchievementHandler.NETHERCORE, 1);
+		}
+	}
 	@Override
 	public String getItemStackDisplayName(ItemStack par1ItemStack)
 	{

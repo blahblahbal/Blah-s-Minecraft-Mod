@@ -277,10 +277,17 @@ achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun
 achievement.inverter=Inverter Factor 9
 achievement.bed_pick=I can mine THAT!
+achievement.nethercore=Chilly.
+achievement.tadaniteArmor=Tadanite Armor
+achievement.lumiteArmor=Lumite Armor
 achievement.catalyzer.desc=Craft the Catalyzer
 achievement.smeltery.desc=Craft a Tadanite Smeltery
 achievement.inverter.desc=Catalyze the Inverter
 achievement.bed_pick.desc=Craft a Bedrock Pickaxe
+achievement.nethercore.desc=Craft a Nether Core Key
+achievement.tadaniteArmor.desc=Craft one piece of Tadanite Armor
+achievement.lumiteArmor.desc=Craft one piece of Lumite Armor
+
 
 entity.blahmod.Ice Cube.name=Ice Cube
 entity.blahmod.Eskimo Zombie.name=Eskimo Zombie

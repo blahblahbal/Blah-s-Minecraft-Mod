@@ -3,6 +3,7 @@ package blahblahbal.blahmod.items;
 import java.util.List;
 import java.util.Random;
 
+import blahblahbal.blahmod.AchievementHandler;
 import blahblahbal.blahmod.Main;
 import blahblahbal.blahmod.PlayerEvents;
 import net.minecraft.block.Block;
@@ -120,6 +121,22 @@ public class ItemModArmor extends ItemArmor
 			    {
 			    	player.fallDistance -= 0.25F;
 			    }	
+			}
+		}
+	}
+    @Override
+	public void onCreated(ItemStack stack, World world, EntityPlayer player) 
+	{
+		super.onCreated(stack, world, player);
+		if (!world.isRemote)
+		{
+			if (stack.getItem().getUnlocalizedName().toLowerCase().contains("tadanite"))
+			{
+				player.addStat(AchievementHandler.TAD_ARMOR, 1);
+			}
+			if (stack.getItem().getUnlocalizedName().toLowerCase().contains("lumite"))
+			{
+				player.addStat(AchievementHandler.LUM_ARMOR, 1);
 			}
 		}
 	}
