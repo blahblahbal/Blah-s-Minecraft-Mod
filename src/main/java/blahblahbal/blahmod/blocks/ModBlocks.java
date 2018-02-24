@@ -621,7 +621,7 @@ public final class ModBlocks
 			GameRegistry.registerBlock(woodSlabs[i], ModItemBlockSlab.class, woodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 			GameRegistry.registerBlock(doubleWoodSlabs[i], ModItemBlockSlab.class, doubleWoodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 		}
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			GameRegistry.registerBlock(slabs3[i], ModItemBlockSlab.class, slabs3[i].name, slabs3[i], doubleSlabs3[i], false);
 			GameRegistry.registerBlock(doubleSlabs3[i], ModItemBlockSlab.class, doubleSlabs3[i].name, slabs3[i], doubleSlabs3[i], false);
