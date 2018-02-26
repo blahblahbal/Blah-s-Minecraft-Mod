@@ -276,6 +276,7 @@ tile.frostSandstoneSlab.name=Frost Sandstone Slab
 tile.frostSandstone.name=Frost Sandstone
 tile.frostSand.name=Frost Sand
 tile.chiseledFrostSandstone.name=Chiseled Frost Sandstone
+tile.compressedObsidian.name=Compressed Obsidian
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun

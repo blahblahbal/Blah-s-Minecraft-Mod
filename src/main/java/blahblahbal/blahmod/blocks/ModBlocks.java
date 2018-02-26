@@ -181,6 +181,7 @@ public final class ModBlocks
 	public static Block limestoneBlock;
 	public static Block clayOre;
 	public static Block boneBlock;
+	public static Block compressedObsidian;
 	// End underground stuff
 	
 	// Crafted
@@ -295,18 +296,19 @@ public final class ModBlocks
 	
 	public static void createBlocks()
 	{
+		GameRegistry.registerBlock((Block)(compressedObsidian = new BasicBlock("compressedObsidian", Material.rock, 70F, 1000F, "pickaxe", 3, "compressedObsidian")), "compressedObsidian");
 		GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
 		GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
 		GameRegistry.registerBlock((Block)(chiseledFrostSandstone = new BasicBlock("chiseledFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledFrostSandstone")), "chiseledFrostSandstone");
 		GameRegistry.registerBlock((Block)(frostSandstone = new BasicBlock("frostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostSandstone")), "frostSandstone");
-		GameRegistry.registerBlock((Block)(frostSand = new BasicBlock("frostSand", Material.sand, 1.5F, 5F, "shovel", 0, "frostSand")).setStepSound(Block.soundTypeSand), "frostSand");
+		GameRegistry.registerBlock((Block)(frostSand = new BasicBlock("frostSand", Material.sand, 0.5F, 0F, "shovel", 0, "frostSand")).setStepSound(Block.soundTypeSand), "frostSand");
 		GameRegistry.registerBlock((Block)(frostBrick = new BasicBlock("frostBrick", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostBrick")), "frostBrick");
 		GameRegistry.registerBlock((Block)(netherFrost = new BasicBlock("netherFrost", Material.rock, 1.5F, 10F, "pickaxe", 0, "netherFrost")), "netherFrost");
-		GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 5F, "shovel", 0, "netherSnow")).setStepSound(Block.soundTypeSand), "netherSnow");
+		GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 0F, "shovel", 0, "netherSnow")).setStepSound(Block.soundTypeSand), "netherSnow");
 		GameRegistry.registerBlock((BlockNetherCorePortal)(netherCorePortal = new BlockNetherCorePortal("ncportal").setUnlocalizedName("ncportal")), "ncportal");
 		GameRegistry.registerBlock((BlockIceFlame)(iceFire = new BlockIceFlame().setUnlocalizedName("iceFire")), "iceFire");
 		GameRegistry.registerBlock((Block)(magma = new BasicBlock("magma", Material.rock, 1.5F, 10F, "pickaxe", 1, "magma")), "magma");
-		GameRegistry.registerBlock((Block)(dreadSand = new BasicBlock("dreadSand", Material.sand, 1.5F, 10F, "shovel", 0, "dreadSand")).setStepSound(Block.soundTypeSand), "dreadSand");
+		GameRegistry.registerBlock((Block)(dreadSand = new BasicBlock("dreadSand", Material.sand, 0.5F, 0F, "shovel", 0, "dreadSand")).setStepSound(Block.soundTypeSand), "dreadSand");
 		GameRegistry.registerBlock((Block)(dreadRock = new BasicBlock("dreadRock", Material.rock, 1.5F, 10F, "pickaxe", 0, "dreadRock")), "dreadRock");
 		GameRegistry.registerBlock((Block)(dreadSandstone = new BasicBlock("dreadSandstone", Material.rock, 1.5F, 10F, "pickaxe", 1, "dreadSandstone")), "dreadSandstone");
 		GameRegistry.registerBlock((Block)(tropicStoneBrick = new BasicBlock("tropicStoneBrick", Material.rock, 1.5F, 10F, "pickaxe", 1, "tropicStoneBrick")), "tropicStoneBrick");

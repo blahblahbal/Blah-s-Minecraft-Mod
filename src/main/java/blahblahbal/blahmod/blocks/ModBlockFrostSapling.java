@@ -7,6 +7,7 @@ import blahblahbal.blahmod.world.StructureSequoiaTree;
 import blahblahbal.blahmod.world.StructureTreeHouse;
 import blahblahbal.blahmod.world.WorldGenDifferentPalmTree;
 import blahblahbal.blahmod.world.WorldGenFrostTree;
+import blahblahbal.blahmod.world.WorldGenLargeFrostTree;
 import blahblahbal.blahmod.world.WorldGenPalmTree;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
@@ -77,6 +78,33 @@ public class ModBlockFrostSapling extends BlockSapling
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	{
-		WorldGenerator gen = (WorldGenerator)new WorldGenFrostTree(worldIn, rand, pos);
+		WorldGenerator gen = (WorldGenerator)(rand.nextInt(3) == 0 ? new WorldGenLargeFrostTree(worldIn, rand, pos) : new WorldGenFrostTree(worldIn, rand, pos));
+		
+		/*WorldGenerator gen = (WorldGenerator)new WorldGenFrostTree(worldIn, rand, pos);
+		for (int i = 0; i >= -1; --i)
+        {
+			for (int j = 0; j >= -1; --j)
+            {
+				if (checkNeighbor(worldIn, pos, i, j, ModBlocks.frostSapling.getDefaultState()))
+				{
+					gen = (WorldGenerator)new WorldGenLargeFrostTree(worldIn, rand, pos);
+				}
+            }
+        }*/	
 	}
+	public boolean checkNeighbor(World w, BlockPos bp, int x, int z, IBlockState s)
+    {
+        return this.isTypeAt(w, bp.add(x, 0, z), s) &&
+        		this.isTypeAt(w, bp.add(x + 1, 0, z), s) &&
+        		this.isTypeAt(w, bp.add(x, 0, z + 1), s) &&
+        		this.isTypeAt(w, bp.add(x + 1, 0, z + 1), s);
+    }
+	/**
+     * Check whether the given BlockPos has a Sapling of the given type
+     */
+    public boolean isTypeAt(World worldIn, BlockPos pos, IBlockState state)
+    {
+        IBlockState iblockstate = worldIn.getBlockState(pos);
+        return iblockstate.getBlock() == this && iblockstate.getBlock() == state.getBlock();
+    }
 }

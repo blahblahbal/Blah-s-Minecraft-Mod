@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:compressedObsidian" },
+        "inventory": { "model": "blahmod:compressedObsidian" }
+    }
+}

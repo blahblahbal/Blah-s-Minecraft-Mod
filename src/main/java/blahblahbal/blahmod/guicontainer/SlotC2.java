@@ -1,5 +1,6 @@
 package blahblahbal.blahmod.guicontainer;
 
+import blahblahbal.blahmod.blocks.ModBlocks;
 import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -17,6 +18,6 @@ public class SlotC2 extends Slot
 	@Override
 	public boolean isItemValid(ItemStack stack)
 	{
-		 return (stack.getItem() == Items.gunpowder || stack.getItem() == Items.lava_bucket || stack.getItem() == Item.getItemFromBlock(Blocks.stone) || stack.getItem() == ModItems.osborgnenFuel);
+		 return (stack.getItem() == Item.getItemFromBlock(ModBlocks.flintBlock) || stack.getItem() == Items.lava_bucket || stack.getItem() == Item.getItemFromBlock(Blocks.stone) || stack.getItem() == ModItems.osborgnenFuel || stack.getItem() == Item.getItemFromBlock(ModBlocks.hardenedLava));
 	}
 }

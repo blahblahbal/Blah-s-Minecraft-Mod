@@ -173,6 +173,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.limestoneBlock), "###","###", "###", '#', ModItems.limestone);
 		GameRegistry.addRecipe(new ItemStack(ModItems.netherCoreKey), "###","#x#", "###", 'x', Blocks.dragon_egg, '#', ModBlocks.netherIce);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.carrotBlock), "###","###", "###", '#', Items.carrot);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.compressedObsidian), "###","###", "###", '#', Blocks.obsidian);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.potatoBlock), "###","###", "###", '#', Items.potato);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sulphurBlock), "###","###", "###", '#', ModItems.sulphur2);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumBlock), "###","###", "###", '#', ModItems.uraniumIngot);
@@ -202,6 +203,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 4), "##","##", '#', new ItemStack(ModBlocks.tropicStone));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadSandstone), "##","##", '#', new ItemStack(ModBlocks.dreadSand));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostSandstone), "##","##", '#', new ItemStack(ModBlocks.frostSand));
+		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 9), new ItemStack(ModBlocks.compressedObsidian));
 		// new vanilla item recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.ice, 4), new ItemStack(Blocks.packed_ice));
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 8), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.cobblestone), 'y', new ItemStack(Items.wheat_seeds));

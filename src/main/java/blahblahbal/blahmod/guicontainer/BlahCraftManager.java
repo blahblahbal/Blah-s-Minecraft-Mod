@@ -64,7 +64,7 @@ public class BlahCraftManager
         this.addRecipe(new ItemStack(Items.melon_seeds, 1), ModItems.sulphur2, Items.wheat_seeds);
         this.addRecipe(new ItemStack(Items.pumpkin_seeds, 1), ModItems.sulphur2, Items.melon_seeds);
         this.addRecipe(new ItemStack(Items.wheat_seeds, 1), ModItems.sulphur2, Items.pumpkin_seeds);
-        this.addRecipe(new ItemStack(Blocks.bedrock, 1), ModItems.sulphur2, Blocks.obsidian, Items.gunpowder);
+        this.addRecipe(new ItemStack(Blocks.bedrock, 1), ModItems.sulphur2, ModBlocks.compressedObsidian, ModBlocks.flintBlock);
         this.addRecipe(new ItemStack(ModItems.uraniumRod, 1), ModItems.sulphur2, ModItems.uraniumIngot);
         this.addRecipe(new ItemStack(Blocks.log, 1, 2), ModItems.sulphur2, new ItemStack(Blocks.log, 1));
         this.addRecipe(new ItemStack(Blocks.log, 1, 1), ModItems.sulphur2, new ItemStack(Blocks.log, 1, 2));
