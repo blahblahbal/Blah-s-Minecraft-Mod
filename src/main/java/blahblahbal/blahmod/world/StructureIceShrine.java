@@ -120,7 +120,7 @@ public class StructureIceShrine extends WorldGenerator
 		@Override
 		public boolean generate(World arg0, Random arg1, BlockPos arg2)
 		{
-			IBlockState obsBrick = ModBlocks.obsidianBrick.getDefaultState();
+			IBlockState obsBrick = ModBlocks.frostBrick.getDefaultState();
 			IBlockState netherIce = ModBlocks.netherIce.getDefaultState();
 			IBlockState netherIceBrick = ModBlocks.netherIceBrick.getDefaultState();
 			IBlockState quartzSlab = Blocks.stone_slab.getDefaultState().withProperty(VARIANT, EnumType.QUARTZ);

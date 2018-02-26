@@ -99,10 +99,10 @@ public class BiomeGenTropics extends BiomeGenBase
                 }
                 else if (iblockstate2.getBlock() == Blocks.stone)
                 {
-                	if (ypos >= 32 - rand.nextInt(7) && j != -1)
+                	/*if (ypos >= 32 - rand.nextInt(7) && j != -1)
                 	{
                 		chunkPrimerIn.setBlockState(i1, ypos, l, ModBlocks.tropicStone.getDefaultState());
-                	}
+                	}*/
                     if (j == -1)
                     {
                     	if (k <= 0)
