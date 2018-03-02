@@ -1,5 +1,6 @@
 package blahblahbal.blahmod.entity;
 
+import blahblahbal.blahmod.items.ModItems;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityMagmaCube;
 import net.minecraft.init.Items;
@@ -74,7 +75,7 @@ public class EntityIceCube extends EntityMagmaCube
 
     protected Item getDropItem()
     {
-        return Items.snowball;
+        return ModItems.iceCream;
     }
 
     /**

@@ -73,6 +73,7 @@ item.zircon.name=Zircon
 item.iceBucket.name=Molten Ice Bucket
 item.netherCoreKey.name=Nether Core Key
 item.frostRod.name=Frostblaze Rod
+item.iceCream.name=Ice Cream
 
 enchantment.moltenTouch=Molten Touch
 enchantment.pulverize=Pulverize
@@ -277,6 +278,7 @@ tile.frostSandstone.name=Frost Sandstone
 tile.frostSand.name=Frost Sand
 tile.chiseledFrostSandstone.name=Chiseled Frost Sandstone
 tile.compressedObsidian.name=Compressed Obsidian
+tile.iceCreamBlock.name=Ice Cream Block
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun

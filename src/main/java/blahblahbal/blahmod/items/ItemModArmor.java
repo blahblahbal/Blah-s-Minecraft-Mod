@@ -136,7 +136,11 @@ public class ItemModArmor extends ItemArmor
 			}
 			if (stack.getItem().getUnlocalizedName().toLowerCase().contains("lumite"))
 			{
-				player.addStat(AchievementHandler.LUM_ARMOR, 1);
+				if (((EntityPlayerMP)player).getStatFile().hasAchievementUnlocked(AchievementHandler.INVERTER))
+				{
+					player.addStat(AchievementHandler.LUM_ARMOR, 1);
+				}
+				else player.addStat(AchievementHandler.GHOST, 1);
 			}
 		}
 	}

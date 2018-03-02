@@ -3,6 +3,11 @@ package blahblahbal.blahmod;
 import java.util.List;
 import java.util.Random;
 
+import blahblahbal.blahmod.blocks.ModBlockCedarLog;
+import blahblahbal.blahmod.blocks.ModBlockDreadLog;
+import blahblahbal.blahmod.blocks.ModBlockFrostLog;
+import blahblahbal.blahmod.blocks.ModBlockLog;
+import blahblahbal.blahmod.blocks.ModBlockPalmLog;
 import blahblahbal.blahmod.blocks.ModBlocks;
 import blahblahbal.blahmod.enchantments.EnchantmentStepping;
 import blahblahbal.blahmod.fluids.BlockAcidFluid;
@@ -24,6 +29,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.AchievementList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
@@ -41,12 +47,29 @@ import net.minecraftforge.event.world.BlockEvent.BreakEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class ModEventHandler
 {
+	
+	@SubscribeEvent
+    public void onItemPickup(PlayerEvent.ItemPickupEvent event)
+    {
+        ItemStack stack = event.pickedUp.getEntityItem();
+        Item item = stack.getItem();
+        
+        Block block = Block.getBlockFromItem(item);
+        IBlockState state = block != null ? block.getStateFromMeta(stack.getItemDamage()) : null;
+        EntityPlayer player = event.player;
+
+        if (block != null && (block instanceof ModBlockCedarLog || block instanceof ModBlockFrostLog || block instanceof ModBlockDreadLog || block instanceof ModBlockPalmLog || block instanceof ModBlockLog))
+        {
+            player.triggerAchievement(AchievementList.mineWood);
+        }
+    }
 	@SubscribeEvent
 	public void playerTick(TickEvent.PlayerTickEvent event)
 	{

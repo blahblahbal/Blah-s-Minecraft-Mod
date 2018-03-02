@@ -13,6 +13,8 @@ public final class ItemRenderRegister
     public static void registerItemRenderer()
     {
     	reg(ModItems.acidBucket);
+    	reg(ModItems.iceCream);
+    	reg(ModItems.frostRod);
     	reg(ModItems.iceBucket);
     	reg(ModItems.netherCoreKey);
     	reg(ModItems.zircon);

@@ -49,8 +49,8 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.palmPlanks, 4), new ItemStack(ModBlocks.palmLog));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cedarPlanks, 4), new ItemStack(ModBlocks.cedarLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.sequoiaPlanks));
-		
-		
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.iceCreamBlock), "XX", "XX", 'X', ModItems.iceCream);
+		GameRegistry.addRecipe(new ItemStack(ModItems.frostRod, 2), "IBI", "BTB", "IBI", 'I', ModItems.iceCream, 'B', Items.blaze_rod, 'T', new ItemStack(ModBlocks.tadanite));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ironSideSlab, 6), "x", "x", "x", 'x', Blocks.iron_block);
 		GameRegistry.addRecipe(new ItemStack(Blocks.iron_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.ironSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldSideSlab, 6), "x", "x", "x", 'x', Blocks.gold_block);
@@ -333,7 +333,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.bedrockPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.bedrock), 'y', new ItemStack(Items.blaze_rod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.bedrockPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.bedrock), 'y', new ItemStack(ModItems.frostRod));
 		// -- END TOOLS --
 		// -- ARMOR --
 		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHelmet), "lzl", "ctc", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteHelmet, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));

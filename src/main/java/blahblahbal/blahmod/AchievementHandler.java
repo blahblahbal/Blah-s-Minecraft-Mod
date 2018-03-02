@@ -4,12 +4,15 @@ import com.google.common.collect.ImmutableList;
 
 import blahblahbal.blahmod.blocks.ModBlocks;
 import blahblahbal.blahmod.items.ModItems;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
 
 public final class AchievementHandler
 {
+	public static final Achievement GHOST = (Achievement)new Achievement("ghost", "ghost", 0, 2, Blocks.obsidian, null).initIndependentStat().registerStat();
+	
 	public static final Achievement CATALYZER = (Achievement)new Achievement("catalyzer", "catalyzer", 0, 2, ModBlocks.catalyzer, null).initIndependentStat().registerStat();
 	//public static final Achievement PREFAB_SAPLING = (Achievement)new Achievement("prefab", "prefab", 2, 2, ModBlocks.prefabSapling, null).initIndependentStat().registerStat();
 	public static final Achievement BEDROCK_PICKAXE = (Achievement)new Achievement("bed_pick", "bed_pick", 0, -2, ModItems.bedrockPickaxe, CATALYZER).registerStat();

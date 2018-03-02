@@ -138,6 +138,7 @@ public final class ModBlocks
 	public static Block frostSand;
 	public static Block frostSandstone;
 	public static Block chiseledFrostSandstone;
+	public static Block iceCreamBlock;
 	// End Nether Core stuff
 
 	// End Stuff
@@ -363,6 +364,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(cement = new BasicBlock("cement", Material.rock, 3F, 150F, "pickaxe", 1, "cement")), "cement");
 		GameRegistry.registerBlock((Block)(uraniumBlock = new BasicBlock("uraniumBlock", Material.iron, 10F, 150F, "pickaxe", 2, "uraniumBlock")).setStepSound(Block.soundTypeMetal).setLightLevel(.3F), "uraniumBlock");
 		GameRegistry.registerBlock((Block)(magmaCreamBlock = new BasicBlock("magmaCreamBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "magmaCreamBlock")).setStepSound(Block.soundTypeGravel), "magmaCreamBlock");
+		GameRegistry.registerBlock((Block)(iceCreamBlock = new BasicBlock("iceCreamBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "iceCreamBlock")).setStepSound(Block.soundTypeGravel), "iceCreamBlock");
 		GameRegistry.registerBlock(potatoBlock = new BlockPotato(Material.cloth, "potatoBlock"), "potatoBlock");
 		GameRegistry.registerBlock((Block)(enderPearlBlock = new BasicBlock("enderPearlBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "enderPearlBlock")).setStepSound(Block.soundTypeStone), "enderPearlBlock");
 		GameRegistry.registerBlock((Block)(endStoneBricks = new BasicBlock("endStoneBricks", Material.rock, 10F, 150F, "pickaxe", 1, "endStoneBricks")).setStepSound(Block.soundTypeStone), "endStoneBricks");
