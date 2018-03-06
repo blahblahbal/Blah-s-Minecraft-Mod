@@ -1,6 +1,7 @@
 package blahblahbal.blahmod;
 
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 import blahblahbal.blahmod.blocks.ModBlockCedarLog;
@@ -29,6 +30,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -222,115 +224,55 @@ public class ModEventHandler
     		 * }*/
     		if (Main.getLumitePick(event.harvester))
     		{
-    			if (event.state.getBlock() == Blocks.diamond_ore ||
-    				event.state.getBlock() == Blocks.emerald_ore ||
-    				event.state.getBlock() == Blocks.gold_ore ||
-    				event.state.getBlock() == Blocks.iron_ore ||
-    				event.state.getBlock() == Blocks.quartz_ore ||
-    				event.state.getBlock() == Blocks.coal_ore ||
-    				event.state.getBlock() == ModBlocks.coalOre ||
-    				event.state.getBlock() == ModBlocks.ironOre ||
-    				event.state.getBlock() == ModBlocks.goldOre ||
-    				event.state.getBlock() == ModBlocks.limestoneOre ||
-    				event.state.getBlock() == ModBlocks.lumiteOre ||
-    				event.state.getBlock() == ModBlocks.sulphurOre ||
-    				event.state.getBlock() == ModBlocks.rubyOre ||
-    				event.state.getBlock() == ModBlocks.citrineOre ||
-    				event.state.getBlock() == ModBlocks.topazOre ||
-    				event.state.getBlock() == ModBlocks.sapphireOre ||
-    				event.state.getBlock() == ModBlocks.amethystOre ||
-    				event.state.getBlock() == ModBlocks.tadaniteOre)
-    			{
-    				if (event.state.getBlock() == Blocks.gold_ore)
-    				{
-    					event.drops.clear();
-        				event.drops.add(new ItemStack(Items.gold_ingot, 3));
-    				}
-    				else if (event.state.getBlock() == Blocks.iron_ore)
-    				{
-    					event.drops.clear();
-        				event.drops.add(new ItemStack(Items.iron_ingot, 3));
-    				}
-    				else if (event.state.getBlock() == ModBlocks.ironOre)
-    				{
-    					event.drops.clear();
-        				event.drops.add(new ItemStack(Items.iron_ingot, 3));
-    				}
-    				else if (event.state.getBlock() == ModBlocks.goldOre)
-    				{
-    					event.drops.clear();
-        				event.drops.add(new ItemStack(Items.gold_ingot, 3));
-    				}
-    				else if (event.state.getBlock() == ModBlocks.lumiteOre)
-    				{
-    					event.drops.clear();
-        				event.drops.add(new ItemStack(ModItems.lumite, 2));
-    				}
-    				else
-    				{
-    					BlockOre bo = (BlockOre)event.state.getBlock();
-        				event.drops.add(new ItemStack(bo.getItemDropped(event.state, new Random(), 6)));
-    				}
-    				
-    			}
+    			ListIterator<ItemStack> iter = event.drops.listIterator();
+				while (iter.hasNext())
+				{
+					ItemStack drop = iter.next();
+					ItemStack smelted = FurnaceRecipes.instance().getSmeltingResult(drop);
+					if (smelted != null)
+					{
+						smelted = smelted.copy();
+						smelted.stackSize = drop.stackSize * 2;
+						iter.set(smelted);
+	
+						// drop XP for it
+						float xp = FurnaceRecipes.instance().getSmeltingExperience(smelted);
+						if(xp < 1 && Math.random() < xp)
+						{
+							xp += 1f;
+						}
+						if(xp >= 1f)
+						{
+							event.state.getBlock().dropXpOnBlockBreak(event.world, event.pos, (int) xp);
+						}
+					}
+	    		}
     		}
     		if (Main.getMoltenTouchModifier(event.harvester))
     		{
-    			if (event.state.getBlock() == Blocks.iron_ore)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.iron_ingot));
-    			}
-    			if (event.state.getBlock() == ModBlocks.ironOre)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.iron_ingot));
-    			}
-    			if (event.state.getBlock() == Blocks.gold_ore)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.gold_ingot));
-    			}
-    			if (event.state.getBlock() == ModBlocks.goldOre)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.gold_ingot));
-    			}
-    			if (event.state.getBlock() == Blocks.netherrack)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.netherbrick));
-    			}
-    			if (event.state.getBlock() == Blocks.clay)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.brick, 4));
-    			}
-    			if (event.state.getBlock() == Blocks.sand)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Blocks.glass));
-    			}
-    			if (event.state.getBlock() == Blocks.stone && Blocks.stone.getMetaFromState(event.state) == 0)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Blocks.stone));
-    			}
-    			if (event.state.getBlock() == Blocks.cactus)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(Items.dye, 1, 2));
-    			}
-    			if (event.state.getBlock() == ModBlocks.uraniumOre)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(ModItems.uraniumIngot));
-    			}
-    			if (event.state.getBlock() == ModBlocks.lumiteOre)
-    			{
-    				event.drops.clear();
-    				event.drops.add(new ItemStack(ModItems.lumite));
-    			}
+    			ListIterator<ItemStack> iter = event.drops.listIterator();
+				while (iter.hasNext())
+				{
+					ItemStack drop = iter.next();
+					ItemStack smelted = FurnaceRecipes.instance().getSmeltingResult(drop);
+					if (smelted != null)
+					{
+						smelted = smelted.copy();
+						smelted.stackSize = drop.stackSize;
+						iter.set(smelted);
+	
+						// drop XP for it
+						float xp = FurnaceRecipes.instance().getSmeltingExperience(smelted);
+						if(xp < 1 && Math.random() < xp)
+						{
+							xp += 1f;
+						}
+						if(xp >= 1f)
+						{
+							event.state.getBlock().dropXpOnBlockBreak(event.world, event.pos, (int) xp);
+						}
+					}
+	    		}
     		}
     	}
     }

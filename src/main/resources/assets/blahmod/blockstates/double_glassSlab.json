@@ -1,0 +1,7 @@
+{
+    "variants": {
+	"half=top": { "model": "glass" },
+	"normal":    { "model": "glass" },
+	"half=bottom": { "model": "glass" }
+    }
+}

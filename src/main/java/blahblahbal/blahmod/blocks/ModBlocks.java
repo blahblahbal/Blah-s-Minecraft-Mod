@@ -108,6 +108,7 @@ public final class ModBlocks
 	public static Block dreadSand;
 	public static Block dreadSandstone;
 	public static Block chiseledDreadSandstone;
+	public static Block dreadRockBricks;
 	// End valley stuff
 
 	// Nether Core stuff
@@ -203,6 +204,8 @@ public final class ModBlocks
 	public static ModBlockStairs petrifiedWoodStairs;
 	public static ModBlockStairs cementStairs;
 	public static ModBlockPrefabSapling prefabSapling;
+	public static ModBlockStairs glassStairs;
+	public static ModBlockStairs reinGlassStairs;
 	// End crafted
 
 	// Slabs
@@ -212,8 +215,8 @@ public final class ModBlocks
 	public static ModBlockSlab[] doubleSlabs2 = new ModBlockSlab[8];
 	public static ModBlockSlab[] woodSlabs = new ModBlockSlab[8];
 	public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[8];
-	public static ModBlockSlab[] slabs3 = new ModBlockSlab[3];
-	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[3];
+	public static ModBlockSlab[] slabs3 = new ModBlockSlab[5];
+	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[5];
 	// End Slabs
 	
 	// Side Slabs
@@ -298,6 +301,7 @@ public final class ModBlocks
 	public static void createBlocks()
 	{
 		GameRegistry.registerBlock((Block)(compressedObsidian = new BasicBlock("compressedObsidian", Material.rock, 70F, 1000F, "pickaxe", 3, "compressedObsidian")), "compressedObsidian");
+		GameRegistry.registerBlock((Block)(dreadRockBricks = new BasicBlock("dreadRockBricks", Material.rock, 1.5F, 10F, "pickaxe", 3, "dreadRockBricks")), "dreadRockBricks");
 		GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
 		GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
 		GameRegistry.registerBlock((Block)(chiseledFrostSandstone = new BasicBlock("chiseledFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledFrostSandstone")), "chiseledFrostSandstone");
@@ -428,6 +432,8 @@ public final class ModBlocks
 		GameRegistry.registerBlock(cementStairs = new ModBlockStairs(cement.getDefaultState(), "cementStairs"), "cementStairs");
 		GameRegistry.registerBlock(tropicStoneBrickStairs = new ModBlockStairs(tropicStoneBrick.getDefaultState(), "tropicStoneBrickStairs"), "tropicStoneBrickStairs");
 		GameRegistry.registerBlock(netherIceBrickStairs = new ModBlockStairs(netherIceBrick.getDefaultState(), "netherIceBrickStairs"), "netherIceBrickStairs");
+		GameRegistry.registerBlock(glassStairs = new ModBlockStairs(Blocks.glass.getDefaultState(), "glassStairs"), "glassStairs");
+		GameRegistry.registerBlock(reinGlassStairs = new ModBlockStairs(reinforcedGlass.getDefaultState(), "reinGlassStairs"), "reinGlassStairs");
 		/*sequoiaLog = new ModBlockLog("sequoiaLog");
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		GameRegistry.registerBlock(sequoiaLog, ItemLog.class, renderItem, "sequoiaLog");
@@ -516,10 +522,14 @@ public final class ModBlocks
 		slabs3[0] = new ModBlockSlabHalf("blazeSlab", Material.rock);
 		slabs3[1] = new ModBlockSlabHalf("frostBrickSlab", Material.rock);
 		slabs3[2] = new ModBlockSlabHalf("frostSandstoneSlab", Material.rock);
+		slabs3[3] = new ModBlockSlabHalf("glassSlab", Material.glass);
+		slabs3[4] = new ModBlockSlabHalf("tropicStoneBrickSlab", Material.rock);
 		
 		doubleSlabs3[0] = new ModBlockSlabDouble("double_blazeSlab", Material.rock, slabs3[0]);
 		doubleSlabs3[1] = new ModBlockSlabDouble("double_frostBrickSlab", Material.rock, slabs3[1]);
 		doubleSlabs3[2] = new ModBlockSlabDouble("double_frostSandstoneSlab", Material.rock, slabs3[2]);
+		doubleSlabs3[3] = new ModBlockSlabDouble("double_glassSlab", Material.glass, slabs3[3]);
+		doubleSlabs3[4] = new ModBlockSlabDouble("double_tropicStoneBrickSlab", Material.rock, slabs3[4]);
 		
 		ironSideSlab = new ModBlockSideSlab("ironSideSlab", Material.iron); // iron -
 		goldSideSlab = new ModBlockSideSlab("goldSideSlab", Material.iron); // gold -
@@ -625,7 +635,7 @@ public final class ModBlocks
 			GameRegistry.registerBlock(woodSlabs[i], ModItemBlockSlab.class, woodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 			GameRegistry.registerBlock(doubleWoodSlabs[i], ModItemBlockSlab.class, doubleWoodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 		}
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 5; i++)
 		{
 			GameRegistry.registerBlock(slabs3[i], ModItemBlockSlab.class, slabs3[i].name, slabs3[i], doubleSlabs3[i], false);
 			GameRegistry.registerBlock(doubleSlabs3[i], ModItemBlockSlab.class, doubleSlabs3[i].name, slabs3[i], doubleSlabs3[i], false);

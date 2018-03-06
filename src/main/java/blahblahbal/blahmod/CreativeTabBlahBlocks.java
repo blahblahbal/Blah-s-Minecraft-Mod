@@ -165,6 +165,36 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.slabs3[0]).copy());
 		items.add(new ItemStack(ModBlocks.slabs3[1]).copy());
 		items.add(new ItemStack(ModBlocks.slabs3[2]).copy());
+		items.add(new ItemStack(ModBlocks.slabs3[3]).copy());
+		items.add(new ItemStack(ModBlocks.slabs3[4]).copy());
+		items.add(new ItemStack(ModBlocks.acaciaSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.oakSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.darkOakSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.frostSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.netherFrostBrickSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.spruceSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.jungleSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.obsidianSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.tadaniteSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.sulphurSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.lapisSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.cedarSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.sequoiaSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.ironSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.goldSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.emeraldSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.diamondSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.limestoneSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.birchSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.tropicsSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.dreadSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.dirtSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.mossSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.petrifiedWoodSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.netherBrickSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.cobblestoneSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.quartzSideSlab).copy());
+		items.add(new ItemStack(ModBlocks.blazeSideSlab).copy());
 		items.add(new ItemStack(ModBlocks.palmFence).copy());
 		items.add(new ItemStack(ModBlocks.cedarFence).copy());
 		items.add(new ItemStack(ModBlocks.sequoiaFence).copy());
@@ -183,6 +213,8 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.petrifiedWoodStairs).copy());
 		items.add(new ItemStack(ModBlocks.dreadStairs).copy());
 		items.add(new ItemStack(ModBlocks.frostStairs).copy());
+		items.add(new ItemStack(ModBlocks.glassStairs).copy());
+		items.add(new ItemStack(ModBlocks.reinGlassStairs).copy());
 		items.add(new ItemStack(ModBlocks.tropicStoneBrickStairs).copy());
 		items.add(new ItemStack(ModBlocks.netherIceBrickStairs).copy());
 		items.add(new ItemStack(ModBlocks.lantern).copy());
@@ -193,6 +225,7 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModBlocks.frostSand).copy());
 		items.add(new ItemStack(ModBlocks.frostSandstone).copy());
 		items.add(new ItemStack(ModBlocks.chiseledFrostSandstone).copy());
+		items.add(new ItemStack(ModBlocks.iceCreamBlock).copy());
 		super.displayAllReleventItems(items);
 	}
 }

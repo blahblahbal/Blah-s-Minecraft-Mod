@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:iceCreamBlock" },
+        "inventory": { "model": "blahmod:iceCreamBlock" }
+    }
+}

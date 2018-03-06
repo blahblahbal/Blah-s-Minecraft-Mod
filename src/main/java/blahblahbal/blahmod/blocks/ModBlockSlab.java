@@ -11,8 +11,13 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -207,7 +212,10 @@ public abstract class ModBlockSlab extends BlockSlab {
         }
         return GameRegistry.findItem("blahmod", blockId);
     }*/
-
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
     /**
      * Creates the block state object.
      * @return the block state with properties defined.
@@ -222,7 +230,24 @@ public abstract class ModBlockSlab extends BlockSlab {
                 new IProperty[] {VARIANT_PROPERTY, HALF});
         }
     }
-
+    @Override
+	@SideOnly(Side.CLIENT)
+	public EnumWorldBlockLayer getBlockLayer()
+	{
+		//if (this.getHalfSlabReference() == Item.getItemFromBlock(ModBlocks.slabs3[3]))
+		//if (this.name == "glassSlab")
+    		return EnumWorldBlockLayer.CUTOUT;
+		//else return Blocks.stone_slab.getBlockLayer();
+	}
+    public boolean isFullCube()
+    {
+        return false;
+    }
+    @Override
+    public boolean doesSideBlockRendering(IBlockAccess world, BlockPos pos, EnumFacing face)
+	{
+		return false;
+	}
     /**
      * Gets the ID of the block.
      * @param isDoubleStacked override the isDouble() method.
@@ -282,6 +307,10 @@ public abstract class ModBlockSlab extends BlockSlab {
         	ID = "blackSandSlab";
         if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.woodSlabs[7]))
         	ID = "frostSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs3[0]))
+        	ID = "blazeSlab";
+        if (Block.getIdFromBlock(this) == Block.getIdFromBlock(ModBlocks.slabs3[1]))
+        	ID = "frostBrickSlab";
 
         return result + ID;
     }

@@ -50,7 +50,9 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cedarPlanks, 4), new ItemStack(ModBlocks.cedarLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.sequoiaPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.iceCreamBlock), "XX", "XX", 'X', ModItems.iceCream);
-		GameRegistry.addRecipe(new ItemStack(ModItems.frostRod, 2), "IBI", "BTB", "IBI", 'I', ModItems.iceCream, 'B', Items.blaze_rod, 'T', new ItemStack(ModBlocks.tadanite));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBricks), "XX", "XX", 'X', ModBlocks.dreadRock);
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.iceCream, 4), new ItemStack(ModBlocks.iceCreamBlock));
+		GameRegistry.addRecipe(new ItemStack(ModItems.frostRod, 2), "IBI", "BTB", "IBI", 'I', ModBlocks.iceCreamBlock, 'B', Items.blaze_rod, 'T', new ItemStack(ModBlocks.tadanite));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ironSideSlab, 6), "x", "x", "x", 'x', Blocks.iron_block);
 		GameRegistry.addRecipe(new ItemStack(Blocks.iron_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.ironSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldSideSlab, 6), "x", "x", "x", 'x', Blocks.gold_block);
@@ -114,6 +116,8 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.palmLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.palmPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.cedarPlanks));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cedarStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.cedarPlanks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.glassStairs, 4), "x  ", "xx ", "xxx", 'x', Blocks.glass);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.reinGlassStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.reinforcedGlass);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeStairs, 8), "x  ", "xx ", "xxx", 'x', ModBlocks.blazeBrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBrickStairs, 4), "x  ", "xx ", "xxx", 'x', ModBlocks.frostBrick);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeStairs, 8), "  x", " xx", "xxx", 'x', ModBlocks.blazeBrick);
@@ -258,6 +262,8 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 5));
 		GameRegistry.addRecipe(new ItemStack(Blocks.nether_brick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 6));
 		GameRegistry.addRecipe(new ItemStack(Blocks.quartz_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 7));
+		GameRegistry.addRecipe(new ItemStack(Blocks.glass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[3]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[3], 6), "xxx", 'x', new ItemStack(Blocks.glass));
 		// slabs end
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrick), "##", "##", '#', ModBlocks.netherIce);
 		// stairs start
@@ -272,6 +278,8 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.deadPlanks, 6), "##","##", '#', ModBlocks.dreadStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeBrick, 3), "##","##", '#', ModBlocks.blazeStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBrick, 6), "##","##", '#', ModBlocks.frostBrickStairs);
+		GameRegistry.addRecipe(new ItemStack(Blocks.glass, 6), "##","##", '#', ModBlocks.glassStairs);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.reinforcedGlass, 6), "##","##", '#', ModBlocks.reinGlassStairs);
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 6), "##","##", '#', Blocks.stone_brick_stairs);
 		GameRegistry.addRecipe(new ItemStack(Blocks.nether_brick, 6), "##","##", '#', Blocks.nether_brick_stairs);
 		GameRegistry.addRecipe(new ItemStack(Blocks.brick_block, 6), "##","##", '#', Blocks.brick_stairs);

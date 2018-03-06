@@ -279,6 +279,11 @@ tile.frostSand.name=Frost Sand
 tile.chiseledFrostSandstone.name=Chiseled Frost Sandstone
 tile.compressedObsidian.name=Compressed Obsidian
 tile.iceCreamBlock.name=Ice Cream Block
+tile.dreadRockBricks.name=Dread Rock Bricks
+tile.glassSlab.name=Glass Slab
+tile.reinGlassStairs.name=Reinforced Glass Stairs
+tile.glassStairs.name=Glass Stairs
+tile.tropicStoneBrickSlab.name=Tropics Stone Brick Slab
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun
