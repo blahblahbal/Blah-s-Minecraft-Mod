@@ -140,6 +140,7 @@ public final class ModBlocks
 	public static Block frostSandstone;
 	public static Block chiseledFrostSandstone;
 	public static Block iceCreamBlock;
+	public static Block frostBlazeBrick;
 	// End Nether Core stuff
 
 	// End Stuff
@@ -158,8 +159,9 @@ public final class ModBlocks
 	public static Block blazeBrick;
 	public static Block magma;
 	public static ModBlockStairs blazeStairs;
+	public static Block magmaRockBricks;
 	// End nether stuff
-
+	
 	// TileEntities
 	public static BlockInventoryFurnace tadaniteSmeltery;
 	public static Block catalyzer;
@@ -300,8 +302,11 @@ public final class ModBlocks
 	
 	public static void createBlocks()
 	{
+		GameRegistry.registerBlock((Block)(frostBlazeBrick = new BasicBlock("frostBlazeBrick", Material.rock, 2F, 10F, "pickaxe", 0, "frostBlazeBrick")).setLightLevel(1F), "frostBlazeBrick");
+		GameRegistry.registerBlock((Block)(magmaRockBricks = new BasicBlock("magmaRockBricks", Material.rock, 2F, 10F, "pickaxe", 0, "magmaRockBricks")).setLightLevel(1F), "magmaRockBricks");
+		
 		GameRegistry.registerBlock((Block)(compressedObsidian = new BasicBlock("compressedObsidian", Material.rock, 70F, 1000F, "pickaxe", 3, "compressedObsidian")), "compressedObsidian");
-		GameRegistry.registerBlock((Block)(dreadRockBricks = new BasicBlock("dreadRockBricks", Material.rock, 1.5F, 10F, "pickaxe", 3, "dreadRockBricks")), "dreadRockBricks");
+		GameRegistry.registerBlock((Block)(dreadRockBricks = new BasicBlock("dreadRockBricks", Material.rock, 1.5F, 10F, "pickaxe", 0, "dreadRockBricks")), "dreadRockBricks");
 		GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
 		GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
 		GameRegistry.registerBlock((Block)(chiseledFrostSandstone = new BasicBlock("chiseledFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledFrostSandstone")), "chiseledFrostSandstone");

@@ -138,6 +138,8 @@ public class CreativeTabBlahBlocks extends CreativeTabs
 		items.add(new ItemStack(ModItems.sequoiaDoorItem).copy());
 		items.add(new ItemStack(ModItems.dreadDoorItem).copy());
 		items.add(new ItemStack(ModItems.frostDoorItem).copy());
+		items.add(new ItemStack(ModBlocks.frostBlazeBrick).copy());
+		items.add(new ItemStack(ModBlocks.magmaRockBricks).copy());
 		items.add(new ItemStack(ModBlocks.slabs[0]).copy());
 		items.add(new ItemStack(ModBlocks.slabs[1]).copy());
 		items.add(new ItemStack(ModBlocks.slabs[2]).copy());

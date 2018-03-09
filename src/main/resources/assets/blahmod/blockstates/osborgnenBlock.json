@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "normal": { "model": "blahmod:osborgnenBlock" },
+        "inventory": { "model": "blahmod:osborgnenBlock" }
+    }
+}

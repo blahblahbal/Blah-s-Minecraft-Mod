@@ -81,6 +81,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 		/** CABIN GEN **/
 		WorldGenerator genCabin = new WorldGenFrostTree(false);
 		WorldGenerator genIgloo = new StructureNetherCoreIglooDungeon();
+		WorldGenerator genSpike = new WorldGenNetherCoreIceSpike();
 		// 25% of chunks can have a cabin
 		final int CABIN_CHANCE = 10;
 		if (rand.nextInt(30) < CABIN_CHANCE)
@@ -92,6 +93,16 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int groundY = getGroundFromAbove(world, randX, randZ, ModBlocks.netherFrost.getDefaultState());
 			if (groundY < 35) return;
 			genCabin.generate(world, rand, new BlockPos(randX, groundY, randZ));
+		}
+		if (rand.nextInt(30) < 10)
+		{
+			
+			int randX = blockX + rand.nextInt(16);
+			int randZ = blockZ + rand.nextInt(16);
+			int groundY = getGroundFromAbove(world, randX, randZ, ModBlocks.netherFrost.getDefaultState());
+			if (groundY < 25) return;
+			genSpike.generate(world, rand, new BlockPos(randX, groundY, randZ));
+			//makeIceSpike(randX, groundY, randZ, 1, rand.nextInt(10) + 15, ModBlocks.netherIce.getDefaultState(), world);
 		}
 		/** END CABIN GEN **/
 		if (rand.nextInt(300) < 5)
@@ -106,7 +117,22 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 	}
 
 	/** HELPER METHODS **/
-
+	public static void makeIceSpike(int x, int y, int z, int length, int height, IBlockState s, World w)
+	{
+		for (int y2 = y; y2 < y + height; y2++)
+		{
+			for (int i = x - (length - (y2 < y + height / 4 ? 0 : ((y2 % 5 == 0 || y2 % 5 == 1) ? length / 2 : 0))); i <= x + (length - (y2 < y + height / 4 ? 0 : ((y2 % 5 == 0 || y2 % 5 == 1) ? length / 2 : 0))); i++)
+			{
+				for (int j = z - (length - (y2 < y + height / 4 ? 0 : ((y2 % 5 == 0 || y2 % 5 == 1) ? length / 2 : 0))); j <= z + (length - (y2 < y + height / 4 ? 0 : ((y2 % 5 == 0 || y2 % 5 == 1) ? length / 2 : 0))); j++)
+				{
+					if (s != null)
+					{
+						w.setBlockState(new BlockPos(i, y2, j), s, 2);
+					}
+				}
+			}
+		}
+	}
 	// find a grass or dirt block to place the bush on
 	public static int getGroundFromAbove(World world, int x, int z, IBlockState b)
 	{

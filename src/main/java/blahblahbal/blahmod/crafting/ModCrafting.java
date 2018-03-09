@@ -49,6 +49,9 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.palmPlanks, 4), new ItemStack(ModBlocks.palmLog));
 		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.cedarPlanks, 4), new ItemStack(ModBlocks.cedarLog));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.sequoiaLog), "# #", "   ", "# #", '#', new ItemStack(ModBlocks.sequoiaPlanks));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.frostRod, 4), new ItemStack(ModBlocks.frostBlazeBrick));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBlazeBrick), "XX", "XX", 'X', ModItems.frostRod);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaRockBricks), "XX", "XX", 'X', ModBlocks.magma);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.iceCreamBlock), "XX", "XX", 'X', ModItems.iceCream);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBricks), "XX", "XX", 'X', ModBlocks.dreadRock);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.iceCream, 4), new ItemStack(ModBlocks.iceCreamBlock));

@@ -2,10 +2,12 @@ package blahblahbal.blahmod;
 
 import blahblahbal.blahmod.client.render.blocks.BlockRenderRegister;
 import blahblahbal.blahmod.client.render.entity.RenderEskimoZombie;
+import blahblahbal.blahmod.client.render.entity.RenderFrostblaze;
 import blahblahbal.blahmod.client.render.entity.RenderGemBolt;
 import blahblahbal.blahmod.client.render.entity.RenderIceCube;
 import blahblahbal.blahmod.client.render.items.ItemRenderRegister;
 import blahblahbal.blahmod.entity.EntityEskimoZombie;
+import blahblahbal.blahmod.entity.EntityFrostblaze;
 import blahblahbal.blahmod.entity.EntityIceCube;
 import blahblahbal.blahmod.projectiles.EntityGemBolt;
 import blahblahbal.blahmod.tileentity.ModTileEntities;
@@ -35,8 +37,9 @@ public class ClientProxy extends CommonProxy {
         final int DEFAULT_ITEM_SUBTYPE = 0;
         ModelLoader.setCustomModelResourceLocation(itemBlockSimple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation);
         //BlockRenderRegister.INSTANCE.registerFluidModels();
-        //RenderingRegistry.registerEntityRenderingHandler(EntityEskimoZombie.class, manager -> new RenderEskimoZombie(manager));
-        //RenderingRegistry.registerEntityRenderingHandler(EntityIceCube.class, manager -> new RenderIceCube(manager));
+        RenderingRegistry.registerEntityRenderingHandler(EntityEskimoZombie.class, manager -> new RenderEskimoZombie(manager));
+        RenderingRegistry.registerEntityRenderingHandler(EntityIceCube.class, manager -> new RenderIceCube(manager));
+        RenderingRegistry.registerEntityRenderingHandler(EntityFrostblaze.class, manager -> new RenderFrostblaze(manager));
     }
 
     @Override

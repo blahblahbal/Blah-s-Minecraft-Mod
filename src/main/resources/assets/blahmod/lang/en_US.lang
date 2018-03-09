@@ -284,6 +284,8 @@ tile.glassSlab.name=Glass Slab
 tile.reinGlassStairs.name=Reinforced Glass Stairs
 tile.glassStairs.name=Glass Stairs
 tile.tropicStoneBrickSlab.name=Tropics Stone Brick Slab
+tile.magmaRockBricks.name=Magma Rock Bricks
+tile.frostBlazeBrick.name=Frostblaze Brick
 
 achievement.catalyzer=Catalyzer
 achievement.smeltery=Double the Fun

@@ -46,6 +46,8 @@ public final class BlockRenderRegister
 	public static void registerBlockRenderer()
 	{
 	    reg((BasicBlock)ModBlocks.tadanite);
+	    reg((BasicBlock)ModBlocks.magmaRockBricks);
+	    reg((BasicBlock)ModBlocks.frostBlazeBrick);
 	    reg((BasicBlock)ModBlocks.dreadRockBricks);
 	    reg((BasicBlock)ModBlocks.iceCreamBlock);
 	    reg((BasicBlock)ModBlocks.compressedObsidian);
