@@ -1,5 +1,5 @@
 {
-	"parent": "blahmod:item/standard_item",
+	"parent": "item/handheld",
 	"textures": {
 		"layer0": "blahmod:items/tadanite_shovel"
 	}

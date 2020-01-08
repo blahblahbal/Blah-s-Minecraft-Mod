@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:compressed_obsidian"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:compressed_obsidian"}],
+		"inventory": [{}]
+	}
+}

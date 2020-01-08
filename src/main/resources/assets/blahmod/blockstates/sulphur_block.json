@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:sulphur_block"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:sulphur_block"}],
+		"inventory": [{}]
+	}
+}

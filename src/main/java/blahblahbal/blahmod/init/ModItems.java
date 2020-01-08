@@ -28,33 +28,36 @@ public class ModItems
 	public static ArmorMaterial obsidianA = EnumHelper.addArmorMaterial("OBSIDIANA", "blahmod:obsidian", 50, new int[] {2, 6, 6, 2}, 32, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f);
 	public static ArmorMaterial lumiteA = EnumHelper.addArmorMaterial("LUMITEA", "blahmod:lumite", 250, new int[] {4, 9, 8, 3}, 32, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 5f);
 	
-	public static Item tadaniteShard = new ItemBasic("tadanite_shard", "tadanite_shard");
-	public static Item tadaniteDiamond = new ItemBasic("tadanite_diamond", "tadanite_diamond");
-	public static ItemModAxe tadaniteAxe = new ItemModAxe(TADANITE_TM, "tadanite_axe", "tadanite_axe");
-	public static ItemModHoe tadaniteHoe = new ItemModHoe(TADANITE_TM, "tadanite_hoe", "tadanite_hoe");
-	public static ItemModPickaxe tadanitePickaxe = new ItemModPickaxe(TADANITE_TM, "tadanite_pickaxe", "tadanite_pickaxe");
-	public static ItemModShovel tadaniteShovel = new ItemModShovel(TADANITE_TM, "tadanite_shovel", "tadanite_shovel");
-	public static ItemModSword tadaniteSword = new ItemModSword(TADANITE_TM, "tadanite_sword", "tadanite_sword");
+	public static final Item tadaniteShard = new ItemBasic("tadanite_shard").setTranslationKey("tadanite_shard");
+	public static final Item tadaniteDiamond = new ItemBasic("tadanite_diamond").setTranslationKey("tadanite_diamond");
+	public static final Item sulphur2 = new ItemBasic("sulphur2").setTranslationKey("sulphur2");
+	public static final Item osborgnenFuel = new ItemBasic("osborgnen_coal").setTranslationKey("osborgnen_coal");
+	public static final Item catalyticInverter = new ItemBasic("catalytic_inverter").setTranslationKey("catalytic_inverter");
+	public static final ItemModAxe tadaniteAxe = new ItemModAxe(TADANITE_TM, "tadanite_axe", "tadanite_axe");
+	public static final ItemModHoe tadaniteHoe = new ItemModHoe(TADANITE_TM, "tadanite_hoe", "tadanite_hoe");
+	public static final ItemModPickaxe tadanitePickaxe = new ItemModPickaxe(TADANITE_TM, "tadanite_pickaxe", "tadanite_pickaxe");
+	public static final ItemModShovel tadaniteShovel = new ItemModShovel(TADANITE_TM, "tadanite_shovel", "tadanite_shovel");
+	public static final ItemModSword tadaniteSword = new ItemModSword(TADANITE_TM, "tadanite_sword", "tadanite_sword");
 	
-	public static void registerItems()
-	{
-		registerItem(tadaniteShard, "tadanite_shard");
-		registerItem(tadaniteDiamond, "tadanite_diamond");
-		registerItem(tadaniteAxe, "tadanite_axe");
-		registerItem(tadaniteHoe, "tadanite_hoe");
-		registerItem(tadanitePickaxe, "tadanite_pickaxe");
-		registerItem(tadaniteShovel, "tadanite_shovel");
-		registerItem(tadaniteSword, "tadanite_sword");
-	}
-	
-    public static Item registerItem(Item item, String name)
-    {    
-        item.setTranslationKey(name);
-        item.setCreativeTab(BlahMod.TabBlah);
-
-        item.setRegistryName(new ResourceLocation(BlahMod.MODID, name));
-        ForgeRegistries.ITEMS.register(item);
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(BlahMod.MODID + ":" + item.delegate.name().getPath(), "inventory"));
-        return item;   
-    }
+//	public static void registerItems()
+//	{
+//		registerItem(tadaniteShard, "tadanite_shard");
+//		registerItem(tadaniteDiamond, "tadanite_diamond");
+//		registerItem(tadaniteAxe, "tadanite_axe");
+//		registerItem(tadaniteHoe, "tadanite_hoe");
+//		registerItem(tadanitePickaxe, "tadanite_pickaxe");
+//		registerItem(tadaniteShovel, "tadanite_shovel");
+//		registerItem(tadaniteSword, "tadanite_sword");
+//	}
+//	
+//    public static Item registerItem(Item item, String name)
+//    {    
+//        item.setTranslationKey(name);
+//        item.setCreativeTab(BlahMod.TabBlah);
+//
+//        item.setRegistryName(new ResourceLocation(BlahMod.MODID, name));
+//        ForgeRegistries.ITEMS.register(item);
+//        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(BlahMod.MODID + ":" + item.delegate.name().getPath(), "inventory"));
+//        return item;   
+//    }
 }

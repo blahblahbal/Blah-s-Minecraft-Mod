@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:petrified_wood"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:petrified_wood"}],
+		"inventory": [{}]
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:black_sand"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:black_sand"}],
+		"inventory": [{}]
+	}
+}

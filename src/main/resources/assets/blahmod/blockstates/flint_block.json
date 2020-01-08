@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:flint_block"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:flint_block"}],
+		"inventory": [{}]
+	}
+}
