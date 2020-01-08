@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "half=top": { "model": "minecraft:diamond_block" },
-        "half=bottom":    { "model": "minecraft:diamond_block" },
-        "normal": { "model": "minecraft:diamond_block" }
-    }
-}

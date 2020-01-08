@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:lapisSideSlab_north" },
-        "facing=south": { "model": "blahmod:lapisSideSlab_south" },
-        "facing=east": { "model": "blahmod:lapisSideSlab_east" },
-        "facing=west": { "model": "blahmod:lapisSideSlab_west" }
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "variants": {
-	"normal": { "model": "blahmod:frostSapling" },
-	"stage=0": { "model": "blahmod:frostSapling" },
-	"stage=1": { "model": "blahmod:frostSapling" }
-	}
-}
-

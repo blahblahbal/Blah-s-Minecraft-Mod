@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "half=top": { "model": "stone" },
-        "normal":    { "model": "stone" },
-        "half=bottom": { "model": "stone" }
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "variants": {
-	"normal": { "model": "blahmod:palmSapling" },
-	"stage=0": { "model": "blahmod:palmSapling" },
-	"stage=1": { "model": "blahmod:palmSapling" }
-	}
-}

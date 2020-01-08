@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:frostBrick" },
-        "inventory": { "model": "blahmod:frostBrick" }
-    }
-}

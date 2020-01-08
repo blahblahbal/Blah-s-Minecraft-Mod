@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "half=bottom,variant=false": { "model": "blahmod:half_tropicStoneBrickSlab" },
-        "half=top,variant=false": { "model": "blahmod:upper_tropicStoneBrickSlab" }
-    }
-}

@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:polishedIgneousRock" },
-        "inventory": { "model": "blahmod:polishedIgneousRock" }
-    }
-}

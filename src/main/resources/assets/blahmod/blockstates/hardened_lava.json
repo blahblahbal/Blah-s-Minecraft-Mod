@@ -1,0 +1,10 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "blahmod:hardened_lava"
+	},
+	"variants": {
+		"normal": [{"model": "blahmod:hardened_lava"}],
+		"inventory": [{}]
+	}
+}

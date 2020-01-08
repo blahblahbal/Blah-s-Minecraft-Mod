@@ -1,6 +1,0 @@
-{
-    "parent":"blahmod:item/standard_item",
-    "textures": {
-        "layer0":"blahmod:items/lumite"
-    }
-}

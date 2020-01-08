@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north":  { "model": "blahmod:largeSeashell" },
-        "facing=south":  { "model": "blahmod:largeSeashell", "y": 180, "uvlock": false },
-        "facing=east": { "model": "blahmod:largeSeashell", "y": 90, "uvlock": false },
-        "facing=west": { "model": "blahmod:largeSeashell", "y": 270, "uvlock": false }
-    }
-}

@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:ironOre" },
-        "inventory": { "model": "blahmod:ironOre" }
-    }
-}

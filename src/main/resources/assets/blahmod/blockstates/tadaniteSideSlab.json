@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:tadaniteSideSlab_north" },
-        "facing=south": { "model": "blahmod:tadaniteSideSlab_south" },
-        "facing=east": { "model": "blahmod:tadaniteSideSlab_east" },
-        "facing=west": { "model": "blahmod:tadaniteSideSlab_west" }
-    }
-}

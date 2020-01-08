@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:obsidianSideSlab_north" },
-        "facing=south": { "model": "blahmod:obsidianSideSlab_south" },
-        "facing=east": { "model": "blahmod:obsidianSideSlab_east" },
-        "facing=west": { "model": "blahmod:obsidianSideSlab_west" }
-    }
-}

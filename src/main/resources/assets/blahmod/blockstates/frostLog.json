@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "blahmod:frostLog" },
-        "axis=z":   { "model": "blahmod:frostLog_side" },
-        "axis=x":   { "model": "blahmod:frostLog_side", "y": 90 },
-        "axis=none": { "model": "blahmod:frostLog" }
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom_rh",
-    "textures": {
-        "bottom": "blahmod:blocks/palmDoor_lower",
-        "top": "blahmod:blocks/palmDoor_upper"
-    }
-}

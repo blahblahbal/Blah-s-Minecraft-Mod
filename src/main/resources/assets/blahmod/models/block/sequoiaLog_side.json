@@ -1,7 +1,0 @@
-{
-    "parent": "block/column_side",
-    "textures": {
-        "end": "blahmod:blocks/sequoiaLog_top",
-        "side": "blahmod:blocks/sequoiaLog"
-    }
-}

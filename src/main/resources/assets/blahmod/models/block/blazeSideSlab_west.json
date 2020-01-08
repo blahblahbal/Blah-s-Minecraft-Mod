@@ -1,8 +1,0 @@
-{
-    "parent": "blahmod:block/sideSlab_west_base",
-    "textures": {
-        "bottom": "blahmod:blocks/blazeBrick",
-        "top": "blahmod:blocks/blazeBrick",
-        "side": "blahmod:blocks/blazeBrick"
-    }
-}

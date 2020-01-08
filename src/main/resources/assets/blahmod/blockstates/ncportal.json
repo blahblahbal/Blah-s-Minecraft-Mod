@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "axis=z": { "model": "blahmod:ncportal_ew" },
-        "axis=x": { "model": "blahmod:ncportal_ns" }
-    }
-}

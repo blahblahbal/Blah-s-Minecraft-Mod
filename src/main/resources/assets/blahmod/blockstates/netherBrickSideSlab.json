@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:netherBrickSideSlab_north" },
-        "facing=south": { "model": "blahmod:netherBrickSideSlab_south" },
-        "facing=east": { "model": "blahmod:netherBrickSideSlab_east" },
-        "facing=west": { "model": "blahmod:netherBrickSideSlab_west" }
-    }
-}

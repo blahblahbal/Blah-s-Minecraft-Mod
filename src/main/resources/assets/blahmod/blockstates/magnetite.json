@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:magnetite" },
-        "inventory": { "model": "blahmod:magnetite" }
-    }
-}

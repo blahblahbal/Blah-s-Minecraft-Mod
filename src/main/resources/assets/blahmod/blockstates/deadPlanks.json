@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:deadPlanks" },
-        "inventory": { "model": "blahmod:deadPlanks" }
-    }
-}

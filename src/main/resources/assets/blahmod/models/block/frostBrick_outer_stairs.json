@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "blahmod:blocks/frostBrick",
-        "top": "blahmod:blocks/frostBrick",
-        "side": "blahmod:blocks/frostBrick"
-    }
-}

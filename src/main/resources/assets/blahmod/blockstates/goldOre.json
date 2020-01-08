@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:goldOre" },
-        "inventory": { "model": "blahmod:goldOre" }
-    }
-}

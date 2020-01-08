@@ -1,7 +1,0 @@
-{
-    "variants": {
-	"half=top": { "model": "minecraft:emerald_block" },
-	"half=bottom":    { "model": "minecraft:emerald_block" },
-	"normal": { "model": "minecraft:emerald_block" }
-    }
-}

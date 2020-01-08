@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:petrifiedWoodSideSlab_north" },
-        "facing=south": { "model": "blahmod:petrifiedWoodSideSlab_south" },
-        "facing=east": { "model": "blahmod:petrifiedWoodSideSlab_east" },
-        "facing=west": { "model": "blahmod:petrifiedWoodSideSlab_west" }
-    }
-}

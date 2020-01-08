@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "half=top": { "model": "blahmod:limestoneBlock" },
-        "normal":    { "model": "blahmod:limestoneBlock" },
-        "half=bottom": { "model": "blahmod:limestoneBlock" }
-    }
-}

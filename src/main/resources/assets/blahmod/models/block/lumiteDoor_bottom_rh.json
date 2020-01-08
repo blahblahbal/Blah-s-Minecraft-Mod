@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom_rh",
-    "textures": {
-        "bottom": "blahmod:blocks/lumiteDoor_lower",
-        "top": "blahmod:blocks/lumiteDoor_upper"
-    }
-}

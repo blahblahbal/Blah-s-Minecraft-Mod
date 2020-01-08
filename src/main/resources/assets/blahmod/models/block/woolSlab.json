@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "blocks/wool_colored_white",
-        "top": "blocks/wool_colored_white",
-        "side": "blocks/wool_colored_white"
-    }
-}

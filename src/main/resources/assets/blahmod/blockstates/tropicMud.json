@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:tropicMud" },
-        "inventory": { "model": "blahmod:tropicMud" }
-    }
-}

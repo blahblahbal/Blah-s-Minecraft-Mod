@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "half=top": { "model": "blahmod:blackSandstone" },
-        "normal":    { "model": "blahmod:blackSandstone" },
-        "half=bottom": { "model": "blahmod:blackSandstone" }
-    }
-}

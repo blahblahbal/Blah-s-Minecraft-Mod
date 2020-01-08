@@ -1,7 +1,0 @@
-{
-    "variants": {
-	"half=top": { "model": "blahmod:petrifiedWood" },
-	"normal":    { "model": "blahmod:petrifiedWood" },
-	"half=bottom": { "model": "blahmod:petrifiedWood" }
-    }
-}

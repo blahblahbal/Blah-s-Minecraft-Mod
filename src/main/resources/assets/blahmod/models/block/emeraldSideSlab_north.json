@@ -1,8 +1,0 @@
-{
-    "parent": "blahmod:block/sideSlab_north_base",
-    "textures": {
-        "bottom": "blocks/emerald_block",
-        "top": "blocks/emerald_block",
-        "side": "blocks/emerald_block"
-    }
-}

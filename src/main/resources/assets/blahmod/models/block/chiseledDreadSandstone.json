@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "side": "blahmod:blocks/chiseledDreadSandstone",
-        "end": "blahmod:blocks/dreadSandstone_top"
-    }
-}

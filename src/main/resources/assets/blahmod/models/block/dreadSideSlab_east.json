@@ -1,8 +1,0 @@
-{
-    "parent": "blahmod:block/sideSlab_east_base",
-    "textures": {
-        "bottom": "blahmod:blocks/deadPlanks",
-        "top": "blahmod:blocks/deadPlanks",
-        "side": "blahmod:blocks/deadPlanks"
-    }
-}

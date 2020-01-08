@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:lumiteBlock" },
-        "inventory": { "model": "blahmod:lumiteBlock" }
-    }
-}

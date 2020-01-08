@@ -1,8 +1,0 @@
-{
-    "parent": "blahmod:block/sideSlab_south_base",
-    "textures": {
-        "bottom": "blahmod:blocks/petrifiedWood",
-        "top": "blahmod:blocks/petrifiedWood",
-        "side": "blahmod:blocks/petrifiedWood"
-    }
-}

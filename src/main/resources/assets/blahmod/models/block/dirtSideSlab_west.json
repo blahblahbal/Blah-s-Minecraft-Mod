@@ -1,8 +1,0 @@
-{
-    "parent": "blahmod:block/sideSlab_west_base",
-    "textures": {
-        "bottom": "blocks/dirt",
-        "top": "blocks/dirt",
-        "side": "blocks/dirt"
-    }
-}

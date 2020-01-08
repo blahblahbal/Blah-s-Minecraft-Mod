@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "blahmod:sequoiaLog" },
-        "axis=z":   { "model": "blahmod:sequoiaLog_side" },
-        "axis=x":   { "model": "blahmod:sequoiaLog_side", "y": 90 },
-        "axis=none": { "model": "blahmod:sequoiaLog_bark" }
-    }
-}

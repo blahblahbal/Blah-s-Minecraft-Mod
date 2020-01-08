@@ -1,7 +1,0 @@
-{
-    "variants": {
-	"half=top": { "model": "blahmod:blazeBrick" },
-	"normal":    { "model": "blahmod:blazeBrick" },
-	"half=bottom": { "model": "blahmod:blazeBrick" }
-    }
-}

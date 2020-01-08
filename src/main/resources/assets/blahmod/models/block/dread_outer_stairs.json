@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "blahmod:blocks/deadPlanks",
-        "top": "blahmod:blocks/deadPlanks",
-        "side": "blahmod:blocks/deadPlanks"
-    }
-}

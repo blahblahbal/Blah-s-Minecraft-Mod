@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:sequoiaSideSlab_north" },
-        "facing=south": { "model": "blahmod:sequoiaSideSlab_south" },
-        "facing=east": { "model": "blahmod:sequoiaSideSlab_east" },
-        "facing=west": { "model": "blahmod:sequoiaSideSlab_west" }
-    }
-}

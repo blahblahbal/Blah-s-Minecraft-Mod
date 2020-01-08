@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "blahmod:blocks/palmPlanks",
-        "top": "blahmod:blocks/palmPlanks",
-        "side": "blahmod:blocks/palmPlanks"
-    }
-}

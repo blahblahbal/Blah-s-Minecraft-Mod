@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north":  { "model": "blahmod:lanternFloor" },
-        "facing=south":  { "model": "blahmod:lanternFloor", "y": 180, "uvlock": false },
-        "facing=east": { "model": "blahmod:lanternFloor", "y": 90, "uvlock": false },
-        "facing=west": { "model": "blahmod:lanternFloor", "y": 270, "uvlock": false }
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "blahmod:mossSideSlab_north" },
-        "facing=south": { "model": "blahmod:mossSideSlab_south" },
-        "facing=east": { "model": "blahmod:mossSideSlab_east" },
-        "facing=west": { "model": "blahmod:mossSideSlab_west" }
-    }
-}

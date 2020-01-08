@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "blahmod:blocks/petrifiedWood",
-        "top": "blahmod:blocks/petrifiedWood",
-        "side": "blahmod:blocks/petrifiedWood"
-    }
-}

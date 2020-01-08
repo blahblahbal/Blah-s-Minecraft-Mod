@@ -1,8 +1,0 @@
-{
-    "variants": {
-	"normal": { "model": "blahmod:dreadSapling" },
-	"stage=0": { "model": "blahmod:dreadSapling" },
-	"stage=1": { "model": "blahmod:dreadSapling" }
-	}
-}
-

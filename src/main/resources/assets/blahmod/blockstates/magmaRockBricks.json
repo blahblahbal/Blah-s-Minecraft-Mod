@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "blahmod:magmaRockBricks" },
-        "inventory": { "model": "blahmod:magmaRockBricks" }
-    }
-}
