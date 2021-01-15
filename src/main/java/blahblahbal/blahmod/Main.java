@@ -56,7 +56,7 @@ public class Main
 {
     public static final String MODID = "blahmod";
     public static final String MODNAME = "Blah's Mod";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1";
     
     public static BiomeGenBase tropicsBiome;
     public static BiomeGenBase cedarBiome;
@@ -133,10 +133,9 @@ public class Main
     	EntityRegistry.registerModEntity(EntityGemBolt.class, "Sapphire Bolt", ++modEntityIndex, this, 64, 10, true);
     	EntityRegistry.registerModEntity(EntityGemBolt.class, "Amethyst Bolt", ++modEntityIndex, this, 64, 10, true);
     	EntityRegistry.registerModEntity(EntityGemBolt.class, "Diamond Bolt", ++modEntityIndex, this, 64, 10, true);*/
-    	EntityRegistry.addSpawn(EntityEskimoZombie.class, 10, 1, 3, EnumCreatureType.MONSTER, BiomeDictionary.getBiomesForType(Type.WATER));
-    	EntityRegistry.registerModEntity(EntityEskimoZombie.class, "Eskimo Zombie", 50, this, 80, 3, true);
-    	EntityRegistry.registerModEntity(EntityIceCube.class, "Ice Cube", 51, this, 80, 3, true);
-    	EntityRegistry.registerModEntity(EntityFrostblaze.class, "Frostblaze", 52, this, 80, 3, true);
+    	EntityRegistry.registerModEntity(EntityEskimoZombie.class, "EskimoZombie", 50, this, 80, 3, true);
+    	EntityRegistry.registerModEntity(EntityFrostblaze.class, "Frostblaze", 51, this, 80, 3, true);
+    	EntityRegistry.registerModEntity(EntityIceCube.class, "IceCube", 52, this, 80, 3, true);
     }
     /*public static void harvestTreeRecursive(HarvestDropsEvent e, World w, BlockPos bp, Block b, int i, int j, int k)
     {

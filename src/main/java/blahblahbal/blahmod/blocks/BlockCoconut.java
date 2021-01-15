@@ -4,13 +4,9 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockCoconut extends Block
 {
@@ -27,8 +23,7 @@ public class BlockCoconut extends Block
     {
         return false;
     }
-	@Override
-    public Item getItemDropped(IBlockState blockstate, Random random, int fortune)
+	public Item getItemDropped(int metadata, Random random, int fortune)
     {
         return Item.getItemFromBlock(ModBlocks.groundCoconut);
     }
@@ -36,8 +31,7 @@ public class BlockCoconut extends Block
     {
         return false;
     }
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
+    public boolean shouldSideBeRendered(IBlockAccess worldIn, int x, int y, int z, int side)
     {
         return true;
     }

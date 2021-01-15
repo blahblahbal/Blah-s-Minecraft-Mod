@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:magmaRockBrickSideSlab_north" },
+        "facing=south": { "model": "blahmod:magmaRockBrickSideSlab_south" },
+        "facing=east": { "model": "blahmod:magmaRockBrickSideSlab_east" },
+        "facing=west": { "model": "blahmod:magmaRockBrickSideSlab_west" }
+    }
+}

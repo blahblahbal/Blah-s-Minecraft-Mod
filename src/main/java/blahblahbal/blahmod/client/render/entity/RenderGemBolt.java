@@ -27,7 +27,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderGemBolt extends Render
 {
-    public RenderGemBolt(RenderManager renderManagerIn, float scaleIn)
+    public RenderGemBolt(RenderManager renderManagerIn)
     {
         super(renderManagerIn);
     }

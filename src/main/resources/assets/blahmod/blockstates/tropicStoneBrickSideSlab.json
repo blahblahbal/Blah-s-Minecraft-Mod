@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:tropicStoneBrickSideSlab_north" },
+        "facing=south": { "model": "blahmod:tropicStoneBrickSideSlab_south" },
+        "facing=east": { "model": "blahmod:tropicStoneBrickSideSlab_east" },
+        "facing=west": { "model": "blahmod:tropicStoneBrickSideSlab_west" }
+    }
+}

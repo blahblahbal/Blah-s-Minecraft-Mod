@@ -72,6 +72,8 @@ public class CreativeTabBlah extends CreativeTabs
 		items.add(new ItemStack(ModItems.coconutFood).copy());
 		items.add(new ItemStack(ModItems.iceCream).copy());
 		items.add(new ItemStack(ModItems.netherCoreKey).copy());
+		items.add(new ItemStack(ModItems.obsidifiedBlazeRod).copy());
+		items.add(new ItemStack(ModItems.obsidianConstruct).copy());
 		for (int i = 0; i < ModItems.dyeNew.length; i++)
 		{
 			items.add(new ItemStack(ModItems.dyeNew[i]).copy());

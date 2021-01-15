@@ -106,6 +106,12 @@ public final class BlockRenderRegister
 	    reg((BasicBlock)ModBlocks.tropicStoneBrick);
 	    reg((BasicBlock)ModBlocks.magma);
 	    reg((BasicBlock)ModBlocks.chiseledDreadSandstone);
+	    reg((BasicBlock)ModBlocks.smoothDreadSandstone);
+	    reg((BasicBlock)ModBlocks.smoothBlackSandstone);
+	    reg((BasicBlock)ModBlocks.smoothFrostSandstone);
+	    reg((BasicBlock)ModBlocks.mossyEndStoneBricks);
+	    reg((BasicBlock)ModBlocks.smoothNetherrack);
+	    reg((BasicBlock)ModBlocks.polishedNetherrack);
 	    //reg((BasicBlock)ModBlocks.lantern);
 	    for (int i = 0; i < 5; i++)
 	    {
@@ -134,7 +140,7 @@ public final class BlockRenderRegister
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.woodSlabs[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.woodSlabs[i])).name, "inventory"));
 	    	ModelLoader.setCustomStateMapper(ModBlocks.doubleWoodSlabs[i], new StateMap.Builder().ignore(ModBlockSlab.VARIANT_PROPERTY).build());
 	    }
-	    for (int i = 0; i < 5; i++)
+	    for (int i = 0; i < 7; i++)
 	    {
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.doubleSlabs3[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.doubleSlabs3[i])).name, "inventory"));
 	    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.slabs3[i]), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockSlab)(ModBlocks.slabs3[i])).name, "inventory"));
@@ -172,6 +178,9 @@ public final class BlockRenderRegister
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.netherFrostBrickSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":netherFrostBrickSideSlab", "inventory"));
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.quartzSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":quartzSideSlab", "inventory"));
     	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cobblestoneSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":cobblestoneSideSlab", "inventory"));
+    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tropicStoneBrickSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":tropicStoneBrickSideSlab", "inventory"));
+    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.magmaRockBrickSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":magmaRockBrickSideSlab", "inventory"));
+    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadRockBrickSideSlab), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":dreadRockBrickSideSlab", "inventory"));
     	
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.uraniumTorch), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockTorch)(ModBlocks.uraniumTorch)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.tadaniteOre), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockOre)(ModBlocks.tadaniteOre)).name, "inventory"));
@@ -196,6 +205,7 @@ public final class BlockRenderRegister
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.palmLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((BlockPalmLeaves)(ModBlocks.palmLeaves)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostLeaves), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockFrostLeaves)(ModBlocks.frostLeaves)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.reinforcedGlass), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockGlass)(ModBlocks.reinforcedGlass)).name, "inventory"));
+	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.borderlessGlass), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockGlass)(ModBlocks.borderlessGlass)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.cedarLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockCedarLog)(ModBlocks.cedarLog)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.frostLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockFrostLog)(ModBlocks.frostLog)).name, "inventory"));
 	    ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(ModBlocks.dreadLog), 0, new ModelResourceLocation(Main.MODID.toLowerCase() + ":" + ((ModBlockDreadLog)(ModBlocks.dreadLog)).name, "inventory"));

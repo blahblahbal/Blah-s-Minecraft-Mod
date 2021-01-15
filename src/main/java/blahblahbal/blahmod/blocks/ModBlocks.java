@@ -65,6 +65,7 @@ public final class ModBlocks
 	public static Block blackSand;
 	public static Block blackSandstone;
 	public static Block chiseledBlackSandstone;
+	public static Block smoothBlackSandstone;
 	public static Block tropicStone;
 	public static Block tropicCobblestone;
 	public static Block tropicStoneBrick;
@@ -109,6 +110,8 @@ public final class ModBlocks
 	public static Block dreadSandstone;
 	public static Block chiseledDreadSandstone;
 	public static Block dreadRockBricks;
+	public static Block smoothDreadSandstone;
+	public static Block borderlessGlass;
 	// End valley stuff
 
 	// Nether Core stuff
@@ -141,12 +144,14 @@ public final class ModBlocks
 	public static Block chiseledFrostSandstone;
 	public static Block iceCreamBlock;
 	public static Block frostBlazeBrick;
+	public static Block smoothFrostSandstone;
 	// End Nether Core stuff
 
 	// End Stuff
 	public static Block zirconOre;
 	public static Block zirconBlock;
 	public static Block endStoneBricks;
+	public static Block mossyEndStoneBricks;
 	// End end stuff
 
 	// Nether Stuff
@@ -160,6 +165,8 @@ public final class ModBlocks
 	public static Block magma;
 	public static ModBlockStairs blazeStairs;
 	public static Block magmaRockBricks;
+	public static Block smoothNetherrack;
+	public static Block polishedNetherrack;
 	// End nether stuff
 	
 	// TileEntities
@@ -217,8 +224,8 @@ public final class ModBlocks
 	public static ModBlockSlab[] doubleSlabs2 = new ModBlockSlab[8];
 	public static ModBlockSlab[] woodSlabs = new ModBlockSlab[8];
 	public static ModBlockSlab[] doubleWoodSlabs = new ModBlockSlab[8];
-	public static ModBlockSlab[] slabs3 = new ModBlockSlab[5];
-	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[5];
+	public static ModBlockSlab[] slabs3 = new ModBlockSlab[7];
+	public static ModBlockSlab[] doubleSlabs3 = new ModBlockSlab[7];
 	// End Slabs
 	
 	// Side Slabs
@@ -253,6 +260,10 @@ public final class ModBlocks
 	public static ModBlockSideSlab netherFrostBrickSideSlab;
 	public static ModBlockSideSlab quartzSideSlab;
 	public static ModBlockSideSlab cobblestoneSideSlab;
+	public static ModBlockSideSlab tropicStoneBrickSideSlab;
+	public static ModBlockSideSlab magmaRockBrickSideSlab;
+	public static ModBlockSideSlab dreadRockBrickSideSlab;
+	
 	
 	public static Item itemIronSideSlab;
 	public static Item itemGoldSideSlab;
@@ -285,6 +296,9 @@ public final class ModBlocks
 	public static Item itemNetherFrostBrickSideSlab;
 	public static Item itemQuartzSideSlab;
 	public static Item itemCobblestoneSideSlab;
+	public static Item itemTropicStoneBrickSideSlab;
+	public static Item itemMagmaRockBrickSideSlab;
+	public static Item itemDreadRockBrickSideSlab;
 	// End SS
 	
 	
@@ -310,6 +324,9 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(saltrock = new BasicBlock("saltrock", Material.rock, 1.5F, 10F, "pickaxe", 0, "saltrock")), "saltrock");
 		GameRegistry.registerBlock((Block)(chiseledBlackSandstone = new BasicBlock("chiseledBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledBlackSandstone")), "chiseledBlackSandstone");
 		GameRegistry.registerBlock((Block)(chiseledFrostSandstone = new BasicBlock("chiseledFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "chiseledFrostSandstone")), "chiseledFrostSandstone");
+		GameRegistry.registerBlock((Block)(smoothBlackSandstone = new BasicBlock("smoothBlackSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "smoothBlackSandstone")), "smoothBlackSandstone");
+		GameRegistry.registerBlock((Block)(smoothFrostSandstone = new BasicBlock("smoothFrostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "smoothFrostSandstone")), "smoothFrostSandstone");
+		GameRegistry.registerBlock((Block)(smoothDreadSandstone = new BasicBlock("smoothDreadSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "smoothDreadSandstone")), "smoothDreadSandstone");
 		GameRegistry.registerBlock((Block)(frostSandstone = new BasicBlock("frostSandstone", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostSandstone")), "frostSandstone");
 		GameRegistry.registerBlock((Block)(frostSand = new BasicBlock("frostSand", Material.sand, 0.5F, 0F, "shovel", 0, "frostSand")).setStepSound(Block.soundTypeSand), "frostSand");
 		GameRegistry.registerBlock((Block)(frostBrick = new BasicBlock("frostBrick", Material.rock, 1.5F, 10F, "pickaxe", 0, "frostBrick")), "frostBrick");
@@ -317,7 +334,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(netherSnow = new BasicBlock("netherSnow", Material.sand, 1.5F, 0F, "shovel", 0, "netherSnow")).setStepSound(Block.soundTypeSand), "netherSnow");
 		GameRegistry.registerBlock((BlockNetherCorePortal)(netherCorePortal = new BlockNetherCorePortal("ncportal").setUnlocalizedName("ncportal")), "ncportal");
 		GameRegistry.registerBlock((BlockIceFlame)(iceFire = new BlockIceFlame().setUnlocalizedName("iceFire")), "iceFire");
-		GameRegistry.registerBlock((Block)(magma = new BasicBlock("magma", Material.rock, 1.5F, 10F, "pickaxe", 1, "magma")), "magma");
+		GameRegistry.registerBlock((Block)(magma = new BasicBlock("magma", Material.rock, 1.5F, 10F, "pickaxe", 1, "magma").setLightLevel(1F)), "magma");
 		GameRegistry.registerBlock((Block)(dreadSand = new BasicBlock("dreadSand", Material.sand, 0.5F, 0F, "shovel", 0, "dreadSand")).setStepSound(Block.soundTypeSand), "dreadSand");
 		GameRegistry.registerBlock((Block)(dreadRock = new BasicBlock("dreadRock", Material.rock, 1.5F, 10F, "pickaxe", 0, "dreadRock")), "dreadRock");
 		GameRegistry.registerBlock((Block)(dreadSandstone = new BasicBlock("dreadSandstone", Material.rock, 1.5F, 10F, "pickaxe", 1, "dreadSandstone")), "dreadSandstone");
@@ -360,13 +377,17 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(lumiteBlock = new BasicBlock("lumiteBlock", Material.iron, 5F, 150F, "pickaxe", 1, "lumiteBlock")).setStepSound(Block.soundTypeMetal), "lumiteBlock");
 		GameRegistry.registerBlock((Block)(netherIceBrick = new BasicBlock("netherIceBrick", Material.rock, 8F, 150F, "pickaxe", 1, "netherIceBrick")).setStepSound(Block.soundTypeStone), "netherIceBrick");
 		GameRegistry.registerBlock((Block)(chiseledDreadSandstone = new BasicBlock("chiseledDreadSandstone", Material.rock, 2F, 30F, "pickaxe", 1, "chiseledDreadSandstone")).setStepSound(Block.soundTypeStone), "chiseledDreadSandstone");
+		
+		GameRegistry.registerBlock((Block)(smoothNetherrack = new BasicBlock("smoothNetherrack", Material.rock, 2F, 30F, "pickaxe", 1, "smoothNetherrack")).setStepSound(Block.soundTypeStone), "smoothNetherrack");
+		GameRegistry.registerBlock((Block)(polishedNetherrack = new BasicBlock("polishedNetherrack", Material.rock, 2F, 30F, "pickaxe", 1, "polishedNetherrack")).setStepSound(Block.soundTypeStone), "polishedNetherrack");
+		
 		GameRegistry.registerBlock(limestoneOre = new ModBlockOre("limestoneOre", Material.rock, ModItems.limestone, 3.5F, 100F, "pickaxe", 1, 0, 1, 2, "limestoneOre"), "limestoneOre");
 		GameRegistry.registerBlock((Block)(coconut = new BlockCoconut("coconut", Material.rock)), "coconut");
 		GameRegistry.registerBlock((Block)(groundCoconut = new BlockCoconut("coconutGround", Material.rock)), "coconutGround");
 		GameRegistry.registerBlock(coalOre = new ModBlockOre("coalOre", Material.rock, Items.coal, 3.5F, 10F, "pickaxe", 0, 0, 1, 1, "coalOre"), "coalOre");
 		GameRegistry.registerBlock((Block)(blazeBrick = new BasicBlock("blazeBrick", Material.rock, 2F, 100F, "pickaxe", 1, "blazeBrick")).setLightLevel(1F), "blazeBrick");
 		GameRegistry.registerBlock((Block)(ironOre = new BasicBlock("ironOre", Material.rock, 1.5F, 10F, "pickaxe", 1, "ironOre")), "ironOre");
-		GameRegistry.registerBlock((Block)(goldOre = new BasicBlock("goldOre", Material.rock, 1.5F, 10F, "pickaxe", 2, "goldOre")), "goldOre");
+		GameRegistry.registerBlock((Block)(goldOre = new BasicBlock("goldOre", Material.rock, 1.5F, 10F, "pickaxe", 3, "goldOre")), "goldOre");
 		GameRegistry.registerBlock(sulphurOre = new ModBlockOre("sulphurOre", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre"), "sulphurOre");
 		GameRegistry.registerBlock(sulphurOre2 = new ModBlockOre("sulphurOre2", Material.rock, ModItems.sulphur2, 3F, 200F, "pickaxe", 2, 0, 1, 2, "sulphurOre2"), "sulphurOre2");
 		GameRegistry.registerBlock((Block)(lumiteOre = new BasicBlock("lumiteOre", Material.rock, 3F, 200F, "pickaxe", 5, "lumiteOre")), "lumiteOre");
@@ -377,6 +398,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock(potatoBlock = new BlockPotato(Material.cloth, "potatoBlock"), "potatoBlock");
 		GameRegistry.registerBlock((Block)(enderPearlBlock = new BasicBlock("enderPearlBlock", Material.cake, 0.5F, 5F, "pickaxe", 0, "enderPearlBlock")).setStepSound(Block.soundTypeStone), "enderPearlBlock");
 		GameRegistry.registerBlock((Block)(endStoneBricks = new BasicBlock("endStoneBricks", Material.rock, 10F, 150F, "pickaxe", 1, "endStoneBricks")).setStepSound(Block.soundTypeStone), "endStoneBricks");
+		GameRegistry.registerBlock((Block)(mossyEndStoneBricks = new BasicBlock("mossyEndStoneBricks", Material.rock, 10F, 150F, "pickaxe", 1, "mossyEndStoneBricks")).setStepSound(Block.soundTypeStone), "mossyEndStoneBricks");
 		GameRegistry.registerBlock(catalyzer = new ModBlockTileEntity("catalyzer"), ItemCatalyzerBlock.class, "catalyzer");
 		GameRegistry.registerBlock((Block)(uraniumOre = new BasicBlock("uraniumOre", Material.rock, 3F, 200F, "pickaxe", 3, "uraniumOre")), "uraniumOre");
 		GameRegistry.registerBlock((Block)(petrifiedWood = new BasicBlock("petrifiedWood", Material.rock, 2F, 100F, "pickaxe", 1, "petrifiedWood")), "petrifiedWood");
@@ -412,6 +434,7 @@ public final class ModBlocks
 		GameRegistry.registerBlock((Block)(cedarLeaves = new BlockCedarLeaves("cedarLeaves")), "cedarLeaves");
 		GameRegistry.registerBlock((Block)(tadaniteSmeltery = new BlockInventoryFurnace()), ItemSmelteryBlock.class, "tadaniteSmeltery");
 		GameRegistry.registerBlock((Block)(reinforcedGlass = new ModBlockGlass("reinforcedGlass", Material.glass, 1F, 8F, "pickaxe", 1, "reinforcedGlass")).setStepSound(Block.soundTypeGlass), "reinforcedGlass");
+		GameRegistry.registerBlock((Block)(borderlessGlass = new ModBlockGlass("borderlessGlass", Material.glass, 1F, 8F, "pickaxe", 1, "borderlessGlass")).setStepSound(Block.soundTypeGlass), "borderlessGlass");
 		GameRegistry.registerBlock((Block)(imperviousBrick = new BasicBlock("imperviousBrick", Material.rock, 1F, 8F, "pickaxe", 1, "imperviousBrick")), "imperviousBrick");
 		GameRegistry.registerBlock((Block)(blackSand = new BasicBlock("blackSand", Material.sand, 0.5F, 0F, "Shovel", 1, "blackSand")).setStepSound(Block.soundTypeSand), "blackSand");
 		GameRegistry.registerBlock((Block)(blackSandstone = new BasicBlock("blackSandstone", Material.rock, 1F, 8F, "pickaxe", 1, "blackSandstone")).setStepSound(Block.soundTypeStone), "blackSandstone");
@@ -529,12 +552,16 @@ public final class ModBlocks
 		slabs3[2] = new ModBlockSlabHalf("frostSandstoneSlab", Material.rock);
 		slabs3[3] = new ModBlockSlabHalf("glassSlab", Material.glass);
 		slabs3[4] = new ModBlockSlabHalf("tropicStoneBrickSlab", Material.rock);
+		slabs3[5] = new ModBlockSlabHalf("magmaRockBrickSlab", Material.rock);
+		slabs3[6] = new ModBlockSlabHalf("dreadRockBrickSlab", Material.rock);
 		
 		doubleSlabs3[0] = new ModBlockSlabDouble("double_blazeSlab", Material.rock, slabs3[0]);
 		doubleSlabs3[1] = new ModBlockSlabDouble("double_frostBrickSlab", Material.rock, slabs3[1]);
 		doubleSlabs3[2] = new ModBlockSlabDouble("double_frostSandstoneSlab", Material.rock, slabs3[2]);
 		doubleSlabs3[3] = new ModBlockSlabDouble("double_glassSlab", Material.glass, slabs3[3]);
 		doubleSlabs3[4] = new ModBlockSlabDouble("double_tropicStoneBrickSlab", Material.rock, slabs3[4]);
+		doubleSlabs3[5] = new ModBlockSlabDouble("double_magmaRockBrickSlab", Material.rock, slabs3[5]);
+		doubleSlabs3[6] = new ModBlockSlabDouble("double_dreadRockBrickSlab", Material.rock, slabs3[6]);
 		
 		ironSideSlab = new ModBlockSideSlab("ironSideSlab", Material.iron); // iron -
 		goldSideSlab = new ModBlockSideSlab("goldSideSlab", Material.iron); // gold -
@@ -567,6 +594,9 @@ public final class ModBlocks
 		netherFrostBrickSideSlab = new ModBlockSideSlab("netherFrostBrickSideSlab", Material.grass); // dirt-
 		quartzSideSlab = new ModBlockSideSlab("quartzSideSlab", Material.rock);
 		cobblestoneSideSlab = new ModBlockSideSlab("cobblestoneSideSlab", Material.rock);
+		tropicStoneBrickSideSlab = new ModBlockSideSlab("tropicStoneBrickSideSlab", Material.rock);
+		magmaRockBrickSideSlab = new ModBlockSideSlab("magmaRockBrickSideSlab", Material.rock);
+		dreadRockBrickSideSlab = new ModBlockSideSlab("dreadRockBrickSideSlab", Material.rock);
 		
 		GameRegistry.registerBlock(ironSideSlab, "ironSideSlab");
 		GameRegistry.registerItem(itemIronSideSlab = new ItemBlock(ironSideSlab), "itemIronSideSlab");
@@ -627,7 +657,12 @@ public final class ModBlocks
 		GameRegistry.registerItem(itemQuartzSideSlab = new ItemBlock(quartzSideSlab), "itemQuartzSideSlab");
 		GameRegistry.registerBlock(cobblestoneSideSlab, "cobblestoneSideSlab");
 		GameRegistry.registerItem(itemCobblestoneSideSlab = new ItemBlock(cobblestoneSideSlab), "itemCobblestoneSideSlab");
-		
+		GameRegistry.registerBlock(tropicStoneBrickSideSlab, "tropicStoneBrickSideSlab");
+		GameRegistry.registerItem(itemTropicStoneBrickSideSlab = new ItemBlock(tropicStoneBrickSideSlab), "itemTropicStoneBrickSideSlab");
+		GameRegistry.registerBlock(magmaRockBrickSideSlab, "magmaRockBrickSideSlab");
+		GameRegistry.registerItem(itemMagmaRockBrickSideSlab = new ItemBlock(magmaRockBrickSideSlab), "itemMagmaRockBrickSideSlab");
+		GameRegistry.registerBlock(dreadRockBrickSideSlab, "dreadRockBrickSideSlab");
+		GameRegistry.registerItem(itemDreadRockBrickSideSlab = new ItemBlock(dreadRockBrickSideSlab), "itemDreadRockBrickSideSlab");
 		
 		for (int i = 0; i < 8; i++)
 		{
@@ -640,7 +675,7 @@ public final class ModBlocks
 			GameRegistry.registerBlock(woodSlabs[i], ModItemBlockSlab.class, woodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 			GameRegistry.registerBlock(doubleWoodSlabs[i], ModItemBlockSlab.class, doubleWoodSlabs[i].name, woodSlabs[i], doubleWoodSlabs[i], false);
 		}
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 7; i++)
 		{
 			GameRegistry.registerBlock(slabs3[i], ModItemBlockSlab.class, slabs3[i].name, slabs3[i], doubleSlabs3[i], false);
 			GameRegistry.registerBlock(doubleSlabs3[i], ModItemBlockSlab.class, doubleSlabs3[i].name, slabs3[i], doubleSlabs3[i], false);

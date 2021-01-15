@@ -10,12 +10,21 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.RecipeSorter;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import static net.minecraftforge.oredict.RecipeSorter.Category.SHAPED;
 
 public final class ModCrafting
 {
+	
+	private static void registerRecipeClasses()
+	{
+		RecipeSorter.register("blahmod:shapedupgrade", ShapedUpgradeRecipe.class, SHAPED, "after:forge:shapedore before:minecraft:shapeless");
+	}
 	public static void initCrafting()
 	{
+		registerRecipeClasses();
 		for (int i = 0; i < 10; i++)
 		{
 			GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.newWool[i]), new ItemStack(ModItems.dyeNew[i]), new ItemStack(Blocks.wool, 1, 0));
@@ -55,7 +64,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.iceCreamBlock), "XX", "XX", 'X', ModItems.iceCream);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBricks), "XX", "XX", 'X', ModBlocks.dreadRock);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.iceCream, 4), new ItemStack(ModBlocks.iceCreamBlock));
-		GameRegistry.addRecipe(new ItemStack(ModItems.frostRod, 2), "IBI", "BTB", "IBI", 'I', ModBlocks.iceCreamBlock, 'B', Items.blaze_rod, 'T', new ItemStack(ModBlocks.tadanite));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.frostRod, 2), "IBI", "BTB", "IBI", 'I', ModBlocks.iceCreamBlock, 'B', Items.blaze_rod, 'T', new ItemStack(ModBlocks.tadanite));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.ironSideSlab, 6), "x", "x", "x", 'x', Blocks.iron_block);
 		GameRegistry.addRecipe(new ItemStack(Blocks.iron_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.ironSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.goldSideSlab, 6), "x", "x", "x", 'x', Blocks.gold_block);
@@ -98,6 +107,12 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.obsidian, 3), "xxx", "xxx", 'x', new ItemStack(ModBlocks.obsidianSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tadaniteSideSlab, 6), "x", "x", "x", 'x', ModBlocks.tadanite);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tadanite, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.tadaniteSideSlab));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrickSideSlab, 6), "x", "x", "x", 'x', ModBlocks.tropicStoneBrick);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.tropicStoneBrickSideSlab));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaRockBrickSideSlab, 6), "x", "x", "x", 'x', ModBlocks.magmaRockBricks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaRockBricks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.magmaRockBrickSideSlab));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBrickSideSlab, 6), "x", "x", "x", 'x', ModBlocks.dreadRockBricks);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBricks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.dreadRockBrickSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.mossSideSlab, 6), "x", "x", "x", 'x', Blocks.mossy_cobblestone);
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 3), "xxx", "xxx", 'x', new ItemStack(ModBlocks.mossSideSlab));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dirtSideSlab, 6), "x", "x", "x", 'x', Blocks.dirt);
@@ -157,7 +172,7 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.lantern, 3), " x ", "zyz", " x ", 'x', Blocks.stone_slab, 'y', Blocks.torch, 'z', Blocks.glass_pane);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.lanternFloor, 3), " x ", "zyz", "xxx", 'x', Blocks.stone_slab, 'y', Blocks.torch, 'z', Blocks.glass_pane);
 		// -- END WOOD STUFF --
-		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.coconutFood, 2), new ItemStack(ModBlocks.groundCoconut));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.coconutFood, 2), new ItemStack(ModBlocks.coconut));
 		// -- CUSTOM DOOR REVERSE CRAFTING --
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.gold_ingot, 2), new ItemStack(ModItems.goldDoorItem));
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.diamond, 2), new ItemStack(ModItems.diamondDoorItem));
@@ -190,6 +205,8 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[3]), "###","###", "###", '#', ModItems.gems[3]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.gemBlocks[4]), "###","###", "###", '#', ModItems.gems[4]);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.zirconBlock), "###","###", "###", '#', ModItems.zircon);
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianConstruct), "xyx","yxy", "xyx", 'x', ModItems.obsidianIngot, 'y', Items.diamond);
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidifiedBlazeRod), " # ","#x#", " # ", 'x', Items.blaze_rod, '#', ModItems.obsidianIngot);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherWartBlock), "###","###", "###", '#', Items.nether_wart);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.flintBlock), "###","###", "###", '#', Items.flint);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaCreamBlock), "###","###", "###", '#', Items.magma_cream);
@@ -204,13 +221,18 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.endStoneBricks), "##","##", '#', Blocks.end_stone);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.cement, 8), "#x#","xxx", "yzy", '#', Blocks.clay, 'x', ModItems.limestone, 'y', Blocks.gravel, 'z', Items.water_bucket);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tadanite), "xxx", "x x", "xxx", 'x', new ItemStack(ModItems.tadaniteShard));
+		GameRegistry.addRecipe(new ItemStack(Items.iron_ingot, 3), "xxx", "x x", "xxx", 'x', new ItemStack(Blocks.iron_bars));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedSaltrock, 4), "##","##", '#', new ItemStack(ModBlocks.saltrock));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedMagnetite, 4), "##","##", '#', new ItemStack(ModBlocks.magnetite));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedIgneousRock, 4), "##","##", '#', new ItemStack(ModBlocks.igneousRock));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 4), "##","##", '#', new ItemStack(ModBlocks.tropicStone));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadSandstone), "##","##", '#', new ItemStack(ModBlocks.dreadSand));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostSandstone), "##","##", '#', new ItemStack(ModBlocks.frostSand));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothDreadSandstone), "##","##", '#', new ItemStack(ModBlocks.dreadSandstone));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothFrostSandstone), "##","##", '#', new ItemStack(ModBlocks.frostSandstone));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothBlackSandstone), "##","##", '#', new ItemStack(ModBlocks.blackSandstone));
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.obsidian, 9), new ItemStack(ModBlocks.compressedObsidian));
+		GameRegistry.addShapelessRecipe(new ItemStack(ModBlocks.mossyEndStoneBricks), new ItemStack(ModBlocks.endStoneBricks), new ItemStack(Items.wheat_seeds));
 		// new vanilla item recipes
 		GameRegistry.addShapelessRecipe(new ItemStack(Blocks.ice, 4), new ItemStack(Blocks.packed_ice));
 		GameRegistry.addRecipe(new ItemStack(Blocks.mossy_cobblestone, 8), "xyx", "yxy", "xyx", 'x', new ItemStack(Blocks.cobblestone), 'y', new ItemStack(Items.wheat_seeds));
@@ -265,10 +287,11 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.stonebrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 5));
 		GameRegistry.addRecipe(new ItemStack(Blocks.nether_brick, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 6));
 		GameRegistry.addRecipe(new ItemStack(Blocks.quartz_block, 3, 0), "xxx", "xxx", 'x', new ItemStack(Blocks.stone_slab, 1, 7));
-		GameRegistry.addRecipe(new ItemStack(Blocks.glass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[3]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[3], 6), "xxx", 'x', new ItemStack(Blocks.glass));
 		// slabs end
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrick), "##", "##", '#', ModBlocks.netherIce);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.smoothNetherrack, 4), "##","##", '#', Blocks.netherrack);
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.polishedNetherrack, 4), "##","##", '#', ModBlocks.smoothNetherrack);
 		// stairs start
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.netherIceBrick, 6), "##","##", '#', ModBlocks.netherIceBrickStairs);
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 6), "##","##", '#', ModBlocks.tropicStoneBrickStairs);
@@ -323,44 +346,57 @@ public final class ModCrafting
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.blaze_rod, 5), new ItemStack(ModBlocks.blazeBrick));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteDiamond), " x ", "xyx", " x ", 'x', new ItemStack(ModItems.tadaniteShard), 'y', new ItemStack(Items.diamond));
 		// -- TOOLS --
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianAxe), "xx ", "xy ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianAxe), " xx", " yx", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.stick));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumitePickaxe), "lll", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadanitePickaxe, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteSword), "lzl", "lzl", " t ", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteSword), 'z', new ItemStack(ModItems.zircon));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), "ll ", "lt ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), " ll", " tl", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteShovel), " l ", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteShovel, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), "ll ", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), " ll", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadanitePickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteAxe), "xx ", "xy ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteAxe), " xx", " yx", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
-		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(Items.blaze_rod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianAxe), "xx ", "xy ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianAxe), " xx", " yx", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(Items.diamond));
+		
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumitePickaxe, "lll", " t ", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadanitePickaxe, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteSword, "lzl", "lzl", " t ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteSword, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteAxe, "ll ", "lt ", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteAxe, " ll", " tl", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteShovel, " l ", " t ", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteShovel, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteHoe, "ll ", " t ", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteHoe, " ll", " t ", " z ", 'l', ModItems.lumite, 'z', ModItems.zircon, 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE)));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumitePickaxe), "lll", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadanitePickaxe, 1, OreDictionary.WILDCARD_VALUE));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteSword), "lzl", "lzl", " t ", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteSword), 'z', new ItemStack(ModItems.zircon));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), "ll ", "lt ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteAxe), " ll", " tl", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteAxe, 1, OreDictionary.WILDCARD_VALUE));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteShovel), " l ", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteShovel, 1, OreDictionary.WILDCARD_VALUE));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), "ll ", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHoe), " ll", " t ", " z ", 'l', new ItemStack(ModItems.lumite), 'z', new ItemStack(ModItems.zircon), 't', new ItemStack(ModItems.tadaniteHoe, 1, OreDictionary.WILDCARD_VALUE));
+		
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadanitePickaxe), "xxx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteSword), " x ", " x ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteAxe), "xx ", "xy ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteAxe), " xx", " yx", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteShovel), " x ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), "xx ", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
+		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHoe), " xx", " y ", " y ", 'x', new ItemStack(ModItems.tadaniteDiamond), 'y', new ItemStack(ModItems.obsidifiedBlazeRod));
 		GameRegistry.addRecipe(new ItemStack(ModItems.bedrockPickaxe), "xxx", " y ", " y ", 'x', new ItemStack(Blocks.bedrock), 'y', new ItemStack(ModItems.frostRod));
 		// -- END TOOLS --
 		// -- ARMOR --
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHelmet), "lzl", "ctc", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteHelmet, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteBoots), "ltl", "czc", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteBoots, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteChestplate), "ctc", "lzl", "zlz", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteChestplate, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
-		GameRegistry.addRecipe(new ItemStack(ModItems.lumiteLeggings), "zlz", "ltl", "c c", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteLeggings, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteHelmet), "lzl", "ctc", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteHelmet, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteBoots), "ltl", "czc", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteBoots, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteChestplate), "ctc", "lzl", "zlz", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteChestplate, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
+		//GameRegistry.addRecipe(new ItemStack(ModItems.lumiteLeggings), "zlz", "ltl", "c c", 'l', new ItemStack(ModItems.lumite), 't', new ItemStack(ModItems.tadaniteLeggings, 1, OreDictionary.WILDCARD_VALUE), 'c', new ItemStack(ModItems.catalyticInverter), 'z', new ItemStack(ModItems.zircon));
 		
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteHelmet, "lzl", "ctc", 'l', ModItems.lumite, 'z', ModItems.zircon, 'c', new ItemStack(ModItems.catalyticInverter), 't', new ItemStack(ModItems.tadaniteHelmet, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteChestplate, "ctc", "lzl", "zlz", 'l', ModItems.lumite, 'z', ModItems.zircon, 'c', new ItemStack(ModItems.catalyticInverter), 't', new ItemStack(ModItems.tadaniteChestplate, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteLeggings, "zlz", "ltl", "c c", 'l', ModItems.lumite, 'z', ModItems.zircon, 'c', new ItemStack(ModItems.catalyticInverter), 't', new ItemStack(ModItems.tadaniteLeggings, 1, OreDictionary.WILDCARD_VALUE)));
+		GameRegistry.addRecipe(new ShapedUpgradeRecipe(ModItems.lumiteHelmet, "ltl", "czc", 'l', ModItems.lumite, 'z', ModItems.zircon, 'c', new ItemStack(ModItems.catalyticInverter), 't', new ItemStack(ModItems.tadaniteBoots, 1, OreDictionary.WILDCARD_VALUE)));
 		
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteHelmet), "xxx", "x x", 'x', new ItemStack(ModItems.tadaniteDiamond));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteBoots), "x x", "x x", 'x', new ItemStack(ModItems.tadaniteDiamond));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteChestplate), "x x", "xxx", "xxx", 'x', new ItemStack(ModItems.tadaniteDiamond));
 		GameRegistry.addRecipe(new ItemStack(ModItems.tadaniteLeggings), "xxx", "x x", "x x", 'x', new ItemStack(ModItems.tadaniteDiamond));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHelmet), "xxx", "x x", 'x', new ItemStack(ModItems.obsidianIngot));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianBoots), "x x", "x x", 'x', new ItemStack(ModItems.obsidianIngot));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianChestplate), "x x", "xxx", "xxx", 'x', new ItemStack(ModItems.obsidianIngot));
-		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianLeggings), "xxx", "x x", "x x", 'x', new ItemStack(ModItems.obsidianIngot));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianHelmet), "xxx", "xyx", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(ModItems.obsidianConstruct));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianBoots), "xyx", "x x", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(ModItems.obsidianConstruct));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianChestplate), "xyx", "xxx", "xxx", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(ModItems.obsidianConstruct));
+		GameRegistry.addRecipe(new ItemStack(ModItems.obsidianLeggings), "xxx", "xyx", "x x", 'x', new ItemStack(ModItems.obsidianIngot), 'y', new ItemStack(ModItems.obsidianConstruct));
 		// -- END ARMOR --
 		
 		//GameRegistry.addRecipe(new ItemStack(ModBlocks.uraniumTorch, 4), "x", "y", 'x', new ItemStack(ModItems.uraniumRod), 'y', new ItemStack(Items.stick));
@@ -409,6 +445,9 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[0], 6), "xxx", 'x', new ItemStack(ModBlocks.blazeBrick));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[1], 6), "xxx", 'x', new ItemStack(ModBlocks.frostBrick));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[2], 6), "xxx", 'x', new ItemStack(ModBlocks.frostSandstone));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[4], 6), "xxx", 'x', new ItemStack(ModBlocks.tropicStoneBrick));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[5], 6), "xxx", 'x', new ItemStack(ModBlocks.magmaRockBricks));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.slabs3[6], 6), "xxx", 'x', new ItemStack(ModBlocks.dreadRockBricks));
 		// custom slab decrafting
 		GameRegistry.addRecipe(new ItemStack(Blocks.dirt, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[0]));
 		GameRegistry.addRecipe(new ItemStack(Blocks.grass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs2[1]));
@@ -437,6 +476,10 @@ public final class ModCrafting
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.blazeBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[0]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[1]));
 		GameRegistry.addRecipe(new ItemStack(ModBlocks.frostSandstone, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[2]));
+		GameRegistry.addRecipe(new ItemStack(Blocks.glass, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[3]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.tropicStoneBrick, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[4]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.magmaRockBricks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[5]));
+		GameRegistry.addRecipe(new ItemStack(ModBlocks.dreadRockBricks, 3, 0), "xxx", "xxx", 'x', new ItemStack(ModBlocks.slabs3[6]));
 		// end custom slab crafting/decrafting		
 		// gem staves
 		GameRegistry.addRecipe(new ItemStack(ModItems.gemStaves[0]), "y", "y", "z", 'y', new ItemStack(ModBlocks.gemBlocks[0]), 'z', new ItemStack(ModBlocks.petrifiedWood));
@@ -463,5 +506,6 @@ public final class ModCrafting
 		GameRegistry.addSmelting(ModBlocks.palmLog, new ItemStack(Items.coal, 1, 1), 2F);
 		GameRegistry.addSmelting(ModBlocks.sequoiaLog, new ItemStack(Items.coal, 1, 1), 2F);
 		GameRegistry.addSmelting(ModBlocks.cedarLog, new ItemStack(Items.coal, 1, 1), 2F);
+		GameRegistry.addSmelting(ModBlocks.dreadSand, new ItemStack(ModBlocks.borderlessGlass), .5F);
 	}
 }

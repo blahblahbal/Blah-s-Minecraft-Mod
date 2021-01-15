@@ -55,7 +55,7 @@ public class StructureNetherVillageHouse1 extends WorldGenerator
 	{
 		{0, 1, 1}, {0, 1, 5}, {7, 1, 1}, {7, 1, 5},
 		{1, 1, 0}, {6, 1, 0}, {1, 1, 6}, {6, 1, 6},
-		{0, 5, 3}, {0, 6, 3}, {6, 5, 3}, {6, 6, 3}
+		{0, 5, 3}, {0, 6, 3}, {7, 5, 3}, {7, 6, 3}
 	};
 	private final int[][] quartzPillarPos = new int[][]
 	{
@@ -136,10 +136,11 @@ public class StructureNetherVillageHouse1 extends WorldGenerator
 	{
 		// parameters: (Item, metadata, min, max, weight)
 		new WeightedRandomChestContent(Items.nether_star, 0, 1, 1, 1),
-		new WeightedRandomChestContent(ModItems.tadaniteDiamond, 0, 1, 2, 5),
+		new WeightedRandomChestContent(ModItems.tadaniteShard, 0, 3, 6, 5),
 		new WeightedRandomChestContent(Items.diamond_axe, 0, 1, 1, 5),
 		new WeightedRandomChestContent(Items.gold_nugget, 0, 3, 21, 15),
 		new WeightedRandomChestContent(Items.diamond_sword, 0, 1, 1, 7),
+		new WeightedRandomChestContent(ModItems.tadaniteDiamond, 0, 1, 1, 1),
 		new WeightedRandomChestContent(new ItemStack(ModBlocks.netherIce), 3, 5, 17),
 	};
 	
@@ -219,9 +220,9 @@ public class StructureNetherVillageHouse1 extends WorldGenerator
 			IBlockState blazeBrick = ModBlocks.blazeBrick.getDefaultState();
 			IBlockState redNetherBrick = ModBlocks.redNetherBrick.getDefaultState();
 			IBlockState netherIce = ModBlocks.netherIce.getDefaultState();
-			IBlockState tadanite = ModBlocks.tadanite.getDefaultState();
+			IBlockState tadanite = Blocks.nether_brick.getDefaultState(); //ModBlocks.tadanite.getDefaultState();
 			IBlockState obsSlab = ModBlocks.slabs2[4].getDefaultState();
-			IBlockState button = Blocks.stone_button.getDefaultState();
+			IBlockState button = Blocks.stone_button.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
 			IBlockState pressPlate = Blocks.stone_pressure_plate.getDefaultState();
 			IBlockState redStainedGlassPane = Blocks.stained_glass_pane.getDefaultState().withProperty(COLOR, EnumDyeColor.RED);
 			IBlockState doorLower = Blocks.iron_door.getDefaultState().withProperty(BlockDoor.HALF, BlockDoor.EnumDoorHalf.LOWER);

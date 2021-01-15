@@ -67,6 +67,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 			int randZ = blockZ + rand.nextInt(16);
 			// use our custom function to get the ground height
 			int groundY = getGroundFromAbove(world, randX, randZ, Blocks.netherrack.getDefaultState());
+			if (groundY < 10) return;
 			genCabin.generate(world, rand, new BlockPos(randX, groundY + 1, randZ));
 		}
 		/** END CABIN GEN **/
@@ -83,7 +84,7 @@ public class WorldGeneratorNetherVillage implements IWorldGenerator
 		WorldGenerator genIgloo = new StructureNetherCoreIglooDungeon();
 		WorldGenerator genSpike = new WorldGenNetherCoreIceSpike();
 		// 25% of chunks can have a cabin
-		final int CABIN_CHANCE = 10;
+		final int CABIN_CHANCE = 5;
 		if (rand.nextInt(30) < CABIN_CHANCE)
 		{
 			// get a random position in the chunk

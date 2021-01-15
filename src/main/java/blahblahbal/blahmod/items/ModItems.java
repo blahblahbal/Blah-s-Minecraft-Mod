@@ -19,7 +19,7 @@ public final class ModItems {
 	public static ToolMaterial lumiteM = EnumHelper.addToolMaterial("LUMITE", 5, 5000, 30F, 11.0F, 45);
 	public static ToolMaterial bedrockM = EnumHelper.addToolMaterial("BEDROCKM", 6, 5000, 20F, 4.0F, 10);
 	public static ArmorMaterial tadaniteA = EnumHelper.addArmorMaterial("TADANITEA", "blahmod:tadanite", 150, new int[] {4, 9, 8, 3}, 32);
-	public static ArmorMaterial obsidianA = EnumHelper.addArmorMaterial("OBSIDIANA", "blahmod:obsidian", 50, new int[] {2, 6, 6, 2}, 32);
+	public static ArmorMaterial obsidianA = EnumHelper.addArmorMaterial("OBSIDIANA", "blahmod:obsidian", 30, new int[] {2, 5, 4, 2}, 32);
 	public static ArmorMaterial lumiteA = EnumHelper.addArmorMaterial("LUMITEA", "blahmod:obsidian", 250, new int[] {4, 9, 8, 3}, 32);
 	public static Item[] gems = new Item[5];
 	public static Item netherCoreKey;
@@ -48,6 +48,8 @@ public final class ModItems {
     public static Item cedarDoorItem;
     public static Item dreadDoorItem;
     public static Item frostDoorItem;
+    public static Item obsidifiedBlazeRod;
+    public static Item obsidianConstruct;
     public static ItemModPickaxe obsidianPickaxe;
     public static ItemModSword obsidianSword;
     public static ItemModAxe obsidianAxe;
@@ -131,6 +133,8 @@ public final class ModItems {
         GameRegistry.registerItem(sulphur2 = new BasicItem("sulphur2"), "sulphur2");
         GameRegistry.registerItem(uraniumIngot = new BasicItem("uraniumIngot"), "uraniumIngot");
         GameRegistry.registerItem(uraniumRod = new BasicItem("uraniumRod"), "uraniumRod");
+        GameRegistry.registerItem(obsidifiedBlazeRod = new BasicItem("obsidifiedBlazeRod"), "obsidifiedBlazeRod");
+        GameRegistry.registerItem(obsidianConstruct = new BasicItem("obsidianConstruct"), "obsidianConstruct");
         Items.egg.setMaxStackSize(64);
         Items.ender_pearl.setMaxStackSize(64);
         Items.snowball.setMaxStackSize(64);

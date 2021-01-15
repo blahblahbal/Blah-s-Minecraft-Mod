@@ -66,9 +66,9 @@ public class ModBlockDreadSapling extends BlockSapling
         this.grow(worldIn, pos, state, rand);
     }
     @Override
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    public boolean canPlaceBlockOn(Block ground)
     {
-    	return (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.dreadSand || worldIn.getBlockState(pos.down()).getBlock() == Blocks.dirt || worldIn.getBlockState(pos.down()).getBlock() == Blocks.grass);
+    	return ground == ModBlocks.dreadSand || ground == Blocks.dirt || ground == Blocks.grass;
     }
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)

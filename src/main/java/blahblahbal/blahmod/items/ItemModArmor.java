@@ -30,12 +30,28 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemModArmor extends ItemArmor
 {
-
+	public String name;
     public ItemModArmor(String unlocalizedName, ArmorMaterial material, int renderIndex, int armorType)
     {
         super(material, renderIndex, armorType);
         this.setCreativeTab(Main.blahTab);
         this.setUnlocalizedName(unlocalizedName);
+        this.name = unlocalizedName;
+    }
+	@Override
+    public boolean getIsRepairable(ItemStack toRepair, ItemStack repair)
+    {
+		ItemStack mat = new ItemStack(ModItems.lumite);
+        if (this.name.contains("tadanite"))
+        {
+        	mat = new ItemStack(ModItems.tadaniteDiamond);
+        }
+        if (this.name.contains("obsidian"))
+        {
+        	mat = new ItemStack(ModItems.obsidianIngot);
+        }
+        if (mat != null && net.minecraftforge.oredict.OreDictionary.itemMatches(mat, repair, false)) return true;
+        return super.getIsRepairable(toRepair, repair);
     }
     @Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack stack){
@@ -69,7 +85,7 @@ public class ItemModArmor extends ItemArmor
 					helmet.getItem() == ModItems.lumiteHelmet)
 			{
 				player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 100, 1));
-				//player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 100, 0));
+				player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 100, 1));
 				player.addPotionEffect(new PotionEffect(Potion.jump.getId(), 100, 1));
 				player.addPotionEffect(new PotionEffect(Potion.saturation.getId(), 100, 0));
 				if (player.isBurning()) player.extinguish();
@@ -106,7 +122,7 @@ public class ItemModArmor extends ItemArmor
 			        player.stepHeight = 1.0F;
 			      }
 			      
-			      if (player.onGround)
+			      /*if (player.onGround)
 			      {
 			        float bonus = 0.02F;
 			        if (player.isInWater()) bonus /= 4.0F;
@@ -115,7 +131,7 @@ public class ItemModArmor extends ItemArmor
 			      else
 			      {
 			    	  player.jumpMovementFactor = 0.05F;
-			      }
+			      }*/
 			    }
 			    if (player.fallDistance > 0.0F)
 			    {

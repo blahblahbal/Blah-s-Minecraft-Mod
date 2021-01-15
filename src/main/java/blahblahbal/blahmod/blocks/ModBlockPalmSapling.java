@@ -69,9 +69,9 @@ public class ModBlockPalmSapling extends BlockSapling
         this.grow(worldIn, pos, state, rand);
     }
     @Override
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    public boolean canPlaceBlockOn(Block ground)
     {
-    	return (worldIn.getBlockState(pos.down()).getBlock() == ModBlocks.blackSand || worldIn.getBlockState(pos.down()).getBlock() == Blocks.sand);
+    	return ground == ModBlocks.blackSand || ground == Blocks.sand;
     }
 	@Override
 	public void generateTree(World worldIn, BlockPos pos, IBlockState state, Random rand)

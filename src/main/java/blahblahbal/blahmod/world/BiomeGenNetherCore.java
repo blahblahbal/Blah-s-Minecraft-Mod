@@ -32,6 +32,6 @@ public class BiomeGenNetherCore extends BiomeGenBase
     @Override
 	public int getFoliageColorAtPos(BlockPos pos)
 	{
-		return 0x8FFF00;
+		return 0xFFFFFF;
 	}
 }

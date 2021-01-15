@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "blahmod:dreadRockBrickSideSlab_north" },
+        "facing=south": { "model": "blahmod:dreadRockBrickSideSlab_south" },
+        "facing=east": { "model": "blahmod:dreadRockBrickSideSlab_east" },
+        "facing=west": { "model": "blahmod:dreadRockBrickSideSlab_west" }
+    }
+}

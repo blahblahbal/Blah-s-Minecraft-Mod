@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "blahmod:blocks/frostSandstone_top",
+        "side": "blahmod:blocks/frostSandstone_smooth"
+    }
+}
