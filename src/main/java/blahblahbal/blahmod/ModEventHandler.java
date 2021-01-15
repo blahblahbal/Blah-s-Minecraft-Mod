@@ -31,6 +31,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.AchievementList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -78,6 +80,10 @@ public class ModEventHandler
 		if (event.phase == TickEvent.Phase.END) // && event.side == Side.SERVER)
 		{
 			EntityPlayer player = (EntityPlayer)event.player;
+			if (player.capabilities.isFlying)
+			{
+				player.addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 20, 1));
+			}
 			/*GameSettings gs = Minecraft.getMinecraft().gameSettings;
 			if (!GameSettings.isKeyDown(gs.keyBindForward) && !GameSettings.isKeyDown(gs.keyBindBack)
 				&& !GameSettings.isKeyDown(gs.keyBindRight) && !GameSettings.isKeyDown(gs.keyBindLeft) &&

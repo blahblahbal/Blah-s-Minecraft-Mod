@@ -48,7 +48,7 @@ public class CommonProxy
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.sulphurOre, (Blocks.netherrack), new int[]{-1}, 80, 35, 2, 5), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.sulphurOre2, (ModBlocks.netherFrost), new int[]{255}, 80, 35, 3, 8), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.magma, (Blocks.netherrack), new int[]{-1}, 58, 30, 2, 20), 0);
-    	GameRegistry.registerWorldGenerator(new BlahWorldGen(ModBlocks.hardenedLava, (Blocks.stone), new int[]{0}, 15, 1, 1, 20), 0);
+    	GameRegistry.registerWorldGenerator(new BlahWorldGen(ModBlocks.hardenedLava, (Blocks.stone), new int[]{0}, 15, 1, 1, 5), 0);
     	
     	GameRegistry.registerWorldGenerator(new BlahWorldGen((Block)ModBlocks.limestoneOre, (Blocks.stone), new int[]{0}, 55, 10, 2, 7), 0);
     	GameRegistry.registerWorldGenerator(new BlahWorldGen2((Block)ModBlocks.boneBlock, (Blocks.stone), new int[]{0}, 55, 10, 10, 12, "Swampland"), 0);

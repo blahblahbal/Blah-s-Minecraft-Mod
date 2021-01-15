@@ -40,15 +40,14 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(EntityEskimoZombie.class, manager -> new RenderEskimoZombie(manager));
         RenderingRegistry.registerEntityRenderingHandler(EntityIceCube.class, manager -> new RenderIceCube(manager));
         RenderingRegistry.registerEntityRenderingHandler(EntityFrostblaze.class, manager -> new RenderFrostblaze(manager));
+        
+        RenderingRegistry.registerEntityRenderingHandler(EntityGemBolt.class, manager -> new RenderGemBolt(manager));
     }
 
     @Override
     public void init(FMLInitializationEvent e) {
         super.init(e);
-        
         ItemRenderRegister.registerItemRenderer();
-        RenderManager renderManager = Minecraft.getMinecraft().getRenderManager();
-        RenderingRegistry.registerEntityRenderingHandler(EntityGemBolt.class, new RenderGemBolt(renderManager, 1F));
     }
 
     @Override

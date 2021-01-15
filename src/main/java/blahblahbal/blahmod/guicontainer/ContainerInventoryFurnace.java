@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
 * From MinecraftByExample - author = brandon3055
+* Modified by blahblahbal slightly
 */
 
 public class ContainerInventoryFurnace extends Container
